@@ -218,12 +218,11 @@ border: 0px solid #404040;
                 a.tooltip-link {
                     position: relative;
                     outline: none;
-                    display: inline-block;
                     text-decoration: none;
-                    font-family: Arial, sans-serif;
                     font-size: 0.75rem;
                     font-weight: normal;
                     color: #404040;
+                    background-color: #FFFFFF;
                 }
 
                     a.tooltip-link:focus {
@@ -242,9 +241,6 @@ border-radius: 4px;
                     padding-bottom: 0.15rem;
                     padding-left: 0.2rem;
                     padding-right: 0.2rem;
-                    width: auto;
-//min-width: max-content;
-//                    max-width: 100%;
                     position: absolute;
                     bottom: 0;
                     right: 0;
@@ -253,9 +249,6 @@ border-radius: 4px;
                     opacity: 0;
                     transition: opacity 0.15s ease-in-out;
                     pointer-events: none;
- //                  white-space: nowrap;
-//                   overflow-wrap: break-word;
-//                   word-wrap: break-word;
                     text-align: center;
                     line-height: 1;
                     font-size: 0.75rem;
@@ -1838,9 +1831,9 @@ border-radius: 4px;
                             padding-bottom: 0;
                             padding-left: 0;
                             padding-right: 0;
-                            width: 100%;
                             height: auto;
-                            display: block;
+                            display: inline-block;
+width: max-content;
                         }
 
                         .content-imagine a {
