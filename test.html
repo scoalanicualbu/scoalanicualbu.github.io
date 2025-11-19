@@ -4438,7 +4438,6 @@ function ajusteazaTooltip(tooltip) {
     // Preia dimensiunile actuale ale tooltip-ului
     const rect = tooltip.getBoundingClientRect();
     const currentWidth = rect.width;
-    const currentHeight = rect.height;
 
     const rootFontSize = parseFloat(getComputedStyle(document.documentElement).fontSize);
     const paddingRem = 0.2;
@@ -4500,7 +4499,7 @@ function ajusteazaTooltip(tooltip) {
     document.body.removeChild(span);
 
     // Calculăm noua lățime, păstrând dimensiunile actuale
-    const totalWidth = lungimeMaxima + 2 * paddingPx;
+    const totalWidth = lungimeMaxima + 2 * paddingRem;
 
     // Actualizăm stilul de width al tooltip-ului
     tooltip.style.width = totalWidth + 'px';
