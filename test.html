@@ -218,11 +218,10 @@ border: 0px solid #404040;
                 .tooltip-link {
                     position: relative;
                     outline: none;
-display: inline-block;
                     text-decoration: none;
                     font-size: 0.75rem;
                     font-weight: normal;
-                    color: #404040;
+                    color: #404040;	
                     background-color: #FFFFFF;
                 }
 
@@ -248,9 +247,7 @@ border-radius: 4px;
                     z-index: 2;
                     visibility: hidden;
                     opacity: 0;
-                    transition: opacity 0.15s ease-in-out;
                     pointer-events: none;
-display: block;
                     text-align: center;
                     line-height: 1;
                     font-size: 0.75rem;
@@ -4371,6 +4368,83 @@ border-radius: 4px;
 
                 tryUpdate();
             }
+
+// Setare lățime fereastră de informații Tooltip
+function ajusteazaTooltip(tooltip) {
+    if (!tooltip) return;
+
+    // Creăm un span temporar pentru măsurare
+    const span = document.createElement('span');
+    span.style.visibility = 'hidden';
+    span.style.position = 'absolute';
+    span.style.whiteSpace = 'pre';
+
+    document.body.appendChild(span);
+
+    const rootFontSize = parseFloat(getComputedStyle(document.documentElement).fontSize);
+    const paddingRem = 0.2;
+    const paddingPx = paddingRem * rootFontSize;
+
+    const text = tooltip.innerText || tooltip.textContent;
+    const cuvinte = text.split(' ');
+
+    // Obținem lățimea containerului părinte
+    const containerRect = tooltip.parentElement.getBoundingClientRect();
+    const paddingTotalPx = 2 * paddingPx;
+    const maxLineWidth = containerRect.width - paddingTotalPx;
+
+    let randuri = [];
+    let currentLine = [];
+
+    for (const cuvant of cuvinte) {
+        const tempLineText = currentLine.concat(cuvant).join(' ');
+        span.innerText = tempLineText;
+        const width = span.offsetWidth;
+
+        if (width <= maxLineWidth) {
+            currentLine.push(cuvant);
+        } else {
+            if (currentLine.length > 0) {
+                randuri.push(currentLine.join(' '));
+            }
+            span.innerText = cuvant;
+            const cuvantWidth = span.offsetWidth;
+            if (cuvantWidth > maxLineWidth) {
+                // Cuvântul e mai lung decât max line width, îl pun singur
+                randuri.push(cuvant);
+                currentLine = [];
+            } else {
+                currentLine = [cuvant];
+            }
+        }
+    }
+    if (currentLine.length > 0) {
+        randuri.push(currentLine.join(' '));
+    }
+
+    // Găsim lungimea maximă a rândurilor
+    let lungimeMaxima = 0;
+    for (const r of randuri) {
+        span.innerText = r;
+        const w = span.offsetWidth;
+        if (w > lungimeMaxima) lungimeMaxima = w;
+    }
+
+    document.body.removeChild(span);
+
+    // Setăm lățimea tooltip-ului: lungimea maximă plus padding
+    const totalWidth = lungimeMaxima + 2 * paddingPx;
+    tooltip.style.width = totalWidth + 'px';
+}
+
+document.querySelectorAll('.tooltip-text').forEach(tooltip => {
+    tooltip.addEventListener('mouseenter', () => {
+        ajusteazaTooltip(tooltip);
+    });
+    tooltip.addEventListener('focus', () => {
+        ajusteazaTooltip(tooltip);
+    });
+});
 
 // Zoom și translatare imagine, "Contact"
             function limitPosition(container, img, scale, translateX, translateY) {
