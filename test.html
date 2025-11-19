@@ -4435,13 +4435,10 @@ border-radius: 4px;
 function ajusteazaTooltip(tooltip) {
     if (!tooltip) return;
 
-    // Creăm un span temporar pentru măsurare
-    const span = document.createElement('span');
-    span.style.visibility = 'hidden';
-    span.style.position = 'absolute';
-    span.style.whiteSpace = 'pre'; // păstrează spațiile
-
-    document.body.appendChild(span);
+    // Preia dimensiunile actuale ale tooltip-ului
+    const rect = tooltip.getBoundingClientRect();
+    const currentWidth = rect.width;
+    const currentHeight = rect.height;
 
     const rootFontSize = parseFloat(getComputedStyle(document.documentElement).fontSize);
     const paddingRem = 0.2;
@@ -4455,8 +4452,16 @@ function ajusteazaTooltip(tooltip) {
     const paddingTotalPx = 2 * paddingPx;
     const maxLineWidth = containerRect.width - paddingTotalPx;
 
+    // Inițializăm variabile pentru măsurare
     let randuri = [];
     let currentLine = [];
+
+    // Creăm un element temporar pentru măsurare text
+    const span = document.createElement('span');
+    span.style.visibility = 'hidden';
+    span.style.position = 'absolute';
+    span.style.whiteSpace = 'pre'; // păstrează spațiile
+    document.body.appendChild(span);
 
     for (const cuvant of cuvinte) {
         const tempLineText = currentLine.concat(cuvant).join(' ');
@@ -4494,26 +4499,19 @@ function ajusteazaTooltip(tooltip) {
 
     document.body.removeChild(span);
 
-    // Setăm lățimea tooltip-ului
+    // Calculăm noua lățime, păstrând dimensiunile actuale
     const totalWidth = lungimeMaxima + 2 * paddingPx;
+
+    // Actualizăm stilul de width al tooltip-ului
     tooltip.style.width = totalWidth + 'px';
 }
 
 document.querySelectorAll('.tooltip-content').forEach(tooltip => {
-    let timeoutId;
-
     tooltip.addEventListener('mouseenter', () => {
-        clearTimeout(timeoutId);
-        timeoutId = setTimeout(() => {
-            ajusteazaTooltip(tooltip);
-        }, 50);
+        ajusteazaTooltip(tooltip);
     });
-
     tooltip.addEventListener('focus', () => {
-        clearTimeout(timeoutId);
-        timeoutId = setTimeout(() => {
-            ajusteazaTooltip(tooltip);
-        }, 50);
+        ajusteazaTooltip(tooltip);
     });
 });
 
