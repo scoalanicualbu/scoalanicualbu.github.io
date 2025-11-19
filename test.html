@@ -4387,10 +4387,12 @@ border-radius: 4px;
             }
 
 // Setare lățime fereastră de informații Tooltip
+let lastWidth = null;
+
 function ajusteazaTooltip(tooltip) {
     if (!tooltip) return;
 
-    // Creăm un span temporar pentru măsurare
+    // Creăm span pentru măsurare
     const span = document.createElement('span');
     span.style.visibility = 'hidden';
     span.style.position = 'absolute';
@@ -4399,35 +4401,34 @@ function ajusteazaTooltip(tooltip) {
     document.body.appendChild(span);
 
     const rootFontSize = parseFloat(getComputedStyle(document.documentElement).fontSize);
-    const paddingRem = 0.2;
-    const paddingPx = paddingRem * rootFontSize;
+    const paddingPx = 0.2 * rootFontSize;
 
     const text = tooltip.innerText || tooltip.textContent;
+
+    // Obținem dimensiunea părintelui
+    const parentRect = tooltip.parentElement.getBoundingClientRect();
+    const maxLineWidth = parentRect.width - 2 * paddingPx;
+
+    // Împărțim textul în cuvinte
     const cuvinte = text.split(' ');
 
-    // Obținem lățimea containerului părinte
-    const containerRect = tooltip.parentElement.getBoundingClientRect();
-    const paddingTotalPx = 2 * paddingPx;
-    const maxLineWidth = containerRect.width - paddingTotalPx - 2;
-
+    // Variabile pentru procesare
     let randuri = [];
     let currentLine = [];
 
     for (const cuvant of cuvinte) {
-        const tempLineText = currentLine.concat(cuvant).join(' ');
-        span.innerText = tempLineText;
-        const width = span.offsetWidth;
+        // Măsurăm dacă adăugarea cuvântului face ca linia să depășească spațiul
+        span.innerText = currentLine.concat(cuvant).join(' ');
+        const latimeCurenta = span.offsetWidth;
 
-        if (width <= maxLineWidth) {
+        if (latimeCurenta <= maxLineWidth) {
             currentLine.push(cuvant);
         } else {
-            if (currentLine.length > 0) {
-                randuri.push(currentLine.join(' '));
-            }
+            // Dacă linia curentă nu poate include cuvântul, o adăugăm la listă și începem alta
+            if (currentLine.length > 0) randuri.push(currentLine.join(' '));
             span.innerText = cuvant;
-            const cuvantWidth = span.offsetWidth;
-            if (cuvantWidth > maxLineWidth) {
-                // Cuvântul e mai lung decât max line width, îl pun singur
+            if (span.offsetWidth > maxLineWidth) {
+                // Cuvântul singur e prea lung, îl punem singur
                 randuri.push(cuvant);
                 currentLine = [];
             } else {
@@ -4435,23 +4436,25 @@ function ajusteazaTooltip(tooltip) {
             }
         }
     }
-    if (currentLine.length > 0) {
-        randuri.push(currentLine.join(' '));
-    }
+    if (currentLine.length > 0) randuri.push(currentLine.join(' '));
 
-    // Găsim lungimea maximă a rândurilor
-    let lungimeMaxima = 0;
+    // Măsurăm lățimea maximă a rândurilor
+    let latimeMaxima = 0;
     for (const r of randuri) {
         span.innerText = r;
-        const w = span.offsetWidth;
-        if (w > lungimeMaxima) lungimeMaxima = w;
+        if (span.offsetWidth > latimeMaxima) latimeMaxima = span.offsetWidth;
     }
 
     document.body.removeChild(span);
 
-    // Setăm lățimea tooltip-ului: lungimea maximă plus padding
-    const totalWidth = lungimeMaxima + 2 * paddingPx;
-    tooltip.style.width = totalWidth + 'px';
+    // Calculăm width-ul final
+    const nouaLatime = latimeMaxima + 2 * paddingPx;
+
+    // Verificăm dacă s-a schimbat
+    if (lastWidth !== nouaLatime) {
+        lastWidth = nouaLatime;
+        tooltip.style.width = nouaLatime + 'px';
+    }
 }
 
 document.querySelectorAll('.tooltip-text').forEach(tooltip => {
