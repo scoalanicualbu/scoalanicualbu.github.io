@@ -4435,38 +4435,56 @@ border-radius: 4px;
 function ajusteazaTooltip(tooltip) {
     if (!tooltip) return;
 
-    // Preia dimensiunile actuale ale tooltip-ului
-    const rect = tooltip.getBoundingClientRect();
-    const currentWidth = rect.width;
+const originalBorder = tooltip.style.border;
 
-    const rootFontSize = parseFloat(getComputedStyle(document.documentElement).fontSize);
+    // Elimină marginile, border-ul și padding-ul pentru măsurare
+    tooltip.style.border = 'none';
+    tooltip.style.margin = '0';
+    tooltip.style.padding = '0';
+    tooltip.style.boxSizing = 'border-box';
+    tooltip.style.width = 'auto';
+
+    // Preia stilurile de font
+    const computedStyle = getComputedStyle(tooltip);
+    const fontFamily = computedStyle.fontFamily;
+    const fontSize = computedStyle.fontSize;
+    const fontWeight = computedStyle.fontWeight;
+    const fontStyle = computedStyle.fontStyle;
+    const lineHeight = computedStyle.lineHeight;
+
+    // Obține dimensiunea containerului părinte
+    const containerRect = tooltip.parentElement.getBoundingClientRect();
+
+    // Creează span pentru măsurare
+    const span = document.createElement('span');
+    span.style.visibility = 'hidden';
+    span.style.position = 'absolute';
+    span.style.whiteSpace = 'pre';
+    span.style.boxSizing = 'border-box';
+    span.style.fontFamily = fontFamily;
+    span.style.fontSize = fontSize;
+    span.style.fontWeight = fontWeight;
+    span.style.fontStyle = fontStyle;
+    span.style.lineHeight = lineHeight;
+
+    document.body.appendChild(span);
+
     const paddingRem = 0.2;
+    const rootFontSize = parseFloat(getComputedStyle(document.documentElement).fontSize);
     const paddingPx = paddingRem * rootFontSize;
+
+    const maxLineWidth = containerRect.width - 2 * paddingPx;
 
     const text = tooltip.innerText || tooltip.textContent;
     const cuvinte = text.split(' ');
 
-    // Obținem lățimea containerului părinte
-    const containerRect = tooltip.parentElement.getBoundingClientRect();
-    const paddingTotalPx = 2 * paddingPx;
-    const maxLineWidth = containerRect.width - paddingTotalPx;
-
-    // Inițializăm variabile pentru măsurare
     let randuri = [];
     let currentLine = [];
-
-    // Creăm un element temporar pentru măsurare text
-    const span = document.createElement('span');
-    span.style.visibility = 'hidden';
-    span.style.position = 'absolute';
-    span.style.whiteSpace = 'pre'; // păstrează spațiile
-    document.body.appendChild(span);
 
     for (const cuvant of cuvinte) {
         const tempLineText = currentLine.concat(cuvant).join(' ');
         span.innerText = tempLineText;
         const width = span.offsetWidth;
-
         if (width <= maxLineWidth) {
             currentLine.push(cuvant);
         } else {
@@ -4476,7 +4494,6 @@ function ajusteazaTooltip(tooltip) {
             span.innerText = cuvant;
             const cuvantWidth = span.offsetWidth;
             if (cuvantWidth > maxLineWidth) {
-                // Cuvântul e mai lung decât max line width, îl pun singur
                 randuri.push(cuvant);
                 currentLine = [];
             } else {
@@ -4488,7 +4505,6 @@ function ajusteazaTooltip(tooltip) {
         randuri.push(currentLine.join(' '));
     }
 
-    // Măsurăm lungimea fiecărui rând și găsim maximă
     let lungimeMaxima = 0;
     for (const r of randuri) {
         span.innerText = r;
@@ -4498,11 +4514,14 @@ function ajusteazaTooltip(tooltip) {
 
     document.body.removeChild(span);
 
-    // Calculăm noua lățime, păstrând dimensiunile actuale
     const totalWidth = lungimeMaxima + 2 * paddingPx;
 
-    // Actualizăm stilul de width al tooltip-ului
+    // Setează lățimea explicit
     tooltip.style.width = totalWidth + 'px';
+
+tooltip.style.border = originalBorder;
+tooltip.style.paddingTop = '0.2rem';
+tooltip.style.paddingBottom = '0.2rem';
 }
 
 document.querySelectorAll('.tooltip-content').forEach(tooltip => {
