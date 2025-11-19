@@ -4408,7 +4408,7 @@ function ajusteazaTooltip(tooltip) {
     // Obținem lățimea containerului părinte
     const containerRect = tooltip.parentElement.getBoundingClientRect();
     const paddingTotalPx = 2 * paddingPx;
-    const maxLineWidth = containerRect.width - paddingTotalPx;
+    const maxLineWidth = containerRect.width - paddingTotalPx - 2;
 
     let randuri = [];
     let currentLine = [];
