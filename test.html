@@ -230,7 +230,50 @@ border: 0px solid #404040;
                         outline-offset: 1px;
                     }
 
-                .tooltip-text {
+                .tooltip-content {
+border: 1px solid #404040;
+border-radius: 4px;
+                    margin-top: auto;
+                    margin-bottom: 0;
+                    margin-left: auto;
+                    margin-right: 0;
+                    padding-top: 0.2rem;
+                    padding-bottom: 0.15rem;
+                    padding-left: 0.2rem;
+                    padding-right: 0.2rem;
+                    position: absolute;
+                    bottom: 0;
+                    right: 0;
+                    z-index: 2;
+                    visibility: hidden;
+                    opacity: 0;
+                    pointer-events: none;
+                    text-align: center;
+                    line-height: 1;
+                    font-size: 0.75rem;
+                    font-weight: normal;
+                    text-shadow: none;
+                    color: #404040;
+                    background-color: #FFFFFF;
+                }
+
+                    .tooltip-content::after {
+                        content: none;
+                    }
+
+                .tooltip-link:hover .tooltip-content {
+                    visibility: visible;
+                    opacity: 1;
+                    pointer-events: auto;
+                }
+
+                .tooltip-link:focus .tooltip-content {
+                    visibility: visible;
+                    opacity: 1;
+                    pointer-events: auto;
+                }
+
+                .tooltip-legaturi {
 border: 1px solid #404040;
 border-radius: 4px;
                     margin-top: auto;
@@ -257,17 +300,17 @@ border-radius: 4px;
                     background-color: #FFFFFF;
                 }
 
-                    .tooltip-text::after {
+                    .tooltip-legaturi::after {
                         content: none;
                     }
 
-                .tooltip-link:hover .tooltip-text {
+                .tooltip-link:hover .tooltip-legaturi {
                     visibility: visible;
                     opacity: 1;
                     pointer-events: auto;
                 }
 
-                .tooltip-link:focus .tooltip-text {
+                .tooltip-link:focus .tooltip-legaturi {
                     visibility: visible;
                     opacity: 1;
                     pointer-events: auto;
@@ -3976,7 +4019,7 @@ border-radius: 4px;
                         <div id="imagine-senscivic" class="content-imagine">
                             <a href="https://senscivic.ro" target="_blank" rel="noopener noreferrer" class="tooltip-link" aria-label="Asociația „Sens Civic” (se deschide într-o nouă fereastră)">
                                 <img src="verde/senscivic.png" alt="Sigla Asociației „Sens Civic”: textul „Asociația Sens Civic” în albastru deasupra unui logo circular cu un design în formă de stea și Pământ, înconjurat de dungi roșii, galbene și albastre">
-                                <span role="tooltip" class="tooltip-text">Se deschide într-o nouă fereastră</span>
+                                <span role="tooltip" class="tooltip-content">Se deschide într-o nouă fereastră</span>
                             </a>
                         </div>
 
@@ -3993,7 +4036,7 @@ border-radius: 4px;
                         <div id="imagine-letsdoit" class="content-imagine">
                             <a href="https://letsdoitromania.ro" target="_blank" rel="noopener noreferrer" class="tooltip-link" aria-label="Asociaţia „Let’s Do It, Romania!” (se deschide într-o nouă fereastră)">
                                 <img src="verde/letsdoit.png" alt="Sigla Asociaţiei „Let’s Do It, Romania!”: șapte fețe zâmbitoare colorate, stilizate, dispuse într-un cerc, transmit diversitate și muncă în echipă, iar în dreapta un text verde, pe fundal alb, spune „LET'S DO IT, ROMANIA!”">
-                                <span role="tooltip" class="tooltip-text">Se deschide într-o nouă fereastră</span>
+                                <span role="tooltip" class="tooltip-content">Se deschide într-o nouă fereastră</span>
                             </a>
                         </div>
 
@@ -4011,28 +4054,28 @@ border-radius: 4px;
                             <a href="https://www.edu.ro" target="_blank" rel="noopener noreferrer" class="tooltip-link" aria-label="Ministerul Educației și Cercetării (se deschide într-o nouă fereastră)">
                                 <img src="https://raw.githubusercontent.com/scoalanicualbu/scoalanicualbu.github.io/main/prezentare/mec.png" alt="Sigla Ministerului Educației și Cercetării">
                                 <div id="mec" class="text">Ministerul Educației și Cercetării</div>
-                                <span role="tooltip" class="tooltip-text">Se deschide într-o nouă fereastră</span>
+                                <span role="tooltip" class="tooltip-legaturi">Se deschide într-o nouă fereastră</span>
                             </a>
                         </li>
                         <li>
                             <a href="https://www.isjneamt.ro" target="_blank" rel="noopener noreferrer" class="tooltip-link" aria-label="Inspectoratul Școlar Județean Neamț (se deschide într-o nouă fereastră)">
                                 <img src="https://raw.githubusercontent.com/scoalanicualbu/scoalanicualbu.github.io/main/prezentare/isjneamt.png" alt="Sigla Inspectoratului Școlar Județean Neamț">
                                 <div id="isjneamt" class="text">Inspectoratul Școlar Județean Neamț</div>
-                                <span role="tooltip" class="tooltip-text">Se deschide într-o nouă fereastră</span>
+                                <span role="tooltip" class="tooltip-legaturi">Se deschide într-o nouă fereastră</span>
                             </a>
                         </li>
                         <li>
                             <a href="https://www.cjrae-neamt.ro" target="_blank" rel="noopener noreferrer" class="tooltip-link" aria-label="Centrul Județean de Resurse și Asistență Educațională Neamț (se deschide într-o nouă fereastră)">
                                 <img src="https://raw.githubusercontent.com/scoalanicualbu/scoalanicualbu.github.io/main/prezentare/cjraeneamt.png" alt="Sigla Centrului Județean de Resurse și Asistență Educațională Neamț">
                                 <div id="cjraeneamt" class="text">Centrul Județean de Resurse și Asistență Educațională Neamț</div>
-                                <span role="tooltip" class="tooltip-text">Se deschide într-o nouă fereastră</span>
+                                <span role="tooltip" class="tooltip-legaturi">Se deschide într-o nouă fereastră</span>
                             </a>
                         </li>
                         <li>
                             <a href="https://www.ccdneamt.ro" target="_blank" rel="noopener noreferrer" class="tooltip-link" aria-label="Casa Corpului Didactic Neamț (se deschide într-o nouă fereastră)">
                                 <img src="https://raw.githubusercontent.com/scoalanicualbu/scoalanicualbu.github.io/main/prezentare/ccdneamt.png" alt="Sigla Casei Corpului Didactic Neamț">
                                 <div id="ccdneamt" class="text">Casa Corpului Didactic Neamț</div>
-                                <span role="tooltip" class="tooltip-text">Se deschide într-o nouă fereastră</span>
+                                <span role="tooltip" class="tooltip-legaturi">Se deschide într-o nouă fereastră</span>
                             </a>
                         </li>
                     </ul>
@@ -4456,12 +4499,21 @@ function ajusteazaTooltip(tooltip) {
     tooltip.style.width = totalWidth + 'px';
 }
 
-document.querySelectorAll('.tooltip-text').forEach(tooltip => {
+document.querySelectorAll('.tooltip-content').forEach(tooltip => {
+    let timeoutId;
+
     tooltip.addEventListener('mouseenter', () => {
-        ajusteazaTooltip(tooltip);
+        clearTimeout(timeoutId);
+        timeoutId = setTimeout(() => {
+            ajusteazaTooltip(tooltip);
+        }, 50);
     });
+
     tooltip.addEventListener('focus', () => {
-        ajusteazaTooltip(tooltip);
+        clearTimeout(timeoutId);
+        timeoutId = setTimeout(() => {
+            ajusteazaTooltip(tooltip);
+        }, 50);
     });
 });
 
