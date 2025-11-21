@@ -4531,12 +4531,12 @@ border-radius: 4px;
             function ajusteazaTooltip(tooltip) {
                 if (!tooltip) return;
 
-                const originalBorder = tooltip.style.border;
+                const computedStyleBeforeHide = getComputedStyle(tooltip);
+                const paddingLeft = parseFloat(computedStyleBeforeHide.paddingLeft) || 0;
+                const paddingRight = parseFloat(computedStyleBeforeHide.paddingRight) || 0;
+                const paddingPx = paddingLeft + paddingRight;
 
-                tooltip.style.border = 'none';
-                tooltip.style.margin = '0';
-                tooltip.style.padding = '0';
-                tooltip.style.boxSizing = 'border-box';
+                tooltip.style.display = 'none';
                 tooltip.style.width = 'auto';
 
                 const computedStyle = getComputedStyle(tooltip);
@@ -4559,13 +4559,12 @@ border-radius: 4px;
                 span.style.fontStyle = fontStyle;
                 span.style.lineHeight = lineHeight;
 
+                span.style.paddingLeft = '0.1rem';
+                span.style.paddingRight = '0.1rem';
+
                 document.body.appendChild(span);
 
-                const paddingRem = 0.2;
-                const rootFontSize = parseFloat(getComputedStyle(document.documentElement).fontSize);
-                const paddingPx = paddingRem * rootFontSize;
-
-                const maxLineWidth = containerRect.width - 2 * paddingPx;
+                const maxLineWidth = containerRect.width - paddingPx;
 
                 const text = tooltip.innerText || tooltip.textContent;
                 const cuvinte = text.split(' ');
@@ -4602,24 +4601,36 @@ border-radius: 4px;
                     span.innerText = r;
                     const w = span.offsetWidth;
                     if (w > lungimeMaxima) lungimeMaxima = w;
-                    }
+                }
 
                 document.body.removeChild(span);
 
-                const totalWidth = lungimeMaxima + 2 * paddingPx;
+                const totalWidth = lungimeMaxima + paddingPx;	
                 tooltip.style.width = totalWidth + 'px';
 
-                tooltip.style.border = originalBorder;
-                tooltip.style.paddingTop = '0.2rem';
-                tooltip.style.paddingBottom = '0.2rem';
+                tooltip.style.paddingLeft = '0.1rem';
+                tooltip.style.paddingRight = '0.1rem';
+                tooltip.style.paddingTop = '0.15rem';
+                tooltip.style.paddingBottom = '0.15rem';
+
+                tooltip.style.display = 'block';
             }
 
             document.querySelectorAll('.tooltip-content').forEach(tooltip => {
-                tooltip.addEventListener('mouseenter', () => {
+                tooltip.style.display = 'none';
+
+                tooltip.parentElement.addEventListener('mouseenter', () => {
                     ajusteazaTooltip(tooltip);
                 });
-                tooltip.addEventListener('focus', () => {
+                tooltip.parentElement.addEventListener('mouseleave', () => {
+                    tooltip.style.display = 'none';
+                });
+
+                tooltip.parentElement.addEventListener('focus', () => {
                     ajusteazaTooltip(tooltip);
+                });
+                tooltip.parentElement.addEventListener('blur', () => {
+                    tooltip.style.display = 'none';
                 });
             });
 
