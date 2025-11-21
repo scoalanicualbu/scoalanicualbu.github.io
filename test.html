@@ -859,6 +859,49 @@ border-radius: 4px;
                                     color: #404040;
                                 }
 
+                        .tooltip-informatii {
+border: 1px solid #404040;
+border-radius: 4px;
+                            margin-top: auto;
+                            margin-bottom: -1px;
+                            margin-left: auto;
+                            margin-right: -1px;
+                            padding-top: 0.2rem;
+                            padding-bottom: 0.15rem;
+                            padding-left: 0.2rem;
+                            padding-right: 0.2rem;
+                            position: absolute;
+                            bottom: 0;
+                            right: 0;
+                            z-index: 2;
+                            visibility: hidden;
+                            opacity: 0;
+                            pointer-events: none;
+                            text-align: center;
+                            line-height: 1;
+                            font-size: 0.75rem;
+                            font-weight: normal;
+                            text-shadow: none;
+                            color: #404040;
+                            background-color: #FFFFFF;
+                        }
+
+                            .tooltip-informatii::after {
+                                content: none;
+                            }
+
+                            .tooltip-link:hover .tooltip-informatii {
+                                visibility: visible;
+                                opacity: 1;
+                                pointer-events: auto;
+                            }
+
+                            .tooltip-link:focus .tooltip-informatii {
+                                visibility: visible;
+                                opacity: 1;
+                                pointer-events: auto;
+                            }
+
 /* Secțiune TelVerde */
                     .sectiune-telverde {
 border: 0px solid #404040;
@@ -3691,7 +3734,7 @@ border-radius: 4px;
                         <div id="imagine-link" class="content-imagine">
                             <a href="https://saptamanaverde.edu.ro/ro" target="_blank" rel="noopener noreferrer" class="tooltip-link" aria-describedby="link-tooltip">
                                 <img src="verde/link.png" width="397" height="76" alt="Textul „Platforma de Resurse pentru Săptămâna Verde”, cu litere mari, îngroșate, în verde măsliniu și verde, pe fond alb">
-                                <span id="link-tooltip" class="tooltip-legaturi" role="tooltip" aria-hidden="true">Se deschide într-o nouă fereastră</span>
+                                <span id="link-tooltip" class="tooltip-legaturi" role="tooltip">Se deschide într-o nouă fereastră</span>
                             </a>
                         </div>
 
@@ -3701,7 +3744,7 @@ border-radius: 4px;
                         <div id="imagine-logo" class="content-imagine wrap-show">
                             <a href="https://saptamanaverde.edu.ro/ro" target="_blank" rel="noopener noreferrer" class="tooltip-link" aria-describedby="logo-tooltip">
                                 <img src="verde/logo.png" width="800" height="307" alt="Banner ilustrat cu „Săptămâna verde”, cu text verde îngroșat, în mijlocul unor ilustrații cu tematică ecologică, precum un glob, copaci, căprioară, bec, iar în partea de sus sunt două sigle ce reprezintă Ministerul Educației și Ministerul Mediului, Apelor și Pădurilor, evocând o temă de sustenabilitate și conștientizare a mediului">
-                                <span id="logo-tooltip" class="tooltip-legaturi" role="tooltip" aria-hidden="true">Se deschide într-o nouă fereastră</span>
+                                <span id="logo-tooltip" class="tooltip-legaturi" role="tooltip">Se deschide într-o nouă fereastră</span>
                             </a>
                         </div>
 
@@ -3888,39 +3931,39 @@ border-radius: 4px;
 
                     <ul class="coloane">
                         <li>
-                            <a href="https://drive.google.com/file/d/1JU-U0WMbZisOGULQryse5vAhSBx9W-Sn/view?usp=drive_link" target="_blank" rel="noopener noreferrer" title="Se deschide într-o nouă fereastră" aria-describedby="platforma-saptamana-verde-tooltip">
+                            <a href="https://drive.google.com/file/d/1JU-U0WMbZisOGULQryse5vAhSBx9W-Sn/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="tooltip-link" aria-describedby="platforma-saptamana-verde-tooltip">
                                Adresa Ministerului Educației nr. 32119 din 08.10.2024 Platforma de resurse educaționale „Săptămâna verde”
-                                <span id="platforma-saptamana-verde-tooltip" class="sr-only"> (se deschide într-o nouă fereastră)</span>
+                                <span id="platforma-saptamana-verde-tooltip" class="tooltip-informatii" role="tooltip"> Se deschide într-o nouă fereastră</span>
                             </a>
                         </li>
                         <li>
-                            <a href="https://drive.google.com/file/d/1j5MeHIS5H1iDOWHVaIPXL8h0xu4sxajE/view?usp=sharing" target="_blank" rel="noopener noreferrer" title="Se deschide într-o nouă fereastră" aria-describedby="repere-saptamana-verde-tooltip">
+                            <a href="https://drive.google.com/file/d/1j5MeHIS5H1iDOWHVaIPXL8h0xu4sxajE/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="tooltip-link" aria-describedby="repere-saptamana-verde-tooltip">
                                 Repere privind derularea activităților din cadrul programului național „Săptămâna verde” în anul școlar 2024-2025
-                                <span id="repere-saptamana-verde-tooltip" class="sr-only"> (se deschide într-o nouă fereastră)</span>
+                                <span id="repere-saptamana-verde-tooltip" class="tooltip-informatii" role="tooltip"> Se deschide într-o nouă fereastră</span>
                             </a>
                         </li>
                         <li>
-                            <a href="https://drive.google.com/file/d/1mG6nEaeiBET3PKLjfHCj_rR1wJE-tC4d/view?usp=sharing" target="_blank" rel="noopener noreferrer" title="Se deschide într-o nouă fereastră" aria-describedby="planificare-saptamana-verde-2024-tooltip">
+                            <a href="https://drive.google.com/file/d/1mG6nEaeiBET3PKLjfHCj_rR1wJE-tC4d/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="tooltip-link" aria-describedby="planificare-saptamana-verde-2024-tooltip">
                                 Planificarea activităților din cadrul programului „Săptămâna verde”, perioada 22.04.2024 - 26.04.2024
-                                <span id="planificare-saptamana-verde-2024-tooltip" class="sr-only"> (se deschide într-o nouă fereastră)</span>
+                                <span id="planificare-saptamana-verde-2024-tooltip" class="tooltip-informatii" role="tooltip"> Se deschide într-o nouă fereastră</span>
                             </a>
                         </li>
                         <li>
-                            <a href="https://drive.google.com/file/d/1C6DPnwwIh9mF5kIe1FXCDgGGemAr42_0/view?usp=sharing" target="_blank" rel="noopener noreferrer" title="Se deschide într-o nouă fereastră" aria-describedby="planificare-saptamana-verde-2023-tooltip">
+                            <a href="https://drive.google.com/file/d/1C6DPnwwIh9mF5kIe1FXCDgGGemAr42_0/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="tooltip-link" aria-describedby="planificare-saptamana-verde-2023-tooltip">
                                 Planificarea activităților din cadrul programului „Săptămâna verde”, perioada 27.03.2023 - 31.03.2023
-                                <span id="planificare-saptamana-verde-2023-tooltip" class="sr-only"> (se deschide într-o nouă fereastră)</span>
+                                <span id="planificare-saptamana-verde-2023-tooltip" class="tooltip-informatii" role="tooltip"> Se deschide într-o nouă fereastră</span>
                             </a>
                         </li>
                         <li>
-                            <a href="https://drive.google.com/file/d/1gh1o-OjOOLVAGpAgkYhc-rPqb5zJOiwH/view?usp=sharing" target="_blank" rel="noopener noreferrer" title="Se deschide într-o nouă fereastră" aria-describedby="anexa-saptamana-verde-tooltip">
+                            <a href="https://drive.google.com/file/d/1gh1o-OjOOLVAGpAgkYhc-rPqb5zJOiwH/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="tooltip-link" aria-describedby="anexa-saptamana-verde-tooltip">
                                 Anexa la Ordinul Ministerului Educației nr. 3629 din 02.02.2023 Metodologie de organizare a programului „Săptămâna verde”
-                                <span id="anexa-saptamana-verde-tooltip" class="sr-only"> (se deschide într-o nouă fereastră)</span>
+                                <span id="anexa-saptamana-verde-tooltip" class="tooltip-informatii" role="tooltip"> Se deschide într-o nouă fereastră</span>
                             </a>
                         </li>
                         <li>
-                            <a href="https://drive.google.com/file/d/1G432MR3iLXPe2shL5ZLW8YfbRz5Xt0mq/view?usp=sharing" target="_blank" rel="noopener noreferrer" title="Se deschide într-o nouă fereastră" aria-describedby="ordin-saptamana-verde-tooltip">
+                            <a href="https://drive.google.com/file/d/1G432MR3iLXPe2shL5ZLW8YfbRz5Xt0mq/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="tooltip-link" aria-describedby="ordin-saptamana-verde-tooltip">
                                 Ordinul Ministerului Educației nr. 3.629 din 02.02.2023 privind aprobarea Metodologiei de organizare a Programului „Săptămâna verde"
-                                <span id="ordin-saptamana-verde-tooltip" class="sr-only"> (se deschide într-o nouă fereastră)</span>
+                                <span id="ordin-saptamana-verde-tooltip" class="tooltip-informatii" role="tooltip"> Se deschide într-o nouă fereastră</span>
                             </a>
                         </li>
                     </ul>
@@ -3943,7 +3986,7 @@ border-radius: 4px;
                         <div id="imagine-activitati" class="content-imagine">
                             <a href="https://drive.google.com/file/d/10aJhDJixZY_CYI-siGcq0YgEjayMrvUl/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="tooltip-link" aria-describedby="activitati-tooltip">
                                 <img src="verde/activitati.png" width="1280" height="1810" alt="Un caiet spiralat etichetat „Activități propuse” este înconjurat de rechizite artistice: vopsele colorate, pensule, creioane, într-un ton creativ și pregătit de activitate">
-                                <span id="activitati-tooltip" class="tooltip-legaturi" role="tooltip" aria-hidden="true">Se deschide într-o nouă fereastră</span>
+                                <span id="activitati-tooltip" class="tooltip-legaturi" role="tooltip">Se deschide într-o nouă fereastră</span>
                             </a>
                         </div>
 
@@ -3958,7 +4001,7 @@ border-radius: 4px;
                         <div id="imagine-aer" class="content-imagine">
                             <a href="https://drive.google.com/file/d/1pvKm0wKRLpre-XXTdWWqMq6AHhQP1Edo/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="tooltip-link" aria-describedby="aer-tooltip">
                                 <img src="verde/aer.png" width="1280" height="1810" alt="Un coș industrial emite fum întunecat pe un cer înnorat, cu textul „Poluarea Aerului” și sigla „Let’s Do It, Romania!”, evidențiind necesitatea stopării poluării aerului">
-                                <span id="aer-tooltip" class="tooltip-legaturi" role="tooltip" aria-hidden="true">Se deschide într-o nouă fereastră</span>
+                                <span id="aer-tooltip" class="tooltip-legaturi" role="tooltip">Se deschide într-o nouă fereastră</span>
                             </a>
                         </div>
 
@@ -3989,7 +4032,7 @@ border-radius: 4px;
                         <div id="imagine-sol" class="content-imagine">
                             <a href="https://drive.google.com/file/d/1WwO7qFDmiKJobYnsxfI2Gblmxnj-mVQI/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="tooltip-link" aria-describedby="sol-tooltip">
                                 <img src="verde/sol.png" width="1280" height="1810" alt="Sol crăpat și uscat, din care iese la iveală o mică plantă verde, cu textul „Poluarea Solului” și sigla „Let’s Do It, Romania!”, evidențiind necesitatea stopării poluării solului">
-                                <span id="sol-tooltip" class="tooltip-legaturi" role="tooltip" aria-hidden="true">Se deschide într-o nouă fereastră</span>
+                                <span id="sol-tooltip" class="tooltip-legaturi" role="tooltip">Se deschide într-o nouă fereastră</span>
                             </a>
                         </div>
 
@@ -4004,7 +4047,7 @@ border-radius: 4px;
                         <div id="imagine-sos" class="content-imagine">
                             <a href="https://drive.google.com/file/d/1iTKCXx-9BURxj9bucWxXIkg7B8vmjnUQ/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="tooltip-link" aria-describedby="sos-tooltip">
                                 <img src="verde/sos.png" width="1280" height="1810" alt="Fundal galben crăpat și ilustrații animate cu sticle și recipiente de plastic împrăștiate care transmit îngrijorare față de mediu, cu textul „EARTh S.O.S.” și sigla „Asociația Sens Civic”, evidențiind necesitatea stopării poluării la nivel global">
-                                <span id="sos-tooltip" class="tooltip-legaturi" role="tooltip" aria-hidden="true">Se deschide într-o nouă fereastră</span>
+                                <span id="sos-tooltip" class="tooltip-legaturi" role="tooltip">Se deschide într-o nouă fereastră</span>
                             </a>
                         </div>
 
@@ -4019,7 +4062,7 @@ border-radius: 4px;
                         <div id="imagine-senscivic" class="content-imagine">
                             <a href="https://senscivic.ro" target="_blank" rel="noopener noreferrer" class="tooltip-link" aria-describedby="senscivic-tooltip">
                                 <img src="verde/senscivic.png" width="390" height="150" alt="Sigla Asociației „Sens Civic”: textul „Asociația Sens Civic” în albastru deasupra unui logo circular cu un design în formă de stea și Pământ, înconjurat de dungi roșii, galbene și albastre">
-                                <span id="senscivic-tooltip" class="tooltip-legaturi" role="tooltip" aria-hidden="true">Se deschide într-o nouă fereastră</span>
+                                <span id="senscivic-tooltip" class="tooltip-legaturi" role="tooltip">Se deschide într-o nouă fereastră</span>
                             </a>
                         </div>
 
@@ -4036,7 +4079,7 @@ border-radius: 4px;
                         <div id="imagine-letsdoit" class="content-imagine">
                             <a href="https://letsdoitromania.ro" target="_blank" rel="noopener noreferrer" class="tooltip-link" aria-describedby="letsdoit-tooltip">
                                 <img src="verde/letsdoit.png" width="1280" height="457" alt="Sigla Asociaţiei „Let’s Do It, Romania!”: șapte fețe zâmbitoare colorate, stilizate, dispuse într-un cerc, transmit diversitate și muncă în echipă, iar în dreapta un text verde, pe fundal alb, spune „LET'S DO IT, ROMANIA!”">
-                                <span id="letsdoit-tooltip" class="tooltip-legaturi" role="tooltip" aria-hidden="true">Se deschide într-o nouă fereastră</span>
+                                <span id="letsdoit-tooltip" class="tooltip-legaturi" role="tooltip">Se deschide într-o nouă fereastră</span>
                             </a>
                         </div>
 
@@ -4054,28 +4097,28 @@ border-radius: 4px;
                             <a href="https://www.edu.ro" target="_blank" rel="noopener noreferrer" class="tooltip-link" aria-describedby="mec-tooltip">
                                 <img src="https://raw.githubusercontent.com/scoalanicualbu/scoalanicualbu.github.io/main/prezentare/mec.png" width="300" height="300" alt="Sigla Ministerului Educației și Cercetării">
                                 <div id="mec" class="text">Ministerul Educației și Cercetării</div>
-                                <span id="mec-tooltip" class="tooltip-legaturi" role="tooltip" aria-hidden="true">opens in a new window</span>
+                                <span id="mec-tooltip" class="tooltip-legaturi" role="tooltip">Se deschide într-o nouă fereastră</span>
                             </a>
                         </li>
                         <li>
                             <a href="https://www.isjneamt.ro" target="_blank" rel="noopener noreferrer" class="tooltip-link" aria-describedby="isjneamt-tooltip">
                                 <img src="https://raw.githubusercontent.com/scoalanicualbu/scoalanicualbu.github.io/main/prezentare/isjneamt.png" width="190" height="190" alt="Sigla Inspectoratului Școlar Județean Neamț">
                                 <div id="isjneamt" class="text">Inspectoratul Școlar Județean Neamț</div>
-                                <span id="isjneamt-tooltip" class="tooltip-legaturi" role="tooltip" aria-hidden="true">opens in a new window</span>
+                                <span id="isjneamt-tooltip" class="tooltip-legaturi" role="tooltip">Se deschide într-o nouă fereastră</span>
                             </a>
                         </li>
                         <li>
                             <a href="https://www.cjrae-neamt.ro" target="_blank" rel="noopener noreferrer" class="tooltip-link" aria-describedby="cjraeneamt-tooltip">
                                 <img src="https://raw.githubusercontent.com/scoalanicualbu/scoalanicualbu.github.io/main/prezentare/cjraeneamt.png" width="410" height="410" alt="Sigla Centrului Județean de Resurse și Asistență Educațională Neamț">
                                 <div id="cjraeneamt" class="text">Centrul Județean de Resurse și Asistență Educațională Neamț</div>
-                                <span id="cjraeneamt-tooltip" class="tooltip-legaturi" role="tooltip" aria-hidden="true">opens in a new window</span>
+                                <span id="cjraeneamt-tooltip" class="tooltip-legaturi" role="tooltip">Se deschide într-o nouă fereastră</span>
                             </a>
                         </li>
                         <li>
                             <a href="https://www.ccdneamt.ro" target="_blank" rel="noopener noreferrer" class="tooltip-link" aria-describedby="ccdneamt-tooltip">
                                 <img src="https://raw.githubusercontent.com/scoalanicualbu/scoalanicualbu.github.io/main/prezentare/ccdneamt.png" width="140" height="140" alt="Sigla Casei Corpului Didactic Neamț">
                                 <div id="ccdneamt" class="text">Casa Corpului Didactic Neamț</div>
-                                <span id="ccdneamt-tooltip" class="tooltip-legaturi" role="tooltip" aria-hidden="true">opens in a new window</span>
+                                <span id="ccdneamt-tooltip" class="tooltip-legaturi" role="tooltip">Se deschide într-o nouă fereastră</span>
                             </a>
                         </li>
                     </ul>
