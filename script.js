@@ -53,7 +53,7 @@
                 document.documentElement.style.setProperty('--gap', sizeGap);
             }
 
-// Aranjare text, "Secțiune Legături"
+// Aranjare text în container
             const parametri = [];
 
             function initializeParams() {
@@ -159,7 +159,7 @@
                 });
             }
 
-// Setare înălțime imagini, "Program de lucru", "Contact", "Personal", "Sindicat"
+// Setare înălțime imagine în funcție de container de referință
             function updateImagine(divId, imgSelector) {
                 const divElement = document.getElementById(divId);
                 const container = document.querySelector(imgSelector);
@@ -244,7 +244,7 @@
                 });
             }
 
-// Setare înălțime container în funcție de container de referință, "Săptămâna verde"
+// Setare înălțime container în funcție de container de referință
             function updateDiv(referenceDivId, targetDivId, imageDivId, nrSiblings) {
                 const divRef = document.getElementById(referenceDivId);
                 const divTar = document.getElementById(targetDivId);
@@ -271,14 +271,7 @@
                     imagine.style.height = inaltimeImg > 0 ? inaltimeImg + 'px' : '0px';
                     imagine.style.display = 'block';
                 };
-
-                if (imagine.complete && imagine.naturalWidth !== 0) {	
-                    ajusteazaImg();
-                } else {
-                    imagine.onload = () => {
-                    ajusteazaImg();
-                    };
-                }
+                ajusteazaImg();
             }
 
             const divsParametri = [
@@ -321,7 +314,217 @@
                 tryUpdate();
             }
 
-// Zoom și translatare imagine, "Contact"
+// Poziționare text alternativ dacă imaginea nu s-a încărcat
+            function updateAlt() {
+                const images = document.querySelectorAll('img');
+                images.forEach(img => {
+                    if (!img.complete || img.naturalWidth === 0) {
+                        img.style.padding = '0.5rem';
+                    } else {
+                        img.style.padding = '';
+                    }
+                });
+            }
+
+// Afișare și poziționare fereastră de informații
+            document.querySelectorAll('.tooltip-informatii').forEach(tooltip => {
+                const link = tooltip.closest('.tooltip-link');
+                if (!link) return;
+
+                function showTooltipAtMouse(e) {
+                    if (link === document.activeElement) {
+                        return;
+                    }
+
+                    tooltip.style.position = 'fixed';
+                    const offsetX = 10;
+                    const offsetY = 10;
+                    tooltip.style.top = (e.clientY + offsetY) + 'px';
+                    tooltip.style.left = (e.clientX + offsetX) + 'px';
+                    tooltip.style.bottom = 'auto';
+                    tooltip.style.right = 'auto';
+                    tooltip.style.visibility = 'visible';
+                    tooltip.style.opacity = '1';
+                    tooltip.style.pointerEvents = 'auto';
+                }
+
+                function showTooltipAtFocus() {
+                    tooltip.style.position = 'absolute';
+                    tooltip.style.top = null;
+                    tooltip.style.left = null;
+                    tooltip.style.bottom = '0';
+                    tooltip.style.right = '0';
+                    tooltip.style.visibility = 'visible';
+                    tooltip.style.opacity = '1';
+                    tooltip.style.pointerEvents = 'auto';
+                }
+
+                function hideTooltip() {
+                    tooltip.style.visibility = 'hidden';
+                    tooltip.style.opacity = '0';
+                    tooltip.style.pointerEvents = 'none';
+                    tooltip.style.position = 'absolute';
+                    tooltip.style.top = null;
+                    tooltip.style.left = null;
+                    tooltip.style.bottom = '0';
+                    tooltip.style.right = '0';
+                }
+
+                link.addEventListener('mousemove', (e) => {
+                    showTooltipAtMouse(e);
+                });
+
+                link.addEventListener('mouseenter', (e) => {
+                    if (link !== document.activeElement) {
+                        showTooltipAtMouse(e);
+                    }
+                });
+
+                link.addEventListener('mouseleave', () => {
+                    if (link !== document.activeElement) {
+                        hideTooltip();
+                    }
+                });
+
+                link.addEventListener('focus', () => {
+                    showTooltipAtFocus();
+                });
+
+                link.addEventListener('blur', () => {
+                    hideTooltip();
+                });
+            });
+
+// Setare lățime fereastră de informații
+            function ajusteazaTooltip(tooltip) {
+                if (!tooltip) return;
+
+                const computedStyleBeforeHide = getComputedStyle(tooltip);
+                const paddingLeft = parseFloat(computedStyleBeforeHide.paddingLeft) || 0;
+                const paddingRight = parseFloat(computedStyleBeforeHide.paddingRight) || 0;
+                const paddingPx = paddingLeft + paddingRight;
+
+                tooltip.style.display = 'none';
+                tooltip.style.width = 'auto';
+
+                const computedStyle = getComputedStyle(tooltip);
+                const fontFamily = computedStyle.fontFamily;
+                const fontSize = computedStyle.fontSize;
+                const fontWeight = computedStyle.fontWeight;
+                const fontStyle = computedStyle.fontStyle;
+                const lineHeight = computedStyle.lineHeight;
+
+                const containerRect = tooltip.parentElement.getBoundingClientRect();
+
+                const span = document.createElement('span');
+                span.style.visibility = 'hidden';
+                span.style.position = 'absolute';
+                span.style.whiteSpace = 'pre';
+                span.style.boxSizing = 'border-box';
+                span.style.fontFamily = fontFamily;
+                span.style.fontSize = fontSize;
+                span.style.fontWeight = fontWeight;
+                span.style.fontStyle = fontStyle;
+                span.style.lineHeight = lineHeight;
+
+                span.style.paddingLeft = '0.1rem';
+                span.style.paddingRight = '0.1rem';
+
+                document.body.appendChild(span);
+
+                const maxLineWidth = containerRect.width - paddingPx;
+
+                const text = tooltip.innerText || tooltip.textContent;
+                const cuvinte = text.split(' ');
+
+                let randuri = [];
+                let currentLine = [];
+
+                for (const cuvant of cuvinte) {
+                    const tempLineText = currentLine.concat(cuvant).join(' ');
+                    span.innerText = tempLineText;
+                    const width = span.offsetWidth;
+                    if (width <= maxLineWidth) {
+                        currentLine.push(cuvant);
+                    } else {
+                        if (currentLine.length > 0) {
+                            randuri.push(currentLine.join(' '));
+                        }
+                        span.innerText = cuvant;
+                        const cuvantWidth = span.offsetWidth;
+                        if (cuvantWidth > maxLineWidth) {
+                            randuri.push(cuvant);
+                            currentLine = [];
+                        } else {
+                            currentLine = [cuvant];
+                        }
+                    }
+                }
+                if (currentLine.length > 0) {
+                    randuri.push(currentLine.join(' '));
+                }
+
+                let lungimeMaxima = 0;
+                for (const r of randuri) {
+                    span.innerText = r;
+                    const w = span.offsetWidth;
+                    if (w > lungimeMaxima) lungimeMaxima = w;
+                }
+
+                document.body.removeChild(span);
+
+                const totalWidth = lungimeMaxima + paddingPx;	
+                tooltip.style.width = totalWidth + 'px';
+
+                tooltip.style.paddingLeft = '0.1rem';
+                tooltip.style.paddingRight = '0.1rem';
+                tooltip.style.paddingTop = '0.15rem';
+                tooltip.style.paddingBottom = '0.15rem';
+
+                tooltip.style.display = 'block';
+            }
+
+            const tooltips = ['tooltip-title', 'tooltip-content'];
+
+            tooltips.forEach(className => {
+                document.querySelectorAll(`.${className}`).forEach(tooltip => {
+                    tooltip.style.display = 'none';
+
+                    const parent = tooltip.parentElement;
+                    let isFocused = false;
+                    let isHovered = false;
+
+                    function updateTooltipVisibility() {
+                        if (isFocused || isHovered) {
+                            ajusteazaTooltip(tooltip);
+                        } else {
+                            tooltip.style.display = 'none';
+                        }
+                    }
+
+                    parent.addEventListener('mouseenter', () => {
+                        isHovered = true;
+                        updateTooltipVisibility();
+                    });
+
+                    parent.addEventListener('mouseleave', () => {
+                        isHovered = false;
+                        updateTooltipVisibility();
+                    });
+
+                    parent.addEventListener('focus', () => {
+                        isFocused = true;
+                        updateTooltipVisibility();
+                    });
+
+                    parent.addEventListener('blur', () => {
+                        isFocused = false;
+                        updateTooltipVisibility();
+                    });
+                });
+            });
+
+// Micșorare, mărire și translatare imagine
             function limitPosition(container, img, scale, translateX, translateY) {
                 const containerWidth = container.clientWidth;
                 const containerHeight = container.clientHeight;
@@ -458,14 +661,14 @@
                 });
             }
 
-// Funcții de gestionare evenimente
+// Inițializare funcții și gestionare evenimente
 
             document.addEventListener('DOMContentLoaded', () => {
 
 // Setare an curent în Subsol pagină
                 const yearEl = document.getElementById('year');
                 if (yearEl) {
-                    yearEl.textContent = new Date().getFullYear();
+                    yearEl.textContent = new Date().getFullYear();	
                 }
 
 // Apeluri de inițializare pentru funcții
@@ -479,6 +682,7 @@
                 setupZoomTranslatare();
 
                 window.onload = () => {
+                    updateAlt();
                     updateDivs();
                 };
 
@@ -487,6 +691,7 @@
                     updateMeniu();
                     updateGap();
                     updateImagini();
+                    updateAlt();
                     updateDivs();
                     potrivesteTexte();
                 });
