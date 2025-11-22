@@ -154,6 +154,20 @@ border: 0px solid #404040;
                     background-color: #FFFFFF;
                 }
 
+                .tooltip-link {
+                    position: relative;
+                    outline: none;
+                    max-width: 100%;
+                    text-decoration: none;
+                    font-size: 0.75rem;
+                    font-weight: normal;
+                }
+
+                    .tooltip-link:focus {
+                        outline: 2px solid #000000;
+                        outline-offset: 0px;
+                    }
+
 /* Sari la Conținut */
                 .skip-link {
                     position: absolute;
@@ -732,8 +746,8 @@ border-radius: 4px;
                         margin-right: 0;
                         padding-top: 0.5rem;
                         padding-bottom: 0.5rem;
-                        padding-left: 0.5rem;
-                        padding-right: 0.5rem;
+                        padding-left: 1rem;
+                        padding-right: 0;
                     }
 
                         .sectiune-informatii ul {
@@ -783,6 +797,33 @@ border-radius: 4px;
                                     text-shadow: 0.4px 0 currentcolor, -0.4px 0 currentcolor;
                                     color: #404040;
                                 }
+
+                        .tooltip-informatii {
+border: 1px solid #404040;
+border-radius: 4px;
+                            margin-top: auto;
+                            margin-bottom: -1px;
+                            margin-left: auto;
+                            margin-right: -1px;
+                            padding-top: 0.2rem;
+                            padding-bottom: 0.15rem;
+                            padding-left: 0.2rem;
+                            padding-right: 0.2rem;
+                            position: absolute;
+                            bottom: 0;
+                            right: 0;
+                            z-index: 2;
+                            visibility: hidden;
+                            opacity: 0;
+                            pointer-events: none;
+                            text-align: center;
+                            line-height: 1;
+                            font-size: 0.75rem;
+                            font-weight: normal;
+                            text-shadow: none;
+                            color: #404040;
+                            background-color: #FFFFFF;
+                        }
 
 /* Secțiune TelVerde */
                     .sectiune-telverde {
@@ -946,28 +987,71 @@ border-radius: 4px;
                                     color: #404040;
                                 }
 
-                                    .text {
+                        .tooltip-legaturi {
+border: 1px solid #404040;
+border-radius: 4px;
+                            margin-top: auto;
+                            margin-bottom: -1px;
+                            margin-left: auto;
+                            margin-right: -1px;
+                            padding-top: 0.2rem;
+                            padding-bottom: 0.15rem;
+                            padding-left: 0.2rem;
+                            padding-right: 0.2rem;
+                            position: absolute;
+                            bottom: 0;
+                            right: 0;
+                            z-index: 2;
+                            visibility: hidden;
+                            opacity: 0;
+                            pointer-events: none;
+                            text-align: center;
+                            line-height: 1;
+                            font-size: 0.75rem;
+                            font-weight: normal;
+                            text-shadow: none;
+                            color: #404040;
+                            background-color: #FFFFFF;
+                        }
+
+                            .tooltip-legaturi::after {
+                                content: none;
+                            }
+
+                            .tooltip-link:hover .tooltip-legaturi {
+                                visibility: visible;
+                                opacity: 1;
+                                pointer-events: auto;
+                            }
+
+                            .tooltip-link:focus .tooltip-legaturi {
+                                visibility: visible;
+                                opacity: 1;
+                                pointer-events: auto;
+                            }
+
+                        .text {
 border: 0px solid #404040;
 border-radius: 4px;
-                                        margin-top: 0;
-                                        margin-bottom: 0;
-                                        margin-left: 0;
-                                        margin-right: 0;
-                                        padding-top: 0;
-                                        padding-bottom: 0;
-                                        padding-left: 0;
-                                        padding-right: 0;
-                                        width: 100%;
-                                        height: 5.5rem;
-                                        display: flex;
-                                        flex-direction: column;
-                                        justify-content: center;
-                                    }
+                            margin-top: 0;
+                            margin-bottom: 0;
+                            margin-left: 0;
+                            margin-right: 0;
+                            padding-top: 0;
+                            padding-bottom: 0;
+                            padding-left: 0;
+                            padding-right: 0;
+                            width: 100%;
+                            height: 5.5rem;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                        }
 
-                                        .line {
-                                            margin-top: 0;
-                                            white-space: nowrap;
-                                        }
+                            .line {
+                                margin-top: 0;
+                                white-space: nowrap;
+                            }
 
 /* Secțiune Comunicări */
                     .sectiune-comunicari {
@@ -1732,6 +1816,11 @@ border-radius: 4px;
                             display: block;
                         }
 
+                                .content-imagine a:hover {
+                                    text-shadow: 0.4px 0 currentcolor, -0.4px 0 currentcolor;
+                                    background-color: #F8F8F8;
+                                }
+
                             .content-imagine img {
 border: 1px solid #404040;
 border-radius: 4px;
@@ -1747,7 +1836,14 @@ border-radius: 4px;
                                 height: auto;
                                 display: block;
                                 object-fit: cover;
+                                overflow-y: auto;
+                                scrollbar-width: none;
                             }
+
+                                .content-imagine img:focus {
+                                    outline: 2px solid #000000;
+                                    outline-offset: 0px;
+                                }
 
                         .contain-imagine {
 border: 0px solid #404040;
@@ -1765,6 +1861,28 @@ border-radius: 4px;
                             display: block;
                         }
 
+                        .contain-imagine a {
+border: 0px solid #404040;
+border-radius: 4px;
+                            margin-top: 0;
+                            margin-bottom: 0;
+                            margin-left: 0;
+                            margin-right: 0;
+                            padding-top: 0;
+                            padding-bottom: 0;
+                            padding-left: 0;
+                            padding-right: 0;
+                            width: 100%;
+                            height: auto;
+                            display: block;
+                        }
+
+                                .contain-imagine a:hover {
+                                    text-shadow: 0.4px 0 currentcolor, -0.4px 0 currentcolor;
+                                    background-color: #F8F8F8;
+                                }
+
+
                             .contain-imagine img {
 border: 1px solid #404040;
 border-radius: 4px;
@@ -1780,6 +1898,99 @@ border-radius: 4px;
                                 height: auto;
                                 display: block;
                                 object-fit: contain;
+                                overflow-y: auto;
+                                scrollbar-width: none;
+                            }
+
+                                .contain-imagine img:focus {
+                                    outline: 2px solid #000000;
+                                    outline-offset: 0px;
+                                }
+
+                        .tooltip-title {
+border: 1px solid #404040;
+border-radius: 4px;
+                            margin-top: auto;
+                            margin-bottom: 0;
+                            margin-left: auto;
+                            margin-right: 0;
+                            padding-top: 0.2rem;
+                            padding-bottom: 0.15rem;
+                            padding-left: 0.2rem;
+                            padding-right: 0.2rem;
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            z-index: 2;
+                            visibility: hidden;
+                            opacity: 0;
+                            pointer-events: none;
+                            text-align: center;
+                            line-height: 1;
+                            font-size: 0.75rem;
+                            font-weight: normal;
+                            text-shadow: none;
+                            color: #404040;
+                            background-color: #FFFFFF;
+                        }
+
+                            .tooltip-title::after {
+                                content: none;
+                            }
+
+                            .tooltip-link:hover .tooltip-title {
+                                visibility: visible;
+                                opacity: 1;
+                                pointer-events: auto;
+                            }
+
+                            .tooltip-link:focus .tooltip-title {
+                                visibility: visible;
+                                opacity: 1;
+                                pointer-events: auto;
+                            }
+
+                        .tooltip-content {
+border: 1px solid #404040;
+border-radius: 4px;
+                            margin-top: auto;
+                            margin-bottom: 0;
+                            margin-left: auto;
+                            margin-right: 0;
+                            padding-top: 0.2rem;
+                            padding-bottom: 0.15rem;
+                            padding-left: 0.2rem;
+                            padding-right: 0.2rem;
+                            position: absolute;
+                            bottom: 0;
+                            right: 0;
+                            z-index: 2;
+                            visibility: hidden;
+                            opacity: 0;
+                            pointer-events: none;
+                            text-align: center;
+                            line-height: 1;
+                            font-size: 0.75rem;
+                            font-weight: normal;
+                            text-shadow: none;
+                            color: #404040;
+                            background-color: #FFFFFF;
+                        }
+
+                            .tooltip-content::after {
+                                content: none;
+                            }
+
+                            .tooltip-link:hover .tooltip-content {
+                                visibility: visible;
+                                opacity: 1;
+                                pointer-events: auto;
+                            }
+
+                            .tooltip-link:focus .tooltip-content {
+                                visibility: visible;
+                                opacity: 1;
+                                pointer-events: auto;
                             }
 
                         .zoom {
