@@ -1897,6 +1897,8 @@ border-radius: 4px;
                                 height: auto;
                                 display: block;
                                 object-fit: cover;
+                    overflow-y: auto;
+                    scrollbar-width: none;
                             }
 
                         .contain-imagine {
@@ -1952,6 +1954,51 @@ border-radius: 4px;
                                 height: auto;
                                 display: block;
                                 object-fit: contain;
+                    overflow-y: auto;
+                    scrollbar-width: none;
+                            }
+
+                        .tooltip-title {
+border: 1px solid #404040;
+border-radius: 4px;
+                            margin-top: auto;
+                            margin-bottom: 0;
+                            margin-left: auto;
+                            margin-right: 0;
+                            padding-top: 0.2rem;
+                            padding-bottom: 0.15rem;
+                            padding-left: 0.2rem;
+                            padding-right: 0.2rem;
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            z-index: 2;
+                            visibility: hidden;
+                            opacity: 0;
+                            pointer-events: none;
+                            text-align: center;
+                            line-height: 1;
+                            font-size: 0.75rem;
+                            font-weight: normal;
+                            text-shadow: none;
+                            color: #404040;
+                            background-color: #FFFFFF;
+                        }
+
+                            .tooltip-title::after {
+                                content: none;
+                            }
+
+                            .tooltip-link:hover .tooltip-title {
+                                visibility: visible;
+                                opacity: 1;
+                                pointer-events: auto;
+                            }
+
+                            .tooltip-link:focus .tooltip-title {
+                                visibility: visible;
+                                opacity: 1;
+                                pointer-events: auto;
                             }
 
                         .tooltip-content {
@@ -3704,7 +3751,7 @@ border-radius: 4px;
                                 <span class="sr-only"> (se deschide în aceeași fereastră)</span>
                             </a>
                         </li>
-                    </ul>
+                    </ul>	
 
                 </nav>
 
@@ -3713,7 +3760,7 @@ border-radius: 4px;
 <!-- Secțiuni de conținut -->
             <div id="main-content" class="page-content" role="region" tabindex="-1" aria-label="Conținut pagină">
 
-<!-- Secțiune Conținut -->
+<!-- Secțiune Conținut -->	
                 <section id="verde-continut" class="sectiune-continut" aria-labelledby="verde-continut-label">
 
                     <h2 id="verde-continut-label" class="sr-only">Programul național „Săptămâna verde”</h2>
@@ -3727,9 +3774,9 @@ border-radius: 4px;
                         <p class="sr-only">Această secțiune cuprinde o imagine reprezentativă a programului național „Săptămâna verde”.</p>
 
                         <div id="imagine-link" class="content-imagine">
-                            <a href="https://saptamanaverde.edu.ro/ro" target="_blank" rel="noopener noreferrer" class="tooltip-link" aria-describedby="link-tooltip">
+                            <a href="https://saptamanaverde.edu.ro/ro" target="_blank" rel="noopener noreferrer" class="tooltip-link" aria-describedby="link-title link-tooltip">
                                 <img src="verde/link.png" width="397" height="76" alt="Textul „Platforma de Resurse pentru Săptămâna Verde”, cu litere mari, îngroșate, în verde măsliniu și verde, pe fond alb">
-                                <span class="sr-only">Platforma de resurse pentru „Săptămâna verde”</span>
+                                <span id="link-title" class="tooltip-title" role="tooltip">Platforma de resurse pentru „Săptămâna verde”</span>
                                 <span id="link-tooltip" class="tooltip-content" role="tooltip">Se deschide într-o nouă fereastră</span>
                             </a>
                         </div>
@@ -3738,9 +3785,9 @@ border-radius: 4px;
                         </div>
 
                         <div id="imagine-logo" class="content-imagine wrap-show">
-                            <a href="https://saptamanaverde.edu.ro/ro" target="_blank" rel="noopener noreferrer" class="tooltip-link" aria-describedby="logo-tooltip">
+                            <a href="https://saptamanaverde.edu.ro/ro" target="_blank" rel="noopener noreferrer" class="tooltip-link" aria-describedby="logo-title logo-tooltip">
                                  <img src="verde/logo.png" width="800" height="307" alt="Banner ilustrat cu „Săptămâna verde”, cu text verde îngroșat, în mijlocul unor ilustrații cu tematică ecologică, precum un glob, copaci, căprioară, bec, iar în partea de sus sunt două sigle ce reprezintă Ministerul Educației și Ministerul Mediului, Apelor și Pădurilor, evocând o temă de sustenabilitate și conștientizare a mediului">
-                                <span class="sr-only">Platforma de resurse pentru „Săptămâna verde”</span>
+                                <span id="logo-title" class="tooltip-title" role="tooltip">Platforma de resurse pentru „Săptămâna verde”</span>
                                 <span id="logo-tooltip" class="tooltip-content" role="tooltip">Se deschide într-o nouă fereastră</span>
                             </a>
                         </div>
@@ -3980,9 +4027,9 @@ border-radius: 4px;
                         <p class="sr-only">Această secțiune cuprinde o imagine reprezentativă pentru activitățile propuse asociate programului național „Săptămâna verde”.</p>
 
                         <div id="imagine-activitati" class="content-imagine">
-                            <a href="https://drive.google.com/file/d/10aJhDJixZY_CYI-siGcq0YgEjayMrvUl/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="tooltip-link" aria-describedby="activitati-tooltip">
+                            <a href="https://drive.google.com/file/d/10aJhDJixZY_CYI-siGcq0YgEjayMrvUl/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="tooltip-link" aria-describedby="activitati-title activitati-tooltip">
                                 <img src="verde/activitati.png" width="1280" height="1810" alt="Un caiet spiralat etichetat „Activități propuse” este înconjurat de rechizite artistice: vopsele colorate, pensule, creioane, într-un ton creativ și pregătit de activitate">
-                                <span class="sr-only">Activități propuse</span>
+                                <span id="activitati-title" class="tooltip-title" role="tooltip">Activități propuse</span>
                                 <span id="activitati-tooltip" class="tooltip-content" role="tooltip">Se deschide într-o nouă fereastră</span>
                             </a>
                         </div>
@@ -3996,9 +4043,9 @@ border-radius: 4px;
                         <p class="sr-only">Această secțiune cuprinde o imagine sugestivă privind proiectul de stopare a poluării aerului asociat programului național „Săptămâna verde”.</p>
 
                         <div id="imagine-aer" class="content-imagine">
-                            <a href="https://drive.google.com/file/d/1pvKm0wKRLpre-XXTdWWqMq6AHhQP1Edo/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="tooltip-link" aria-describedby="aer-tooltip">
+                            <a href="https://drive.google.com/file/d/1pvKm0wKRLpre-XXTdWWqMq6AHhQP1Edo/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="tooltip-link" aria-describedby="aer-title aer-tooltip">
                                 <img src="verde/aer.png" width="1280" height="1810" alt="Un coș industrial emite fum întunecat pe un cer înnorat, cu textul „Poluarea Aerului” și sigla „Let’s Do It, Romania!”, evidențiind necesitatea stopării poluării aerului">
-                                <span class="sr-only">Activitatea „Poluarea Aerului”</span>
+                                <span id="aer-title" class="tooltip-title" role="tooltip">Activitatea „Poluarea Aerului”</span>
                                 <span id="aer-tooltip" class="tooltip-content" role="tooltip">Se deschide într-o nouă fereastră</span>
                             </a>
                         </div>
@@ -4012,9 +4059,9 @@ border-radius: 4px;
                         <p class="sr-only">Această secțiune cuprinde o imagine sugestivă privind proiectul de stopare a poluării apei asociat programului național „Săptămâna verde”.</p>
 
                         <div id="imagine-apa" class="content-imagine">
-                            <a href="https://drive.google.com/file/d/1vL0d-zZRfVU3s-ezF_G626qGxplJSw0_/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="tooltip-link" aria-describedby="apa-tooltip">
+                            <a href="https://drive.google.com/file/d/1vL0d-zZRfVU3s-ezF_G626qGxplJSw0_/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="tooltip-link" aria-describedby="apa-title apa-tooltip">
                                 <img src="verde/apa.png" width="1280" height="1810" alt="La apus, o sticlă de plastic murdară, aruncată pe o plajă în nisip, cu scoici atașate, cu textul „Poluarea Apei” și sigla „Let’s Do It, Romania!”, evidențiind necesitatea stopării poluării apei">
-                                <span class="sr-only">Activitatea „Poluarea Apei”</span>
+                                <span id="apa-title" class="tooltip-title" role="tooltip">Activitatea „Poluarea Apei”</span>
                                 <span id="apa-tooltip" class="sr-only">Se deschide într-o nouă fereastră</span>
                                 <span role="tooltip" class="tooltip-content" aria-hidden="true">Se deschide într-o nouă fereastră</span>
                             </a>
@@ -4029,9 +4076,9 @@ border-radius: 4px;
                         <p class="sr-only">Această secțiune cuprinde o imagine sugestivă privind proiectul de stopare a poluării solului asociat programului național „Săptămâna verde”.</p>
 
                         <div id="imagine-sol" class="content-imagine">
-                            <a href="https://drive.google.com/file/d/1WwO7qFDmiKJobYnsxfI2Gblmxnj-mVQI/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="tooltip-link" aria-describedby="sol-tooltip">
+                            <a href="https://drive.google.com/file/d/1WwO7qFDmiKJobYnsxfI2Gblmxnj-mVQI/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="tooltip-link" aria-describedby="sol-title sol-tooltip">
                                 <img src="verde/sol.png" width="1280" height="1810" alt="Sol crăpat și uscat, din care iese la iveală o mică plantă verde, cu textul „Poluarea Solului” și sigla „Let’s Do It, Romania!”, evidențiind necesitatea stopării poluării solului">
-                                <span class="sr-only">Activitatea „Poluarea Solului”</span>
+                                <span id="sol-title" class="tooltip-title" role="tooltip">Activitatea „Poluarea Solului”</span>
                                 <span id="sol-tooltip" class="tooltip-content" role="tooltip">Se deschide într-o nouă fereastră</span>
                             </a>
                         </div>
@@ -4045,9 +4092,9 @@ border-radius: 4px;
                         <p class="sr-only">Această secțiune cuprinde o imagine sugestivă privind proiectul de stopare a poluării la nivel global asociat programului național „Săptămâna verde”.</p>
 
                         <div id="imagine-sos" class="content-imagine">
-                            <a href="https://drive.google.com/file/d/1iTKCXx-9BURxj9bucWxXIkg7B8vmjnUQ/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="tooltip-link" aria-describedby="sos-tooltip">
+                            <a href="https://drive.google.com/file/d/1iTKCXx-9BURxj9bucWxXIkg7B8vmjnUQ/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="tooltip-link" aria-describedby="sos-title sos-tooltip">
                                 <img src="verde/sos.png" width="1280" height="1810" alt="Fundal galben crăpat și ilustrații animate cu sticle și recipiente de plastic împrăștiate care transmit îngrijorare față de mediu, cu textul „eARTh S.O.S.” și sigla „Asociația Sens Civic”, evidențiind necesitatea stopării poluării la nivel global">
-                                <span class="sr-only">Proiectul „eARTh S.O.S.”</span>
+                                <span id="sos-title" class="tooltip-title" role="tooltip">Proiectul „eARTh S.O.S.”</span>
                                 <span id="sos-tooltip" class="tooltip-content" role="tooltip">Se deschide într-o nouă fereastră</span>
                             </a>
                         </div>
@@ -4061,9 +4108,9 @@ border-radius: 4px;
                         <p class="sr-only">Această secțiune cuprinde o imagine sugestivă privind voluntarii asociați programului național „Săptămâna verde”.</p>
 
                         <div id="imagine-senscivic" class="content-imagine">
-                            <a href="https://senscivic.ro" target="_blank" rel="noopener noreferrer" class="tooltip-link" aria-describedby="senscivic-tooltip">
+                            <a href="https://senscivic.ro" target="_blank" rel="noopener noreferrer" class="tooltip-link" aria-describedby="senscivic-title senscivic-tooltip">
                                 <img src="verde/senscivic.png" width="390" height="150" alt="Sigla Asociației „Sens Civic”: textul „Asociația Sens Civic” în albastru deasupra unui logo circular cu un design în formă de stea și Pământ, înconjurat de dungi roșii, galbene și albastre">
-                                <span class="sr-only">Asociația „Sens Civic”</span>
+                                <span id="senscivic-title" class="tooltip-title" role="tooltip">Asociația „Sens Civic”</span>
                                 <span id="senscivic-tooltip" class="tooltip-content" role="tooltip">Se deschide într-o nouă fereastră</span>
                             </a>
                         </div>
@@ -4079,9 +4126,9 @@ border-radius: 4px;
                         </div>
 
                         <div id="imagine-letsdoit" class="content-imagine">
-                            <a href="https://letsdoitromania.ro" target="_blank" rel="noopener noreferrer" class="tooltip-link" aria-describedby="letsdoit-tooltip">
+                            <a href="https://letsdoitromania.ro" target="_blank" rel="noopener noreferrer" class="tooltip-link" aria-describedby="letsdoit-title letsdoit-tooltip">
                                 <img src="verde/letsdoit.png" width="1280" height="457" alt="Sigla Asociaţiei „Let’s Do It, Romania!”: șapte fețe zâmbitoare colorate, stilizate, dispuse într-un cerc, transmit diversitate și muncă în echipă, iar în dreapta un text verde, pe fundal alb, spune „LET'S DO IT, ROMANIA!”">
-                                <span class="sr-only">Asociația „Let’s Do It, Romania!”</span>
+                                <span id="letsdoit-title" class="tooltip-title" role="tooltip">Asociația „Let’s Do It, Romania!”</span>
                                 <span id="letsdoit-tooltip" class="tooltip-content" role="tooltip">Se deschide într-o nouă fereastră</span>
                             </a>
                         </div>
@@ -4427,14 +4474,8 @@ border-radius: 4px;
                     imagine.style.height = inaltimeImg > 0 ? inaltimeImg + 'px' : '0px';
                     imagine.style.display = 'block';
                 };
+ajusteazaImg();
 
-                if (imagine.complete && imagine.naturalWidth !== 0) {	
-                    ajusteazaImg();
-                } else {
-                    imagine.onload = () => {
-                    ajusteazaImg();
-                    };
-                }
             }
 
             const divsParametri = [
@@ -4647,39 +4688,43 @@ border-radius: 4px;
                 tooltip.style.display = 'block';
             }
 
-            document.querySelectorAll('.tooltip-content').forEach(tooltip => {
-                tooltip.style.display = 'none';
+            const tooltips = ['tooltip-title', 'tooltip-content'];
 
-                const parent = tooltip.parentElement;
-                let isFocused = false;
-                let isHovered = false;
+            tooltips.forEach(className => {
+                document.querySelectorAll(`.${className}`).forEach(tooltip => {
+                    tooltip.style.display = 'none';
 
-                function updateTooltipVisibility() {
-                    if (isFocused || isHovered) {
-                        ajusteazaTooltip(tooltip);
-                    } else {
-                        tooltip.style.display = 'none';
+                    const parent = tooltip.parentElement;
+                    let isFocused = false;
+                    let isHovered = false;
+
+                    function updateTooltipVisibility() {
+                        if (isFocused || isHovered) {
+                            ajusteazaTooltip(tooltip);
+                        } else {
+                            tooltip.style.display = 'none';
+                        }
                     }
-                }
 
-                parent.addEventListener('mouseenter', () => {
-                    isHovered = true;
-                    updateTooltipVisibility();
-                });
+                    parent.addEventListener('mouseenter', () => {
+                        isHovered = true;
+                        updateTooltipVisibility();
+                    });
 
-                parent.addEventListener('mouseleave', () => {
-                    isHovered = false;
-                    updateTooltipVisibility();
-                });
+                    parent.addEventListener('mouseleave', () => {
+                        isHovered = false;
+                        updateTooltipVisibility();
+                    });
 
-                parent.addEventListener('focus', () => {
-                    isFocused = true;
-                    updateTooltipVisibility();
-                });
+                    parent.addEventListener('focus', () => {
+                        isFocused = true;
+                        updateTooltipVisibility();
+                    });
 
-                parent.addEventListener('blur', () => {
-                    isFocused = false;
-                    updateTooltipVisibility();
+                    parent.addEventListener('blur', () => {
+                        isFocused = false;
+                        updateTooltipVisibility();
+                    });
                 });
             });
 
@@ -4827,7 +4872,7 @@ border-radius: 4px;
 // Setare an curent în Subsol pagină
                 const yearEl = document.getElementById('year');
                 if (yearEl) {
-                    yearEl.textContent = new Date().getFullYear();
+                    yearEl.textContent = new Date().getFullYear();	
                 }
 
 // Apeluri de inițializare pentru funcții
@@ -4902,4 +4947,5 @@ border-radius: 4px;
     </body>
 
 </html>
+
 
