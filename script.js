@@ -5,6 +5,7 @@
                 const aside = document.querySelector('aside');
                 const toggleBtn = document.getElementById('menu-toggle');
                 const width = window.innerWidth;
+
                 if (width >= 1367) {
                     aside.classList.add('show');
                     toggleBtn.style.display = 'none';
@@ -12,6 +13,7 @@
                     aside.classList.remove('show');
                     toggleBtn.style.display = 'block';
                 }
+
                 updateButton();
             }
 
@@ -19,6 +21,7 @@
             function updateButton() {
                 const aside = document.querySelector('aside');
                 const toggleBtn = document.getElementById('menu-toggle');
+
                 if (aside.classList.contains('show')) {
                     toggleBtn.innerHTML = '⨯';
                     toggleBtn.setAttribute('aria-label', 'Închide meniu');
@@ -160,88 +163,66 @@
             }
 
 // Setare înălțime imagine în funcție de container de referință
-            function updateImagine(divId, imgSelector) {
-                const divElement = document.getElementById(divId);
-                const container = document.querySelector(imgSelector);
+            function updateImagine(referenceDivId, targetDivId) {
+                const divRef = document.getElementById(referenceDivId);
+                const divTar = document.getElementById(targetDivId);
 
-                if (!divElement || !container) return;
-                    const img = container.querySelector('img');
-                    if (!img) return;
-                    if (img.complete && img.naturalWidth !== 0) {
-                        img.style.display = 'none';
-                        const height = divElement.offsetHeight;
-                        img.style.height = height + 'px';
-                        img.style.display = 'block';
-                    } else {
-                        img.onload = () => {
-                            img.style.display = 'none';
-                            const height = divElement.offsetHeight;
-                            img.style.height = height + 'px';
-                            img.style.display = 'block';
-                        };
-                    }
+                if (!divRef || !divTar) return;
+
+                const img = divTar.querySelector('img');
+
+                if (img) {
+                    img.style.display = 'none';
+                }
+
+                divTar.style.height = 'auto';
+                const inaltimeRef = divRef.offsetHeight;
+                divTar.style.height = inaltimeRef + 'px';
+
+                if (img) {
+                    img.style.height = inaltimeRef + 'px';
+                    img.style.display = 'block';
+                }
             }
 
             const imaginiParametri = [
-                ['program-secretariat', '#imagine-lucru'],
-                ['contact-date', '#imagine-contact'],
-                ['personal-text', '#imagine-personal'],
-                ['sindicat-contact', '#imagine-sindicat'],
-                ['ca-text', '#imagine-ca'],
-                ['conducere-text', '#imagine-conducere'],
-                ['ceac-descriere', '#imagine-ceac'],
-                ['comisii-descriere', '#imagine-comisii'],
-                ['regulamente-descriere', '#imagine-regulamente'],
-                ['oferta-text', '#imagine-oferta'],
-                ['gradinita-text', '#imagine-gradinita'],
-                ['pregatitoare-text', '#imagine-pregatitoare'],
-                ['evaluari246-text', '#imagine-evaluari246'],
-                ['simulare8-text', '#imagine-simulare8'],
-                ['evaluare-text', '#imagine-evaluare'],
-                ['admitere-text', '#imagine-admitere'],
-                ['profesional-text', '#imagine-profesional'],
-                ['dual-text', '#imagine-dual'],
-                ['altfel-descriere', '#imagine-glob'],
-                ['altfel-program', '#imagine-maini'],
-                ['altfel-rezultate', '#imagine-cerc']
+                ['program-secretariat', 'imagine-lucru'],
+                ['contact-date', 'imagine-contact'],
+                ['personal-text', 'imagine-personal'],
+                ['sindicat-contact', 'imagine-sindicat'],
+                ['ca-text', 'imagine-ca'],
+                ['conducere-text', 'imagine-conducere'],
+                ['ceac-descriere', 'imagine-ceac'],
+                ['comisii-descriere', 'imagine-comisii'],
+                ['regulamente-descriere', 'imagine-regulamente'],
+                ['oferta-text', 'imagine-oferta'],
+                ['gradinita-text', 'imagine-gradinita'],
+                ['pregatitoare-text', 'imagine-pregatitoare'],
+                ['evaluari246-text', 'imagine-evaluari246'],
+                ['simulare8-text', 'imagine-simulare8'],
+                ['evaluare-text', 'imagine-evaluare'],
+                ['admitere-text', 'imagine-admitere'],
+                ['profesional-text', 'imagine-profesional'],
+                ['dual-text', 'imagine-dual'],
+                ['altfel-descriere', 'imagine-glob'],
+                ['altfel-program', 'imagine-maini'],
+                ['altfel-rezultate', 'imagine-cerc']
             ];
 
             function updateImagini() {
-                imaginiParametri.forEach(([divId, imgSelector]) => {
+                const tryUpdate = () => {
 
-                    const divElement = document.getElementById(divId);
-                    if (!divElement) return;
+                    imaginiParametri.forEach(([referenceDivId, targetDivId]) => {
+                        const divRef = document.getElementById(referenceDivId);
+                        const divTar = document.getElementById(targetDivId);
+                    });
 
-                    const container = document.querySelector(imgSelector);
-                    if (!container) return;
+                    imaginiParametri.forEach(([referenceDivId, targetDivId]) => {
+                        updateImagine(referenceDivId, targetDivId);
+                    });
+                  };
 
-                    const img = container.querySelector('img');
-                    if (!img) return;
-
-                    img.style.display = 'none';
-
-                    const maxIncercari = 10;
-                    let incercari = 0;
-
-                    const tryUpdate = () => {
-                        if (img.complete && img.naturalWidth !== 0) {
-                            updateImagine(divId, imgSelector);
-                        } else {
-                            incercari++;
-                            if (incercari < maxIncercari) {
-                                setTimeout(tryUpdate, 300);
-                            } else {
-                                console.warn(`Imaginea din ${divId} nu s-a încărcat după ${maxIncercari} încercări.`);
-                            }
-                        }
-                    };
-
-                    if (img.complete && img.naturalWidth !== 0) {
-                        updateImagine(divId, imgSelector);
-                    } else {
-                        tryUpdate();
-                    }
-                });
+                tryUpdate();
             }
 
 // Setare înălțime container în funcție de container de referință
@@ -280,35 +261,17 @@
             ];
 
             function updateDivs() {
-                const maxIncercari = 10;
-                let incercari = 0;
-
                 const tryUpdate = () => {
-                    let toateGăsite = true;
 
                     divsParametri.forEach(([referenceDivId, targetDivId, imageDivId, nrSiblings]) => {
                         const referenceDiv = document.getElementById(referenceDivId);
                         const targetDiv = document.getElementById(targetDivId);
                         const imageDiv = document.getElementById(imageDivId);
-
-                        if (!referenceDiv || !targetDiv || !imageDiv) {
-                            toateGăsite = false;
-                            return;
-                        }
                     });
 
-                    if (toateGăsite) {
-                        divsParametri.forEach(([referenceDivId, targetDivId, imageDivId, nrSiblings]) => {
-                            updateDiv(referenceDivId, targetDivId, imageDivId, nrSiblings);
-                        });
-                    } else {
-                        incercari++;
-                        if (incercari < maxIncercari) {
-                            setTimeout(tryUpdate, 300);
-                        } else {
-                            console.warn(`Unele elemente din divsParametri nu au fost găsite după ${maxIncercari} încercări.`);
-                            }
-                    }
+                    divsParametri.forEach(([referenceDivId, targetDivId, imageDivId, nrSiblings]) => {
+                        updateDiv(referenceDivId, targetDivId, imageDivId, nrSiblings);
+                    });
                 };
 
                 tryUpdate();
@@ -708,6 +671,7 @@
 
 // Gestionare apăsare tastă CTRL
                 let ctrlToggleDone = false;
+
                 document.addEventListener('keydown', (e) => {
                     if (e.key === 'Control') {
                         if (window.innerWidth < 1367) {
