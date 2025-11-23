@@ -889,6 +889,9 @@ border-radius: 4px;
                                     height: 100%;
                                     display: block;
                                     object-fit: cover;
+                                    overflow-y: auto;
+                                    scrollbar-width: none;
+                                    word-break: break-word;
                                     background-color: #FFFFFF;
                                 }
 
