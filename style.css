@@ -964,6 +964,9 @@ border-radius: 4px;
                                     padding-right: 0;
                                     width: 5rem;
                                     height: 5rem;
+                                    overflow-y: auto;
+                                    scrollbar-width: none;
+                                    word-break: break-word;
                                     background-color: #FFFFFF;
                                 }
 
@@ -1838,6 +1841,7 @@ border-radius: 4px;
                                 object-fit: cover;
                                 overflow-y: auto;
                                 scrollbar-width: none;
+                                word-break: break-word;
                             }
 
                                 .content-imagine img:focus {
@@ -1900,6 +1904,7 @@ border-radius: 4px;
                                 object-fit: contain;
                                 overflow-y: auto;
                                 scrollbar-width: none;
+                                word-break: break-word;
                             }
 
                                 .contain-imagine img:focus {
