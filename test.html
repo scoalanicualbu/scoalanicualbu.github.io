@@ -173,7 +173,6 @@ border: 0px solid #404040;
                 .hr {
                     height: 1px;
                     width: 100%;
-                    background-color: #404040;
                 }
 
                 .hp {
@@ -200,19 +199,16 @@ border: 0px solid #404040;
                     width: 100%;
                 }
 
-                .sr-only {
-                    position: absolute;
-                    border: 0;
-                    margin: -1px;
-                    padding: 0;
-                    width: 1px;
-                    height: 1px;
-                    clip-path: inset(100%);
-                    overflow: hidden;
-                    white-space: nowrap;
-                    color: #000000;
-                    background-color: #FFFFFF;
-                }
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
 
                 .tooltip-link {
                     position: relative;
@@ -386,6 +382,7 @@ border-radius: 4px;
                         font-weight: bold;
                         line-height: 1.5;
                         color: #202020;
+                        background-color: #F8F8F8;
                     }
 
 /* Meniu site */
@@ -1848,6 +1845,8 @@ border-radius: 4px;
                         }
 
                         .wrap-show {
+                            color: #404040;
+                            background-color: #FFFFFF;
                         }
 
                         .content-imagine {
@@ -3521,9 +3520,9 @@ border-radius: 4px;
         </section>
 
 <!-- Link "Sari la conținut" -->
-        <a href="#main-content" id="skipToContinut" class="skip-link">
+        <button id="skipToContinut" class="skip-link highlight-link" onclick="document.getElementById('main-content').focus();">
             Mergi la conținutul paginii
-        </a>
+        </button>
 
 <!-- MENIU -->
         <aside id="main-menu" aria-label="Meniu principal">
