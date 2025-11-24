@@ -49,6 +49,8 @@ border: 0px solid #404040;
                     padding-left: 0;
                     padding-right: 0;
                     font-size: var(--sz1);
+                    color: #404040;
+                    background-color: #FFFFFF;
                 }
 
                 h2 {
@@ -61,6 +63,8 @@ border: 0px solid #404040;
                     padding-left: 0;
                     padding-right: 0;
                     font-size: var(--sz2);
+                    color: #404040;
+                    background-color: #FFFFFF;
                 }
 
                 h3 {
@@ -73,6 +77,8 @@ border: 0px solid #404040;
                     padding-left: 0;
                     padding-right: 0;
                     font-size: var(--sz3);
+                    color: #404040;
+                    background-color: #FFFFFF;
                 }
 
                 h4 {
@@ -85,6 +91,8 @@ border: 0px solid #404040;
                     padding-left: 0;
                     padding-right: 0;
                     font-size: var(--sz3);
+                    color: #404040;
+                    background-color: #FFFFFF;
                 }
 
                 h5 {
@@ -97,6 +105,8 @@ border: 0px solid #404040;
                     padding-left: 0;
                     padding-right: 0;
                     font-size: var(--sz3);
+                    color: #404040;
+                    background-color: #FFFFFF;
                 }
 
                 p {
@@ -108,12 +118,25 @@ border: 0px solid #404040;
                     padding-bottom: 0;
                     padding-left: 0;
                     padding-right: 0;
+                    color: #404040;
+                    background-color: #FFFFFF;
+                }
+
+                .strong {
+                    color: #404040;
+                    background-color: #FFFFFF;
+                }
+
+                .span {
+                    color: #404040;
+                    background-color: #FFFFFF;
                 }
 
                 .hr {
                     height: 1px;
                     width: 100%;
-                    background-color: #404040;
+                    color: #404040;
+                    background-color: #FFFFFF;
                 }
 
                 .hp {
@@ -126,6 +149,8 @@ border: 0px solid #404040;
                     padding-left: 0;
                     padding-right: 0;
                     width: 100%;
+                    color: #404040;
+                    background-color: #FFFFFF;
                 }
 
                 .hp-2 {
@@ -138,6 +163,8 @@ border: 0px solid #404040;
                     padding-left: 0;
                     padding-right: 0;
                     width: 100%;
+                    color: #404040;
+                    background-color: #FFFFFF;
                 }
 
                 .sr-only {
@@ -1787,6 +1814,8 @@ border-radius: 4px;
                         }
 
                         .wrap-show {
+                            color: #404040;
+                            background-color: #FFFFFF;
                         }
 
                         .content-imagine {
