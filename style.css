@@ -161,6 +161,7 @@ border: 0px solid #404040;
                     text-decoration: none;
                     font-size: 0.75rem;
                     font-weight: normal;
+                    display: inline-flex;
                 }
 
                     .tooltip-link:focus {
@@ -889,9 +890,6 @@ border-radius: 4px;
                                     height: 100%;
                                     display: block;
                                     object-fit: cover;
-                                    overflow-y: auto;
-                                    scrollbar-width: none;
-                                    word-break: break-word;
                                     background-color: #FFFFFF;
                                 }
 
@@ -965,11 +963,12 @@ border-radius: 4px;
                                     padding-bottom: 0;
                                     padding-left: 0;
                                     padding-right: 0;
-                                    width: 6rem;
+                                    width: 5rem;
                                     height: 5rem;
                                     overflow-y: auto;
                                     scrollbar-width: none;
                                     word-break: break-word;
+                                    flex-shrink: 0;
                                     background-color: #FFFFFF;
                                 }
 
