@@ -1984,13 +1984,18 @@ border-radius: 4px;
                         }
 
                             .zoom img {
-border: 0px solid #404040;
+border: 1px solid transparent;
 border-radius: 4px;
                                 display: block;
                                 transform-origin: top left;
                                 transition: transform 0.1s ease;
                                 cursor: grab;
                             }
+
+                                .zoom img:focus {
+border: 2px solid #000000;
+                                    outline: none;
+                                }
 
                                 .zoom img:hover {
                                     cursor: grab;
