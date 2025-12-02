@@ -718,7 +718,7 @@ border: 0px solid #404040;
 border-radius: 4px;
                         margin-top: 0;
                         margin-bottom: 0;
-                        margin-left: 0;
+                        margin-left: 0.5rem;
                         margin-right: 0;
                         padding-top: 0.5rem;
                         padding-bottom: 0.5rem;
@@ -735,6 +735,7 @@ border-radius: 4px;
                             padding-bottom: 0;
                             padding-left: 0;
                             padding-right: 0;
+                            width: 100%;
                             list-style: none;
                         }
 
