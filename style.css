@@ -727,7 +727,6 @@ border-radius: 4px;
                     }
 
                         .sectiune-informatii ul {
-border: 1px solid #404040;
                             margin-top: 0;
                             margin-bottom: 0;
                             margin-left: 0;
@@ -736,7 +735,6 @@ border: 1px solid #404040;
                             padding-bottom: 0;
                             padding-left: 0;
                             padding-right: 0;
-                            width: 100%;
                             list-style: none;
                         }
 
