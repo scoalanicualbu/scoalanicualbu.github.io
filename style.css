@@ -1073,7 +1073,7 @@ border-radius: 4px;
                                 margin-left: 0;
                                 margin-right: 0;
                                 padding-top: 0;
-                                padding-bottom: 0;
+                                padding-bottom: 0.1rem;
                                 padding-left: 0;
                                 padding-right: 0.5rem;
                                 display: flex;
@@ -1214,7 +1214,9 @@ border-radius: 4px;
                                     padding-right: 0;
                                     display: grid;
                                     grid-template-columns: repeat(1, 1fr);
-                                    align-items: center;
+                                    gap: 0.5rem;
+                                    flex: 1;
+                                    align-items: stretch;
                                 }
 
                                 .imagine-1 img {
@@ -1233,6 +1235,9 @@ border-radius: 4px;
                                     height: auto;
                                     display: block;
                                     object-fit: cover;
+                                    overflow-y: auto;
+                                    scrollbar-width: none;
+                                    word-break: break-word;
                                     background-color: #FFFFFF;
                                 }
 
@@ -1250,7 +1255,8 @@ border-radius: 4px;
                                     display: grid;
                                     grid-template-columns: repeat(2, 1fr);
                                     gap: 0.5rem;
-                                    align-items: center;
+                                    flex: 1;
+                                    align-items: stretch;
                                 }
 
                                 .imagine-2 img {
@@ -1264,11 +1270,14 @@ border-radius: 4px;
                                     padding-bottom: 0;
                                     padding-left: 0;
                                     padding-right: 0;
-                                    width: auto;
+                                    width: 100%;
                                     max-width: 100%;
-                                    height: 100%;
+                                    height: auto;
                                     display: block;
                                     object-fit: cover;
+                                    overflow-y: auto;
+                                    scrollbar-width: none;
+                                    word-break: break-word;
                                     background-color: #FFFFFF;
                                 }
 
@@ -1286,7 +1295,8 @@ border-radius: 4px;
                                     display: grid;
                                     grid-template-columns: repeat(3, 1fr);
                                     gap: 0.5rem;
-                                    align-items: center;
+                                    flex: 1;
+                                    align-items: stretch;
                                 }
 
                                 .imagine-3 img {
@@ -1300,11 +1310,14 @@ border-radius: 4px;
                                     padding-bottom: 0;
                                     padding-left: 0;
                                     padding-right: 0;
-                                    width: auto;
+                                    width: 100%;
                                     max-width: 100%;
-                                    height: 100%;
+                                    height: auto;
                                     display: block;
                                     object-fit: cover;
+                                    overflow-y: auto;
+                                    scrollbar-width: none;
+                                    word-break: break-word;
                                     background-color: #FFFFFF;
                                 }
 
@@ -1322,7 +1335,8 @@ border-radius: 4px;
                                     display: grid;
                                     grid-template-columns: repeat(4, 1fr);
                                     gap: 0.5rem;
-                                    align-items: center;
+                                    flex: 1;
+                                    align-items: stretch;
                                 }
 
                                 .imagine-4 img {
@@ -1334,88 +1348,92 @@ border-radius: 4px;
                                     margin-right: 0;
                                     padding-top: 0;
                                     padding-bottom: 0;
-                                    padding-left: 0;
+                                    padding-left: 0;	
                                     padding-right: 0;
-                                    width: auto;
+                                    width: 100%;
                                     max-width: 100%;
-                                    height: 100%;
+                                    height: auto;
                                     display: block;
                                     object-fit: cover;
+                                    overflow-y: auto;
+                                    scrollbar-width: none;
+                                    word-break: break-word;
                                     background-color: #FFFFFF;
                                 }
 
-                                .sectiune-comunicari figure.i {
+                        .comunicari-figure {
 border: 0px solid #404040;
 border-radius: 4px;
-                                    margin-top: 0.2rem;
-                                    margin-bottom: 0;
-                                    margin-left: 0.2rem;
-                                    margin-right: 0.5rem;
-                                    padding-top: 0;
-                                    padding-bottom: 0;
-                                    padding-left: 0;
-                                    padding-right: 0;
-                                    width: 5rem;
-                                    height: auto;
-                                    background-color: #FFFFFF;
-                                }
+                            margin-top: 0.2rem;
+                            margin-bottom: -0.26rem;
+                            margin-left: 0.2rem;
+                            margin-right: 0.5rem;
+                            padding-top: 0;
+                            padding-bottom: 0;
+                            padding-left: 0;
+                            padding-right: 0;
+                            width: 5rem;
+                            height: auto;
+                            font-size: 0.9rem;
+                            background-color: #FFFFFF;
+                        }
 
-                                    .sectiune-comunicari figcaption.i {
+                            .comunicari-figure img {
 border: 1px solid #404040;
 border-radius: 4px;
-                                        margin-top: 0.2rem;
-                                        margin-bottom: -0.28rem;
-                                        margin-left: 0;
-                                        margin-right: 0;
-                                        padding-top: 0;
-                                        padding-bottom: 0;
-                                        padding-left: 0.15rem;
-                                        padding-right: 0.1rem;
-                                        width: 5rem;
-                                        line-height: 1rem;
-                                        text-align: left;
-                                        font-size: 0.9rem;
-                                        background-color: #FFFFFF;
-                                    }
+                                margin-top: 0;
+                                margin-bottom: 0;
+                                margin-left: 0;
+                                margin-right: 0;
+                                padding-top: 0;
+                                padding-bottom: 0;
+                                padding-left: 0;
+                                padding-right: 0;
+                                width: 100%;
+                                height: auto;
+                                display: block;
+                                object-fit: cover;
+                            }
 
-                                .sectiune-comunicari figure.figure-1 img {
-                                    margin-bottom: -0.1rem;
+                                .content-figure img:focus {
+                                    outline: 2px solid #000000;
+                                    outline-offset: 0px;
                                 }
 
-                                    .sectiune-comunicari figcaption.caption-1 {
+                        .comunicari-date {
 border: 1px solid #404040;
 border-radius: 4px;
-                                        margin-top: 0;
-                                        margin-bottom: 0.5rem;
-                                        margin-left: 0;
-                                        margin-right: 0.1rem;
-                                        padding-top: 0;
-                                        padding-bottom: 0;
-                                        padding-left: 0.5rem;
-                                        padding-right: 0.5rem;
-                                        width: auto;
-                                        line-height: 1rem;
-                                        text-align: center;
-                                        font-size: 0.9rem;
-                                        background-color: #FFFFFF;
-                                    }
+                            margin-top: -0.06rem;
+                            margin-bottom: -0.28rem;
+                            margin-left: 0;
+                            margin-right: 0;
+                            padding-top: 0;
+                            padding-bottom: 0;
+                            padding-left: 0.15rem;
+                            padding-right: 0.1rem;
+                            width: 5rem;
+                            line-height: 1rem;
+                            text-align: left;
+                            font-size: 0.9rem;
+                            background-color: #FFFFFF;
+                        }
 
-                                .date {
+                        .date {
 border: 1px solid #404040;
 border-radius: 4px;
-                                    margin-top: 0.5rem;
-                                    margin-bottom: 0.2rem;
-                                    margin-left: 0.2rem;
-                                    margin-right: 0;
-                                    padding-top: 0;
-                                    padding-bottom: 0;
-                                    padding-left: 0.19rem;
-                                    padding-right: 0.19rem;
-                                    width: 5rem;
-                                    text-align: center;
-                                    font-size: 0.9rem;
-                                    background-color: #FFFFFF;
-                                }
+                            margin-top: 0.5rem;
+                            margin-bottom: 0;
+                            margin-left: 0.2rem;
+                            margin-right: 0;
+                            padding-top: 0;
+                            padding-bottom: 0;
+                            padding-left: 0.19rem;
+                            padding-right: 0.19rem;
+                            width: 5rem;
+                            text-align: center;
+                            font-size: 0.9rem;
+                            background-color: #FFFFFF;
+                        }
 
                                 .sectiune-comunicari a {
 border: 0px solid #404040;
@@ -1864,7 +1882,6 @@ border-radius: 4px;
                                     background-color: #F8F8F8;
                                 }
 
-
                             .contain-imagine img {
 border: 1px solid #404040;
 border-radius: 4px;
@@ -2218,7 +2235,7 @@ border-radius: 4px;
                     }
                 }
 
-/* page-menu-2 (organigrama),  verde (div-link, imagine-link) da, wrap-3 (verde 2-platforma1,2) */
+/* page-menu-2 (organigrama),  verde (div-link, imagine-link) da, wrap-3 (verde 2-platforma1,2), imagine-4 2, imagine-2 1 */
                 @media (min-width: 1921px)and (max-width: 2160px) {
                     aside {
                         min-height: 100vh;
@@ -2240,6 +2257,12 @@ border-radius: 4px;
                     }
                     .sectiune-comunicari ul {
                         grid-template-columns: repeat(2, 1fr);
+                    }
+                    .imagine-4 {
+                        grid-template-columns: repeat(2, 1fr);
+                    }
+                    .imagine-2 {
+                        grid-template-columns: repeat(1, 1fr);
                     }
                     .footer {
                         margin-left: var(--asz);
@@ -2269,6 +2292,12 @@ border-radius: 4px;
                     .sectiune-comunicari ul {
                         grid-template-columns: repeat(2, 1fr);
                     }
+                    .imagine-4 {
+                        grid-template-columns: repeat(2, 1fr);
+                    }
+                    .imagine-2 {
+                        grid-template-columns: repeat(1, 1fr);
+                    }
                     .sectiune-telverde ul {
                         grid-template-columns: repeat(4, 1fr);
                     }
@@ -2279,40 +2308,6 @@ border-radius: 4px;
 
 /* page-menu 1 (evaluare) */
                 @media (min-width: 1681px)and (max-width: 1800px) {
-                    aside {
-                        min-height: 100vh;
-                    }
-                    .banner {
-                        margin-left: var(--asz);
-                    }
-                    .content {
-                        margin-left: var(--asz);
-                    }
-                    .page-menu .trei-evaluare {
-                        grid-template-columns: repeat(1, 1fr);
-                    }
-                    .page-menu .patru-organigrama {
-                        grid-template-columns: repeat(2, 1fr);
-                    }
-                    #verde-platforma-1 .wrap-3 {
-                        grid-column: span 6;
-                    }
-                    #verde-platforma-2 .wrap-3 {
-                        grid-column: span 6;
-                    }
-                    .sectiune-comunicari ul {
-                        grid-template-columns: repeat(2, 1fr);
-                    }
-                    .sectiune-telverde ul {
-                        grid-template-columns: repeat(4, 1fr);
-                    }
-                    .footer {
-                        margin-left: var(--asz);
-                    }
-                }
-
-/* imagine-4 2, imagine-2 1 */
-                @media (min-width: 1367px) and (max-width: 1680px) {
                     aside {
                         min-height: 100vh;
                     }
@@ -2352,7 +2347,7 @@ border-radius: 4px;
                 }
 
 /* aside da */
-                @media (min-width: 1153px) and (max-width: 1366px) {
+                @media (min-width: 1153px) and (max-width: 1680px) {
                     aside {
                         border-radius: 4px;
                     }
@@ -2382,7 +2377,7 @@ border-radius: 4px;
                     }
                 }
 
-/* legaturi 2, wrap-show nu, wrap-92 12-2, wrap-9 12 */
+/* legaturi 2, wrap-show nu, wrap-92 12-2, wrap-9 12, imagine-4 1 */
                 @media (min-width: 901px) and (max-width: 1152px) { 
                     aside {
                         border-radius: 4px;
@@ -2403,7 +2398,7 @@ border-radius: 4px;
                         grid-template-columns: repeat(2, 1fr);
                     }
                     .imagine-4 {
-                        grid-template-columns: repeat(2, 1fr);
+                        grid-template-columns: repeat(1, 1fr);
                     }
                     .imagine-2 {
                         grid-template-columns: repeat(1, 1fr);
@@ -2417,7 +2412,7 @@ border-radius: 4px;
                     }
                 }
 
-/*  page-menu 1 (admitere), wrap-3 (verde 2-platforma1,2) */
+/*  page-menu 1 (admitere), wrap-3 (verde 2-platforma1,2), comunicari 1 */
                 @media (min-width: 801px) and (max-width: 900px) {
                     aside {
                         border-radius: 4px;
@@ -2526,10 +2521,10 @@ border-radius: 4px;
                         grid-column: span 4;
                     }
                     .sectiune-comunicari ul {
-                        grid-template-columns: repeat(2, 1fr);
+                        grid-template-columns: repeat(1, 1fr);
                     }
                     .imagine-4 {
-                        grid-template-columns: repeat(2, 1fr);
+                        grid-template-columns: repeat(1, 1fr);
                     }
                     .imagine-2 {
                         grid-template-columns: repeat(1, 1fr);
@@ -2543,7 +2538,7 @@ border-radius: 4px;
                     }
                 }
 
-/* page-menu 2 (prezentare, regulamente), wrap-3 (verde 2-continut), wrap-2 (verde 3-proiecte), comunicari 1, telverde 2 */
+/* page-menu 2 (prezentare, regulamente), wrap-3 (verde 2-continut), wrap-2 (verde 3-proiecte), telverde 2 */
                 @media (min-width: 721px) and (max-width: 800px) {
                     aside {
                         border-radius: 4px;
@@ -2685,7 +2680,7 @@ border-radius: 4px;
                         grid-template-columns: repeat(1, 1fr);
                     }
                     .imagine-4 {
-                        grid-template-columns: repeat(2, 1fr);
+                        grid-template-columns: repeat(1, 1fr);
                     }
                     .imagine-2 {
                         grid-template-columns: repeat(1, 1fr);
@@ -2859,7 +2854,7 @@ border-radius: 4px;
                         grid-template-columns: repeat(1, 1fr);
                     }
                     .imagine-4 {
-                        grid-template-columns: repeat(2, 1fr);
+                        grid-template-columns: repeat(1, 1fr);
                     }
                     .imagine-2 {
                         grid-template-columns: repeat(1, 1fr);
@@ -2874,7 +2869,7 @@ border-radius: 4px;
                 }
 
 
-/* legaturi 1, imagine-4 1, wrap-92 12-1, wrap-6 12 (conducere-ul),  wrap-3 (altfel, verde 1-continut) */
+/* legaturi 1, wrap-92 12-1, wrap-6 12 (conducere-ul),  wrap-3 (altfel, verde 1-continut) */
                 @media (min-width: 427px) and (max-width: 600px) { 
                     aside {
                         border-radius: 4px;
