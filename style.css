@@ -945,6 +945,7 @@ border-radius: 4px;
                                     scrollbar-width: none;
                                     word-break: break-word;
                                     flex-shrink: 0;
+                                    font-size: 0.9rem;
                                     background-color: #FFFFFF;
                                 }
 
@@ -3421,4 +3422,3 @@ border-radius: 4px;
                         grid-template-columns: repeat(1, 1fr);
                     }
                 }
-
