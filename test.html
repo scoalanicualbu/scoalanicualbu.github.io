@@ -652,10 +652,9 @@ border-radius: 4px;
                         margin-right: 0;
                         padding-top: 0.5rem;
                         padding-bottom: 0.5rem;
-                        padding-left: 0
+                        padding-left: 0;
                         padding-right: 0;
                         width: 100%;
-                        justify-content: center;
                         align-items: start;
                     }
 
@@ -671,7 +670,6 @@ border-radius: 4px;
                             padding-left: 0;
                             padding-right: 0;
                             width: 100%;
-                            justify-content: center;
                             list-style: none;
                         }
 
@@ -687,10 +685,6 @@ border-radius: 4px;
                                 padding-left: 0;
                                 padding-right: 0;
                                 width: 100%;
-                                display: flex;
-                                align-items: center;
-                                justify-content: center;
-                                flex-grow: 1;
                             }
 
                                 .content-menu li:hover {
@@ -704,16 +698,13 @@ border: 0px solid #404040;
 border-radius: 4px;
                                     margin-top: 0;
                                     margin-bottom: 0;
-                                    margin-left: 0;
+                                    margin-left: 0.5rem;
                                     margin-right: 0;
                                     padding-top: var(--pd3);
                                     padding-bottom: var(--pd3);
                                     padding-left: 0.5rem;
                                     padding-right: 0.5rem;
                                     width: 100%;
-                                    display: flex;
-                                    align-items: center;
-                                    justify-content: center;
                                     text-align: center;
                                     text-decoration: none;
                                     font-size: var(--sz3);
@@ -722,6 +713,10 @@ border-radius: 4px;
 
                                     .content-menu a:hover {
                                         text-shadow: 0.4px 0 currentcolor, -0.4px 0 currentcolor;
+                                    }
+
+                                    .content-menu a:focus {
+                                     //   margin-left: 0;
                                     }
 
                                     .content-menu a.active {
