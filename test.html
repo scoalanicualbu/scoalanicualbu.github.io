@@ -652,22 +652,26 @@ border-radius: 4px;
                         margin-right: 0;
                         padding-top: 0.5rem;
                         padding-bottom: 0.5rem;
-                        padding-left: 0.5rem;
-                        padding-right: 0.5rem;
+                        padding-left: 0
+                        padding-right: 0;
+                        width: 100%;
+                        justify-content: center;
+                        align-items: start;
                     }
 
                         .content-menu ul {
-border: 1px solid #404040;
+border: 0px solid #404040;
 border-radius: 4px;
                             margin-top: -0.5rem;
                             margin-bottom: -0.5rem;
-                            margin-left: -0.5rem;
+                            margin-left: 0;
                             margin-right: 0;
                             padding-top: 0;
                             padding-bottom: 0;
                             padding-left: 0;
                             padding-right: 0;
                             width: 100%;
+                            justify-content: center;
                             list-style: none;
                         }
 
@@ -685,6 +689,7 @@ border-radius: 4px;
                                 width: 100%;
                                 display: flex;
                                 align-items: center;
+                                justify-content: center;
                                 flex-grow: 1;
                             }
 
@@ -1875,6 +1880,40 @@ border-radius: 4px;
                             height: auto;
                             display: grid;
                             grid-template-columns: repeat(10, 1fr);
+                            gap: 1rem;
+                        }
+
+                        .wrap-101 {
+border: 0px solid #404040;
+border-radius: 4px;
+                            margin-top: 0;
+                            margin-bottom: 0;
+                            margin-left: 0;
+                            margin-right: 0;
+                            padding-top: 0;
+                            padding-bottom: 0;
+                            padding-left: 0;
+                            padding-right: 0;
+                            grid-column: span 1;
+                            height: auto;
+                            display: grid;
+                            gap: 1rem;
+                        }
+
+                        .wrap-1010 {
+border: 0px solid #404040;
+border-radius: 4px;
+                            margin-top: 0;
+                            margin-bottom: 0;
+                            margin-left: 0;
+                            margin-right: 0;
+                            padding-top: 0;
+                            padding-bottom: 0;
+                            padding-left: 0;
+                            padding-right: 0;
+                            grid-column: span 10;
+                            height: auto;
+                            display: grid;
                             gap: 1rem;
                         }
 
@@ -3909,19 +3948,87 @@ border-radius: 4px;
 
                     <section id="proiecte-prezentare" class="wrap-10" aria-labelledby="proiecte-prezentare-label">
 
-                        <h3 id="proiecte-prezentare-label" class="m3 sr-only">Prezentare proiecte:</h3>
+                        <h3 id="proiecte-prezentare-label" class="m3 sr-only"  aria-describedby="proiecte-descriere">Prezentare proiecte:</h3>
 
+                        <section id="proiecte-descriere" class="wrap-1010" aria-labelledby="proiecte-descriere-label">
 
+                            <h4 id="proiecte-descriere-label" class="m3 sr-only">Descriere</h4>
 
+                            <article id="proiecte-text" class="sectiune-text" aria-labelledby="proiecte-text-label">
+
+                                <h5 id="proiecte-text-label" class="m3 sr-only" aria-describedby="parteneriat">Parteneriat educațional</h5>
+
+                                <section id="parteneriat" class="coloane" aria-labelledby="parteneriat-label">
+
+                                    <h6 id="parteneriat-label" class="m3 sr-only">Prezentare</h6>
+
+                                    <p>Parteneriatul reprezintă procesul de colaborare dintre două sau mai multe părţi care acţionează împreună pentru realizarea unor interese sau scopuri comune. În practica şcolară există mai multe expresii destinate parteneriatului educaţional: acord de parteneriat, acord cadru de parteneriat pentru educaţie, parteneriat de colaborare, protocol de colaborare, protocol de parteneriat, contract de parteneriat, convenţie de parteneriat, parteneriat, parteneriat de colaborare instituţională, proiect de parteneriat şi altele.</p>
+                                    <p>Parteneriatele școlare facilitează realizarea unor proiecte prin care elevii au posibilitatea să își perfecționeze și să pună în practică cunoștințele, să participe la competiții, excursii, schimburi de experiențe, socializând și perfecționându-și  competențele de comunicare.</p>
+                                    <p>Proiectarea şi implementarea unor activităţi extracurriculare şi extraşcolare, în şcoală şi în comunitate, pe baza proiectelor şi parteneriatelor dintre elevi, profesori şi membri ai comunităţii locale este o necesitate a activităţii didactice.</p>
+
+                                    <p class="citat-0"><Parteneriatele educaţionale pot fi:/p>
+                                    <p class="citat-0">– în funcţie de domeniul de colaborare: parteneriate în vederea finanţării derulării unor proiecte; parteneriate de realizarea a unor proiecte comune de dezvoltare instituţională; parteneriate de dezvoltare a unor proiecte comune didactice; parteneriate ce vizează contracte de cercetare; parteneriate ce au ca scop activităţile de formare profesională; parteneriate în vederea organizării de manifestări ştiinţifice şi publicarea produselor; parteneriate de iniţiere, derulare, evaluare a unor programe internaţionale;</p>
+                                    <p class="citat-0">– în funcţie de scopul şi obiectivele urmărite: parteneriate de reprezentare: federaţii, uniuni, consilii, alianţe, coaliţii; parteneriate operaţionale cu proiecte concrete ca motiv al asocierii;</p>
+                                    <p class="citat-0">– în funcţie de durata de desfăşurare: parteneriate pe termen scurt; parteneriate pe termen mediu; parteneriate pe termen lung;</p>
+                                    <p class="citat-0">– în funcţie de forma de finanţare: parteneriate cu finanţare integrală; parteneriate cu finanţare parţială; parteneriate fără finanţare; parteneriate cu autofinanţare;</p>
+                                    <p>– în funcţie de tipul de unitate: unitate de învăţământ; agent economic; instituţii şi organisme guvernamentale centrale/locale; instituţii nonguvernamentale.</p>
+
+                                    <p class="citat-0">Condițiile realizării unui parteneriat reuşit implică:</p>
+                                    <p class="citat-0">– identificarea scopurilor, intereselor comune, utile partenerilor şi comunităţii;</p>
+                                    <p class="citat-0">– găsirea modului optim pentru realizarea scopului propus;</p>
+                                    <p class="citat-0">– organizarea şi conducerea resurselor disponibile pentru a atinge scopul propus;</p>
+                                    <p class="citat-0">– identificarea competenţelor persoanelor implicate în aceste proiecte pentru a le putea folosi la maxim;</p>
+                                    <p class="citat-0">– combinarea eficientă a atitudinilor, abordărilor şi tehnicilor care se pot aplica diferitelor sarcini;</p>
+                                    <p>– utilizarea cu succes a schimbării în folosul instituţiei.</p>
+
+                                    <p class="citat-0">Elaborarea, coordonarea şi desfăşurarea unor proiecte educative extracurriculare contribuie la construirea şi modelarea personalităţii elevilor în măsura în care:</p>
+                                    <p class="citat-0">– urmăresc lărgirea şi adâncirea influenţelor exercitate în procesul de învăţământ;</p>
+                                    <p class="citat-0">– valorifică şi dezvolă interesele şi aptitudinile celor supuși actului educațional;</p>
+                                    <p class="citat-0">– organizează timpul liber într-o manieră plăcută, relaxantă;</p>
+                                    <p class="citat-0">– formele de organizare ale acestor activităţi au caracter recreativ, dar urmăresc un scop educativ;</p>
+                                    <p>– au un efect pozitiv pentru munca desfasurată în grup, creează un sentiment de siguranţă şi încredere.</p>
+
+                                    <p class="citat-0">Prin organizarea de activităţi extraşcolare, elevii contribuie, după puterile lor, la creşterea calităţii vieţii în comunitatea în care trăiesc, astfel:</p>
+                                    <p class="citat-0">– se împletește teoria cu practica, elevii constatând că ceea ce învaţă la şcoală poate fi aplicat în cadrul unei acţiuni concrete;</p>
+                                    <p class="citat-0">– acţiunile dezvoltă la elevi empatia, responsabilitatea faţă de semenii lor;</p>
+                                    <p class="citat-0">– se creează legături la nivelul comunităţii;</p>
+                                    <p class="citat-0">– se stimulează gândirea critică;</p>
+                                    <p class="citat-0">– se educă percepţia multiculturalităţii;</p>
+                                    <p>– se dezvoltă stima de sine şi devotamentul pentru ideile civice.</p>
+
+                                    <p class="citat-0">Proiectele educative pot produce efecte importante, cum ar fi:</p>
+                                    <p class="citat-0">– creşterea calităţii actului educaţional  şi a rezultatelor învăţării;</p>
+                                    <p class="citat-0">– stimularea şi multiplicarea iniţiativelor tinerilor în dezvoltarea vieţii comunităţii şcolare/comunităţii;</p>
+                                    <p class="citat-0">– creșterea gradului de socializare și valorizare a elevilor;</p>
+                                    <p class="citat-0">– reducerea procentului fenomenelor antisociale, a abandonului şi absenteismului şcolar;</p>
+                                    <p class="citat-0">– creşterea ratei promovabilităţii şcolare;</p>
+                                    <p class="citat-0">– asigurarea şanselor egale de dezvoltare personală;</p>
+                                    <p class="citat-0">– ridicarea calităţii resursei umane din sistemul educaţional;</p>
+                                    <p class="citat-0">– formarea resursei umane necesare dezvoltării societăţii cunoaşterii;</p>
+                                    <p class="citat-0">– asigurarea sustenabilităţii proiectelor educative prin conştientizarea comunităţii cu privire la potenţialul pe care programele educaţionale le au asupra formării tinerei generaţii ce urmează a se integra;</p>
+                                    <p>– transformarea educaţiei în sursă de dezvoltare comunitară.</p>
+
+                                    <p>Proiectele de parteneriat educaţionale vizează întărirea relaţiilor dintre părinţi, elevi, dascăli şi comunitate, creşterea gradului de implicare a tuturor factorilor educaţionali. Activitatea în parteneriat are nenumărate avantaje, deoarece creează relaţii de colaborare, clarifică diverse probleme educative, oferă un nou cadru în dezvoltarea personalităţii elevului. Iniţierea diferitelor proiecte de parteneriat educaţionale sunt benefice atât pentru elevi, cât şi pentru toţi factorii implicaţi: şcoală, familie, comunitate.</p>
+                                    <p>Un rol anume în stabilirea relaţiilor de colaborare îi revine managerului instituţiei şcolare, care asigură o implicare activă în lansarea proiectelor de parteneriat educaţional, care vizează întărirea relaţiilor dintre părinţi, elevi, profesori şi comunitate, care contribuie la creşterea gradului de implicare a tuturor factorilor educaţionali. De faptul cum managerul instituţiei a reuşit să formeze o relaţie de comunicare, relaţionare, cooperare între părţile implicate depinde reuşita parteneriatului educaţional şcoală-familie-comunitate.</p>
+                                    <p>Școala face posibilă participarea grupurilor şi colectivităţilor la viaţa publică, elaborarea şi luarea deciziilor. Schimbul de informaţii favorizează interacţiunea socială şi permite unui număr mare de oameni să ia parte activă la soluţionarea problemelor.</p>
+                                    <p>Motivul principal pentru crearea unor astfel de parteneriate este dorinţa de a ajuta elevii să aibă succes la şcoală şi, mai târziu, în viaţă. Atunci când părinţii, elevii și ceilalţi membri ai comunităţii se consideră unii pe alţii parteneri în educaţie, se creează în jurul elevilor o comunitate de suport care începe să funcţioneze. Parteneriatele trebuie văzute ca o componentă esenţială în organizarea şcolii şi a clasei de elevi. Ele nu mai sunt considerate doar o simplă activitate cu caracter opţional sau o problemă de natura relaţiilor publice.</p>
+                                    <p>Astfel, elevii învaţă să gândească critic, complex, îşi dezvoltă gândirea multicauzală, experimentează abilităţi de rezolvare de probleme, de empatie, de toleranţă și, nu în ultimul rând, socializează, învăţând să fie mai apropiaţi, să lege noi prietenii, să-şi împărtăşească experienţe personale.</p>
+                                    <p>Experiențele elevilor participanți sunt pozitive, legăturile de prietenie dintre participanți sunt stabile și viabile astfel încât nu mai este nevoie de motivare suplimentară pentru participarea la alte programe asemănătoare, interne sau internaționale.</p>
+
+                                </section>
+
+                            </article>
+
+                        </section>
 
                     </section>
 
                 </section>
 
 <!-- Secțiune Legături -->
-                <section id="altfel-legaturi" class="sectiune-legaturi" aria-labelledby="altfel-legaturi-label">
+                <section id="proiecte-legaturi" class="sectiune-legaturi" aria-labelledby="proiecte-legaturi-label">
 
-                    <h2 id="altfel-legaturi-label" class="m3 sr-only">Legături utile:</h2>
+                    <h2 id="proiecte-legaturi-label" class="m3 sr-only">Legături utile:</h2>
 
                     <ul>                    
                         <li>
