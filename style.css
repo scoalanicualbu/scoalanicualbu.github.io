@@ -636,8 +636,8 @@ border-radius: 4px;
                                     background-color: #F8F8F8;
                                 }
 
-                                .content-menu a {
-border: 1px solid #404040;
+                                .content-menu ul li a {
+border: 0px solid #404040;
 border-radius: 4px;
                                     margin-top: 0;
                                     margin-bottom: 0;
@@ -649,13 +649,14 @@ border-radius: 4px;
                                     padding-right: 0.5rem;
                                     width: 100%;
                                     display: flex;
+                                    justify-content: center;
                                     align-items: center;
                                     text-decoration: none;
                                     font-size: var(--sz3);
                                     color: #404040;
                                 }
 
-                                    .content-menu a:hover {
+                                    .content-menu ul li  a:hover {
                                         text-shadow: 0.4px 0 currentcolor, -0.4px 0 currentcolor;
                                     }
 
@@ -1585,7 +1586,7 @@ border: 0px solid #404040;
 border-radius: 4px;
                             margin-top: 0;
                             margin-bottom: 0;
-                            margin-left: 0;
+                            margin-left: -0.5rem;
                             margin-right: 0;
                             padding-top: var(--pd3);
                             padding-bottom: var(--pd3);
