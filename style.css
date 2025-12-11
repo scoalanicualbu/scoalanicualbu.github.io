@@ -493,7 +493,7 @@ border-radius: 4px;
                                 grid-template-columns: repeat(4, 1fr);
                             }
 
-                            .page-menu .sase {
+                            .page-menu .sase-proiecte {
                                 grid-template-columns: repeat(6, 1fr);
                             }
 
@@ -580,8 +580,105 @@ border-radius: 4px;
                         display: flex;
                         flex-direction: column;
                         flex-grow: 1;
+                        color: #404040;
                         background-color: #FFFFFF;
                         }
+
+                    .content-menu {
+border: 0px solid #404040;
+border-radius: 4px;
+                        margin-top: 0;
+                        margin-bottom: 0;
+                        margin-left: 0;
+                        margin-right: 0;
+                        padding-top: 0;
+                        padding-bottom: 0;
+                        padding-left: 0;
+                        padding-right: 0;
+                        width: 100%;
+                        align-items: start;
+                    }
+
+                        .content-menu ul {
+border: 0px solid #404040;
+border-radius: 4px;
+                            margin-top: 0;
+                            margin-bottom: 0;
+                            margin-left: 0;
+                            margin-right: 0;
+                            padding-top: 0;
+                            padding-bottom: 0;
+                            padding-left: 0;
+                            padding-right: 0;
+                            width: 100%;
+                            list-style: none;
+                        }
+
+                            .content-menu li {
+border: 1px solid #404040;
+border-radius: 4px;
+                                margin-top: 1rem;
+                                margin-bottom: 0;
+                                margin-left: 0;
+                                margin-right: 0;
+                                padding-top: 0;
+                                padding-bottom: 0;
+                                padding-left: 0;
+                                padding-right: 0;
+                                width: 100%;
+                                justify-content: center;
+                                text-align: center;
+                            }
+
+                                .content-menu li:hover {
+border: 1px solid #000000;
+border-radius: 4px;
+                                    background-color: #F8F8F8;
+                                }
+
+                                .content-menu a {
+border: 1px solid #404040;
+border-radius: 4px;
+                                    margin-top: 0;
+                                    margin-bottom: 0;
+                                    margin-left: 0;
+                                    margin-right: 0;
+                                    padding-top: var(--pd3);
+                                    padding-bottom: var(--pd3);
+                                    padding-left: 0.5rem;
+                                    padding-right: 0.5rem;
+                                    width: 100%;
+                                    display: flex;
+                                    align-items: center;
+                                    text-decoration: none;
+                                    font-size: var(--sz3);
+                                    color: #404040;
+                                }
+
+                                    .content-menu a:hover {
+                                        text-shadow: 0.4px 0 currentcolor, -0.4px 0 currentcolor;
+                                    }
+
+                                    .content-menu a.active {
+border: 0px solid #000000;
+border-radius: 4px;
+                                        margin-top: 0;
+                                        margin-bottom: 0;
+                                        margin-left: 0;
+                                        margin-right: 0;
+                                        padding-top: var(--pd2);
+                                        padding-bottom: var(--pd2);
+                                        padding-left: 0.5rem;
+                                        padding-right: 0.5rem;
+                                        pointer-events: none;
+                                        font-size: var(--sz2);
+                                        font-weight: bold;
+                                        background-color: #DCDCDC;
+                                    }
+
+                                        .content-menu a.active:hover {
+                                            text-shadow: none;
+                                        }
 
 /* Secțiuni de conținut */
 
@@ -1488,7 +1585,7 @@ border: 0px solid #404040;
 border-radius: 4px;
                             margin-top: 0;
                             margin-bottom: 0;
-                            margin-left: -0.5rem;
+                            margin-left: 0;
                             margin-right: 0;
                             padding-top: var(--pd3);
                             padding-bottom: var(--pd3);
@@ -1721,6 +1818,40 @@ border-radius: 4px;
                             gap: 1rem;
                         }
 
+                        .wrap-101 {
+border: 0px solid #404040;
+border-radius: 4px;
+                            margin-top: 0;
+                            margin-bottom: 0;
+                            margin-left: 0;
+                            margin-right: 0;
+                            padding-top: 0;
+                            padding-bottom: 0;
+                            padding-left: 0;
+                            padding-right: 0;
+                            grid-column: span 1;
+                            height: auto;
+                            display: grid;
+                            gap: 1rem;
+                        }
+
+                        .wrap-1010 {
+border: 0px solid #404040;
+border-radius: 4px;
+                            margin-top: 0;
+                            margin-bottom: 0;
+                            margin-left: 0;
+                            margin-right: 0;
+                            padding-top: 0;
+                            padding-bottom: 0;
+                            padding-left: 0;
+                            padding-right: 0;
+                            grid-column: span 10;
+                            height: auto;
+                            display: grid;
+                            gap: 1rem;
+                        }
+
                         .wrap-11 {
 border: 0px solid #404040;
 border-radius: 4px;
@@ -1808,21 +1939,21 @@ border-radius: 4px;
                             display: block;
                         }
 
-                        .content-imagine a {
+                            .content-imagine a {
 border: 0px solid #404040;
 border-radius: 4px;
-                            margin-top: 0;
-                            margin-bottom: 0;
-                            margin-left: 0;
-                            margin-right: 0;
-                            padding-top: 0;
-                            padding-bottom: 0;
-                            padding-left: 0;
-                            padding-right: 0;
-                            width: 100%;
-                            height: auto;
-                            display: block;
-                        }
+                                margin-top: 0;
+                                margin-bottom: 0;
+                                margin-left: 0;
+                                margin-right: 0;
+                                padding-top: 0;
+                                padding-bottom: 0;
+                                padding-left: 0;
+                                padding-right: 0;
+                                width: 100%;
+                                height: auto;
+                                display: block;
+                            }
 
                                 .content-imagine a:hover {
                                     text-shadow: 0.4px 0 currentcolor, -0.4px 0 currentcolor;
@@ -1870,21 +2001,21 @@ border-radius: 4px;
                             display: block;
                         }
 
-                        .contain-imagine a {
+                            .contain-imagine a {
 border: 0px solid #404040;
 border-radius: 4px;
-                            margin-top: 0;
-                            margin-bottom: 0;
-                            margin-left: 0;
-                            margin-right: 0;
-                            padding-top: 0;
-                            padding-bottom: 0;
-                            padding-left: 0;
-                            padding-right: 0;
-                            width: 100%;
-                            height: auto;
-                            display: block;
-                        }
+                                margin-top: 0;
+                                margin-bottom: 0;
+                                margin-left: 0;
+                                margin-right: 0;
+                                padding-top: 0;
+                                padding-bottom: 0;
+                                padding-left: 0;
+                                padding-right: 0;
+                                width: 100%;
+                                height: auto;
+                                display: block;
+                            }
 
                                 .contain-imagine a:hover {
                                     text-shadow: 0.4px 0 currentcolor, -0.4px 0 currentcolor;
@@ -2316,7 +2447,7 @@ border-radius: 4px;
                 }
 
 /* page-menu 1 (evaluare) */
-                @media (min-width: 1337px)and (max-width: 1800px) {
+                @media (min-width: 1681px)and (max-width: 1800px) {
                     aside {
                         min-height: 100vh;
                     }
@@ -2355,6 +2486,55 @@ border-radius: 4px;
                     }
                 }
 
+/* page-menu 3, wrap-2 4, wrap-10 8 (proiecte) */
+                @media (min-width: 1337px)and (max-width: 1680px) {
+                    aside {
+                        min-height: 100vh;
+                    }
+                    .banner {
+                        margin-left: var(--asz);
+                    }
+                    .content {
+                        margin-left: var(--asz);
+                    }
+                    .page-menu .trei-evaluare {
+                        grid-template-columns: repeat(1, 1fr);
+                    }
+                    .page-menu .patru-organigrama {
+                        grid-template-columns: repeat(2, 1fr);
+                    }
+                    .page-menu .sase-proiecte {
+                        grid-template-columns: repeat(3, 1fr);
+                    }
+                    #proiecte-continut .wrap-2 {
+                        grid-column: span 4;
+                    }
+                    #proiecte-continut .wrap-10 {
+                        grid-column: span 8;
+                    }
+                    #verde-platforma-1 .wrap-3 {
+                        grid-column: span 6;
+                    }
+                    #verde-platforma-2 .wrap-3 {
+                        grid-column: span 6;
+                    }
+                    .sectiune-comunicari ul {
+                        grid-template-columns: repeat(2, 1fr);
+                    }
+                    .imagine-4 {
+                        grid-template-columns: repeat(2, 1fr);
+                    }
+                    .imagine-2 {
+                        grid-template-columns: repeat(1, 1fr);
+                    }
+                    .sectiune-telverde ul {
+                        grid-template-columns: repeat(4, 1fr);
+                    }
+                    .footer {
+                        margin-left: var(--asz);
+                    }
+                }
+
 /* aside da */
                 @media (min-width: 1153px) and (max-width: 1336px) {
                     aside {
@@ -2365,6 +2545,15 @@ border-radius: 4px;
                     }
                     .page-menu .patru-organigrama {
                         grid-template-columns: repeat(2, 1fr);
+                    }
+                    .page-menu .sase-proiecte {
+                        grid-template-columns: repeat(3, 1fr);
+                    }
+                    #proiecte-continut .wrap-2 {
+                        grid-column: span 4;
+                    }
+                    #proiecte-continut .wrap-10 {
+                        grid-column: span 8;
                     }
                     #verde-platforma-1 .wrap-3 {
                         grid-column: span 6;
@@ -2387,7 +2576,7 @@ border-radius: 4px;
                 }
 
 /* legaturi 2, wrap-show nu, wrap-92 12-2, wrap-9 12, imagine-4 1 */
-                @media (min-width: 901px) and (max-width: 1152px) { 
+                @media (min-width: 901px) and (max-width: 1152px) {
                     aside {
                         border-radius: 4px;
                     }
@@ -2396,6 +2585,15 @@ border-radius: 4px;
                     }
                     .page-menu .patru-organigrama {
                         grid-template-columns: repeat(2, 1fr);
+                    }
+                    .page-menu .sase-proiecte {
+                        grid-template-columns: repeat(3, 1fr);
+                    }
+                    #proiecte-continut .wrap-2 {
+                        grid-column: span 4;
+                    }
+                    #proiecte-continut .wrap-10 {
+                        grid-column: span 8;
                     }
                     #verde-platforma-1 .wrap-3 {
                         grid-column: span 6;
@@ -2434,6 +2632,15 @@ border-radius: 4px;
                     }
                     .page-menu .patru-organigrama {
                         grid-template-columns: repeat(1, 1fr);
+                    }
+                    .page-menu .sase-proiecte {
+                        grid-template-columns: repeat(3, 1fr);
+                    }
+                    #proiecte-continut .wrap-2 {
+                        grid-column: span 4;
+                    }
+                    #proiecte-continut .wrap-10 {
+                        grid-column: span 8;
                     }
                     #program-continut .wrap-show {
                         display: none;
@@ -2566,6 +2773,15 @@ border-radius: 4px;
                     }
                     .page-menu .patru-regulamente {
                         grid-template-columns: repeat(2, 1fr);
+                    }
+                    .page-menu .sase-proiecte {
+                        grid-template-columns: repeat(3, 1fr);
+                    }
+                    #proiecte-continut .wrap-2 {
+                        grid-column: span 4;
+                    }
+                    #proiecte-continut .wrap-10 {
+                        grid-column: span 8;
                     }
                     #program-continut .wrap-show {
                         display: none;
@@ -2703,7 +2919,7 @@ border-radius: 4px;
                     }
                 }
 
-/* page-menu-1 (organigrama), wrap-4 */
+/* page-menu-1 (organigrama), wrap-4, page-menu 2, wrap-2 12, wrap-10 12 (proiecte) */
                 @media (min-width: 601px) and (max-width: 720px) { 
                     aside {
                         border-radius: 4px;
@@ -2722,6 +2938,15 @@ border-radius: 4px;
                     }
                     .page-menu .patru-regulamente {
                         grid-template-columns: repeat(2, 1fr);
+                    }
+                    .page-menu .sase-proiecte {
+                        grid-template-columns: repeat(2, 1fr);
+                    }
+                    #proiecte-continut .wrap-2 {
+                        grid-column: span 12;
+                    }
+                    #proiecte-continut .wrap-10 {
+                        grid-column: span 12;
                     }
                     #program-continut .wrap-show {
                         display: none;
@@ -2877,9 +3102,8 @@ border-radius: 4px;
                     }
                 }
 
-
 /* legaturi 1, wrap-92 12-1, wrap-6 12 (conducere-ul),  wrap-3 (altfel, verde 1-continut) */
-                @media (min-width: 427px) and (max-width: 600px) { 
+                @media (min-width: 481px) and (max-width: 600px) { 
                     aside {
                         border-radius: 4px;
                     }
@@ -2897,6 +3121,207 @@ border-radius: 4px;
                     }
                     .page-menu .patru-regulamente {
                         grid-template-columns: repeat(2, 1fr);
+                    }
+                    .page-menu .sase-proiecte {
+                        grid-template-columns: repeat(2, 1fr);
+                    }
+                    #proiecte-continut .wrap-2 {
+                        grid-column: span 12;
+                    }
+                    #proiecte-continut .wrap-10 {
+                        grid-column: span 12;
+                    }
+                    #program-continut .wrap-show {
+                        display: none;
+                    }
+                    #program-continut .wrap-92 {
+                        grid-column: span 12;
+                        grid-template-columns: repeat(1, 1fr);
+                    }
+                    #contact-continut .citat-3 {
+                        text-align: center;
+                    }
+                    #contact-continut .wrap-show {
+                        display: none;
+                    }
+                    #contact-continut .wrap-9 {
+                        grid-column: span 12;
+                    }
+                    #personal-continut .wrap-show {
+                        display: none;
+                    }
+                    #personal-continut .wrap-8 {
+                        grid-column: span 12;
+                    }
+                    #sindicat-continut .wrap-show {
+                        display: none;
+                    }
+                    #sindicat-continut .wrap-8 {
+                        grid-column: span 12;
+                    }
+                    #ca-continut .wrap-show {
+                        display: none;
+                    }
+                    #ca-continut .wrap-9 {
+                        grid-column: span 12;
+                    }
+                    #conducere-continut .wrap-show {
+                        display: none;
+                    }
+                    #conducere-continut .wrap-9 {
+                        grid-column: span 12;
+                    }
+                    #conducere-ul .wrap-6 {
+                        grid-column: span 12;
+                    }
+                    #ceac-continut .wrap-show {
+                        display: none;
+                    }
+                    #ceac-continut .wrap-9 {
+                        grid-column: span 12;
+                    }
+                    #comisii-continut .wrap-show {
+                        display: none;
+                    }
+                    #comisii-continut .wrap-9 {
+                        grid-column: span 12;
+                    }
+                    #comisii-ul .wrap-6 {
+                        grid-column: span 12;
+                    }
+                    #regulamente-continut .wrap-show {
+                        display: none;
+                    }
+                    #regulamente-continut .wrap-9 {
+                        grid-column: span 12;
+                    }
+                    #regulamente-ul .wrap-6 {
+                        grid-column: span 12;
+                    }
+                    #oferta-continut .wrap-show {
+                        display: none;
+                    }
+                    #oferta-continut .wrap-9 {
+                        grid-column: span 12;
+                    }
+                    #gradinita-continut .wrap-show {
+                        display: none;
+                    }
+                    #gradinita-continut .wrap-9 {
+                        grid-column: span 12;
+                    }
+                    #pregatitoare-continut .wrap-show {
+                        display: none;
+                    }
+                    #pregatitoare-continut .wrap-9 {
+                        grid-column: span 12;
+                    }
+                    #evaluari246-continut .wrap-show {
+                        display: none;
+                    }
+                    #evaluari246-continut .wrap-8 {
+                        grid-column: span 12;
+                    }
+                    #simulare8-continut .wrap-show {
+                        display: none;
+                    }
+                    #simulare8-continut .wrap-8 {
+                        grid-column: span 12;
+                    }
+                    #evaluare-continut .wrap-show {
+                        display: none;
+                    }
+                    #evaluare-continut .wrap-8 {
+                        grid-column: span 12;
+                    }
+                    #admitere-continut .wrap-show {
+                        display: none;
+                    }
+                    #admitere-continut .wrap-8 {
+                        grid-column: span 12;
+                    }
+                    #profesional-continut .wrap-show {
+                        display: none;
+                    }
+                    #profesional-continut .wrap-8 {
+                        grid-column: span 12;
+                    }
+                    #dual-continut .wrap-show {
+                        display: none;
+                    }
+                    #dual-continut .wrap-8 {
+                        grid-column: span 12;
+                    }
+                    #altfel-continut .wrap-show {
+                        display: none;
+                    }
+                    #altfel-continut .wrap-9 {
+                        grid-column: span 12;
+                    }
+                    #verde-logo .wrap-show {
+                        display: none;
+                    }
+                    #verde-continut .wrap-3 {
+                        grid-column: span 12;
+                    }
+                    #verde-continut .wrap-9 {
+                        grid-column: span 12;
+                    }
+                    #verde-platforma-1 .wrap-3 {
+                        grid-column: span 12;
+                    }
+                    #verde-platforma-2 .wrap-3 {
+                        grid-column: span 12;
+                    }
+                    #verde-proiecte .wrap-2 {
+                        grid-column: span 6;
+                    }
+                    .sectiune-comunicari ul {
+                        grid-template-columns: repeat(1, 1fr);
+                    }
+                    .imagine-4 {
+                        grid-template-columns: repeat(1, 1fr);
+                    }
+                    .imagine-2 {
+                        grid-template-columns: repeat(1, 1fr);
+                    }
+                    .sectiune-telverde ul {
+                        grid-template-columns: repeat(2, 1fr);
+                    }
+                    .sectiune-legaturi ul {
+                        display: grid;
+                        grid-template-columns: repeat(1, 1fr);
+                    }
+                }
+
+/* legaturi 1, wrap-92 12-1, wrap-6 12 (conducere-ul),  wrap-3 (altfel, verde 1-continut), page-menu 1 (proiecte) */
+                @media (min-width: 427px) and (max-width: 480px) { 
+                    aside {
+                        border-radius: 4px;
+                    }
+                    .page-menu .patru-prezentare {
+                        grid-template-columns: repeat(2, 1fr);
+                    }
+                    .page-menu .trei-evaluare {
+                        grid-template-columns: repeat(1, 1fr);
+                    }
+                    .page-menu .trei-admitere {
+                        grid-template-columns: repeat(1, 1fr);
+                    }
+                    .page-menu .patru-organigrama {
+                        grid-template-columns: repeat(1, 1fr);
+                    }
+                    .page-menu .patru-regulamente {
+                        grid-template-columns: repeat(2, 1fr);
+                    }
+                    .page-menu .sase-proiecte {
+                        grid-template-columns: repeat(1, 1fr);
+                    }
+                    #proiecte-continut .wrap-2 {
+                        grid-column: span 12;
+                    }
+                    #proiecte-continut .wrap-10 {
+                        grid-column: span 12;
                     }
                     #program-continut .wrap-show {
                         display: none;
@@ -3080,6 +3505,15 @@ border-radius: 4px;
                     }
                     .page-menu .patru-regulamente {
                         grid-template-columns: repeat(1, 1fr);
+                    }
+                    .page-menu .sase-proiecte {
+                        grid-template-columns: repeat(1, 1fr);
+                    }
+                    #proiecte-continut .wrap-2 {
+                        grid-column: span 12;
+                    }
+                    #proiecte-continut .wrap-10 {
+                        grid-column: span 12;
                     }
                     #program-continut .wrap-show {
                         display: none;
@@ -3266,6 +3700,15 @@ border-radius: 4px;
                     }
                     .page-menu .patru-regulamente {
                         grid-template-columns: repeat(1, 1fr);
+                    }
+                    .page-menu .sase-proiecte {
+                        grid-template-columns: repeat(1, 1fr);
+                    }
+                    #proiecte-continut .wrap-2 {
+                        grid-column: span 12;
+                    }
+                    #proiecte-continut .wrap-10 {
+                        grid-column: span 12;
                     }
                     #program-continut .wrap-show {
                         display: none;
