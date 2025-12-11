@@ -2487,7 +2487,7 @@ border-radius: 4px;
                 }
 
 /* page-menu 3, wrap-2 4, wrap-10 8 (proiecte) */
-                @media (min-width: 1337px)and (max-width: 1680px) {
+                @media (min-width: 1367px)and (max-width: 1680px) {
                     aside {
                         min-height: 100vh;
                     }
@@ -2536,7 +2536,7 @@ border-radius: 4px;
                 }
 
 /* aside da */
-                @media (min-width: 1153px) and (max-width: 1336px) {
+                @media (min-width: 1153px) and (max-width: 1366px) {
                     aside {
                         border-radius: 4px;
                     }
