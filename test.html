@@ -640,6 +640,7 @@ border-radius: 4px;
                         display: flex;
                         flex-direction: column;
                         flex-grow: 1;
+                        color: #404040;
                         background-color: #FFFFFF;
                         }
 
@@ -650,8 +651,8 @@ border-radius: 4px;
                         margin-bottom: 0;
                         margin-left: 0;
                         margin-right: 0;
-                        padding-top: 0.5rem;
-                        padding-bottom: 0.5rem;
+                        padding-top: 0;
+                        padding-bottom: 0;
                         padding-left: 0;
                         padding-right: 0;
                         width: 100%;
@@ -661,8 +662,8 @@ border-radius: 4px;
                         .content-menu ul {
 border: 0px solid #404040;
 border-radius: 4px;
-                            margin-top: -0.5rem;
-                            margin-bottom: -0.5rem;
+                            margin-top: 0;
+                            margin-bottom: 0;
                             margin-left: 0;
                             margin-right: 0;
                             padding-top: 0;
@@ -685,6 +686,8 @@ border-radius: 4px;
                                 padding-left: 0;
                                 padding-right: 0;
                                 width: 100%;
+                                justify-content: center;
+                                text-align: center;
                             }
 
                                 .content-menu li:hover {
@@ -694,18 +697,19 @@ border-radius: 4px;
                                 }
 
                                 .content-menu a {
-border: 0px solid #404040;
+border: 1px solid #404040;
 border-radius: 4px;
                                     margin-top: 0;
                                     margin-bottom: 0;
-                                    margin-left: 0.5rem;
+                                    margin-left: 0;
                                     margin-right: 0;
                                     padding-top: var(--pd3);
                                     padding-bottom: var(--pd3);
                                     padding-left: 0.5rem;
                                     padding-right: 0.5rem;
                                     width: 100%;
-                                    text-align: center;
+                                    display: flex;
+                                    align-items: center;
                                     text-decoration: none;
                                     font-size: var(--sz3);
                                     color: #404040;
@@ -713,10 +717,6 @@ border-radius: 4px;
 
                                     .content-menu a:hover {
                                         text-shadow: 0.4px 0 currentcolor, -0.4px 0 currentcolor;
-                                    }
-
-                                    .content-menu a:focus {
-                                     //   margin-left: 0;
                                     }
 
                                     .content-menu a.active {
@@ -1645,7 +1645,7 @@ border: 0px solid #404040;
 border-radius: 4px;
                             margin-top: 0;
                             margin-bottom: 0;
-                            margin-left: -0.5rem;
+                            margin-left: 0;
                             margin-right: 0;
                             padding-top: var(--pd3);
                             padding-bottom: var(--pd3);
@@ -3999,7 +3999,7 @@ border-radius: 4px;
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="proiecte/ecoscoala.html">
+                                    <a href="proiecte/ecoscoala.html" class="active">
                                         Catalogul electronic
                                         <span class="sr-only">Se deschide în aceeași fereastră</span>
                                     </a>
