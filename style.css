@@ -1802,7 +1802,7 @@ border-radius: 4px;
                         }
 
                         .wrap-10 {
-border: 1px solid #404040;
+border: 0px solid #404040;
 border-radius: 4px;
                             margin-top: 0;
                             margin-bottom: 0;
@@ -1922,6 +1922,21 @@ border-radius: 4px;
 
                         .wrap-show {
                             position: static;
+                        }
+
+                        .content-text {
+border: 0px solid #404040;
+border-radius: 4px;
+                            margin-top: 0;
+                            margin-bottom: 0;
+                            margin-left: 0;
+                            margin-right: 0;
+                            padding-top: 0;
+                            padding-bottom: 0;
+                            padding-left: 0;
+                            padding-right: 0;
+                            width: 100%;
+                            text-align: left;
                         }
 
                         .content-imagine {
