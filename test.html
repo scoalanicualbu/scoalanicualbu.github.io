@@ -2258,6 +2258,7 @@ border-radius: 4px;
                                 .content-carusel li {
 border: 0px solid #404040;
 border-radius: 4px;
+position: relative;
                                     margin-top: 0;
                                     margin-bottom: 0;
                                     margin-left: 0;
@@ -2296,6 +2297,7 @@ border: 0px solid #404040;
 border-radius: 50%;
                             left: 1rem;
                             top: 50%;
+transform: translateY(-50%);
                             z-index: 1;
                             margin-top: 0;
                             margin-bottom: 0;
@@ -2327,6 +2329,7 @@ border: 0px solid #404040;
 border-radius: 50%;
                             right: 1rem;
                             top: 50%;
+transform: translateY(-50%);
                             z-index: 1;
                             margin-top: 0;
                             margin-bottom: 0;
@@ -5059,6 +5062,31 @@ border-radius: 4px;
             }
 
 // Navigare imagini carusel
+
+            function pozitioneazaSageti(caruselContainer) {
+                const imagineActive = caruselContainer.querySelector('.carusel li.active img');
+                const prevBtn = caruselContainer.querySelector('.arrow-left');
+                const nextBtn = caruselContainer.querySelector('.arrow-right');
+
+                if (imagineActive && prevBtn && nextBtn) {
+                    const rect = imagineActive.getBoundingClientRect();
+                    const containerRect = caruselContainer.getBoundingClientRect();
+
+                    const imagineY = rect.top - containerRect.top;
+                    const imagineHeight = rect.height;
+                    const topPosition = imagineY + imagineHeight / 2;
+
+                    prevBtn.style.top = topPosition + 'px';
+                    nextBtn.style.top = topPosition + 'px';
+                }
+            }
+
+            function updateSageti() {
+                document.querySelectorAll('.content-carusel').forEach(carusel => {
+                    poziționeazăSageți(carusel);
+                });
+            }
+
             function initializeCarusel(caruselID) {
                 const container = document.getElementById(caruselID);
                 const slides = container.querySelectorAll('.carusel li');
@@ -5085,6 +5113,9 @@ border-radius: 4px;
                             dot.removeAttribute('aria-current');
                         }
                     });
+                    setTimeout(() => {
+                    pozitioneazaSageti(container);
+                    }, 50);
                 }
 
                 function updateArrows() {
@@ -5207,6 +5238,11 @@ border-radius: 4px;
                     }
                 });
                 updateArrows();
+                window.addEventListener('load', () => {
+                    setTimeout(() => {
+                        pozitioneazaSageti(container);
+                    }, 100);
+                });
             }
 
             function initializeCarusele() {
@@ -5714,8 +5750,8 @@ border-radius: 4px;
                 updateGap();
                 updateImagini();
                 initializeParams();
-                potrivesteTexte();
                 initializeCarusele();
+                potrivesteTexte();
                 setupZoomTranslatare();
 
                 window.onload = () => {
@@ -5730,6 +5766,7 @@ border-radius: 4px;
                     updateImagini();
                     updateAlt();
                     updateDivs();
+                    updateSageti();
                     potrivesteTexte();
                 });
 
