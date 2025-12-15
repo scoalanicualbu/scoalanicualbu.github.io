@@ -159,6 +159,198 @@
                 });
             }
 
+// Navigare imagini carusel
+
+            function pozitioneazaSageti(caruselContainer) {
+                const imagineActive = caruselContainer.querySelector('.carusel li.active img');
+                const prevBtn = caruselContainer.querySelector('.arrow-left');
+                const nextBtn = caruselContainer.querySelector('.arrow-right');
+
+                if (imagineActive && prevBtn && nextBtn) {
+                    const rect = imagineActive.getBoundingClientRect();
+                    const containerRect = caruselContainer.getBoundingClientRect();
+
+                    const imagineY = rect.top - containerRect.top;
+                    const imagineHeight = rect.height;
+                    const topPosition = imagineY + imagineHeight / 2;
+
+                    prevBtn.style.top = topPosition + 'px';
+                    nextBtn.style.top = topPosition + 'px';
+                }
+            }
+
+            function updateSageti() {
+                document.querySelectorAll('.content-carusel').forEach(carusel => {
+                    pozitioneazaSageti(carusel);
+                });
+            }
+
+            function initializeCarusel(caruselID) {
+                const container = document.getElementById(caruselID);
+                const slides = container.querySelectorAll('.carusel li');
+                const dots = container.querySelectorAll('.dots .dot');
+                const prevBtn = container.querySelector('.arrow-left');
+                const nextBtn = container.querySelector('.arrow-right');
+
+                let currentIndex = 0;
+                const totalSlides = slides.length;
+
+                let isSelected = false;
+                let isHovered = false;
+                let isActive = false;
+
+                function showSlide(index) {
+                    slides.forEach((slide, i) => {
+                        slide.classList.toggle('active', i === index);
+                    });
+                    dots.forEach((dot, i) => {
+                        dot.classList.toggle('active', i === index);
+                        if (i === index) {
+                            dot.setAttribute('aria-current', 'true');
+                        } else {
+                            dot.removeAttribute('aria-current');
+                        }
+                    });
+                    setTimeout(() => {
+                    pozitioneazaSageti(container);
+                    }, 50);
+                }
+
+                function updateArrows() {
+                    if (isActive) {
+                        prevBtn.classList.remove('arrow-inactive');
+                        nextBtn.classList.remove('arrow-inactive');
+                        prevBtn.classList.add('arrow-active');
+                        nextBtn.classList.add('arrow-active');
+                    } else {
+                        prevBtn.classList.remove('arrow-active');
+                        nextBtn.classList.remove('arrow-active');
+                        prevBtn.classList.add('arrow-inactive');
+                        nextBtn.classList.add('arrow-inactive');
+                    }
+                }
+
+                nextBtn.addEventListener('click', () => {
+                    currentIndex = (currentIndex + 1) % totalSlides;
+                    showSlide(currentIndex);
+                });
+                prevBtn.addEventListener('click', () => {
+                    currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+                    showSlide(currentIndex);
+                });
+                dots.forEach((dot, i) => {
+                    dot.addEventListener('click', () => {
+                        currentIndex = i;
+                        showSlide(currentIndex);
+                    });
+                });
+
+                container.addEventListener('mouseenter', () => {
+                    isHovered = true;
+                    if (!isActive) {
+                        isActive = true;
+                        updateArrows();
+                    }
+                });
+                container.addEventListener('mouseleave', () => {
+                    isHovered = false;
+                    if (!document.querySelector(`#${caruselID} .carusel li:focus`) && !isSelected) {
+                        isActive = false;
+                        updateArrows();
+                    }
+                });
+
+                slides.forEach(li => {
+                    li.addEventListener('focus', () => {
+                        isActive = true;
+                        updateArrows();
+                    });
+                    li.addEventListener('blur', () => {
+                        setTimeout(() => {
+                            if (!document.activeElement.closest(`#${caruselID}`)) {
+                                isActive = false;
+                                updateArrows();
+                            }
+                        }, 100);
+                    });
+                    li.addEventListener('click', () => {
+                        isSelected = true;
+                        isActive = true;
+                        updateArrows();
+                    });
+                });
+
+                document.addEventListener('click', (e) => {
+                    const container = document.getElementById(caruselID);
+                    const prevBtn = container.querySelector('.arrow-left');
+                    const nextBtn = container.querySelector('.arrow-right');
+
+                    if (!e.target.closest(`#${caruselID}`)) {
+                        isSelected = false;
+                        prevBtn.classList.remove('arrow-active');
+                        nextBtn.classList.remove('arrow-active');
+                        prevBtn.classList.add('arrow-inactive');
+                        nextBtn.classList.add('arrow-inactive');
+                    } else {
+                        isSelected = true;
+                        prevBtn.classList.remove('arrow-inactive');
+                        nextBtn.classList.remove('arrow-inactive');
+                        prevBtn.classList.add('arrow-active');
+                        nextBtn.classList.add('arrow-active');
+                    }
+                });
+
+                document.addEventListener('keydown', (e) => {
+                    const focusedLi = document.querySelector(`#${caruselID} .carusel li:focus`);
+                    if ((!focusedLi || !focusedLi.closest(`#${caruselID}`)) && !isSelected) return;
+
+                    if (isActive || (focusedLi && focusedLi.closest(`#${caruselID}`))) {
+                        isActive = true;
+                        updateArrows();
+                    }
+
+                    if (e.key === 'ArrowLeft') {
+                        currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+                        showSlide(currentIndex);
+                    } else if (e.key === 'ArrowRight') {
+                        currentIndex = (currentIndex + 1) % totalSlides;
+                        showSlide(currentIndex);
+                    }
+                });
+
+                document.addEventListener('keydown', (e) => {
+                    const container = document.getElementById(caruselID);
+                    const focusInCarousel = container.contains(document.activeElement);
+                    if (!focusInCarousel) return;
+
+                    if (e.key === 'ArrowLeft') {
+                        e.preventDefault(); // preveni scroll-ul paginii
+                        currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+                        showSlide(currentIndex);
+                        prevBtn.focus();
+                    } else if (e.key === 'ArrowRight') {
+                        e.preventDefault();
+                        currentIndex = (currentIndex + 1) % totalSlides;
+                        showSlide(currentIndex);
+                        nextBtn.focus();
+                    }
+                });
+                updateArrows();
+                window.addEventListener('load', () => {
+                    setTimeout(() => {
+                        pozitioneazaSageti(container);
+                    }, 100);
+                });
+            }
+
+            function initializeCarusele() {
+                const containers = document.querySelectorAll('.content-carusel');
+                containers.forEach((container) => {
+                    const id = container.id;
+                    initializeCarusel(id);
+                });
+            }
+
 // Setare înălțime imagine în funcție de container de referință
             function updateImagine(referenceDivId, targetDivId) {
                 const divRef = document.getElementById(referenceDivId);
@@ -451,7 +643,7 @@
 
                 document.body.removeChild(span);
 
-                const totalWidth = lungimeMaxima + paddingPx;	
+                const totalWidth = lungimeMaxima + paddingPx;
                 tooltip.style.width = totalWidth + 'px';
 
                 tooltip.style.paddingLeft = '0.1rem';
@@ -646,7 +838,7 @@
 // Setare an curent în Subsol pagină
                 const yearEl = document.getElementById('year');
                 if (yearEl) {
-                    yearEl.textContent = new Date().getFullYear();	
+                    yearEl.textContent = new Date().getFullYear();
                 }
 
 // Apeluri de inițializare pentru funcții
@@ -654,9 +846,10 @@
 // Inițializare setări la încărcare pagină
                 updateMeniu();
                 updateGap();
+                potrivesteTexte();
                 updateImagini();
                 initializeParams();
-                potrivesteTexte();
+                initializeCarusele();
                 setupZoomTranslatare();
 
                 window.onload = () => {
@@ -668,10 +861,11 @@
                 window.addEventListener('resize', () => {
                     updateMeniu();
                     updateGap();
+                    potrivesteTexte();
                     updateImagini();
                     updateAlt();
                     updateDivs();
-                    potrivesteTexte();
+                    updateSageti();
                 });
 
 // Afișare sau ascundere Meniu principal la click pe buton
