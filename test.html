@@ -2237,7 +2237,9 @@ border-radius: 4px;
                             position: relative;
                             width: 100%;
                             height: auto;
-                            display: block;
+                            display: flex;
+                            flex-direction: column;
+                            align-items: stretch;
                             }
 
                             .content-carusel ul {
@@ -2251,7 +2253,9 @@ border-radius: 4px;
                                 padding-bottom: 0;
                                 padding-left: 0;
                                 padding-right: 0;
-                                width: 100%;
+                                height: 100%; 
+                                display: flex;
+                                flex-direction: column;
                                 list-style: none;
                             }
 
@@ -2267,29 +2271,51 @@ border-radius: 4px;
                                     padding-left: 0;
                                     padding-right: 0;
                                     position: relative;
-                                    width: 100%;
                                     display: none;
+                                    flex-direction: column;
+                                    flex: 1;
                                 }
 
                                     .content-carusel li.active {
-                                        display: block;
+                                        display: flex;
                                     }
 
-                            .content-carusel img {
+                            .imagine-carusel {
+border: 0px solid #404040;
+border-radius: 4px;
+                                margin-top: 0;
+                                margin-bottom: 0;
+                                margin-left: 0;
+                                margin-right: 0;
+                                padding-top: 0;
+                                padding-bottom: 0;
+                                padding-left: 0;
+                                padding-right: 0;
+                                width: 100%;
+                                height: auto;
+                                display: flex;
+                                align-items: stretch;
+                                flex: 1;
+                            }
+
+                            .imagine-carusel img {
 border: 1px solid #404040;
 border-radius: 4px;
                                 margin-top: 0;
-                               margin-bottom: 0;
-                               margin-left: 0;
-                               margin-right: 0;
-                               padding-top: 0;
-                               padding-bottom: 0;
-                               padding-left: 0;
-                               padding-right: 0;
-                               width: 100%;
-                               height: auto;
-                               display: block;
-                               object-fit: cover;
+                                margin-bottom: 0;
+                                margin-left: 0;
+                                margin-right: 0;
+                                padding-top: 0;
+                                padding-bottom: 0;
+                                padding-left: 0;
+                                padding-right: 0;
+                                width: 100%;
+                                height: auto;
+                                display: block;
+                                object-fit: cover;
+                                overflow-y: auto;
+                                scrollbar-width: none;
+                                word-break: break-word;
                             }
 
                         .arrow-left {
@@ -2329,7 +2355,7 @@ border: 0px solid #404040;
 border-radius: 50%;
                             right: 1rem;
                             top: 50%;
-transform: translateY(-50%);
+                            transform: translateY(-50%);
                             z-index: 1;
                             margin-top: 0;
                             margin-bottom: 0;
@@ -2864,6 +2890,12 @@ border-radius: 4px;
                     #proiecte-continut .wrap-10 {
                         grid-column: span 8;
                     }
+                    #erasmusplus-continut .wrap-2 {
+                        grid-column: span 4;
+                    }
+                    #erasmusplus-continut .wrap-10 {
+                        grid-column: span 8;
+                    }
                     #verde-platforma-1 .wrap-3 {
                         grid-column: span 6;
                     }
@@ -2907,6 +2939,12 @@ border-radius: 4px;
                     #proiecte-continut .wrap-10 {
                         grid-column: span 8;
                     }
+                    #erasmusplus-continut .wrap-2 {
+                        grid-column: span 4;
+                    }
+                    #erasmusplus-continut .wrap-10 {
+                        grid-column: span 8;
+                    }
                     #verde-platforma-1 .wrap-3 {
                         grid-column: span 6;
                     }
@@ -2945,6 +2983,12 @@ border-radius: 4px;
                         grid-column: span 4;
                     }
                     #proiecte-continut .wrap-10 {
+                        grid-column: span 8;
+                    }
+                    #erasmusplus-continut .wrap-2 {
+                        grid-column: span 4;
+                    }
+                    #erasmusplus-continut .wrap-10 {
                         grid-column: span 8;
                     }
                     #verde-platforma-1 .wrap-3 {
@@ -2992,6 +3036,12 @@ border-radius: 4px;
                         grid-column: span 4;
                     }
                     #proiecte-continut .wrap-10 {
+                        grid-column: span 8;
+                    }
+                    #erasmusplus-continut .wrap-2 {
+                        grid-column: span 4;
+                    }
+                    #erasmusplus-continut .wrap-10 {
                         grid-column: span 8;
                     }
                     #program-continut .wrap-show {
@@ -3133,6 +3183,12 @@ border-radius: 4px;
                         grid-column: span 4;
                     }
                     #proiecte-continut .wrap-10 {
+                        grid-column: span 8;
+                    }
+                    #erasmusplus-continut .wrap-2 {
+                        grid-column: span 4;
+                    }
+                    #erasmusplus-continut .wrap-10 {
                         grid-column: span 8;
                     }
                     #program-continut .wrap-show {
@@ -3298,6 +3354,12 @@ border-radius: 4px;
                         grid-column: span 12;
                     }
                     #proiecte-continut .wrap-10 {
+                        grid-column: span 12;
+                    }
+                    #erasmusplus-continut .wrap-2 {
+                        grid-column: span 12;
+                    }
+                    #erasmusplus-continut .wrap-10 {
                         grid-column: span 12;
                     }
                     #program-continut .wrap-show {
@@ -3481,6 +3543,12 @@ border-radius: 4px;
                         grid-column: span 12;
                     }
                     #proiecte-continut .wrap-10 {
+                        grid-column: span 12;
+                    }
+                    #erasmusplus-continut .wrap-2 {
+                        grid-column: span 12;
+                    }
+                    #erasmusplus-continut .wrap-10 {
                         grid-column: span 12;
                     }
                     #program-continut .wrap-show {
@@ -3675,6 +3743,12 @@ border-radius: 4px;
                     #proiecte-continut .wrap-10 {
                         grid-column: span 12;
                     }
+                    #erasmusplus-continut .wrap-2 {
+                        grid-column: span 12;
+                    }
+                    #erasmusplus-continut .wrap-10 {
+                        grid-column: span 12;
+                    }
                     #program-continut .wrap-show {
                         display: none;
                     }
@@ -3865,6 +3939,12 @@ border-radius: 4px;
                         grid-column: span 12;
                     }
                     #proiecte-continut .wrap-10 {
+                        grid-column: span 12;
+                    }
+                    #erasmusplus-continut .wrap-2 {
+                        grid-column: span 12;
+                    }
+                    #erasmusplus-continut .wrap-10 {
                         grid-column: span 12;
                     }
                     #program-continut .wrap-show {
@@ -4060,6 +4140,12 @@ border-radius: 4px;
                         grid-column: span 12;
                     }
                     #proiecte-continut .wrap-10 {
+                        grid-column: span 12;
+                    }
+                    #erasmusplus-continut .wrap-2 {
+                        grid-column: span 12;
+                    }
+                    #erasmusplus-continut .wrap-10 {
                         grid-column: span 12;
                     }
                     #program-continut .wrap-show {
@@ -4501,7 +4587,7 @@ border-radius: 4px;
                                 <span class="sr-only">Se deschide în aceeași fereastră</span>
                             </a>
                         </li>
-                    </ul>	
+                    </ul>
 
                 </nav>
 
@@ -4510,7 +4596,7 @@ border-radius: 4px;
 <!-- Secțiuni de conținut -->
             <div id="main-content" class="page-content" role="region" tabindex="-1" aria-label="Conținut pagină">
 
-<!-- Secțiune Conținut -->	
+<!-- Secțiune Conținut -->
                 <section id="erasmusplus-continut" class="sectiune-continut" aria-labelledby="erasmusplus-continut-label">
 
                     <h2 id="erasmusplus-continut-label" class="m3 sr-only" aria-describedby="erasmusplus-meniu erasmusplus-prezentare erasmusplus-ghid erasmusplus-copii erasmusplus-varstnici erasmusplus-viziune erasmusplus-imaginatie erasmusplus-libertate erasmusplus-proiecte">Erasmus+</h2>
@@ -4539,7 +4625,7 @@ border-radius: 4px;
                                         <span class="sr-only">Se deschide în aceeași fereastră</span>
                                     </a>
                                 </li>
-                            </ul>	
+                            </ul>
 
                         </nav>
 
@@ -4725,22 +4811,22 @@ border-radius: 4px;
 
                                                         <ul id="carusel-grup-1" class="carusel" aria-label="Imagini carusel 1">
                                                             <li class="active">
-                                                                <div id="imagine-1-carusel-1">
+                                                                <div id="imagine-1-carusel-1" class="imagine-carusel">
                                                                     <img src="proiecte/erasmusplus/2020-1RO01-KA120-SCH-095631-01.png" width="2268" height="4032" alt="Într-o sală de clasă, un cadru didactic înbrăcat formal, prezintă la videoproiector o diagramă colorată în limba greacă despre traseele educaționale din liceu, inclusiv G’ GEL, B’ GEL și A’ GEL, cu săgeți și blocuri tematice privind orientarea educațională, studiile umaniste, studiile științifice, sănătatea, economia și informatica">
                                                                 </div>
                                                             </li>
                                                             <li>
-                                                                <div id="imagine-2-carusel-1">
+                                                                <div id="imagine-2-carusel-1" class="imagine-carusel">
                                                                     <img src="proiecte/erasmusplus/2020-1RO01-KA120-SCH-095631-02.png" width="2268" height="4032" alt="Într-o sală de clasă luminoasă, într-o atmosferă activă, completată de mobilierul școlar albastru și maro deschis și rucsacuri și materiale școlare, o adolescentă în hanorac roz stă în bancă cu brațele încrucișate, privindu-și colegii care socializează lângă dulapuri, iar pe perete se află un afiș cu o stea colorată și text în limba greacă, alături de un portret înrămat">
                                                                 </div>
                                                             </li>
                                                             <li>
-                                                                <div id="imagine-3-carusel-1">
+                                                                <div id="imagine-3-carusel-1" class="imagine-carusel">
                                                                     <img src="proiecte/erasmusplus/2020-1RO01-KA120-SCH-095631-03.png" width="2268" height="4032" alt="Un hol luminos al școlii, cu podea lucioasă din marmură, ferestre mari cu rame albastre deschise pe partea stângă, radiatoare albe sub ferestre și ghivece cu plante verzi aliniate pe partea dreaptă, cu pereți cu panouri informative, cu o ușă cu ramă albastră către o altă încăpere, în fundal, iar în colțul din dreapta jos apare parțial o cameră foto ținută de o persoană">
                                                                 </div>
                                                             </li>
                                                             <li>
-                                                                <div id="imagine-4-carusel-1">
+                                                                <div id="imagine-4-carusel-1" class="imagine-carusel">
                                                                     <img src="proiecte/erasmusplus/2020-1RO01-KA120-SCH-095631-04.png" width="2268" height="4032" alt="Un teren de baschet/handbal/fotbal/volei în aer liber cu suprafață verde și zone circulare maro, vizibil uzat și decojit, încadrat de gard albastru metalic, panou de baschet transparent și tribune de beton, iar în fundal sunt clădiri școlare, copaci înalți și cer parțial înnorat">
                                                                 </div>
                                                             </li>
@@ -4775,37 +4861,37 @@ border-radius: 4px;
 
                                                         <ul id="carusel-grup-2" class="carusel" aria-label="Imagini carusel 2">
                                                             <li class="active">
-                                                                <div id="imagine-5-carusel-2">
+                                                                <div id="imagine-5-carusel-2" class="imagine-carusel">
                                                                     <img src="proiecte/erasmusplus/2020-1RO01-KA120-SCH-095631-05.png" width="4032" height="2268" alt="O sală de clasă plină cu elevi adolescenți, unii stau în picioare și discută în grupuri, alții stau așezați în bănci, cu ghiozdane și haine sport, într-o atmosferă de pauză școlară animată, iar pe peretele din față se vede o tablă cu formule scrise și un panou de afișaj">
                                                                 </div>
                                                             </li>
                                                             <li>
-                                                                <div id="imagine-6-carusel-2">
+                                                                <div id="imagine-6-carusel-2"class="imagine-carusel" >
                                                                     <img src="proiecte/erasmusplus/2020-1RO01-KA120-SCH-095631-06.png" width="4032" height="2268" alt="O sală de clasă aglomerată cu numeroși elevi adolescenți care stau la bănci sau discută în picioare, într-o atmosferă de pauză școlară animată, în prim-plan fiind o fată îmbrăcată în hanorac roz care stă așezată în bancă, cu brațele încrucișate, în centru fiind o elevă în bluză albă cu steagul României pe mânecă ce vorbește cu colegii, iar pe pereți sunt afișe educaționale, un portret și dulapuri din lemn albastru și maro deschis">
                                                                 </div>
                                                             </li>
                                                             <li>
-                                                                <div id="imagine-7-carusel-2">
+                                                                <div id="imagine-7-carusel-2" class="imagine-carusel">
                                                                     <img src="proiecte/erasmusplus/2020-1RO01-KA120-SCH-095631-07.png" width="4032" height="2268" alt="O sală de clasă luminoasă, cu ferestre mari, cu rama albastră, plină de elevi adolescenți așezați în bănci maro deschis, discutând și râzând, într-o atmosferă relaxată de activitate educațională, un cadru didactic fotografiază grupul, în prim-plan fiind câteva eleve cu păr roșcat și păr lung șaten care stau în bănci, pe care sunt autocolante colorate cu imagini tip joc educativ">
                                                                 </div>
                                                             </li>
                                                             <li>
-                                                                <div id="imagine-8-carusel-2">
+                                                                <div id="imagine-8-carusel-2" class="imagine-carusel">
                                                                     <img src="proiecte/erasmusplus/2020-1RO01-KA120-SCH-095631-08.png" width="4032" height="2268" alt="O sală de clasă luminoasă, cu ferestre mari, cu rama albastră, plină de elevi adolescenți aşezaţi la bănci maro deschis, discutând și zâmbind, într-o atmosferă de activitate educațională și prezentare în grup, un cadru didactic în cămașă în carouri stă în fața clasei, trei elevi stau lângă tabla albă pe care se văd diagrame și formule scrise, iar în partea dreaptă, în fața clasei, se află o catedră cu computer, pe care sunt caiete, pliante de prezentări și o sticlă cu apă">
                                                                 </div>
                                                             </li>
                                                             <li>
-                                                                <div id="imagine-9-carusel-2">
+                                                                <div id="imagine-9-carusel-2" class="imagine-carusel">
                                                                     <img src="proiecte/erasmusplus/2020-1RO01-KA120-SCH-095631-09.png" width="4032" height="2268" alt="Elevi și adulți sunt adunați, într-o atmosferă de activitate participativă și mediu educațional, într-o sală de clasă luminoasă, cu ferestre cu rama albastră și mobilier școlar simplu, un grup stând în picioare în partea dreaptă și discutând, în timp ce alți elevi stau în bănci, iar în fundal este o tablă albă cu diagrame și calcule scrise">
                                                                 </div>
                                                             </li>
                                                             <li>
-                                                                <div id="imagine-10-carusel-2">
+                                                                <div id="imagine-10-carusel-2" class="imagine-carusel">
                                                                     <img src="proiecte/erasmusplus/2020-1RO01-KA120-SCH-095631-10.png" width="4032" height="2268" alt="Într-un hol cu un perete din panouri groase de sticlă albastră transparentă si cu ceilalți pereți deschiși la culoare, pe care se află o placă de inscripție inaugurală ce indică, în limba greacă, „Liceul Bioclimatic din Ialyssosun”, un panou de anunțuri cu afișe educaționale, o hartă a Greciei, afișe cu instrucțiuni de postură corectă și informații administrative, precum și un poster cu semne rutiere, un elev stă la o masă lungă din lemn scriind pe niște foi albe de hârtie, iar în dreapta este un alt coridor cu iluminare fluorescentă albă">
                                                                 </div>
                                                             </li>
                                                             <li>
-                                                                <div id="imagine-11-carusel-2">
+                                                                <div id="imagine-11-carusel-2" class="imagine-carusel">
                                                                     <img src="proiecte/erasmusplus/2020-1RO01-KA120-SCH-095631-11.png" width="4032" height="2268" alt="Un bărbat, în dreapta, gesticulează în timp ce vorbește cu o femeie, în stânga, care ascultă, în sala de festivități a școlii, în care sunt sunt rânduri de scaune pliante portocalii și o scenă în partea din față, cu draperii groase aurii și roșii ce acoperă pereții din spate, iar pe pereții laterali sunt agățate mai multe postere">
                                                                 </div>
                                                             </li>
@@ -5547,7 +5633,7 @@ border-radius: 4px;
 
                 document.body.removeChild(span);
 
-                const totalWidth = lungimeMaxima + paddingPx;	
+                const totalWidth = lungimeMaxima + paddingPx;
                 tooltip.style.width = totalWidth + 'px';
 
                 tooltip.style.paddingLeft = '0.1rem';
@@ -5742,7 +5828,7 @@ border-radius: 4px;
 // Setare an curent în Subsol pagină
                 const yearEl = document.getElementById('year');
                 if (yearEl) {
-                    yearEl.textContent = new Date().getFullYear();	
+                    yearEl.textContent = new Date().getFullYear();
                 }
 
 // Apeluri de inițializare pentru funcții
@@ -5750,10 +5836,10 @@ border-radius: 4px;
 // Inițializare setări la încărcare pagină
                 updateMeniu();
                 updateGap();
+                potrivesteTexte();
                 updateImagini();
                 initializeParams();
                 initializeCarusele();
-                potrivesteTexte();
                 setupZoomTranslatare();
 
                 window.onload = () => {
@@ -5765,11 +5851,11 @@ border-radius: 4px;
                 window.addEventListener('resize', () => {
                     updateMeniu();
                     updateGap();
+                    potrivesteTexte();
                     updateImagini();
                     updateAlt();
                     updateDivs();
                     updateSageti();
-                    potrivesteTexte();
                 });
 
 // Afișare sau ascundere Meniu principal la click pe buton
