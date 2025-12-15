@@ -5810,10 +5810,10 @@ border-radius: 4px;
 // Inițializare setări la încărcare pagină
                 updateMeniu();
                 updateGap();
+                potrivesteTexte();
                 updateImagini();
                 initializeParams();
                 initializeCarusele();
-                potrivesteTexte();
                 setupZoomTranslatare();
 
                 window.onload = () => {
@@ -5825,11 +5825,11 @@ border-radius: 4px;
                 window.addEventListener('resize', () => {
                     updateMeniu();
                     updateGap();
+                    potrivesteTexte();
                     updateImagini();
                     updateAlt();
                     updateDivs();
                     updateSageti();
-                    potrivesteTexte();
                 });
 
 // Afișare sau ascundere Meniu principal la click pe buton
