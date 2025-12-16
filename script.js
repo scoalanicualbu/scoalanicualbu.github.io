@@ -195,7 +195,6 @@
                 let currentIndex = 0;
                 const totalSlides = slides.length;
 
-                let isSelected = false;
                 let isHovered = false;
                 let isActive = false;
 
@@ -205,19 +204,14 @@
                     });
                     dots.forEach((dot, i) => {
                         dot.classList.toggle('active', i === index);
-                        if (i === index) {
-                            dot.setAttribute('aria-current', 'true');
-                        } else {
-                            dot.removeAttribute('aria-current');
-                        }
                     });
                     setTimeout(() => {
-                    pozitioneazaSageti(container);
+                        pozitioneazaSageti(container);
                     }, 50);
                 }
 
                 function updateArrows() {
-                    if (isActive) {
+                    if (isActive || isHovered) {
                         prevBtn.classList.remove('arrow-inactive');
                         nextBtn.classList.remove('arrow-inactive');
                         prevBtn.classList.add('arrow-active');
@@ -227,7 +221,7 @@
                         nextBtn.classList.remove('arrow-active');
                         prevBtn.classList.add('arrow-inactive');
                         nextBtn.classList.add('arrow-inactive');
-                    }
+                        }
                 }
 
                 nextBtn.addEventListener('click', () => {
@@ -238,29 +232,40 @@
                     currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
                     showSlide(currentIndex);
                 });
-                dots.forEach((dot, i) => {
-                    dot.addEventListener('click', () => {
-                        currentIndex = i;
-                        showSlide(currentIndex);
-                    });
-                });
 
                 container.addEventListener('mouseenter', () => {
                     isHovered = true;
                     if (!isActive) {
-                        isActive = true;
+                        isHovered = true;
                         updateArrows();
                     }
                 });
                 container.addEventListener('mouseleave', () => {
                     isHovered = false;
-                    if (!document.querySelector(`#${caruselID} .carusel li:focus`) && !isSelected) {
-                        isActive = false;
+                    if (!document.querySelector(`#${caruselID} .carusel li:focus`)) {
+                        isHovered = false;
                         updateArrows();
                     }
                 });
 
                 slides.forEach(li => {
+                    const img = li.querySelector('img');
+
+                    if (img) {
+                        img.addEventListener('focus', () => {
+                            isActive = true;
+                            updateArrows();
+                        });
+                        img.addEventListener('blur', () => {
+                            setTimeout(() => {
+                                if (!document.activeElement.closest(`#${caruselID}`)) {
+                                    isActive = false;
+                                    updateArrows();
+                                }
+                            }, 100);
+                        });
+                    }
+
                     li.addEventListener('focus', () => {
                         isActive = true;
                         updateArrows();
@@ -273,36 +278,31 @@
                             }
                         }, 100);
                     });
-                    li.addEventListener('click', () => {
-                        isSelected = true;
-                        isActive = true;
-                        updateArrows();
-                    });
+                });
+
+                prevBtn.addEventListener('focus', () => {
+                    isActive = true;
+                    updateArrows();
+                });
+                nextBtn.addEventListener('focus', () => {
+                    isActive = true;
+                    updateArrows();
                 });
 
                 document.addEventListener('click', (e) => {
                     const container = document.getElementById(caruselID);
-                    const prevBtn = container.querySelector('.arrow-left');
-                    const nextBtn = container.querySelector('.arrow-right');
-
                     if (!e.target.closest(`#${caruselID}`)) {
-                        isSelected = false;
-                        prevBtn.classList.remove('arrow-active');
-                        nextBtn.classList.remove('arrow-active');
-                        prevBtn.classList.add('arrow-inactive');
-                        nextBtn.classList.add('arrow-inactive');
+                        isActive = false;
+                        updateArrows();
                     } else {
-                        isSelected = true;
-                        prevBtn.classList.remove('arrow-inactive');
-                        nextBtn.classList.remove('arrow-inactive');
-                        prevBtn.classList.add('arrow-active');
-                        nextBtn.classList.add('arrow-active');
-                    }
+                        isActive = true;
+                        updateArrows();
+                        }
                 });
 
                 document.addEventListener('keydown', (e) => {
                     const focusedLi = document.querySelector(`#${caruselID} .carusel li:focus`);
-                    if ((!focusedLi || !focusedLi.closest(`#${caruselID}`)) && !isSelected) return;
+                    if ((!focusedLi || !focusedLi.closest(`#${caruselID}`))) return;
 
                     if (isActive || (focusedLi && focusedLi.closest(`#${caruselID}`))) {
                         isActive = true;
@@ -324,7 +324,7 @@
                     if (!focusInCarousel) return;
 
                     if (e.key === 'ArrowLeft') {
-                        e.preventDefault(); // preveni scroll-ul paginii
+                        e.preventDefault();
                         currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
                         showSlide(currentIndex);
                         prevBtn.focus();
@@ -335,7 +335,16 @@
                         nextBtn.focus();
                     }
                 });
+
+                container.addEventListener('focusout', () => {
+                    if (!container.contains(document.activeElement)) {
+                        isActive = false;
+                        updateArrows();
+                    }
+                });
+
                 updateArrows();
+
                 window.addEventListener('load', () => {
                     setTimeout(() => {
                         pozitioneazaSageti(container);
