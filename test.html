@@ -879,7 +879,7 @@ border-radius: 4px;
 border: 0px solid #404040;
 border-radius: 4px;
                             margin-top: 0;
-                            margin-bottom: 0;
+                            margin-bottom: -0.5rem;
                             margin-left: 0.5rem;
                             margin-right: 0;
                             padding-top: 0;
@@ -2318,6 +2318,11 @@ border-radius: 4px;
                                 word-break: break-word;
                             }
 
+                                .imagine-carusel img:focus {
+                                    outline: 2px solid #000000;
+                                    outline-offset: 0px;
+                                }
+
                         .arrow-left {
 border: 0px solid #404040;
 border-radius: 50%;
@@ -2334,8 +2339,8 @@ border-radius: 50%;
                             padding-left: 0;
                             padding-right: 0.1rem;
                             position: absolute;
-                            width: 2.5rem;
-                            height: 2.5rem;
+                            width: 2.75rem;
+                            height: 2.75rem;
                             display: flex;
                             align-items: center;
                             justify-content: center;
@@ -2366,8 +2371,8 @@ border-radius: 50%;
                             padding-left: 0.1rem;
                             padding-right: 0;
                             position: absolute;
-                            width: 2.5rem;
-                            height: 2.5rem;
+                            width: 2.75rem;
+                            height: 2.75rem;
                             display: flex;
                             align-items: center;
                             justify-content: center;
@@ -2417,7 +2422,6 @@ border-radius: 50%;
                                     width: 1rem;
                                     height: 1rem;
                                     display: inline-block;
-                                    cursor: pointer;
                                     background-color: #FFFFFF;
                                 }
 
@@ -2864,7 +2868,7 @@ border-radius: 4px;
                     }
                 }
 
-/* page-menu 3, wrap-2 4, wrap-10 8 (proiecte) */
+/* page-menu 3, wrap-2 4, wrap-10 8 (PROIECTE) */
                 @media (min-width: 1367px)and (max-width: 1680px) {
                     aside {
                         min-height: 100vh;
@@ -3327,7 +3331,7 @@ border-radius: 4px;
                     }
                 }
 
-/* page-menu-1 (organigrama), wrap-4, page-menu 2, wrap-2 12, wrap-10 12 (proiecte) */
+/* page-menu-1 (organigrama), wrap-4, page-menu 2, wrap-2 12, wrap-10 12, wrap-103 10, wrap 107 10 (PROIECTE) */
                 @media (min-width: 601px) and (max-width: 720px) { 
                     aside {
                         border-radius: 4px;
@@ -3726,7 +3730,7 @@ border-radius: 4px;
                     }
                 }
 
-/* legaturi 1, wrap-92 12-1, wrap-6 12 (conducere-ul),  wrap-3 (altfel, verde 1-continut), page-menu 1 (proiecte) */
+/* legaturi 1, wrap-92 12-1, wrap-6 12 (conducere-ul),  wrap-3 (altfel, verde 1-continut), page-menu 1 (PROIECTE) */
                 @media (min-width: 427px) and (max-width: 480px) { 
                     aside {
                         border-radius: 4px;
@@ -4801,7 +4805,7 @@ border-radius: 4px;
 
                         <section id="proiecte-informatii" class="wrap-1010" aria-labelledby="proiecte-informatii-label">
 
-                            <h4 id="proiecte-informatii-label" class="m3 sr-only" aria-describedby="informatii-proiecte">Informații</h4>
+                            <h4 id="proiecte-informatii-label" class="m3 sr-only" aria-describedby="informatii-proiecte">Informații proiecte</h4>
 
                             <section id="informatii-proiecte" class="content-article citat-6" aria-labelledby="informatii-proiecte-label">
 
@@ -4819,6 +4823,9 @@ border-radius: 4px;
                                                 <span id="grecia-2020-tooltip" class="tooltip-informatii" role="tooltip">Se deschide într-o nouă fereastră</span>
                                             </a>
 
+                                            <div class="hp" role="separator" aria-orientation="horizontal" aria-hidden="true">
+                                            </div>
+
                                             <section id="informatii" class="wrap-10" aria-labelledby="informatii-label">
 
                                                 <h6 id="informatii-label" class="m3 sr-only" aria-describedby="grecia-1 grecia-2">Informații</h6>
@@ -4835,38 +4842,38 @@ border-radius: 4px;
                                                             &#10094;
                                                         </button>
 
-                                                        <button id="next-1" class="arrow-right arrow-inactive" aria-label="Imaginea următoare în Carusel 1">
-                                                            &#10095;
-                                                        </button>
-
-                                                        <ul id="carusel-grup-1" class="carusel" aria-label="Imagini carusel 1">
+                                                        <ul id="carusel-grup-1" class="carusel" aria-label="Imagini Carusel 1">
                                                             <li class="active">
                                                                 <div id="imagine-1-carusel-1" class="imagine-carusel">
-                                                                    <img src="proiecte/erasmusplus/2020-1RO01-KA120-SCH-095631-01.png" width="2268" height="4032" alt="Într-o sală de clasă, un cadru didactic înbrăcat formal, prezintă la videoproiector o diagramă colorată în limba greacă despre traseele educaționale din liceu, inclusiv G’ GEL, B’ GEL și A’ GEL, cu săgeți și blocuri tematice privind orientarea educațională, studiile umaniste, studiile științifice, sănătatea, economia și informatica">
+                                                                    <img src="proiecte/erasmusplus/2020-1RO01-KA120-SCH-095631-01.png" width="2268" height="4032" alt="Într-o sală de clasă, un cadru didactic înbrăcat formal, prezintă la videoproiector o diagramă colorată în limba greacă despre traseele educaționale din liceu, inclusiv G’ GEL, B’ GEL și A’ GEL, cu săgeți și blocuri tematice privind orientarea educațională, studiile umaniste, studiile științifice, sănătatea, economia și informatica" tabindex="0">
                                                                 </div>
                                                             </li>
                                                             <li>
                                                                 <div id="imagine-2-carusel-1" class="imagine-carusel">
-                                                                    <img src="proiecte/erasmusplus/2020-1RO01-KA120-SCH-095631-02.png" width="2268" height="4032" alt="Într-o sală de clasă luminoasă, într-o atmosferă activă, completată de mobilierul școlar albastru și maro deschis și rucsacuri și materiale școlare, o adolescentă în hanorac roz stă în bancă cu brațele încrucișate, privindu-și colegii care socializează lângă dulapuri, iar pe perete se află un afiș cu o stea colorată și text în limba greacă, alături de un portret înrămat">
+                                                                    <img src="proiecte/erasmusplus/2020-1RO01-KA120-SCH-095631-02.png" width="2268" height="4032" alt="Într-o sală de clasă luminoasă, într-o atmosferă activă, completată de mobilierul școlar albastru și maro deschis și rucsacuri și materiale școlare, o adolescentă în hanorac roz stă în bancă cu brațele încrucișate, privindu-și colegii care socializează lângă dulapuri, iar pe perete se află un afiș cu o stea colorată și text în limba greacă, alături de un portret înrămat" tabindex="0">
                                                                 </div>
                                                             </li>
                                                             <li>
                                                                 <div id="imagine-3-carusel-1" class="imagine-carusel">
-                                                                    <img src="proiecte/erasmusplus/2020-1RO01-KA120-SCH-095631-03.png" width="2268" height="4032" alt="Un hol luminos al școlii, cu podea lucioasă din marmură, ferestre mari cu rame albastre deschise pe partea stângă, radiatoare albe sub ferestre și ghivece cu plante verzi aliniate pe partea dreaptă, cu pereți cu panouri informative, cu o ușă cu ramă albastră către o altă încăpere, în fundal, iar în colțul din dreapta jos apare parțial o cameră foto ținută de o persoană">
+                                                                    <img src="proiecte/erasmusplus/2020-1RO01-KA120-SCH-095631-03.png" width="2268" height="4032" alt="Un hol luminos al școlii, cu podea lucioasă din marmură, ferestre mari cu rame albastre deschise pe partea stângă, radiatoare albe sub ferestre și ghivece cu plante verzi aliniate pe partea dreaptă, cu pereți cu panouri informative, cu o ușă cu ramă albastră către o altă încăpere, în fundal, iar în colțul din dreapta jos apare parțial o cameră foto ținută de o persoană" tabindex="0">
                                                                 </div>
                                                             </li>
                                                             <li>
                                                                 <div id="imagine-4-carusel-1" class="imagine-carusel">
-                                                                    <img src="proiecte/erasmusplus/2020-1RO01-KA120-SCH-095631-04.png" width="2268" height="4032" alt="Un teren de baschet/handbal/fotbal/volei în aer liber cu suprafață verde și zone circulare maro, vizibil uzat și decojit, încadrat de gard albastru metalic, panou de baschet transparent și tribune de beton, iar în fundal sunt clădiri școlare, copaci înalți și cer parțial înnorat">
+                                                                    <img src="proiecte/erasmusplus/2020-1RO01-KA120-SCH-095631-04.png" width="2268" height="4032" alt="Un teren de baschet/handbal/fotbal/volei în aer liber cu suprafață verde și zone circulare maro, vizibil uzat și decojit, încadrat de gard albastru metalic, panou de baschet transparent și tribune de beton, iar în fundal sunt clădiri școlare, copaci înalți și cer parțial înnorat" tabindex="0">
                                                                 </div>
                                                             </li>
                                                         </ul>
 
+                                                        <button id="next-1" class="arrow-right arrow-inactive" aria-label="Imaginea următoare în Carusel 1">
+                                                            &#10095;
+                                                        </button>
+
                                                         <nav id="dots-1" class="dots" aria-label="Indicatori Carusel 1">
-                                                            <button class="dot active" tabindex="-1" aria-label="Grecia 1" aria-current="true"></button>
-                                                            <button class="dot" tabindex="-1" aria-label="Grecia 2"></button>
-                                                            <button class="dot" tabindex="-1" aria-label="Grecia 3"></button>
-                                                            <button class="dot" tabindex="-1" aria-label="Grecia 4"></button>
+                                                            <span class="dot active" aria-label="Grecia 1"></span>
+                                                            <span class="dot" aria-label="Grecia 2"></span>
+                                                            <span class="dot" aria-label="Grecia 3"></span>
+                                                            <span class="dot" aria-label="Grecia 4"></span>
                                                         </nav>
 
                                                     </section>
@@ -4875,7 +4882,7 @@ border-radius: 4px;
 
                                                 <section id="grecia-2" class="wrap-107" aria-labelledby="grecia-2-label">
 
-                                                    <h6 id="gracia-2-label" class="m3 sr-only" aria-describedby="carusel-2">Grecia 2/2</h6>
+                                                    <h6 id="grecia-2-label" class="m3 sr-only" aria-describedby="carusel-2">Grecia 2/2</h6>
 
                                                     <section id="carusel-2" class="content-carusel" aria-labelledby="carusel-2-label">
 
@@ -4885,56 +4892,56 @@ border-radius: 4px;
                                                             &#10094;
                                                         </button>
 
-                                                        <button id="next-2" class="arrow-right arrow-inactive" aria-label="Imaginea următoare în Carusel 2">
-                                                            &#10095;
-                                                        </button>
-
-                                                        <ul id="carusel-grup-2" class="carusel" aria-label="Imagini carusel 2">
+                                                        <ul id="carusel-grup-2" class="carusel" aria-label="Imagini Carusel 2">
                                                             <li class="active">
                                                                 <div id="imagine-5-carusel-2" class="imagine-carusel">
-                                                                    <img src="proiecte/erasmusplus/2020-1RO01-KA120-SCH-095631-05.png" width="4032" height="2268" alt="O sală de clasă plină cu elevi adolescenți, unii stau în picioare și discută în grupuri, alții stau așezați în bănci, cu ghiozdane și haine sport, într-o atmosferă de pauză școlară animată, iar pe peretele din față se vede o tablă cu formule scrise și un panou de afișaj">
+                                                                    <img src="proiecte/erasmusplus/2020-1RO01-KA120-SCH-095631-05.png" width="4032" height="2268" alt="O sală de clasă plină cu elevi adolescenți, unii stau în picioare și discută în grupuri, alții stau așezați în bănci, cu ghiozdane și haine sport, într-o atmosferă de pauză școlară animată, iar pe peretele din față se vede o tablă cu formule scrise și un panou de afișaj" tabindex="0">
                                                                 </div>
                                                             </li>
                                                             <li>
                                                                 <div id="imagine-6-carusel-2"class="imagine-carusel" >
-                                                                    <img src="proiecte/erasmusplus/2020-1RO01-KA120-SCH-095631-06.png" width="4032" height="2268" alt="O sală de clasă aglomerată cu numeroși elevi adolescenți care stau la bănci sau discută în picioare, într-o atmosferă de pauză școlară animată, în prim-plan fiind o fată îmbrăcată în hanorac roz care stă așezată în bancă, cu brațele încrucișate, în centru fiind o elevă în bluză albă cu steagul României pe mânecă ce vorbește cu colegii, iar pe pereți sunt afișe educaționale, un portret și dulapuri din lemn albastru și maro deschis">
+                                                                    <img src="proiecte/erasmusplus/2020-1RO01-KA120-SCH-095631-06.png" width="4032" height="2268" alt="O sală de clasă aglomerată cu numeroși elevi adolescenți care stau la bănci sau discută în picioare, într-o atmosferă de pauză școlară animată, în prim-plan fiind o fată îmbrăcată în hanorac roz care stă așezată în bancă, cu brațele încrucișate, în centru fiind o elevă în bluză albă cu steagul României pe mânecă ce vorbește cu colegii, iar pe pereți sunt afișe educaționale, un portret și dulapuri din lemn albastru și maro deschis" tabindex="0">
                                                                 </div>
                                                             </li>
                                                             <li>
                                                                 <div id="imagine-7-carusel-2" class="imagine-carusel">
-                                                                    <img src="proiecte/erasmusplus/2020-1RO01-KA120-SCH-095631-07.png" width="4032" height="2268" alt="O sală de clasă luminoasă, cu ferestre mari, cu rama albastră, plină de elevi adolescenți așezați în bănci maro deschis, discutând și râzând, într-o atmosferă relaxată de activitate educațională, un cadru didactic fotografiază grupul, în prim-plan fiind câteva eleve cu păr roșcat și păr lung șaten care stau în bănci, pe care sunt autocolante colorate cu imagini tip joc educativ">
+                                                                    <img src="proiecte/erasmusplus/2020-1RO01-KA120-SCH-095631-07.png" width="4032" height="2268" alt="O sală de clasă luminoasă, cu ferestre mari, cu rama albastră, plină de elevi adolescenți așezați în bănci maro deschis, discutând și râzând, într-o atmosferă relaxată de activitate educațională, un cadru didactic fotografiază grupul, în prim-plan fiind câteva eleve cu păr roșcat și păr lung șaten care stau în bănci, pe care sunt autocolante colorate cu imagini tip joc educativ" tabindex="0">
                                                                 </div>
                                                             </li>
                                                             <li>
                                                                 <div id="imagine-8-carusel-2" class="imagine-carusel">
-                                                                    <img src="proiecte/erasmusplus/2020-1RO01-KA120-SCH-095631-08.png" width="4032" height="2268" alt="O sală de clasă luminoasă, cu ferestre mari, cu rama albastră, plină de elevi adolescenți aşezaţi la bănci maro deschis, discutând și zâmbind, într-o atmosferă de activitate educațională și prezentare în grup, un cadru didactic în cămașă în carouri stă în fața clasei, trei elevi stau lângă tabla albă pe care se văd diagrame și formule scrise, iar în partea dreaptă, în fața clasei, se află o catedră cu computer, pe care sunt caiete, pliante de prezentări și o sticlă cu apă">
+                                                                    <img src="proiecte/erasmusplus/2020-1RO01-KA120-SCH-095631-08.png" width="4032" height="2268" alt="O sală de clasă luminoasă, cu ferestre mari, cu rama albastră, plină de elevi adolescenți aşezaţi la bănci maro deschis, discutând și zâmbind, într-o atmosferă de activitate educațională și prezentare în grup, un cadru didactic în cămașă în carouri stă în fața clasei, trei elevi stau lângă tabla albă pe care se văd diagrame și formule scrise, iar în partea dreaptă, în fața clasei, se află o catedră cu computer, pe care sunt caiete, pliante de prezentări și o sticlă cu apă" tabindex="0">
                                                                 </div>
                                                             </li>
                                                             <li>
                                                                 <div id="imagine-9-carusel-2" class="imagine-carusel">
-                                                                    <img src="proiecte/erasmusplus/2020-1RO01-KA120-SCH-095631-09.png" width="4032" height="2268" alt="Elevi și adulți sunt adunați, într-o atmosferă de activitate participativă și mediu educațional, într-o sală de clasă luminoasă, cu ferestre cu rama albastră și mobilier școlar simplu, un grup stând în picioare în partea dreaptă și discutând, în timp ce alți elevi stau în bănci, iar în fundal este o tablă albă cu diagrame și calcule scrise">
+                                                                    <img src="proiecte/erasmusplus/2020-1RO01-KA120-SCH-095631-09.png" width="4032" height="2268" alt="Elevi și adulți sunt adunați, într-o atmosferă de activitate participativă și mediu educațional, într-o sală de clasă luminoasă, cu ferestre cu rama albastră și mobilier școlar simplu, un grup stând în picioare în partea dreaptă și discutând, în timp ce alți elevi stau în bănci, iar în fundal este o tablă albă cu diagrame și calcule scrise" tabindex="0">
                                                                 </div>
                                                             </li>
                                                             <li>
                                                                 <div id="imagine-10-carusel-2" class="imagine-carusel">
-                                                                    <img src="proiecte/erasmusplus/2020-1RO01-KA120-SCH-095631-10.png" width="4032" height="2268" alt="Într-un hol cu un perete din panouri groase de sticlă albastră transparentă si cu ceilalți pereți deschiși la culoare, pe care se află o placă de inscripție inaugurală ce indică, în limba greacă, „Liceul Bioclimatic din Ialyssosun”, un panou de anunțuri cu afișe educaționale, o hartă a Greciei, afișe cu instrucțiuni de postură corectă și informații administrative, precum și un poster cu semne rutiere, un elev stă la o masă lungă din lemn scriind pe niște foi albe de hârtie, iar în dreapta este un alt coridor cu iluminare fluorescentă albă">
+                                                                    <img src="proiecte/erasmusplus/2020-1RO01-KA120-SCH-095631-10.png" width="4032" height="2268" alt="Într-un hol cu un perete din panouri groase de sticlă albastră transparentă si cu ceilalți pereți deschiși la culoare, pe care se află o placă de inscripție inaugurală ce indică, în limba greacă, „Liceul Bioclimatic din Ialyssosun”, un panou de anunțuri cu afișe educaționale, o hartă a Greciei, afișe cu instrucțiuni de postură corectă și informații administrative, precum și un poster cu semne rutiere, un elev stă la o masă lungă din lemn scriind pe niște foi albe de hârtie, iar în dreapta este un alt coridor cu iluminare fluorescentă albă" tabindex="0">
                                                                 </div>
                                                             </li>
                                                             <li>
                                                                 <div id="imagine-11-carusel-2" class="imagine-carusel">
-                                                                    <img src="proiecte/erasmusplus/2020-1RO01-KA120-SCH-095631-11.png" width="4032" height="2268" alt="Un bărbat, în dreapta, gesticulează în timp ce vorbește cu o femeie, în stânga, care ascultă, în sala de festivități a școlii, în care sunt sunt rânduri de scaune pliante portocalii și o scenă în partea din față, cu draperii groase aurii și roșii ce acoperă pereții din spate, iar pe pereții laterali sunt agățate mai multe postere">
+                                                                    <img src="proiecte/erasmusplus/2020-1RO01-KA120-SCH-095631-11.png" width="4032" height="2268" alt="Un bărbat, în dreapta, gesticulează în timp ce vorbește cu o femeie, în stânga, care ascultă, în sala de festivități a școlii, în care sunt sunt rânduri de scaune pliante portocalii și o scenă în partea din față, cu draperii groase aurii și roșii ce acoperă pereții din spate, iar pe pereții laterali sunt agățate mai multe postere" tabindex="0">
                                                                 </div>
                                                             </li>
                                                         </ul>
 
+                                                        <button id="next-2" class="arrow-right arrow-inactive" aria-label="Imaginea următoare în Carusel 2">
+                                                            &#10095;
+                                                        </button>
+
                                                         <nav id="dots-2" class="dots" aria-label="Indicatori Carusel 2">
-                                                            <button class="dot active" tabindex="-1" aria-label="Grecia 5" aria-current="true"></button>
-                                                            <button class="dot" tabindex="-1" aria-label="Grecia 6"></button>
-                                                            <button class="dot" tabindex="-1" aria-label="Grecia 7"></button>
-                                                            <button class="dot" tabindex="-1" aria-label="Grecia 8"></button>
-                                                            <button class="dot" tabindex="-1" aria-label="Grecia 9"></button>
-                                                            <button class="dot" tabindex="-1" aria-label="Grecia 10"></button>
-                                                            <button class="dot" tabindex="-1" aria-label="Grecia 11"></button>
+                                                            <span class="dot active" aria-label="Grecia 5"></span>
+                                                            <span class="dot" aria-label="Grecia 6"></span>
+                                                            <span class="dot" aria-label="Grecia 7"></span>
+                                                            <span class="dot" aria-label="Grecia 8"></span>
+                                                            <span class="dot" aria-label="Grecia 9"></span>
+                                                            <span class="dot" aria-label="Grecia 10"></span>
+                                                            <span class="dot" aria-label="Grecia 11"></span>
                                                         </nav>
 
                                                     </section>
@@ -5215,7 +5222,6 @@ border-radius: 4px;
                 let currentIndex = 0;
                 const totalSlides = slides.length;
 
-                let isSelected = false;
                 let isHovered = false;
                 let isActive = false;
 
@@ -5225,19 +5231,14 @@ border-radius: 4px;
                     });
                     dots.forEach((dot, i) => {
                         dot.classList.toggle('active', i === index);
-                        if (i === index) {
-                            dot.setAttribute('aria-current', 'true');
-                        } else {
-                            dot.removeAttribute('aria-current');
-                        }
                     });
                     setTimeout(() => {
-                    pozitioneazaSageti(container);
+                        pozitioneazaSageti(container);
                     }, 50);
                 }
 
                 function updateArrows() {
-                    if (isActive) {
+                    if (isActive || isHovered) {
                         prevBtn.classList.remove('arrow-inactive');
                         nextBtn.classList.remove('arrow-inactive');
                         prevBtn.classList.add('arrow-active');
@@ -5247,7 +5248,7 @@ border-radius: 4px;
                         nextBtn.classList.remove('arrow-active');
                         prevBtn.classList.add('arrow-inactive');
                         nextBtn.classList.add('arrow-inactive');
-                    }
+                        }
                 }
 
                 nextBtn.addEventListener('click', () => {
@@ -5258,29 +5259,40 @@ border-radius: 4px;
                     currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
                     showSlide(currentIndex);
                 });
-                dots.forEach((dot, i) => {
-                    dot.addEventListener('click', () => {
-                        currentIndex = i;
-                        showSlide(currentIndex);
-                    });
-                });
 
                 container.addEventListener('mouseenter', () => {
                     isHovered = true;
                     if (!isActive) {
-                        isActive = true;
+                        isHovered = true;
                         updateArrows();
                     }
                 });
                 container.addEventListener('mouseleave', () => {
                     isHovered = false;
-                    if (!document.querySelector(`#${caruselID} .carusel li:focus`) && !isSelected) {
-                        isActive = false;
+                    if (!document.querySelector(`#${caruselID} .carusel li:focus`)) {
+                        isHovered = false;
                         updateArrows();
                     }
                 });
 
                 slides.forEach(li => {
+                    const img = li.querySelector('img');
+
+                    if (img) {
+                        img.addEventListener('focus', () => {
+                            isActive = true;
+                            updateArrows();
+                        });
+                        img.addEventListener('blur', () => {
+                            setTimeout(() => {
+                                if (!document.activeElement.closest(`#${caruselID}`)) {
+                                    isActive = false;
+                                    updateArrows();
+                                }
+                            }, 100);
+                        });
+                    }
+
                     li.addEventListener('focus', () => {
                         isActive = true;
                         updateArrows();
@@ -5293,36 +5305,31 @@ border-radius: 4px;
                             }
                         }, 100);
                     });
-                    li.addEventListener('click', () => {
-                        isSelected = true;
-                        isActive = true;
-                        updateArrows();
-                    });
+                });
+
+                prevBtn.addEventListener('focus', () => {
+                    isActive = true;
+                    updateArrows();
+                });
+                nextBtn.addEventListener('focus', () => {
+                    isActive = true;
+                    updateArrows();
                 });
 
                 document.addEventListener('click', (e) => {
                     const container = document.getElementById(caruselID);
-                    const prevBtn = container.querySelector('.arrow-left');
-                    const nextBtn = container.querySelector('.arrow-right');
-
                     if (!e.target.closest(`#${caruselID}`)) {
-                        isSelected = false;
-                        prevBtn.classList.remove('arrow-active');
-                        nextBtn.classList.remove('arrow-active');
-                        prevBtn.classList.add('arrow-inactive');
-                        nextBtn.classList.add('arrow-inactive');
+                        isActive = false;
+                        updateArrows();
                     } else {
-                        isSelected = true;
-                        prevBtn.classList.remove('arrow-inactive');
-                        nextBtn.classList.remove('arrow-inactive');
-                        prevBtn.classList.add('arrow-active');
-                        nextBtn.classList.add('arrow-active');
-                    }
+                        isActive = true;
+                        updateArrows();
+                        }
                 });
 
                 document.addEventListener('keydown', (e) => {
                     const focusedLi = document.querySelector(`#${caruselID} .carusel li:focus`);
-                    if ((!focusedLi || !focusedLi.closest(`#${caruselID}`)) && !isSelected) return;
+                    if ((!focusedLi || !focusedLi.closest(`#${caruselID}`))) return;
 
                     if (isActive || (focusedLi && focusedLi.closest(`#${caruselID}`))) {
                         isActive = true;
@@ -5344,7 +5351,7 @@ border-radius: 4px;
                     if (!focusInCarousel) return;
 
                     if (e.key === 'ArrowLeft') {
-                        e.preventDefault(); // preveni scroll-ul paginii
+                        e.preventDefault();
                         currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
                         showSlide(currentIndex);
                         prevBtn.focus();
@@ -5355,7 +5362,16 @@ border-radius: 4px;
                         nextBtn.focus();
                     }
                 });
+
+                container.addEventListener('focusout', () => {
+                    if (!container.contains(document.activeElement)) {
+                        isActive = false;
+                        updateArrows();
+                    }
+                });
+
                 updateArrows();
+
                 window.addEventListener('load', () => {
                     setTimeout(() => {
                         pozitioneazaSageti(container);
