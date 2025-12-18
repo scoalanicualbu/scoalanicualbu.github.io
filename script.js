@@ -850,6 +850,10 @@
                     yearEl.textContent = new Date().getFullYear();
                 }
 
+// Inițializare Meniu și spațiere elemente
+                updateMeniu();
+                updateGap();
+
 // Afișare sau ascundere Meniu principal la click pe buton
                 const menuToggleBtn = document.getElementById('menu-toggle');
                 if (menuToggleBtn) {
@@ -896,8 +900,6 @@
 
 // Inițializare setări la încărcare pagină
                 window.addEventListener('load', () => {
-                    updateMeniu();
-                    updateGap();
                     initializeParams();
                     potrivesteTexte();
                     updateImagini();
