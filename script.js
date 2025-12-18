@@ -854,6 +854,10 @@
                 updateMeniu();
                 updateGap();
 
+// Potrivire text
+                initializeParams();
+                potrivesteTexte();
+
 // Afișare sau ascundere Meniu principal la click pe buton
                 const menuToggleBtn = document.getElementById('menu-toggle');
                 if (menuToggleBtn) {
@@ -900,8 +904,6 @@
 
 // Inițializare setări la încărcare pagină
                 window.addEventListener('load', () => {
-                    initializeParams();
-                    potrivesteTexte();
                     updateImagini();
                     updateAlt();
                     updateDivs();
@@ -920,6 +922,3 @@
                     updateDivs();
                     updateSageti();
                 });
-
-
-
