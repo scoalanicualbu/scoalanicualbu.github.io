@@ -85,11 +85,11 @@
                 const aElement = container.closest('a');
                 if (!aElement) return;
 
-                container.style.visibility = 'hidden';
+                //container.style.visibility = 'hidden';
                 container.innerHTML = '';
 
                 const aRect = aElement.getBoundingClientRect();
-                const paddingPx = (0.2 + 0.1 + 5 + 0.1 + 0.5 + 0.1 + 0.1 + 0.2) * 16;
+                const paddingPx = (0.2 + 0.1 + 5 + 0.1 + 0.5 + 0.1 + 0.1 + 0.5) * 16;
                 const totalAvailableWidth = aRect.width - paddingPx;
                 const maxLineLength = totalAvailableWidth;
 
@@ -142,8 +142,7 @@
                 parametri.forEach(({ id, text }) => {
                     const el = document.getElementById(id);
                     if (!el) return;
-                    const img = document.querySelector(`a[aria-labelledby="${id}"] img`);
-potrivesteText(id, text);
+                    potrivesteText(id, text);
                 });
             }
 
