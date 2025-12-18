@@ -89,7 +89,7 @@
                 container.innerHTML = '';
 
                 const aRect = aElement.getBoundingClientRect();
-                const paddingPx = (0.2 + 0.1 + 5 + 0.1 + 0.5 + 0.1 + 0.1 + 0.5) * 16;
+                const paddingPx = (0.2 + 0.1 + 5 + 0.1 + 0.5 + 0.1 + 0.1 + 0.2) * 16;
                 const totalAvailableWidth = aRect.width - paddingPx;
                 const maxLineLength = totalAvailableWidth;
 
@@ -143,19 +143,7 @@
                     const el = document.getElementById(id);
                     if (!el) return;
                     const img = document.querySelector(`a[aria-labelledby="${id}"] img`);
-                    if (!img) {
-                        setTimeout(() => {
-                            potrivesteText(id, text);
-                        }, 1);
-                    } else {
-                        if (img.complete && img.naturalWidth !== 0) {
-                            potrivesteText(id, text);
-                        } else {
-                            img.addEventListener('load', () => {
-                                potrivesteText(id, text);
-                            });
-                        }
-                    }
+potrivesteText(id, text);
                 });
             }
 
