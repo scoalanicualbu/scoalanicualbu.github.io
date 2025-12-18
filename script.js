@@ -89,7 +89,7 @@
                 container.innerHTML = '';
 
                 const aRect = aElement.getBoundingClientRect();
-                const paddingPx = (0.2 + 0.1 + 5 + 0.1 + 0.5 + 0.1 + 0.1 + 0.6) * 16;
+                const paddingPx = (0.2 + 0.1 + 5 + 0.1 + 0.5 + 0.1 + 0.1 + 0.4) * 16;
                 const totalAvailableWidth = aRect.width - paddingPx;
                 const maxLineLength = totalAvailableWidth;
 
@@ -920,4 +920,5 @@
                     updateDivs();
                     updateSageti();
                 });
+
 
