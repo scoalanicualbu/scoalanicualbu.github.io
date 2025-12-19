@@ -840,7 +840,6 @@
                 initializeParams();
                 potrivesteTexte();
                 updateImagini();
-                updateAlt();
                 initializeCarusele();
                 updateSageti();
                 setupZoomTranslatare();
@@ -892,6 +891,7 @@
 // Inițializare setări la încărcare pagină
             window.addEventListener('load', () => {
                 updateDivs();
+                updateAlt();
             });
 
 // Inițializare setări la redimensionare pagină
