@@ -67,16 +67,17 @@
                 });
             }
 
+            const measureSpan = document.createElement('span');
+            measureSpan.style.visibility = 'hidden';
+            measureSpan.style.position = 'absolute';
+            measureSpan.style.whiteSpace = 'pre';
+            measureSpan.style.font = 'inherit';
+            document.body.appendChild(measureSpan);
+
             function masoaraString(text) {
-                const span = document.createElement('span');
-                span.style.visibility = 'hidden';
-                span.style.position = 'absolute';
-                span.style.whiteSpace = 'pre';
-                span.innerText = text;
-                document.body.appendChild(span);
-                const latime = span.offsetWidth;
-                document.body.removeChild(span);
-                return latime;
+                measureSpan.innerText = text;
+                const rect = measureSpan.getBoundingClientRect();
+                return rect.width;
             }
 
             function potrivesteText(id, text) {
@@ -85,13 +86,12 @@
                 const aElement = container.closest('a');
                 if (!aElement) return;
 
-                container.style.visibility = 'hidden';
                 container.innerHTML = '';
 
                 const aRect = aElement.getBoundingClientRect();
+
                 const paddingPx = (0.2 + 0.1 + 5 + 0.1 + 0.5 + 0.1 + 0.1 + 0.5) * 16;
                 const totalAvailableWidth = aRect.width - paddingPx;
-                const maxLineLength = totalAvailableWidth;
 
                 const cuvinte = text.split(' ');
                 let randuri = [];
@@ -100,263 +100,46 @@
                 for (const cuvant of cuvinte) {
                     const tempLineText = currentLine.concat(cuvant).join(' ');
                     const width = masoaraString(tempLineText);
-                    if (width <= maxLineLength) {
-                    currentLine.push(cuvant);
+                    if (width <= totalAvailableWidth) {
+                        currentLine.push(cuvant);
                     } else {
                         if (currentLine.length > 0) {
                             randuri.push(currentLine.join(' '));
                         }
                         const cuvantWidth = masoaraString(cuvant);
-                        if (cuvantWidth > maxLineLength) {
+                        if (cuvantWidth > totalAvailableWidth) {
                             randuri.push(cuvant);
                             currentLine = [];
                         } else {
                             currentLine = [cuvant];
+                            }
                         }
-                    }
                 }
                 if (currentLine.length > 0) {
                     randuri.push(currentLine.join(' '));
                 }
 
                 let lungimeMaxima = 0;
-                const randuriDimensiuni = [];
-                randuri.forEach(r => {
-                    const width = masoaraString(r);
-                    randuriDimensiuni.push(width);
-                    if (width > lungimeMaxima) lungimeMaxima = width;
+                const randuriDimensiuni = randuri.map(r => {
+                    const w = masoaraString(r);
+                    if (w > lungimeMaxima) lungimeMaxima = w;
+                    return w;
                 });
 
                 randuri.forEach((r, idx) => {
-                    const lineDiv = document.createElement('div');
-                    lineDiv.className = 'line';
-                    lineDiv.innerText = r;
-                    lineDiv.style.marginLeft = ((lungimeMaxima - randuriDimensiuni[idx]) / 2) + 'px';
-                    container.appendChild(lineDiv);
+                    const div = document.createElement('div');
+                    div.innerText = r;
+                    div.style.display = 'block';
+                    div.style.marginLeft = ((lungimeMaxima - randuriDimensiuni[idx]) / 2) + 'px';
+                    container.appendChild(div);
                 });
-
-                container.style.visibility = 'visible';
             }
 
             function potrivesteTexte() {
                 parametri.forEach(({ id, text }) => {
                     const el = document.getElementById(id);
                     if (!el) return;
-                    const img = document.querySelector(`a[aria-labelledby="${id}"] img`);
-                    if (!img) {
-                        setTimeout(() => {
-                            potrivesteText(id, text);
-                        }, 300);
-                    } else {
-                        if (img.complete && img.naturalWidth !== 0) {
-                            potrivesteText(id, text);
-                        } else {
-                            img.addEventListener('load', () => {
-                                potrivesteText(id, text);
-                            });
-                        }
-                    }
-                });
-            }
-
-// Navigare imagini carusel
-
-            function pozitioneazaSageti(caruselContainer) {
-                const imagineActive = caruselContainer.querySelector('.carusel li.active img');
-                const prevBtn = caruselContainer.querySelector('.arrow-left');
-                const nextBtn = caruselContainer.querySelector('.arrow-right');
-
-                if (imagineActive && prevBtn && nextBtn) {
-                    const rect = imagineActive.getBoundingClientRect();
-                    const containerRect = caruselContainer.getBoundingClientRect();
-
-                    const imagineY = rect.top - containerRect.top;
-                    const imagineHeight = rect.height;
-                    const topPosition = imagineY + imagineHeight / 2;
-
-                    prevBtn.style.top = topPosition + 'px';
-                    nextBtn.style.top = topPosition + 'px';
-                }
-            }
-
-            function updateSageti() {
-                document.querySelectorAll('.content-carusel').forEach(carusel => {
-                    pozitioneazaSageti(carusel);
-                });
-            }
-
-            function initializeCarusel(caruselID) {
-                const container = document.getElementById(caruselID);
-                const slides = container.querySelectorAll('.carusel li');
-                const dots = container.querySelectorAll('.dots .dot');
-                const prevBtn = container.querySelector('.arrow-left');
-                const nextBtn = container.querySelector('.arrow-right');
-
-                let currentIndex = 0;
-                const totalSlides = slides.length;
-
-                let isHovered = false;
-                let isActive = false;
-
-                function showSlide(index) {
-                    slides.forEach((slide, i) => {
-                        slide.classList.toggle('active', i === index);
-                    });
-                    dots.forEach((dot, i) => {
-                        dot.classList.toggle('active', i === index);
-                    });
-                    setTimeout(() => {
-                        pozitioneazaSageti(container);
-                    }, 50);
-                }
-
-                function updateArrows() {
-                    if (isActive || isHovered) {
-                        prevBtn.classList.remove('arrow-inactive');
-                        nextBtn.classList.remove('arrow-inactive');
-                        prevBtn.classList.add('arrow-active');
-                        nextBtn.classList.add('arrow-active');
-                    } else {
-                        prevBtn.classList.remove('arrow-active');
-                        nextBtn.classList.remove('arrow-active');
-                        prevBtn.classList.add('arrow-inactive');
-                        nextBtn.classList.add('arrow-inactive');
-                        }
-                }
-
-                nextBtn.addEventListener('click', () => {
-                    currentIndex = (currentIndex + 1) % totalSlides;
-                    showSlide(currentIndex);
-                });
-                prevBtn.addEventListener('click', () => {
-                    currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-                    showSlide(currentIndex);
-                });
-
-                container.addEventListener('mouseenter', () => {
-                    isHovered = true;
-                    if (!isActive) {
-                        isHovered = true;
-                        updateArrows();
-                    }
-                });
-                container.addEventListener('mouseleave', () => {
-                    isHovered = false;
-                    if (!document.querySelector(`#${caruselID} .carusel li:focus`)) {
-                        isHovered = false;
-                        updateArrows();
-                    }
-                });
-
-                slides.forEach(li => {
-                    const img = li.querySelector('img');
-
-                    if (img) {
-                        img.addEventListener('focus', () => {
-                            isActive = true;
-                            updateArrows();
-                        });
-                        img.addEventListener('blur', () => {
-                            setTimeout(() => {
-                                if (!document.activeElement.closest(`#${caruselID}`)) {
-                                    isActive = false;
-                                    updateArrows();
-                                }
-                            }, 100);
-                        });
-                    }
-
-                    li.addEventListener('focus', () => {
-                        isActive = true;
-                        updateArrows();
-                    });
-                    li.addEventListener('blur', () => {
-                        setTimeout(() => {
-                            if (!document.activeElement.closest(`#${caruselID}`)) {
-                                isActive = false;
-                                updateArrows();
-                            }
-                        }, 100);
-                    });
-                });
-
-                prevBtn.addEventListener('focus', () => {
-                    isActive = true;
-                    updateArrows();
-                });
-                nextBtn.addEventListener('focus', () => {
-                    isActive = true;
-                    updateArrows();
-                });
-
-                document.addEventListener('click', (e) => {
-                    const container = document.getElementById(caruselID);
-                    if (!e.target.closest(`#${caruselID}`)) {
-                        isActive = false;
-                        updateArrows();
-                    } else {
-                        isActive = true;
-                        updateArrows();
-                        }
-                });
-
-                document.addEventListener('keydown', (e) => {
-                    const focusedLi = document.querySelector(`#${caruselID} .carusel li:focus`);
-                    if ((!focusedLi || !focusedLi.closest(`#${caruselID}`))) return;
-
-                    if (isActive || (focusedLi && focusedLi.closest(`#${caruselID}`))) {
-                        isActive = true;
-                        updateArrows();
-                    }
-
-                    if (e.key === 'ArrowLeft') {
-                        currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-                        showSlide(currentIndex);
-                    } else if (e.key === 'ArrowRight') {
-                        currentIndex = (currentIndex + 1) % totalSlides;
-                        showSlide(currentIndex);
-                    }
-                });
-
-                document.addEventListener('keydown', (e) => {
-                    const container = document.getElementById(caruselID);
-                    const focusInCarousel = container.contains(document.activeElement);
-                    if (!focusInCarousel) return;
-
-                    if (e.key === 'ArrowLeft') {
-                        e.preventDefault();
-                        currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-                        showSlide(currentIndex);
-                        prevBtn.focus();
-                    } else if (e.key === 'ArrowRight') {
-                        e.preventDefault();
-                        currentIndex = (currentIndex + 1) % totalSlides;
-                        showSlide(currentIndex);
-                        nextBtn.focus();
-                    }
-                });
-
-                container.addEventListener('focusout', () => {
-                    if (!container.contains(document.activeElement)) {
-                        isActive = false;
-                        updateArrows();
-                    }
-                });
-
-                updateArrows();
-
-                window.addEventListener('load', () => {
-                    setTimeout(() => {
-                        pozitioneazaSageti(container);
-                    }, 100);
-                });
-            }
-
-            function initializeCarusele() {
-                const containers = document.querySelectorAll('.content-carusel');
-                containers.forEach((container) => {
-                    const id = container.id;
-                    initializeCarusel(id);
+                    potrivesteText(id, text);
                 });
             }
 
@@ -703,6 +486,207 @@
                 });
             });
 
+// Navigare imagini carusel
+
+            function pozitioneazaSageti(caruselContainer) {
+                const imagineActive = caruselContainer.querySelector('.carusel li.active img');
+                const prevBtn = caruselContainer.querySelector('.arrow-left');
+                const nextBtn = caruselContainer.querySelector('.arrow-right');
+
+                if (imagineActive && prevBtn && nextBtn) {
+                    const rect = imagineActive.getBoundingClientRect();
+                    const containerRect = caruselContainer.getBoundingClientRect();
+
+                    const imagineY = rect.top - containerRect.top;
+                    const imagineHeight = rect.height;
+                    const topPosition = imagineY + imagineHeight / 2;
+
+                    prevBtn.style.top = topPosition + 'px';
+                    nextBtn.style.top = topPosition + 'px';
+                }
+            }
+
+            function updateSageti() {
+                document.querySelectorAll('.content-carusel').forEach(carusel => {
+                    pozitioneazaSageti(carusel);
+                });
+            }
+
+            function initializeCarusel(caruselID) {
+                const container = document.getElementById(caruselID);
+                const slides = container.querySelectorAll('.carusel li');
+                const dots = container.querySelectorAll('.dots .dot');
+                const prevBtn = container.querySelector('.arrow-left');
+                const nextBtn = container.querySelector('.arrow-right');
+
+                let currentIndex = 0;
+                const totalSlides = slides.length;
+
+                let isHovered = false;
+                let isActive = false;
+
+                function showSlide(index) {
+                    slides.forEach((slide, i) => {
+                        slide.classList.toggle('active', i === index);
+                    });
+                    dots.forEach((dot, i) => {
+                        dot.classList.toggle('active', i === index);
+                    });
+                    setTimeout(() => {
+                        pozitioneazaSageti(container);
+                    }, 50);
+                }
+
+                function updateArrows() {
+                    if (isActive || isHovered) {
+                        prevBtn.classList.remove('arrow-inactive');
+                        nextBtn.classList.remove('arrow-inactive');
+                        prevBtn.classList.add('arrow-active');
+                        nextBtn.classList.add('arrow-active');
+                    } else {
+                        prevBtn.classList.remove('arrow-active');
+                        nextBtn.classList.remove('arrow-active');
+                        prevBtn.classList.add('arrow-inactive');
+                        nextBtn.classList.add('arrow-inactive');
+                        }
+                }
+
+                nextBtn.addEventListener('click', () => {
+                    currentIndex = (currentIndex + 1) % totalSlides;
+                    showSlide(currentIndex);
+                });
+                prevBtn.addEventListener('click', () => {
+                    currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+                    showSlide(currentIndex);
+                });
+
+                container.addEventListener('mouseenter', () => {
+                    isHovered = true;
+                    if (!isActive) {
+                        isHovered = true;
+                        updateArrows();
+                    }
+                });
+                container.addEventListener('mouseleave', () => {
+                    isHovered = false;
+                    if (!document.querySelector(`#${caruselID} .carusel li:focus`)) {
+                        isHovered = false;
+                        updateArrows();
+                    }
+                });
+
+                slides.forEach(li => {
+                    const img = li.querySelector('img');
+
+                    if (img) {
+                        img.addEventListener('focus', () => {
+                            isActive = true;
+                            updateArrows();
+                        });
+                        img.addEventListener('blur', () => {
+                            setTimeout(() => {
+                                if (!document.activeElement.closest(`#${caruselID}`)) {
+                                    isActive = false;
+                                    updateArrows();
+                                }
+                            }, 100);
+                        });
+                    }
+
+                    li.addEventListener('focus', () => {
+                        isActive = true;
+                        updateArrows();
+                    });
+                    li.addEventListener('blur', () => {
+                        setTimeout(() => {
+                            if (!document.activeElement.closest(`#${caruselID}`)) {
+                                isActive = false;
+                                updateArrows();
+                            }
+                        }, 100);
+                    });
+                });
+
+                prevBtn.addEventListener('focus', () => {
+                    isActive = true;
+                    updateArrows();
+                });
+                nextBtn.addEventListener('focus', () => {
+                    isActive = true;
+                    updateArrows();
+                });
+
+                document.addEventListener('click', (e) => {
+                    const container = document.getElementById(caruselID);
+                    if (!e.target.closest(`#${caruselID}`)) {
+                        isActive = false;
+                        updateArrows();
+                    } else {
+                        isActive = true;
+                        updateArrows();
+                        }
+                });
+
+                document.addEventListener('keydown', (e) => {
+                    const focusedLi = document.querySelector(`#${caruselID} .carusel li:focus`);
+                    if ((!focusedLi || !focusedLi.closest(`#${caruselID}`))) return;
+
+                    if (isActive || (focusedLi && focusedLi.closest(`#${caruselID}`))) {
+                        isActive = true;
+                        updateArrows();
+                    }
+
+                    if (e.key === 'ArrowLeft') {
+                        currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+                        showSlide(currentIndex);
+                    } else if (e.key === 'ArrowRight') {
+                        currentIndex = (currentIndex + 1) % totalSlides;
+                        showSlide(currentIndex);
+                    }
+                });
+
+                document.addEventListener('keydown', (e) => {
+                    const container = document.getElementById(caruselID);
+                    const focusInCarousel = container.contains(document.activeElement);
+                    if (!focusInCarousel) return;
+
+                    if (e.key === 'ArrowLeft') {
+                        e.preventDefault();
+                        currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+                        showSlide(currentIndex);
+                        prevBtn.focus();
+                    } else if (e.key === 'ArrowRight') {
+                        e.preventDefault();
+                        currentIndex = (currentIndex + 1) % totalSlides;
+                        showSlide(currentIndex);
+                        nextBtn.focus();
+                    }
+                });
+
+                container.addEventListener('focusout', () => {
+                    if (!container.contains(document.activeElement)) {
+                        isActive = false;
+                        updateArrows();
+                    }
+                });
+
+                updateArrows();
+
+                window.addEventListener('load', () => {
+                    setTimeout(() => {
+                        pozitioneazaSageti(container);
+                    }, 100);
+                });
+            }
+
+            function initializeCarusele() {
+                const containers = document.querySelectorAll('.content-carusel');
+                containers.forEach((container) => {
+                    const id = container.id;
+                    initializeCarusel(id);
+                });
+            }
+
 // Micșorare, mărire și translatare imagine
             function limitPosition(container, img, scale, translateX, translateY) {
                 const containerWidth = container.clientWidth;
@@ -850,32 +834,13 @@
                     yearEl.textContent = new Date().getFullYear();
                 }
 
-// Apeluri de inițializare pentru funcții
-
-// Inițializare setări la încărcare pagină
+// Inițializare Meniu și spațiere elemente
                 updateMeniu();
                 updateGap();
-                potrivesteTexte();
-                updateImagini();
+
+// Potrivire texte
                 initializeParams();
-                initializeCarusele();
-                setupZoomTranslatare();
-
-                window.onload = () => {
-                    updateAlt();
-                    updateDivs();
-                };
-
-// Inițializare setări la redimensionare pagină
-                window.addEventListener('resize', () => {
-                    updateMeniu();
-                    updateGap();
-                    potrivesteTexte();
-                    updateImagini();
-                    updateAlt();
-                    updateDivs();
-                    updateSageti();
-                });
+                potrivesteTexte();
 
 // Afișare sau ascundere Meniu principal la click pe buton
                 const menuToggleBtn = document.getElementById('menu-toggle');
@@ -917,4 +882,27 @@
                     }
                 }, { passive: false });
 
+            });
+
+// Apeluri de inițializare pentru funcții
+
+// Inițializare setări la încărcare pagină
+            window.addEventListener('load', () => {
+                updateDivs();
+                updateImagini();
+                updateAlt();
+                initializeCarusele();
+                updateSageti();
+                setupZoomTranslatare();
+            });
+
+// Inițializare setări la redimensionare pagină
+            window.addEventListener('resize', () => {
+                updateMeniu();
+                updateGap();
+                potrivesteTexte();
+                updateDivs();
+                updateImagini();
+                updateAlt();
+                updateSageti();
             });
