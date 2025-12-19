@@ -834,13 +834,16 @@
                     yearEl.textContent = new Date().getFullYear();
                 }
 
-// Inițializare Meniu și spațiere elemente
+// Inițializare funcții
                 updateMeniu();
                 updateGap();
-
-// Potrivire texte
                 initializeParams();
                 potrivesteTexte();
+                updateImagini();
+                updateAlt();
+                initializeCarusele();
+                updateSageti();
+                setupZoomTranslatare();
 
 // Afișare sau ascundere Meniu principal la click pe buton
                 const menuToggleBtn = document.getElementById('menu-toggle');
@@ -889,11 +892,6 @@
 // Inițializare setări la încărcare pagină
             window.addEventListener('load', () => {
                 updateDivs();
-                updateImagini();
-                updateAlt();
-                initializeCarusele();
-                updateSageti();
-                setupZoomTranslatare();
             });
 
 // Inițializare setări la redimensionare pagină
