@@ -1376,6 +1376,11 @@ border-radius: 4px;
                                     background-color: #FFFFFF;
                                 }
 
+                                    .imagine-1 img:focus {
+                                        outline: 2px solid #000000;
+                                        outline-offset: 0px;
+                                    }
+
                                 .imagine-2 {
 border: 0px solid #404040;
 border-radius: 4px;
@@ -1415,6 +1420,11 @@ border-radius: 4px;
                                     word-break: break-word;
                                     background-color: #FFFFFF;
                                 }
+
+                                    .imagine-2 img:focus {
+                                        outline: 2px solid #000000;
+                                        outline-offset: 0px;
+                                    }
 
                                 .imagine-3 {
 border: 0px solid #404040;
@@ -1456,6 +1466,11 @@ border-radius: 4px;
                                     background-color: #FFFFFF;
                                 }
 
+                                    .imagine-3 img:focus {
+                                        outline: 2px solid #000000;
+                                        outline-offset: 0px;
+                                    }
+
                                 .imagine-4 {
 border: 0px solid #404040;
 border-radius: 4px;
@@ -1495,6 +1510,11 @@ border-radius: 4px;
                                     word-break: break-word;
                                     background-color: #FFFFFF;
                                 }
+
+                                    .imagine-4 img:focus {
+                                        outline: 2px solid #000000;
+                                        outline-offset: 0px;
+                                    }
 
                         .comunicari-figure {
 border: 0px solid #404040;
