@@ -188,7 +188,7 @@
                 ['altfel-descriere', 'imagine-glob'],
                 ['altfel-program', 'imagine-maini'],
                 ['altfel-rezultate', 'imagine-cerc'],
-                ['ecoscoala-reevaluare', 'imagine-steagul-verde'],
+                ['certificat', 'imagine-steagul-verde'],
                 ['imagine-teme', 'imagine-program'],
                 ['imagine-sigla-fee', 'imagine-sigla-ecoscoala'],
                 ['imagine-sigla-fee', 'imagine-sigla-ccdg'],
