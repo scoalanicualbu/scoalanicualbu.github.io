@@ -187,7 +187,17 @@
                 ['dual-text', 'imagine-dual'],
                 ['altfel-descriere', 'imagine-glob'],
                 ['altfel-program', 'imagine-maini'],
-                ['altfel-rezultate', 'imagine-cerc']
+                ['altfel-rezultate', 'imagine-cerc'],
+                ['ecoscoala-reevaluare', 'imagine-steagul-verde'],
+                ['imagine-teme', 'imagine-program'],
+                ['imagine-sigla-fee', 'imagine-sigla-ecoscoala'],
+                ['imagine-sigla-fee', 'imagine-sigla-ccdg'],
+                ['imagine-sigla-fee', 'imagine-ccdg'],
+                ['imagine-sigla-fee', 'imagine-sigla-ecosisteme'],
+                ['imagine-sigla-fee', 'imagine-sigla-reporteri'],
+                ['imagine-sigla-fee', 'imagine-sigla-cheia-verde'],
+                ['imagine-sigla-fee', 'imagine-sigla-steagul-albastru'],
+                ['imagine-sigla-fee', 'imagine-sigla-fee-global']
             ];
 
             function updateImagini() {
