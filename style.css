@@ -1,3 +1,5 @@
+        <style>
+
             :root {
                 --sz1: 1.5rem;
                 --pd1: 0.25rem;
@@ -1918,6 +1920,58 @@ border-radius: 4px;
                             gap: 1rem;
                         }
 
+                        .wrap-104 {
+border: 0px solid #404040;
+border-radius: 4px;
+                            margin-top: 0;
+                            margin-bottom: 0;
+                            margin-left: 0;
+                            margin-right: 0;
+                            padding-top: 0;
+                            padding-bottom: 0;
+                            padding-left: 0;
+                            padding-right: 0;
+                            grid-column: span 4;
+                            height: auto;
+                            display: grid;
+                            gap: 1rem;
+                        }
+
+                        .wrap-105 {
+border: 0px solid #404040;
+border-radius: 4px;
+                            margin-top: 0;
+                            margin-bottom: 0;
+                            margin-left: 0;
+                            margin-right: 0;
+                            padding-top: 0;
+                            padding-bottom: 0;
+                            padding-left: 0;
+                            padding-right: 0;
+                            grid-column: span 5;
+                            height: auto;
+                            display: grid;
+                            gap: 1rem;
+                            align-content: start;
+                        }
+
+                        .wrap-106 {
+border: 0px solid #404040;
+border-radius: 4px;
+                            margin-top: 0;
+                            margin-bottom: 0;
+                            margin-left: 0;
+                            margin-right: 0;
+                            padding-top: 0;
+                            padding-bottom: 0;
+                            padding-left: 0;
+                            padding-right: 0;
+                            grid-column: span 6;
+                            height: auto;
+                            display: grid;
+                            gap: 1rem;
+                        }
+
                         .wrap-107 {
 border: 0px solid #404040;
 border-radius: 4px;
@@ -1930,6 +1984,40 @@ border-radius: 4px;
                             padding-left: 0;
                             padding-right: 0;
                             grid-column: span 7;
+                            height: auto;
+                            display: grid;
+                            gap: 1rem;
+                        }
+
+                        .wrap-108 {
+border: 0px solid #404040;
+border-radius: 4px;
+                            margin-top: 0;
+                            margin-bottom: 0;
+                            margin-left: 0;
+                            margin-right: 0;
+                            padding-top: 0;
+                            padding-bottom: 0;
+                            padding-left: 0;
+                            padding-right: 0;
+                            grid-column: span 8;
+                            height: auto;
+                            display: grid;
+                            gap: 1rem;
+                        }
+
+                        .wrap-109 {
+border: 0px solid #404040;
+border-radius: 4px;
+                            margin-top: 0;
+                            margin-bottom: 0;
+                            margin-left: 0;
+                            margin-right: 0;
+                            padding-top: 0;
+                            padding-bottom: 0;
+                            padding-left: 0;
+                            padding-right: 0;
+                            grid-column: span 9;
                             height: auto;
                             display: grid;
                             gap: 1rem;
@@ -2163,6 +2251,49 @@ border-radius: 4px;
 
                                 .contain-imagine img:focus {
                                     outline: 2px solid #000000;
+                                    outline-offset: 0px;
+                                }
+
+                        .content-gif {
+border: 1px solid #404040;
+border-radius: 4px;
+                            margin-top: 0;
+                            margin-bottom: 0;
+                            margin-left: 0;
+                            margin-right: 0;
+                            padding-top: 0;
+                            padding-bottom: 0;
+                            padding-left: 0;
+                            padding-right: 0;
+                            position: relative;
+                            width: 100%;
+                            height: auto;
+                        }
+
+                            .content-gif img {
+border: 0px solid #404040;
+border-radius: 4px;
+                                position: absolute;
+                                margin-top: 0;
+                                margin-bottom: 0;
+                                margin-left: 0;
+                                margin-right: 0;
+                                padding-top: 0;
+                                padding-bottom: 0;
+                                padding-left: 0;
+                                padding-right: 0;
+                                width: 100%;
+                                height: auto;
+                                object-fit: cover;
+                                overflow-y: auto;
+                                scrollbar-width: none;
+                                word-break: break-word;
+                            }
+
+                                .content-gif img:focus {
+border: 0px solid #404040;
+border-radius: 4px;
+                                    outline: 3px solid #000000;
                                     outline-offset: 0px;
                                 }
 
@@ -2811,7 +2942,7 @@ border-radius: 4px;
                     }
                 }
 
-/* page-menu 3, wrap-2 4, wrap-10 8 (PROIECTE) */
+/* page-menu 3, wrap-2 4, wrap-10 8, wrap-1 2, wrap-4 8, wrap-102 5, wrap-108 5, wrap-105 10 (PROIECTE) */
                 @media (min-width: 1367px)and (max-width: 1680px) {
                     aside {
                         min-height: 100vh;
@@ -2842,6 +2973,27 @@ border-radius: 4px;
                     }
                     #erasmusplus-continut .wrap-10 {
                         grid-column: span 8;
+                    }
+                    #ecoscoala-continut .wrap-2 {
+                        grid-column: span 4;
+                    }
+                    #ecoscoala-continut .wrap-10 {
+                        grid-column: span 8;
+                    }
+                    #ecoscoala-continut .wrap-1 {
+                        grid-column: span 2;
+                    }
+                    #ecoscoala-continut .wrap-4 {
+                        grid-column: span 8;
+                    }
+                    #ecoscoala-continut .wrap-102 {
+                        grid-column: span 5;
+                    }
+                    #ecoscoala-continut .wrap-108 {
+                        grid-column: span 5;
+                    }
+                    #ecoscoala-continut .wrap-105 {
+                        grid-column: span 10;
                     }
                     #verde-platforma-1 .wrap-3 {
                         grid-column: span 6;
@@ -2892,6 +3044,27 @@ border-radius: 4px;
                     #erasmusplus-continut .wrap-10 {
                         grid-column: span 8;
                     }
+                    #ecoscoala-continut .wrap-2 {
+                        grid-column: span 4;
+                    }
+                    #ecoscoala-continut .wrap-10 {
+                        grid-column: span 8;
+                    }
+                    #ecoscoala-continut .wrap-1 {
+                        grid-column: span 2;
+                    }
+                    #ecoscoala-continut .wrap-4 {
+                        grid-column: span 8;
+                    }
+                    #ecoscoala-continut .wrap-102 {
+                        grid-column: span 5;
+                    }
+                    #ecoscoala-continut .wrap-108 {
+                        grid-column: span 5;
+                    }
+                    #ecoscoala-continut .wrap-105 {
+                        grid-column: span 10;
+                    }
                     #verde-platforma-1 .wrap-3 {
                         grid-column: span 6;
                     }
@@ -2937,6 +3110,27 @@ border-radius: 4px;
                     }
                     #erasmusplus-continut .wrap-10 {
                         grid-column: span 8;
+                    }
+                    #ecoscoala-continut .wrap-2 {
+                        grid-column: span 4;
+                    }
+                    #ecoscoala-continut .wrap-10 {
+                        grid-column: span 8;
+                    }
+                    #ecoscoala-continut .wrap-1 {
+                        grid-column: span 2;
+                    }
+                    #ecoscoala-continut .wrap-4 {
+                        grid-column: span 8;
+                    }
+                    #ecoscoala-continut .wrap-102 {
+                        grid-column: span 5;
+                    }
+                    #ecoscoala-continut .wrap-108 {
+                        grid-column: span 5;
+                    }
+                    #ecoscoala-continut .wrap-105 {
+                        grid-column: span 10;
                     }
                     #verde-platforma-1 .wrap-3 {
                         grid-column: span 6;
@@ -2990,6 +3184,27 @@ border-radius: 4px;
                     }
                     #erasmusplus-continut .wrap-10 {
                         grid-column: span 8;
+                    }
+                    #ecoscoala-continut .wrap-2 {
+                        grid-column: span 4;
+                    }
+                    #ecoscoala-continut .wrap-10 {
+                        grid-column: span 8;
+                    }
+                    #ecoscoala-continut .wrap-1 {
+                        grid-column: span 2;
+                    }
+                    #ecoscoala-continut .wrap-4 {
+                        grid-column: span 8;
+                    }
+                    #ecoscoala-continut .wrap-102 {
+                        grid-column: span 5;
+                    }
+                    #ecoscoala-continut .wrap-108 {
+                        grid-column: span 5;
+                    }
+                    #ecoscoala-continut .wrap-105 {
+                        grid-column: span 10;
                     }
                     #program-continut .wrap-show {
                         display: none;
@@ -3138,6 +3353,27 @@ border-radius: 4px;
                     #erasmusplus-continut .wrap-10 {
                         grid-column: span 8;
                     }
+                    #ecoscoala-continut .wrap-2 {
+                        grid-column: span 4;
+                    }
+                    #ecoscoala-continut .wrap-10 {
+                        grid-column: span 8;
+                    }
+                    #ecoscoala-continut .wrap-1 {
+                        grid-column: span 2;
+                    }
+                    #ecoscoala-continut .wrap-4 {
+                        grid-column: span 8;
+                    }
+                    #ecoscoala-continut .wrap-102 {
+                        grid-column: span 5;
+                    }
+                    #ecoscoala-continut .wrap-108 {
+                        grid-column: span 5;
+                    }
+                    #ecoscoala-continut .wrap-105 {
+                        grid-column: span 10;
+                    }
                     #program-continut .wrap-show {
                         display: none;
                     }
@@ -3274,7 +3510,7 @@ border-radius: 4px;
                     }
                 }
 
-/* page-menu-1 (organigrama), wrap-4, page-menu 2, wrap-2 12, wrap-10 12, wrap-103 10, wrap 107 10 (PROIECTE) */
+/* page-menu-1 (organigrama), wrap-4, page-menu 2, wrap-2 12, wrap-10 12, wrap-1 4, wrap-4 4, wrap-102 10, wrap-108 10 (PROIECTE) */
                 @media (min-width: 601px) and (max-width: 720px) { 
                     aside {
                         border-radius: 4px;
@@ -3313,6 +3549,27 @@ border-radius: 4px;
                         grid-column: span 10;
                     }
                     #erasmusplus-continut .wrap-107 {
+                        grid-column: span 10;
+                    }
+                    #ecoscoala-continut .wrap-2 {
+                        grid-column: span 12;
+                    }
+                    #ecoscoala-continut .wrap-10 {
+                        grid-column: span 12;
+                    }
+                    #ecoscoala-continut .wrap-1 {
+                        grid-column: span 4;
+                    }
+                    #ecoscoala-continut .wrap-4 {
+                        grid-column: span 4;
+                    }
+                    #ecoscoala-continut .wrap-102 {
+                        grid-column: span 10;
+                    }
+                    #ecoscoala-continut .wrap-108 {
+                        grid-column: span 10;
+                    }
+                    #ecoscoala-continut .wrap-105 {
                         grid-column: span 10;
                     }
                     #program-continut .wrap-show {
@@ -3510,6 +3767,27 @@ border-radius: 4px;
                     #erasmusplus-continut .wrap-107 {
                         grid-column: span 10;
                     }
+                    #ecoscoala-continut .wrap-2 {
+                        grid-column: span 12;
+                    }
+                    #ecoscoala-continut .wrap-10 {
+                        grid-column: span 12;
+                    }
+                    #ecoscoala-continut .wrap-1 {
+                        grid-column: span 4;
+                    }
+                    #ecoscoala-continut .wrap-4 {
+                        grid-column: span 4;
+                    }
+                    #ecoscoala-continut .wrap-102 {
+                        grid-column: span 10;
+                    }
+                    #ecoscoala-continut .wrap-108 {
+                        grid-column: span 10;
+                    }
+                    #ecoscoala-continut .wrap-105 {
+                        grid-column: span 10;
+                    }
                     #program-continut .wrap-show {
                         display: none;
                     }
@@ -3673,7 +3951,7 @@ border-radius: 4px;
                     }
                 }
 
-/* legaturi 1, wrap-92 12-1, wrap-6 12 (conducere-ul),  wrap-3 (altfel, verde 1-continut), page-menu 1 (PROIECTE) */
+/* page-menu 1, wrap-1 6, wrap-4 12 (PROIECTE) */
                 @media (min-width: 427px) and (max-width: 480px) { 
                     aside {
                         border-radius: 4px;
@@ -3712,6 +3990,27 @@ border-radius: 4px;
                         grid-column: span 10;
                     }
                     #erasmusplus-continut .wrap-107 {
+                        grid-column: span 10;
+                    }
+                    #ecoscoala-continut .wrap-2 {
+                        grid-column: span 12;
+                    }
+                    #ecoscoala-continut .wrap-10 {
+                        grid-column: span 12;
+                    }
+                    #ecoscoala-continut .wrap-1 {
+                        grid-column: span 6;
+                    }
+                    #ecoscoala-continut .wrap-4 {
+                        grid-column: span 12;
+                    }
+                    #ecoscoala-continut .wrap-102 {
+                        grid-column: span 10;
+                    }
+                    #ecoscoala-continut .wrap-108 {
+                        grid-column: span 10;
+                    }
+                    #ecoscoala-continut .wrap-105 {
                         grid-column: span 10;
                     }
                     #program-continut .wrap-show {
@@ -3916,6 +4215,27 @@ border-radius: 4px;
                         grid-column: span 10;
                     }
                     #erasmusplus-continut .wrap-107 {
+                        grid-column: span 10;
+                    }
+                    #ecoscoala-continut .wrap-2 {
+                        grid-column: span 12;
+                    }
+                    #ecoscoala-continut .wrap-10 {
+                        grid-column: span 12;
+                    }
+                    #ecoscoala-continut .wrap-1 {
+                        grid-column: span 6;
+                    }
+                    #ecoscoala-continut .wrap-4 {
+                        grid-column: span 12;
+                    }
+                    #ecoscoala-continut .wrap-102 {
+                        grid-column: span 10;
+                    }
+                    #ecoscoala-continut .wrap-108 {
+                        grid-column: span 10;
+                    }
+                    #ecoscoala-continut .wrap-105 {
                         grid-column: span 10;
                     }
                     #program-continut .wrap-show {
@@ -4123,6 +4443,27 @@ border-radius: 4px;
                         grid-column: span 10;
                     }
                     #erasmusplus-continut .wrap-107 {
+                        grid-column: span 10;
+                    }
+                    #ecoscoala-continut .wrap-2 {
+                        grid-column: span 12;
+                    }
+                    #ecoscoala-continut .wrap-10 {
+                        grid-column: span 12;
+                    }
+                    #ecoscoala-continut .wrap-1 {
+                        grid-column: span 6;
+                    }
+                    #ecoscoala-continut .wrap-4 {
+                        grid-column: span 12;
+                    }
+                    #ecoscoala-continut .wrap-102 {
+                        grid-column: span 10;
+                    }
+                    #ecoscoala-continut .wrap-108 {
+                        grid-column: span 10;
+                    }
+                    #ecoscoala-continut .wrap-105 {
                         grid-column: span 10;
                     }
                     #program-continut .wrap-show {
