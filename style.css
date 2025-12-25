@@ -812,6 +812,20 @@ border-radius: 4px;
                             text-align: left;
                         }
 
+                        .citat-8 {
+border: 0px solid #404040;
+border-radius: 4px;
+                            margin-top: 0;
+                            margin-bottom: 0;
+                            margin-left: -0.5rem;
+                            margin-right: 0;
+                            padding-top: 0;
+                            padding-bottom: 0;
+                            padding-left: 0;
+                            padding-right: 0;
+                            text-align: left;
+                        }
+
                     .coloane {
 border: 0px solid #404040;
 border-radius: 4px;
@@ -2999,6 +3013,12 @@ border-radius: 4px;
                     #strategie-continut .wrap-10 {
                         grid-column: span 8;
                     }
+                    #scoala-dupa-scoala-continut .wrap-2 {
+                        grid-column: span 4;
+                    }
+                    #scoala-dupa-scoala-continut .wrap-10 {
+                        grid-column: span 8;
+                    }
                     #verde-platforma-1 .wrap-3 {
                         grid-column: span 6;
                     }
@@ -3075,6 +3095,12 @@ border-radius: 4px;
                     #strategie-continut .wrap-10 {
                         grid-column: span 8;
                     }
+                    #scoala-dupa-scoala-continut .wrap-2 {
+                        grid-column: span 4;
+                    }
+                    #scoala-dupa-scoala-continut .wrap-10 {
+                        grid-column: span 8;
+                    }
                     #verde-platforma-1 .wrap-3 {
                         grid-column: span 6;
                     }
@@ -3146,6 +3172,12 @@ border-radius: 4px;
                         grid-column: span 4;
                     }
                     #strategie-continut .wrap-10 {
+                        grid-column: span 8;
+                    }
+                    #scoala-dupa-scoala-continut .wrap-2 {
+                        grid-column: span 4;
+                    }
+                    #scoala-dupa-scoala-continut .wrap-10 {
                         grid-column: span 8;
                     }
                     #verde-platforma-1 .wrap-3 {
@@ -3226,6 +3258,12 @@ border-radius: 4px;
                         grid-column: span 4;
                     }
                     #strategie-continut .wrap-10 {
+                        grid-column: span 8;
+                    }
+                    #scoala-dupa-scoala-continut .wrap-2 {
+                        grid-column: span 4;
+                    }
+                    #scoala-dupa-scoala-continut .wrap-10 {
                         grid-column: span 8;
                     }
                     #program-continut .wrap-show {
@@ -3400,6 +3438,12 @@ border-radius: 4px;
                         grid-column: span 4;
                     }
                     #strategie-continut .wrap-10 {
+                        grid-column: span 8;
+                    }
+                    #scoala-dupa-scoala-continut .wrap-2 {
+                        grid-column: span 4;
+                    }
+                    #scoala-dupa-scoala-continut .wrap-10 {
                         grid-column: span 8;
                     }
                     #program-continut .wrap-show {
@@ -3604,6 +3648,12 @@ border-radius: 4px;
                         grid-column: span 12;
                     }
                     #strategie-continut .wrap-10 {
+                        grid-column: span 12;
+                    }
+                    #scoala-dupa-scoala-continut .wrap-2 {
+                        grid-column: span 12;
+                    }
+                    #scoala-dupa-scoala-continut .wrap-10 {
                         grid-column: span 12;
                     }
                     #program-continut .wrap-show {
@@ -3826,6 +3876,12 @@ border-radius: 4px;
                         grid-column: span 12;
                     }
                     #strategie-continut .wrap-10 {
+                        grid-column: span 12;
+                    }
+                    #scoala-dupa-scoala-continut .wrap-2 {
+                        grid-column: span 12;
+                    }
+                    #scoala-dupa-scoala-continut .wrap-10 {
                         grid-column: span 12;
                     }
                     #program-continut .wrap-show {
@@ -4059,6 +4115,12 @@ border-radius: 4px;
                     #strategie-continut .wrap-10 {
                         grid-column: span 12;
                     }
+                    #scoala-dupa-scoala-continut .wrap-2 {
+                        grid-column: span 12;
+                    }
+                    #scoala-dupa-scoala-continut .wrap-10 {
+                        grid-column: span 12;
+                    }
                     #program-continut .wrap-show {
                         display: none;
                     }
@@ -4288,6 +4350,12 @@ border-radius: 4px;
                         grid-column: span 12;
                     }
                     #strategie-continut .wrap-10 {
+                        grid-column: span 12;
+                    }
+                    #scoala-dupa-scoala-continut .wrap-2 {
+                        grid-column: span 12;
+                    }
+                    #scoala-dupa-scoala-continut .wrap-10 {
                         grid-column: span 12;
                     }
                     #program-continut .wrap-show {
@@ -4522,6 +4590,12 @@ border-radius: 4px;
                         grid-column: span 12;
                     }
                     #strategie-continut .wrap-10 {
+                        grid-column: span 12;
+                    }
+                    #scoala-dupa-scoala-continut .wrap-2 {
+                        grid-column: span 12;
+                    }
+                    #scoala-dupa-scoala-continut .wrap-10 {
                         grid-column: span 12;
                     }
                     #program-continut .wrap-show {
