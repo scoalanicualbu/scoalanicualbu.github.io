@@ -3025,6 +3025,12 @@ border-radius: 4px;
                     #scoala-de-acasa-continut .wrap-10 {
                         grid-column: span 8;
                     }
+                    #catalogul-electronic-continut .wrap-2 {
+                        grid-column: span 4;
+                    }
+                    #catalogul-electronic-continut .wrap-10 {
+                        grid-column: span 8;
+                    }
                     #verde-platforma-1 .wrap-3 {
                         grid-column: span 6;
                     }
@@ -3113,6 +3119,12 @@ border-radius: 4px;
                     #scoala-de-acasa-continut .wrap-10 {
                         grid-column: span 8;
                     }
+                    #catalogul-electronic-continut .wrap-2 {
+                        grid-column: span 4;
+                    }
+                    #catalogul-electronic-continut .wrap-10 {
+                        grid-column: span 8;
+                    }
                     #verde-platforma-1 .wrap-3 {
                         grid-column: span 6;
                     }
@@ -3196,6 +3208,12 @@ border-radius: 4px;
                         grid-column: span 4;
                     }
                     #scoala-de-acasa-continut .wrap-10 {
+                        grid-column: span 8;
+                    }
+                    #catalogul-electronic-continut .wrap-2 {
+                        grid-column: span 4;
+                    }
+                    #catalogul-electronic-continut .wrap-10 {
                         grid-column: span 8;
                     }
                     #verde-platforma-1 .wrap-3 {
@@ -3288,6 +3306,12 @@ border-radius: 4px;
                         grid-column: span 4;
                     }
                     #scoala-de-acasa-continut .wrap-10 {
+                        grid-column: span 8;
+                    }
+                    #catalogul-electronic-continut .wrap-2 {
+                        grid-column: span 4;
+                    }
+                    #catalogul-electronic-continut .wrap-10 {
                         grid-column: span 8;
                     }
                     #program-continut .wrap-show {
@@ -3474,6 +3498,12 @@ border-radius: 4px;
                         grid-column: span 4;
                     }
                     #scoala-de-acasa-continut .wrap-10 {
+                        grid-column: span 8;
+                    }
+                    #catalogul-electronic-continut .wrap-2 {
+                        grid-column: span 4;
+                    }
+                    #catalogul-electronic-continut .wrap-10 {
                         grid-column: span 8;
                     }
                     #program-continut .wrap-show {
@@ -3690,6 +3720,12 @@ border-radius: 4px;
                         grid-column: span 12;
                     }
                     #scoala-de-acasa-continut .wrap-10 {
+                        grid-column: span 12;
+                    }
+                    #catalogul-electronic-continut .wrap-2 {
+                        grid-column: span 12;
+                    }
+                    #catalogul-electronic-continut .wrap-10 {
                         grid-column: span 12;
                     }
                     #program-continut .wrap-show {
@@ -3924,6 +3960,12 @@ border-radius: 4px;
                         grid-column: span 12;
                     }
                     #scoala-de-acasa-continut .wrap-10 {
+                        grid-column: span 12;
+                    }
+                    #catalogul-electronic-continut .wrap-2 {
+                        grid-column: span 12;
+                    }
+                    #catalogul-electronic-continut .wrap-10 {
                         grid-column: span 12;
                     }
                     #program-continut .wrap-show {
@@ -4169,6 +4211,12 @@ border-radius: 4px;
                     #scoala-de-acasa-continut .wrap-10 {
                         grid-column: span 12;
                     }
+                    #catalogul-electronic-continut .wrap-2 {
+                        grid-column: span 12;
+                    }
+                    #catalogul-electronic-continut .wrap-10 {
+                        grid-column: span 12;
+                    }
                     #program-continut .wrap-show {
                         display: none;
                     }
@@ -4410,6 +4458,12 @@ border-radius: 4px;
                         grid-column: span 12;
                     }
                     #scoala-de-acasa-continut .wrap-10 {
+                        grid-column: span 12;
+                    }
+                    #catalogul-electronic-continut .wrap-2 {
+                        grid-column: span 12;
+                    }
+                    #catalogul-electronic-continut .wrap-10 {
                         grid-column: span 12;
                     }
                     #program-continut .wrap-show {
@@ -4656,6 +4710,12 @@ border-radius: 4px;
                         grid-column: span 12;
                     }
                     #scoala-de-acasa-continut .wrap-10 {
+                        grid-column: span 12;
+                    }
+                    #catalogul-electronic-continut .wrap-2 {
+                        grid-column: span 12;
+                    }
+                    #catalogul-electronic-continut .wrap-10 {
                         grid-column: span 12;
                     }
                     #program-continut .wrap-show {
