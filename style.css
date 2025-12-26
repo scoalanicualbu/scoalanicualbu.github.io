@@ -699,6 +699,34 @@ border-radius: 4px;
                         text-align: left;
                     }
 
+                        .citat-r {
+border: 0px solid #404040;
+border-radius: 4px;
+                            margin-top: 0;
+                            margin-bottom: 0.5rem;
+                            margin-left: 0;
+                            margin-right: 0;
+                            padding-top: 0;
+                            padding-bottom: 0;
+                            padding-left: 0;
+                            padding-right: 0;
+                            text-align: right;
+                        }
+
+                        .citat-r0 {
+border: 0px solid #404040;
+border-radius: 4px;
+                            margin-top: 0;
+                            margin-bottom: 0;
+                            margin-left: 0;
+                            margin-right: 0;
+                            padding-top: 0;
+                            padding-bottom: 0;
+                            padding-left: 0;
+                            padding-right: 0;
+                            text-align: right;
+                        }
+
                         .citat-0 {
 border: 0px solid #404040;
 border-radius: 4px;
@@ -3051,6 +3079,12 @@ border-radius: 4px;
                     #edulib-continut .wrap-10 {
                         grid-column: span 8;
                     }
+                    #wireless-campus-continut .wrap-2 {
+                        grid-column: span 4;
+                    }
+                    #wireless-campus-continut .wrap-10 {
+                        grid-column: span 8;
+                    }
                     #verde-platforma-1 .wrap-3 {
                         grid-column: span 6;
                     }
@@ -3151,6 +3185,12 @@ border-radius: 4px;
                     #edulib-continut .wrap-10 {
                         grid-column: span 8;
                     }
+                    #wireless-campus-continut .wrap-2 {
+                        grid-column: span 4;
+                    }
+                    #wireless-campus-continut .wrap-10 {
+                        grid-column: span 8;
+                    }
                     #verde-platforma-1 .wrap-3 {
                         grid-column: span 6;
                     }
@@ -3246,6 +3286,12 @@ border-radius: 4px;
                         grid-column: span 4;
                     }
                     #edulib-continut .wrap-10 {
+                        grid-column: span 8;
+                    }
+                    #wireless-campus-continut .wrap-2 {
+                        grid-column: span 4;
+                    }
+                    #wireless-campus-continut .wrap-10 {
                         grid-column: span 8;
                     }
                     #verde-platforma-1 .wrap-3 {
@@ -3350,6 +3396,12 @@ border-radius: 4px;
                         grid-column: span 4;
                     }
                     #edulib-continut .wrap-10 {
+                        grid-column: span 8;
+                    }
+                    #wireless-campus-continut .wrap-2 {
+                        grid-column: span 4;
+                    }
+                    #wireless-campus-continut .wrap-10 {
                         grid-column: span 8;
                     }
                     #program-continut .wrap-show {
@@ -3548,6 +3600,12 @@ border-radius: 4px;
                         grid-column: span 4;
                     }
                     #edulib-continut .wrap-10 {
+                        grid-column: span 8;
+                    }
+                    #wireless-campus-continut .wrap-2 {
+                        grid-column: span 4;
+                    }
+                    #wireless-campus-continut .wrap-10 {
                         grid-column: span 8;
                     }
                     #program-continut .wrap-show {
@@ -3776,6 +3834,12 @@ border-radius: 4px;
                         grid-column: span 12;
                     }
                     #edulib-continut .wrap-10 {
+                        grid-column: span 12;
+                    }
+                    #wireless-campus-continut .wrap-2 {
+                        grid-column: span 12;
+                    }
+                    #wireless-campus-continut .wrap-10 {
                         grid-column: span 12;
                     }
                     #program-continut .wrap-show {
@@ -4022,6 +4086,12 @@ border-radius: 4px;
                         grid-column: span 12;
                     }
                     #edulib-continut .wrap-10 {
+                        grid-column: span 12;
+                    }
+                    #wireless-campus-continut .wrap-2 {
+                        grid-column: span 12;
+                    }
+                    #wireless-campus-continut .wrap-10 {
                         grid-column: span 12;
                     }
                     #program-continut .wrap-show {
@@ -4279,6 +4349,12 @@ border-radius: 4px;
                     #edulib-continut .wrap-10 {
                         grid-column: span 12;
                     }
+                    #wireless-campus-continut .wrap-2 {
+                        grid-column: span 12;
+                    }
+                    #wireless-campus-continut .wrap-10 {
+                        grid-column: span 12;
+                    }
                     #program-continut .wrap-show {
                         display: none;
                     }
@@ -4532,6 +4608,12 @@ border-radius: 4px;
                         grid-column: span 12;
                     }
                     #edulib-continut .wrap-10 {
+                        grid-column: span 12;
+                    }
+                    #wireless-campus-continut .wrap-2 {
+                        grid-column: span 12;
+                    }
+                    #wireless-campus-continut .wrap-10 {
                         grid-column: span 12;
                     }
                     #program-continut .wrap-show {
@@ -4790,6 +4872,12 @@ border-radius: 4px;
                         grid-column: span 12;
                     }
                     #edulib-continut .wrap-10 {
+                        grid-column: span 12;
+                    }
+                    #wireless-campus-continut .wrap-2 {
+                        grid-column: span 12;
+                    }
+                    #wireless-campus-continut .wrap-10 {
                         grid-column: span 12;
                     }
                     #program-continut .wrap-show {
