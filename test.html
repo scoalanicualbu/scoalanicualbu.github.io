@@ -1991,6 +1991,7 @@ border-radius: 4px;
                             display: grid;
                             grid-template-columns: repeat(10, 1fr);
                             gap: 1rem;
+                            align-content: start;
                         }
 
                         .wrap-101 {
@@ -5802,7 +5803,7 @@ border-radius: 4px;
 
                         <h3 id="clasa-viitorului-videoconferinta-label" class="m3 sr-only">Videoconferință</h3>
 
-                        <div id="videoconferinta" class="content-imagine">
+                        <div id="videoconferinta-clasa-viitorului" class="content-imagine">
                             <a href="https://drive.google.com/file/d/12qUUTESUhl4nxvVn98koH3Aps-H1RSVs/view" target="_blank" rel="noopener noreferrer" class="tooltip-link" aria-describedby="videoconferinta-title videoconferinta-tooltip">
                                 <img src="strategie/clasa-viitorului/videoconferinta.png" width="1383" height="563" alt="Sigla Ministerului Educației și Cercetării și textul „Videoconferință de presă, 16.03.2020”">
                                 <span id="videoconferinta-title" class="tooltip-title" role="tooltip">Videoconferință de presă</span>
@@ -5816,7 +5817,7 @@ border-radius: 4px;
 
                         <h3 id="clasa-viitorului-altfel-label" class="m3 sr-only">O altfel de clasă</h3>
 
-                        <div id="altfel" class="content-imagine">
+                        <div id="altfel-clasa-viitorului" class="content-imagine">
                             <a href="https://drive.google.com/file/d/17PG3_vAc-Sg8NCEfErgV2VQRLpyRef01/view" target="_blank" rel="noopener noreferrer" class="tooltip-link" aria-describedby="altfel-title altfel-tooltip">
                                 <img src="strategie/clasa-viitorului/altfel.png" width="1389" height="560" alt="Sigla firmei Edu Apps și textul „Clasa Viitorului, o altfel de clasă”">
                                 <span id="altfel-title" class="tooltip-title" role="tooltip">Clasa viitorului - o altfel de clasă</span>
@@ -5830,7 +5831,7 @@ border-radius: 4px;
 
                         <h3 id="clasa-viitorului-classroom-label" class="m3 sr-only">Google Classroom</h3>
 
-                        <div id="classroom" class="content-imagine">
+                        <div id="classroom-clasa-viitorului" class="content-imagine">
                             <a href="https://drive.google.com/file/d/1uUlYo6XuulIFjvvGxtvsQhycUAA1zP1L/view" target="_blank" rel="noopener noreferrer" class="tooltip-link" aria-describedby="classroom-title classroom-tooltip">
                                 <img src="strategie/clasa-viitorului/classroom.png" width="1389" height="559" alt="Sigla firmei Edu Apps și textul „Utilizare Google Classroom”">
                                 <span id="classroom-title" class="tooltip-title" role="tooltip">Utilizare Google Classroom</span>
@@ -5844,7 +5845,7 @@ border-radius: 4px;
 
                         <h3 id="clasa-viitorului-meet-label" class="m3 sr-only">Google Meet</h3>
 
-                        <div id="meet" class="content-imagine">
+                        <div id="meet-clasa-viitorului" class="content-imagine">
                             <a href="https://drive.google.com/file/d/1VqhvjXuxrT3zFxof1JSeeH-wFu2HR-xF/view" target="_blank" rel="noopener noreferrer" class="tooltip-link" aria-describedby="meet-title meet-tooltip">
                                 <img src="strategie/clasa-viitorului/meet.png" width="1391" height="561" alt="Sigla firmei Edu Apps și textul „Utilizare Google Meet, Calendar, YouTube Live”">
                                 <span id="meet-title" class="tooltip-title" role="tooltip">Utilizare Google Meet, Calendar, YouTube Live</span>
@@ -5858,7 +5859,7 @@ border-radius: 4px;
 
                         <h3 id="clasa-viitorului-word-label" class="m3 sr-only">Videoconferință</h3>
 
-                        <div id="word" class="content-imagine">
+                        <div id="word-clasa-viitorului" class="content-imagine">
                             <a href="https://drive.google.com/file/d/1tEhQpf4Z1zhdT5rzxy6ZA5gHpA7iCfAC/view" target="_blank" rel="noopener noreferrer" class="tooltip-link" aria-describedby="word-title word-tooltip">
                                 <img src="strategie/clasa-viitorului/word.png" width="1352" height="562" alt="Sigla firmei Edu Apps și textul „Utilizare Microsoft Word - Word de nota 10”">
                                 <span id="word-title" class="tooltip-title" role="tooltip">Utilizare Microsoft Word</span>
@@ -5872,7 +5873,7 @@ border-radius: 4px;
 
                         <h3 id="clasa-viitorului-powerpoint-label" class="m3 sr-only">Microsoft PowerPoint</h3>
 
-                        <div id="powerpoint" class="content-imagine">
+                        <div id="powerpoint-clasa-viitorului" class="content-imagine">
                             <a href="https://drive.google.com/file/d/1a6poEA7NSdsfYBp10NpT0H8ApvyLHJzF/view" target="_blank" rel="noopener noreferrer" class="tooltip-link" aria-describedby="powerpoint-title powerpoint-tooltip">
                                 <img src="strategie/clasa-viitorului/powerpoint.png" width="1370" height="570" alt="Sigla firmei Edu Apps și textul „Utilizare Microsoft PowerPoint”">
                                 <span id="powerpoint-title" class="tooltip-title" role="tooltip">Utilizare Microsoft PowerPoint</span>
@@ -6145,7 +6146,12 @@ border-radius: 4px;
                 ['imagine-sigla-fee', 'imagine-sigla-reporteri'],
                 ['imagine-sigla-fee', 'imagine-sigla-cheia-verde'],
                 ['imagine-sigla-fee', 'imagine-sigla-steagul-albastru'],
-                ['imagine-sigla-fee', 'imagine-sigla-fee-global']
+                ['imagine-sigla-fee', 'imagine-sigla-fee-global'],
+                ['videoconferinta-clasa-viitorului', 'altfel-clasa-viitorului'],
+                ['videoconferinta-clasa-viitorului', 'classroom-clasa-viitorului'],
+                ['videoconferinta-clasa-viitorului', 'meet-clasa-viitorului'],
+                ['videoconferinta-clasa-viitorului', 'word-clasa-viitorului'],
+                ['videoconferinta-clasa-viitorului', 'powerpoint-clasa-viitorului']
             ];
 
             function updateImagini() {
