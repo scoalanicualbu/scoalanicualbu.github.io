@@ -197,7 +197,13 @@
                 ['imagine-sigla-fee', 'imagine-sigla-reporteri'],
                 ['imagine-sigla-fee', 'imagine-sigla-cheia-verde'],
                 ['imagine-sigla-fee', 'imagine-sigla-steagul-albastru'],
-                ['imagine-sigla-fee', 'imagine-sigla-fee-global']
+                ['imagine-sigla-fee', 'imagine-sigla-fee-global'],
+                ['clasa-viitorului-videoconferinta', 'videoconferinta-clasa-viitorului'],
+                ['clasa-viitorului-videoconferinta', 'altfel-clasa-viitorului'],
+                ['clasa-viitorului-videoconferinta', 'classroom-clasa-viitorului'],
+                ['clasa-viitorului-videoconferinta', 'meet-clasa-viitorului'],
+                ['clasa-viitorului-videoconferinta', 'word-clasa-viitorului'],
+                ['clasa-viitorului-videoconferinta', 'powerpoint-clasa-viitorului']
             ];
 
             function updateImagini() {
