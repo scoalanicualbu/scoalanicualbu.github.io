@@ -928,20 +928,6 @@ border-radius: 4px;
                                 list-style: none;
                             }
 
-                            .sectiune-informatii li.resurse {
-border: 0px solid #404040;
-border-radius: 4px;
-                                margin-top: 0;
-                                margin-bottom: 1rem;
-                                margin-left: 0;
-                                margin-right: 0;
-                                padding-top: 0;
-                                padding-bottom: 0;
-                                padding-left: 0;
-                                padding-right: 0;
-                                list-style: none;
-                            }
-
                                 .sectiune-informatii a {
 border: 0px solid #404040;
 border-radius: 4px;
@@ -990,6 +976,47 @@ border-radius: 4px;
                             color: #404040;
                             background-color: #FFFFFF;
                         }
+
+/* Secțiune Resurse */
+                    .sectiune-resurse {
+border: 0px solid #404040;
+border-radius: 4px;
+                        margin-top: -0.5rem;
+                        margin-bottom: -1rem;
+                        margin-left: 0;
+                        margin-right: 0;
+                        padding-top: 0.5rem;
+                        padding-bottom: 0;
+                        padding-left: 0;
+                        padding-right: 0;
+                    }
+
+                        .sectiune-resurse ul {
+                            margin-top: 0;
+                            margin-bottom: 0;
+                            margin-left: 0;
+                            margin-right: 0;
+                            padding-top: 0;
+                            padding-bottom: 0;
+                            padding-left: 0;
+                            padding-right: 0;
+                            width: 100%;
+                            list-style: none;
+                        }
+
+                            .sectiune-resurse li {
+border: 0px solid #404040;
+border-radius: 4px;
+                                margin-top: 0;
+                                margin-bottom: 0;
+                                margin-left: 0;
+                                margin-right: 0;
+                                padding-top: 0;
+                                padding-bottom: 1rem;
+                                padding-left: 0;
+                                padding-right: 0;
+                                list-style: none;
+                            }
 
 /* Secțiune TelVerde */
                     .sectiune-telverde {
@@ -1921,6 +1948,7 @@ border-radius: 4px;
                             display: grid;
                             grid-template-columns: repeat(10, 1fr);
                             gap: 1rem;
+                            align-content: start;
                         }
 
                         .wrap-101 {
@@ -3118,6 +3146,12 @@ border-radius: 4px;
                     #smart-edu-continut .wrap-10 {
                         grid-column: span 8;
                     }
+                    #clasa-viitorului-continut .wrap-2 {
+                        grid-column: span 4;
+                    }
+                    #clasa-viitorului-continut .wrap-10 {
+                        grid-column: span 8;
+                    }
                     #verde-platforma-1 .wrap-3 {
                         grid-column: span 6;
                     }
@@ -3230,6 +3264,12 @@ border-radius: 4px;
                     #smart-edu-continut .wrap-10 {
                         grid-column: span 8;
                     }
+                    #clasa-viitorului-continut .wrap-2 {
+                        grid-column: span 4;
+                    }
+                    #clasa-viitorului-continut .wrap-10 {
+                        grid-column: span 8;
+                    }
                     #verde-platforma-1 .wrap-3 {
                         grid-column: span 6;
                     }
@@ -3337,6 +3377,12 @@ border-radius: 4px;
                         grid-column: span 4;
                     }
                     #smart-edu-continut .wrap-10 {
+                        grid-column: span 8;
+                    }
+                    #clasa-viitorului-continut .wrap-2 {
+                        grid-column: span 4;
+                    }
+                    #clasa-viitorului-continut .wrap-10 {
                         grid-column: span 8;
                     }
                     #verde-platforma-1 .wrap-3 {
@@ -3453,6 +3499,12 @@ border-radius: 4px;
                         grid-column: span 4;
                     }
                     #smart-edu-continut .wrap-10 {
+                        grid-column: span 8;
+                    }
+                    #clasa-viitorului-continut .wrap-2 {
+                        grid-column: span 4;
+                    }
+                    #clasa-viitorului-continut .wrap-10 {
                         grid-column: span 8;
                     }
                     #program-continut .wrap-show {
@@ -3663,6 +3715,12 @@ border-radius: 4px;
                         grid-column: span 4;
                     }
                     #smart-edu-continut .wrap-10 {
+                        grid-column: span 8;
+                    }
+                    #clasa-viitorului-continut .wrap-2 {
+                        grid-column: span 4;
+                    }
+                    #clasa-viitorului-continut .wrap-10 {
                         grid-column: span 8;
                     }
                     #program-continut .wrap-show {
@@ -3903,6 +3961,12 @@ border-radius: 4px;
                         grid-column: span 12;
                     }
                     #smart-edu-continut .wrap-10 {
+                        grid-column: span 12;
+                    }
+                    #clasa-viitorului-continut .wrap-2 {
+                        grid-column: span 12;
+                    }
+                    #clasa-viitorului-continut .wrap-10 {
                         grid-column: span 12;
                     }
                     #program-continut .wrap-show {
@@ -4161,6 +4225,12 @@ border-radius: 4px;
                         grid-column: span 12;
                     }
                     #smart-edu-continut .wrap-10 {
+                        grid-column: span 12;
+                    }
+                    #clasa-viitorului-continut .wrap-2 {
+                        grid-column: span 12;
+                    }
+                    #clasa-viitorului-continut .wrap-10 {
                         grid-column: span 12;
                     }
                     #program-continut .wrap-show {
@@ -4430,6 +4500,12 @@ border-radius: 4px;
                     #smart-edu-continut .wrap-10 {
                         grid-column: span 12;
                     }
+                    #clasa-viitorului-continut .wrap-2 {
+                        grid-column: span 12;
+                    }
+                    #clasa-viitorului-continut .wrap-10 {
+                        grid-column: span 12;
+                    }
                     #program-continut .wrap-show {
                         display: none;
                     }
@@ -4695,6 +4771,12 @@ border-radius: 4px;
                         grid-column: span 12;
                     }
                     #smart-edu-continut .wrap-10 {
+                        grid-column: span 12;
+                    }
+                    #clasa-viitorului-continut .wrap-2 {
+                        grid-column: span 12;
+                    }
+                    #clasa-viitorului-continut .wrap-10 {
                         grid-column: span 12;
                     }
                     #program-continut .wrap-show {
@@ -4965,6 +5047,12 @@ border-radius: 4px;
                         grid-column: span 12;
                     }
                     #smart-edu-continut .wrap-10 {
+                        grid-column: span 12;
+                    }
+                    #clasa-viitorului-continut .wrap-2 {
+                        grid-column: span 12;
+                    }
+                    #clasa-viitorului-continut .wrap-10 {
                         grid-column: span 12;
                     }
                     #program-continut .wrap-show {
