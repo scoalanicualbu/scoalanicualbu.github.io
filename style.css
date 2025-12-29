@@ -854,6 +854,20 @@ border-radius: 4px;
                             text-align: left;
                         }
 
+                        .citat-9 {
+border: 0px solid #404040;
+border-radius: 4px;
+                            margin-top: -1rem;
+                            margin-bottom: 0;
+                            margin-left: -0.5rem;
+                            margin-right: 0;
+                            padding-top: 0;
+                            padding-bottom: 0;
+                            padding-left: 0;
+                            padding-right: 0;
+                            text-align: left;
+                        }
+
                     .coloane {
 border: 0px solid #404040;
 border-radius: 4px;
@@ -896,7 +910,7 @@ border-radius: 4px;
                         margin-left: 0.5rem;
                         margin-right: 0;
                         padding-top: 0.5rem;
-                        padding-bottom: 0.5rem;
+                        padding-bottom: 0;
                         padding-left: 0;
                         padding-right: 0;
                     }
@@ -3121,7 +3135,7 @@ border-radius: 4px;
                     }
                 }
 
-/* page-menu 3, wrap-2 4, wrap-10 8, wrap-1 2, wrap-4 8, wrap-102 5, wrap-108 5, wrap-105 10 (PROIECTE) */
+/* page-menu 3, wrap-2 4, wrap-10 8, wrap-1 2, wrap-4 8, wrap-102 5, wrap-108 5, wrap-105 10 (PROIECTE), wrap-2 4, wrap-10 8 (STRATEGIE) */
                 @media (min-width: 1367px)and (max-width: 1680px) {
                     aside {
                         min-height: 100vh;
@@ -3226,6 +3240,12 @@ border-radius: 4px;
                         grid-column: span 4;
                     }
                     #cred-continut .wrap-10 {
+                        grid-column: span 8;
+                    }
+                    #antibullying-continut .wrap-2 {
+                        grid-column: span 4;
+                    }
+                    #antibullying-continut .wrap-10 {
                         grid-column: span 8;
                     }
                     #verde-platforma-1 .wrap-3 {
@@ -3352,6 +3372,12 @@ border-radius: 4px;
                     #cred-continut .wrap-10 {
                         grid-column: span 8;
                     }
+                    #antibullying-continut .wrap-2 {
+                        grid-column: span 4;
+                    }
+                    #antibullying-continut .wrap-10 {
+                        grid-column: span 8;
+                    }
                     #verde-platforma-1 .wrap-3 {
                         grid-column: span 6;
                     }
@@ -3471,6 +3497,12 @@ border-radius: 4px;
                         grid-column: span 4;
                     }
                     #cred-continut .wrap-10 {
+                        grid-column: span 8;
+                    }
+                    #antibullying-continut .wrap-2 {
+                        grid-column: span 4;
+                    }
+                    #antibullying-continut .wrap-10 {
                         grid-column: span 8;
                     }
                     #verde-platforma-1 .wrap-3 {
@@ -3599,6 +3631,12 @@ border-radius: 4px;
                         grid-column: span 4;
                     }
                     #cred-continut .wrap-10 {
+                        grid-column: span 8;
+                    }
+                    #antibullying-continut .wrap-2 {
+                        grid-column: span 4;
+                    }
+                    #antibullying-continut .wrap-10 {
                         grid-column: span 8;
                     }
                     #program-continut .wrap-show {
@@ -3823,6 +3861,12 @@ border-radius: 4px;
                     #cred-continut .wrap-10 {
                         grid-column: span 8;
                     }
+                    #antibullying-continut .wrap-2 {
+                        grid-column: span 4;
+                    }
+                    #antibullying-continut .wrap-10 {
+                        grid-column: span 8;
+                    }
                     #program-continut .wrap-show {
                         display: none;
                     }
@@ -3959,7 +4003,7 @@ border-radius: 4px;
                     }
                 }
 
-/* page-menu-1 (organigrama), wrap-4, page-menu 2, wrap-2 12, wrap-10 12, wrap-1 4, wrap-4 4, wrap-102 10, wrap-108 10 (PROIECTE) */
+/* page-menu-1 (organigrama), wrap-4, page-menu 2, wrap-2 12, wrap-10 12, wrap-1 4, wrap-4 4, wrap-102 10, wrap-108 10 (PROIECTE), wrap-2 12, wrap-10 12, wrap-105 10 (STRATEGIE) */
                 @media (min-width: 601px) and (max-width: 720px) { 
                     aside {
                         border-radius: 4px;
@@ -4074,6 +4118,15 @@ border-radius: 4px;
                     }
                     #cred-continut .wrap-10 {
                         grid-column: span 12;
+                    }
+                    #antibullying-continut .wrap-2 {
+                        grid-column: span 12;
+                    }
+                    #antibullying-continut .wrap-10 {
+                        grid-column: span 12;
+                    }
+                    #antibullying-continut .wrap-105 {
+                        grid-column: span 10;
                     }
                     #program-continut .wrap-show {
                         display: none;
@@ -4344,6 +4397,15 @@ border-radius: 4px;
                     }
                     #cred-continut .wrap-10 {
                         grid-column: span 12;
+                    }
+                    #antibullying-continut .wrap-2 {
+                        grid-column: span 12;
+                    }
+                    #antibullying-continut .wrap-10 {
+                        grid-column: span 12;
+                    }
+                    #antibullying-continut .wrap-105 {
+                        grid-column: span 10;
                     }
                     #program-continut .wrap-show {
                         display: none;
@@ -4624,6 +4686,15 @@ border-radius: 4px;
                     #cred-continut .wrap-10 {
                         grid-column: span 12;
                     }
+                    #antibullying-continut .wrap-2 {
+                        grid-column: span 12;
+                    }
+                    #antibullying-continut .wrap-10 {
+                        grid-column: span 12;
+                    }
+                    #antibullying-continut .wrap-105 {
+                        grid-column: span 10;
+                    }
                     #program-continut .wrap-show {
                         display: none;
                     }
@@ -4902,6 +4973,15 @@ border-radius: 4px;
                     }
                     #cred-continut .wrap-10 {
                         grid-column: span 12;
+                    }
+                    #antibullying-continut .wrap-2 {
+                        grid-column: span 12;
+                    }
+                    #antibullying-continut .wrap-10 {
+                        grid-column: span 12;
+                    }
+                    #antibullying-continut .wrap-105 {
+                        grid-column: span 10;
                     }
                     #program-continut .wrap-show {
                         display: none;
@@ -5184,6 +5264,15 @@ border-radius: 4px;
                     }
                     #cred-continut .wrap-10 {
                         grid-column: span 12;
+                    }
+                    #antibullying-continut .wrap-2 {
+                        grid-column: span 12;
+                    }
+                    #antibullying-continut .wrap-10 {
+                        grid-column: span 12;
+                    }
+                    #antibullying-continut .wrap-105 {
+                        grid-column: span 10;
                     }
                     #program-continut .wrap-show {
                         display: none;
