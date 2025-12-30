@@ -92,8 +92,6 @@ border: 0px solid #404040;
                 padding-bottom: 0;
                 padding-left: 0;
                 padding-right: 0;
-                width: 100%;
-                max-width: 100vw;
                 min-height: 100vh;
                 display: flex;
                 flex-direction: column;
@@ -6169,29 +6167,6 @@ border-radius: 4px;
                 }
             }
 
-// Calculare spațiere prin interpolare liniară
-            function getGap() {
-                const maxGap = 1;
-                const minGap = 1;
-                const maxVW = 2160;
-                const minVW = 300;
-                const VW = window.innerWidth;
-                if (VW >= maxVW) {
-                    return maxGap + 'rem';
-                }
-                if (VW <= minVW) {
-                    return minGap + 'rem';
-                }
-                const ratio = (VW - minVW) / (maxVW - minVW);
-                const valueGap = minGap + ratio * (maxGap - minGap);
-                return valueGap.toFixed(2) + 'rem';
-            }
-
-            function updateGap() {
-                const sizeGap = getGap();
-                document.documentElement.style.setProperty('--gap', sizeGap);
-            }
-
 // Aranjare text în container
             const parametri = [];
 
@@ -7051,16 +7026,19 @@ border-radius: 4px;
             });
 
 // Inițializare setări la redimensionare pagină
-            window.addEventListener('resize', () =&gt; {
-                updateMeniu();
-                updateGap();
-                potrivesteTexte();
-                updateDivs();
-                updateImagini();
-                updateAlt();
-                updateSageti();
-void document.body.offsetHeight;
-            });
+window.addEventListener('resize', () =&gt; {
+// Apelează funcțiile tale
+updateMeniu();
+updateGap();
+potrivesteTexte();
+updateDivs();
+updateImagini();
+updateAlt();
+updateSageti();
+
+// Forțează reflow fără a modifica display
+void document.body.offsetHeight; // forțează reflow subtil
+});
 
         </script>
 
