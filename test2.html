@@ -7026,15 +7026,19 @@ border-radius: 4px;
             });
 
 // Inițializare setări la redimensionare pagină
-            window.addEventListener('resize', () => {
-                updateMeniu();
-                updateGap();
-                potrivesteTexte();
-                updateDivs();
-                updateImagini();
-                updateAlt();
-                updateSageti();
-            });
+window.addEventListener('resize', () =&gt; {
+// Apelează funcțiile tale
+updateMeniu();
+updateGap();
+potrivesteTexte();
+updateDivs();
+updateImagini();
+updateAlt();
+updateSageti();
+
+// Forțează reflow fără a modifica display
+void document.body.offsetHeight; // forțează reflow subtil
+});
 
         </script>
 
