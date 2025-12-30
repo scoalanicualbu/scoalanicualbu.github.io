@@ -3063,7 +3063,7 @@ border-radius: 4px;
                 }
 
 /* comunicari-2 */
-                @media (min-width: 2161px)and (max-width: 3840px) {
+                @media (min-width: 2161px) and (max-width: 3840px) {
                     aside {
                         min-height: 100vh;
                     }
@@ -3088,7 +3088,7 @@ border-radius: 4px;
                 }
 
 /* page-menu-2 (organigrama),  verde (div-link, imagine-link) da, wrap-3 (verde 2-platforma1,2), imagine-4 2, imagine-2 1 */
-                @media (min-width: 1921px)and (max-width: 2160px) {
+                @media (min-width: 1921px) and (max-width: 2160px) {
                     aside {
                         min-height: 100vh;
                     }
@@ -3122,7 +3122,7 @@ border-radius: 4px;
                 }
 
 /* telverde 4 */
-                @media (min-width: 1801px)and (max-width: 1920px) {
+                @media (min-width: 1801px) and (max-width: 1920px) {
                     aside {
                         min-height: 100vh;
                     }
@@ -3159,7 +3159,7 @@ border-radius: 4px;
                 }
 
 /* page-menu 1 (evaluare) */
-                @media (min-width: 1681px)and (max-width: 1800px) {
+                @media (min-width: 1681px) and (max-width: 1800px) {
                     aside {
                         min-height: 100vh;
                     }
@@ -3199,7 +3199,7 @@ border-radius: 4px;
                 }
 
 /* page-menu 3, wrap-2 4, wrap-10 8, wrap-1 2, wrap-4 8, wrap-102 5, wrap-108 5, wrap-105 10 (PROIECTE), wrap-2 4, wrap-10 8 (STRATEGIE) */
-                @media (min-width: 1367px)and (max-width: 1680px) {
+                @media (min-width: 1367px) and (max-width: 1680px) {
                     aside {
                         min-height: 100vh;
                     }
@@ -7026,19 +7026,15 @@ border-radius: 4px;
             });
 
 // Inițializare setări la redimensionare pagină
-window.addEventListener('resize', () =&gt; {
-// Apelează funcțiile tale
-updateMeniu();
-updateGap();
-potrivesteTexte();
-updateDivs();
-updateImagini();
-updateAlt();
-updateSageti();
-
-// Forțează reflow fără a modifica display
-void document.body.offsetHeight; // forțează reflow subtil
-});
+            window.addEventListener('resize', () => {
+                updateMeniu();
+                updateGap();
+                potrivesteTexte();
+                updateDivs();
+                updateImagini();
+                updateAlt();
+                updateSageti();
+            });
 
         </script>
 
