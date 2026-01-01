@@ -868,6 +868,34 @@ border-radius: 4px;
                             text-align: left;
                         }
 
+                        .citat-10 {
+border: 0px solid #404040;
+border-radius: 4px;
+                            margin-top: -1rem;
+                            margin-bottom: 0.5rem;
+                            margin-left: 0;
+                            margin-right: 0;
+                            padding-top: 0;
+                            padding-bottom: 0;
+                            padding-left: 0;
+                            padding-right: 0;
+                            text-align: left;
+                        }
+
+                        .citat-11 {
+border: 0px solid #404040;
+border-radius: 4px;
+                            margin-top: 0.5rem;
+                            margin-bottom: 0;
+                            margin-left: 0;
+                            margin-right: 0;
+                            padding-top: 0;
+                            padding-bottom: 0;
+                            padding-left: 0;
+                            padding-right: 0;
+                            text-align: left;
+                        }
+
                     .coloane {
 border: 0px solid #404040;
 border-radius: 4px;
@@ -2251,6 +2279,33 @@ border-radius: 4px;
                             list-style-position: inside;
                         }
 
+                            .sectiune-continut ol.r li {
+border: 0px solid #404040;
+border-radius: 4px;
+                                margin-top: 0;
+                                margin-bottom: 0;
+                                margin-left: 0;
+                                margin-right: 0;
+                                padding-top: 0;
+                                padding-bottom: 0.5rem;
+                                padding-left: 0;
+                                padding-right: 0;
+                                display: list-item;
+                            }
+
+                        .sectiune-continut ol.r {
+                            margin-top: 0;
+                            margin-bottom: 1rem;
+                            margin-left: 0;
+                            margin-right: 0;
+                            padding-top: 0;
+                            padding-bottom: 0;
+                            padding-left: 0;
+                            padding-right: 0;
+                            list-style: upper-roman;
+                            list-style-position: inside;
+                        }
+
                             .sectiune-continut ol.s li {
 border: 0px solid #404040;
 border-radius: 4px;
@@ -3256,6 +3311,15 @@ border-radius: 4px;
                     #telescoala-continut .wrap-10 {
                         grid-column: span 8;
                     }
+                    #vaccinare-continut .wrap-2 {
+                        grid-column: span 4;
+                    }
+                    #vaccinare-continut .wrap-10 {
+                        grid-column: span 8;
+                    }
+                    #vaccinare-continut .wrap-1 {
+                        grid-column: span 2;
+                    }
                     #verde-platforma-1 .wrap-3 {
                         grid-column: span 6;
                     }
@@ -3392,6 +3456,15 @@ border-radius: 4px;
                     #telescoala-continut .wrap-10 {
                         grid-column: span 8;
                     }
+                    #vaccinare-continut .wrap-2 {
+                        grid-column: span 4;
+                    }
+                    #vaccinare-continut .wrap-10 {
+                        grid-column: span 8;
+                    }
+                    #vaccinare-continut .wrap-1 {
+                        grid-column: span 2;
+                    }
                     #verde-platforma-1 .wrap-3 {
                         grid-column: span 6;
                     }
@@ -3524,6 +3597,15 @@ border-radius: 4px;
                     }
                     #telescoala-continut .wrap-10 {
                         grid-column: span 8;
+                    }
+                    #vaccinare-continut .wrap-2 {
+                        grid-column: span 4;
+                    }
+                    #vaccinare-continut .wrap-10 {
+                        grid-column: span 8;
+                    }
+                    #vaccinare-continut .wrap-1 {
+                        grid-column: span 2;
                     }
                     #verde-platforma-1 .wrap-3 {
                         grid-column: span 6;
@@ -3664,6 +3746,15 @@ border-radius: 4px;
                     }
                     #telescoala-continut .wrap-10 {
                         grid-column: span 8;
+                    }
+                    #vaccinare-continut .wrap-2 {
+                        grid-column: span 4;
+                    }
+                    #vaccinare-continut .wrap-10 {
+                        grid-column: span 8;
+                    }
+                    #vaccinare-continut .wrap-1 {
+                        grid-column: span 2;
                     }
                     #program-continut .wrap-show {
                         display: none;
@@ -3898,6 +3989,15 @@ border-radius: 4px;
                     }
                     #telescoala-continut .wrap-10 {
                         grid-column: span 8;
+                    }
+                    #vaccinare-continut .wrap-2 {
+                        grid-column: span 4;
+                    }
+                    #vaccinare-continut .wrap-10 {
+                        grid-column: span 8;
+                    }
+                    #vaccinare-continut .wrap-1 {
+                        grid-column: span 2;
                     }
                     #program-continut .wrap-show {
                         display: none;
@@ -4165,6 +4265,15 @@ border-radius: 4px;
                     }
                     #telescoala-continut .wrap-10 {
                         grid-column: span 12;
+                    }
+                    #vaccinare-continut .wrap-2 {
+                        grid-column: span 12;
+                    }
+                    #vaccinare-continut .wrap-10 {
+                        grid-column: span 12;
+                    }
+                    #vaccinare-continut .wrap-1 {
+                        grid-column: span 6;
                     }
                     #program-continut .wrap-show {
                         display: none;
@@ -4450,6 +4559,15 @@ border-radius: 4px;
                     }
                     #telescoala-continut .wrap-10 {
                         grid-column: span 12;
+                    }
+                    #vaccinare-continut .wrap-2 {
+                        grid-column: span 12;
+                    }
+                    #vaccinare-continut .wrap-10 {
+                        grid-column: span 12;
+                    }
+                    #vaccinare-continut .wrap-1 {
+                        grid-column: span 6;
                     }
                     #program-continut .wrap-show {
                         display: none;
@@ -4755,6 +4873,15 @@ border-radius: 4px;
                         position: static;
                         height: auto;
                     }
+                    #vaccinare-continut .wrap-2 {
+                        grid-column: span 12;
+                    }
+                    #vaccinare-continut .wrap-10 {
+                        grid-column: span 12;
+                    }
+                    #vaccinare-continut .wrap-1 {
+                        grid-column: span 6;
+                    }
                     #program-continut .wrap-show {
                         display: none;
                     }
@@ -5058,6 +5185,15 @@ border-radius: 4px;
                      #telescoala-sigla .content-gif img {
                         position: static;
                         height: auto;
+                    }
+                    #vaccinare-continut .wrap-2 {
+                        grid-column: span 12;
+                    }
+                    #vaccinare-continut .wrap-10 {
+                        grid-column: span 12;
+                    }
+                    #vaccinare-continut .wrap-1 {
+                        grid-column: span 12;
                     }
                     #program-continut .wrap-show {
                         display: none;
@@ -5365,6 +5501,15 @@ border-radius: 4px;
                      #telescoala-sigla .content-gif img {
                         position: static;
                         height: auto;
+                    }
+                    #vaccinare-continut .wrap-2 {
+                        grid-column: span 12;
+                    }
+                    #vaccinare-continut .wrap-10 {
+                        grid-column: span 12;
+                    }
+                    #vaccinare-continut .wrap-1 {
+                        grid-column: span 12;
                     }
                     #program-continut .wrap-show {
                         display: none;
