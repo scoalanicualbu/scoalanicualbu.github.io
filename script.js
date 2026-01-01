@@ -237,38 +237,18 @@
             ];
 
             function updateDivs() {
-                const maxIncercari = 10;
-                let incercari = 0;
+                divsParametri.forEach(([referenceDivId, targetDivId, imageDivId, nrSiblings]) => {
+                    const referenceDiv = document.getElementById(referenceDivId);
+                    const targetDiv = document.getElementById(targetDivId);
+                    const imageDiv = document.getElementById(imageDivId);
 
-                const tryUpdate = () => {
-                    let toateGăsite = true;
-
-                    divsParametri.forEach(([referenceDivId, targetDivId, imageDivId, nrSiblings]) => {
-                        const referenceDiv = document.getElementById(referenceDivId);
-                        const targetDiv = document.getElementById(targetDivId);
-                        const imageDiv = document.getElementById(imageDivId);
-
-                        if (!referenceDiv || !targetDiv || !imageDiv) {
-                            toateGăsite = false;
-                            return;
-                        }
-                    });
-
-                    if (toateGăsite) {
-                        divsParametri.forEach(([referenceDivId, targetDivId, imageDivId, nrSiblings]) => {
-                            updateDiv(referenceDivId, targetDivId, imageDivId, nrSiblings);
-                        });
-                    } else {
-                        incercari++;
-                        if (incercari < maxIncercari) {
-                            setTimeout(tryUpdate, 300);
-                        } else {
-                            console.warn(`Unele elemente din divsParametri nu au fost găsite după ${maxIncercari} încercări.`);
-                            }
+                    if (!referenceDiv || !targetDiv || !imageDiv) {
+                        return;
                     }
-                };
-
-                tryUpdate();
+                    divsParametri.forEach(([referenceDivId, targetDivId, imageDivId, nrSiblings]) => {
+                        updateDiv(referenceDivId, targetDivId, imageDivId, nrSiblings);
+                    });
+                });
             }
 
 // Poziționare text alternativ dacă imaginea nu s-a încărcat
