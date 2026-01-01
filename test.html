@@ -7412,10 +7412,7 @@ border-radius: 4px;
                 const divRef = document.getElementById(referenceDivId);
                 const divTar = document.getElementById(targetDivId);
 
-    if (!divRef || !divTar) {
-        console.warn('Element not found:', referenceDivId, targetDivId);
-        return;
-    }
+                if (!divRef || !divTar) return;
 
                 const img = divTar.querySelector('img');
 
@@ -7425,16 +7422,12 @@ border-radius: 4px;
 
                 divTar.style.height = 'auto';
                 const inaltimeRef = divRef.offsetHeight;
-    console.log('Setez inaltime pentru', targetDivId, 'la', inaltimeRef);
                 divTar.style.height = inaltimeRef + 'px';
 
-    if (img) {
-        img.style.display = 'none';
-        img.style.height = inaltimeRef + 'px';
-        img.style.display = 'block';
-    } else {
-        console.warn('Nu s-a gasit imagine in', targetDivId);
-    }
+                if (img) {
+                    img.style.height = inaltimeRef + 'px';
+                    img.style.display = 'block';
+                }
             }
 
             const imaginiParametri = [
