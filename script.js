@@ -30,29 +30,6 @@
                 }
             }
 
-// Calculare spațiere prin interpolare liniară
-            function getGap() {
-                const maxGap = 1;
-                const minGap = 1;
-                const maxVW = 2160;
-                const minVW = 300;
-                const VW = window.innerWidth;
-                if (VW >= maxVW) {
-                    return maxGap + 'rem';
-                }
-                if (VW <= minVW) {
-                    return minGap + 'rem';
-                }
-                const ratio = (VW - minVW) / (maxVW - minVW);
-                const valueGap = minGap + ratio * (maxGap - minGap);
-                return valueGap.toFixed(2) + 'rem';
-            }
-
-            function updateGap() {
-                const sizeGap = getGap();
-                document.documentElement.style.setProperty('--gap', sizeGap);
-            }
-
 // Aranjare text în container
             const parametri = [];
 
@@ -203,7 +180,9 @@
                 ['clasa-viitorului-videoconferinta', 'classroom-clasa-viitorului'],
                 ['clasa-viitorului-videoconferinta', 'meet-clasa-viitorului'],
                 ['clasa-viitorului-videoconferinta', 'word-clasa-viitorului'],
-                ['clasa-viitorului-videoconferinta', 'powerpoint-clasa-viitorului']
+                ['clasa-viitorului-videoconferinta', 'powerpoint-clasa-viitorului'],
+                ['clasa-viitorului-videoconferinta', 'powerpoint-clasa-viitorului'],
+                ['in-siguranta', 'la-joaca']
             ];
 
             function updateImagini() {
@@ -852,7 +831,6 @@
 
 // Inițializare funcții
                 updateMeniu();
-                updateGap();
                 initializeParams();
                 potrivesteTexte();
                 updateImagini();
@@ -913,7 +891,6 @@
 // Inițializare setări la redimensionare pagină
             window.addEventListener('resize', () => {
                 updateMeniu();
-                updateGap();
                 potrivesteTexte();
                 updateDivs();
                 updateImagini();
