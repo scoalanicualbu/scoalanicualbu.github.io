@@ -186,19 +186,14 @@
             ];
 
             function updateImagini() {
-                const tryUpdate = () => {
+                imaginiParametri.forEach(([referenceDivId, targetDivId]) => {
+                    const divRef = document.getElementById(referenceDivId);
+                    const divTar = document.getElementById(targetDivId);
+                });
 
-                    imaginiParametri.forEach(([referenceDivId, targetDivId]) => {
-                        const divRef = document.getElementById(referenceDivId);
-                        const divTar = document.getElementById(targetDivId);
-                    });
-
-                    imaginiParametri.forEach(([referenceDivId, targetDivId]) => {
-                        updateImagine(referenceDivId, targetDivId);
-                    });
-                  };
-
-                tryUpdate();
+                imaginiParametri.forEach(([referenceDivId, targetDivId]) => {
+                    updateImagine(referenceDivId, targetDivId);
+                });
             }
 
 // Setare înălțime container în funcție de container de referință
