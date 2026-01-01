@@ -3192,7 +3192,7 @@ border-radius: 4px;
                     }
                 }
 
-/* (1367px-1680px) page-menu 3, wrap-2 4, wrap-10 8, wrap-1 2, wrap-4 8, wrap-102 5, wrap-108 5, wrap-105 10 (PROIECTE), wrap-2 4, wrap-10 8 (STRATEGIE) */
+/* (1367px-1680px) page-menu 3, wrap-2 4, wrap-10 8, wrap-1 2, wrap-4 8, wrap-102 5, wrap-108 5, wrap-105 10 (PROIECTE), wrap-2 4, wrap-10 8, wrap-1 2 (STRATEGIE) */
                 @media (min-width: 85.4em) and (max-width: 105.1em) {
                     aside {
                         min-height: 100vh;
@@ -3206,11 +3206,11 @@ border-radius: 4px;
                     .page-menu .trei-evaluare {
                         grid-template-columns: repeat(1, 1fr);
                     }
-                    .page-menu .patru-organigrama {
-                        grid-template-columns: repeat(2, 1fr);
-                    }
                     .page-menu .sase-proiecte {
                         grid-template-columns: repeat(3, 1fr);
+                    }
+                    .page-menu .patru-organigrama {
+                        grid-template-columns: repeat(2, 1fr);
                     }
                     #proiecte-continut .wrap-2 {
                         grid-column: span 4;
@@ -3351,11 +3351,11 @@ border-radius: 4px;
                     .page-menu .trei-evaluare {
                         grid-template-columns: repeat(1, 1fr);
                     }
-                    .page-menu .patru-organigrama {
-                        grid-template-columns: repeat(2, 1fr);
-                    }
                     .page-menu .sase-proiecte {
                         grid-template-columns: repeat(3, 1fr);
+                    }
+                    .page-menu .patru-organigrama {
+                        grid-template-columns: repeat(2, 1fr);
                     }
                     #proiecte-continut .wrap-2 {
                         grid-column: span 4;
@@ -3493,11 +3493,11 @@ border-radius: 4px;
                     .page-menu .trei-evaluare {
                         grid-template-columns: repeat(1, 1fr);
                     }
-                    .page-menu .patru-organigrama {
-                        grid-template-columns: repeat(2, 1fr);
-                    }
                     .page-menu .sase-proiecte {
                         grid-template-columns: repeat(3, 1fr);
+                    }
+                    .page-menu .patru-organigrama {
+                        grid-template-columns: repeat(2, 1fr);
                     }
                     #proiecte-continut .wrap-2 {
                         grid-column: span 4;
@@ -3642,11 +3642,11 @@ border-radius: 4px;
                     .page-menu .trei-admitere {
                         grid-template-columns: repeat(1, 1fr);
                     }
-                    .page-menu .patru-organigrama {
-                        grid-template-columns: repeat(1, 1fr);
-                    }
                     .page-menu .sase-proiecte {
                         grid-template-columns: repeat(3, 1fr);
+                    }
+                    .page-menu .patru-organigrama {
+                        grid-template-columns: repeat(1, 1fr);
                     }
                     #proiecte-continut .wrap-2 {
                         grid-column: span 4;
@@ -3882,14 +3882,14 @@ border-radius: 4px;
                     .page-menu .trei-admitere {
                         grid-template-columns: repeat(1, 1fr);
                     }
-                    .page-menu .patru-organigrama {
-                        grid-template-columns: repeat(1, 1fr);
+                    .page-menu .sase-proiecte {
+                        grid-template-columns: repeat(3, 1fr);
                     }
                     .page-menu .patru-regulamente {
                         grid-template-columns: repeat(2, 1fr);
                     }
-                    .page-menu .sase-proiecte {
-                        grid-template-columns: repeat(3, 1fr);
+                    .page-menu .patru-organigrama {
+                        grid-template-columns: repeat(1, 1fr);
                     }
                     #proiecte-continut .wrap-2 {
                         grid-column: span 4;
@@ -4135,7 +4135,7 @@ border-radius: 4px;
                     }
                 }
 
-/* (601px-720px) page-menu-1 (organigrama), wrap-4, page-menu 2, wrap-2 12, wrap-10 12, wrap-1 4, wrap-4 4, wrap-102 10, wrap-108 10 (PROIECTE), wrap-2 12, wrap-10 12, wrap-105 10 (STRATEGIE) */
+/* (601px-720px) page-menu-1 (organigrama), wrap-4, page-menu 2, wrap-2 12, wrap-10 12, wrap-1 4, wrap-4 4, wrap-102 10, wrap-108 10 (PROIECTE), wrap-2 12, wrap-10 12, wrap-105 10, wrap-1 6 (STRATEGIE) */
                 @media (min-width: 37.5em) and (max-width: 45.1em) {
                     aside {
                         border-radius: 4px;
@@ -4149,14 +4149,14 @@ border-radius: 4px;
                     .page-menu .trei-admitere {
                         grid-template-columns: repeat(1, 1fr);
                     }
-                    .page-menu .patru-organigrama {
-                        grid-template-columns: repeat(1, 1fr);
+                    .page-menu .sase-proiecte {
+                        grid-template-columns: repeat(2, 1fr);
                     }
                     .page-menu .patru-regulamente {
                         grid-template-columns: repeat(2, 1fr);
                     }
-                    .page-menu .sase-proiecte {
-                        grid-template-columns: repeat(2, 1fr);
+                    .page-menu .patru-organigrama {
+                        grid-template-columns: repeat(1, 1fr);
                     }
                     #proiecte-continut .wrap-2 {
                         grid-column: span 12;
@@ -4443,14 +4443,14 @@ border-radius: 4px;
                     .page-menu .trei-admitere {
                         grid-template-columns: repeat(1, 1fr);
                     }
-                    .page-menu .patru-organigrama {
-                        grid-template-columns: repeat(1, 1fr);
+                    .page-menu .sase-proiecte {
+                        grid-template-columns: repeat(2, 1fr);
                     }
                     .page-menu .patru-regulamente {
                         grid-template-columns: repeat(2, 1fr);
                     }
-                    .page-menu .sase-proiecte {
-                        grid-template-columns: repeat(2, 1fr);
+                    .page-menu .patru-organigrama {
+                        grid-template-columns: repeat(1, 1fr);
                     }
                     #proiecte-continut .wrap-2 {
                         grid-column: span 12;
@@ -4746,13 +4746,13 @@ border-radius: 4px;
                     .page-menu .trei-admitere {
                         grid-template-columns: repeat(1, 1fr);
                     }
-                    .page-menu .patru-organigrama {
+                    .page-menu .sase-proiecte {
                         grid-template-columns: repeat(1, 1fr);
                     }
                     .page-menu .patru-regulamente {
                         grid-template-columns: repeat(2, 1fr);
                     }
-                    .page-menu .sase-proiecte {
+                    .page-menu .patru-organigrama {
                         grid-template-columns: repeat(1, 1fr);
                     }
                     #proiecte-continut .wrap-2 {
@@ -5045,7 +5045,7 @@ border-radius: 4px;
                     }
                 }
 
-/* (353px-426px) page-menu 1 (prezentare), wrap-2 (verde 2-proiecte), telverde 1 */
+/* (353px-426px) page-menu 1 (prezentare), wrap-2 (verde 2-proiecte), telverde 1, wrap-1 12 (STRATEGIE) */
                 @media (min-width: 21.9em) and (max-width: 26.7em) {
                     aside {
                         border-radius: 4px;
@@ -5059,13 +5059,13 @@ border-radius: 4px;
                     .page-menu .trei-admitere {
                         grid-template-columns: repeat(1, 1fr);
                     }
-                    .page-menu .patru-organigrama {
+                    .page-menu .sase-proiecte {
                         grid-template-columns: repeat(1, 1fr);
                     }
                     .page-menu .patru-regulamente {
                         grid-template-columns: repeat(1, 1fr);
                     }
-                    .page-menu .sase-proiecte {
+                    .page-menu .patru-organigrama {
                         grid-template-columns: repeat(1, 1fr);
                     }
                     #proiecte-continut .wrap-2 {
@@ -5375,13 +5375,13 @@ border-radius: 4px;
                     .page-menu .trei-admitere {
                         grid-template-columns: repeat(1, 1fr);
                     }
-                    .page-menu .patru-organigrama {
+                    .page-menu .sase-proiecte {
                         grid-template-columns: repeat(1, 1fr);
                     }
                     .page-menu .patru-regulamente {
                         grid-template-columns: repeat(1, 1fr);
                     }
-                    .page-menu .sase-proiecte {
+                    .page-menu .patru-organigrama {
                         grid-template-columns: repeat(1, 1fr);
                     }
                     #proiecte-continut .wrap-2 {
