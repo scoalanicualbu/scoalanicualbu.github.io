@@ -3212,6 +3212,12 @@ border-radius: 4px;
                     .page-menu .patru-organigrama {
                         grid-template-columns: repeat(2, 1fr);
                     }
+                    #verde-platforma-1 .wrap-3 {
+                        grid-column: span 6;
+                    }
+                    #verde-platforma-2 .wrap-3 {
+                        grid-column: span 6;
+                    }
                     #proiecte-continut .wrap-2 {
                         grid-column: span 4;
                     }
@@ -3319,12 +3325,6 @@ border-radius: 4px;
                     }
                     #vaccinare-continut .wrap-1 {
                         grid-column: span 2;
-                    }
-                    #verde-platforma-1 .wrap-3 {
-                        grid-column: span 6;
-                    }
-                    #verde-platforma-2 .wrap-3 {
-                        grid-column: span 6;
                     }
                     .sectiune-comunicari ul {
                         grid-template-columns: repeat(2, 1fr);
@@ -3357,6 +3357,12 @@ border-radius: 4px;
                     .page-menu .patru-organigrama {
                         grid-template-columns: repeat(2, 1fr);
                     }
+                    #verde-platforma-1 .wrap-3 {
+                        grid-column: span 6;
+                    }
+                    #verde-platforma-2 .wrap-3 {
+                        grid-column: span 6;
+                    }
                     #proiecte-continut .wrap-2 {
                         grid-column: span 4;
                     }
@@ -3464,12 +3470,6 @@ border-radius: 4px;
                     }
                     #vaccinare-continut .wrap-1 {
                         grid-column: span 2;
-                    }
-                    #verde-platforma-1 .wrap-3 {
-                        grid-column: span 6;
-                    }
-                    #verde-platforma-2 .wrap-3 {
-                        grid-column: span 6;
                     }
                     .sectiune-comunicari ul {
                         grid-template-columns: repeat(2, 1fr);
@@ -3499,6 +3499,12 @@ border-radius: 4px;
                     .page-menu .patru-organigrama {
                         grid-template-columns: repeat(2, 1fr);
                     }
+                    #verde-platforma-1 .wrap-3 {
+                        grid-column: span 6;
+                    }
+                    #verde-platforma-2 .wrap-3 {
+                        grid-column: span 6;
+                    }
                     #proiecte-continut .wrap-2 {
                         grid-column: span 4;
                     }
@@ -3606,12 +3612,6 @@ border-radius: 4px;
                     }
                     #vaccinare-continut .wrap-1 {
                         grid-column: span 2;
-                    }
-                    #verde-platforma-1 .wrap-3 {
-                        grid-column: span 6;
-                    }
-                    #verde-platforma-2 .wrap-3 {
-                        grid-column: span 6;
                     }
                     .sectiune-comunicari ul {
                         grid-template-columns: repeat(2, 1fr);
@@ -3648,6 +3648,40 @@ border-radius: 4px;
                     .page-menu .patru-organigrama {
                         grid-template-columns: repeat(1, 1fr);
                     }
+                    #program-continut .wrap-show {
+                        display: none;
+                    }
+                    #program-continut .wrap-92 {
+                        grid-column: span 12;
+                        grid-template-columns: repeat(1, 1fr);
+                    }
+                    #oferta-continut .wrap-show {
+                        display: none;
+                    }
+                    #oferta-continut .wrap-9 {
+                        grid-column: span 12;
+                    }
+                    #gradinita-continut .wrap-show {
+                        display: none;
+                    }
+                    #gradinita-continut .wrap-9 {
+                        grid-column: span 12;
+                    }
+                    #pregatitoare-continut .wrap-show {
+                        display: none;
+                    }
+                    #pregatitoare-continut .wrap-9 {
+                        grid-column: span 12;
+                    }
+                    #verde-platforma-1 .wrap-3 {
+                        grid-column: span 12;
+                    }
+                    #verde-platforma-2 .wrap-3 {
+                        grid-column: span 12;
+                    }
+                    #verde-proiecte .wrap-2 {
+                        grid-column: span 4;
+                    }
                     #proiecte-continut .wrap-2 {
                         grid-column: span 4;
                     }
@@ -3756,20 +3790,13 @@ border-radius: 4px;
                     #vaccinare-continut .wrap-1 {
                         grid-column: span 2;
                     }
-                    #program-continut .wrap-show {
+                    #regulamente-continut .wrap-show {
                         display: none;
                     }
-                    #program-continut .wrap-92 {
+                    #regulamente-continut .wrap-9 {
                         grid-column: span 12;
-                        grid-template-columns: repeat(1, 1fr);
                     }
-                    #contact-continut .citat-3 {
-                        text-align: center;
-                    }
-                    #contact-continut .wrap-show {
-                        display: none;
-                    }
-                    #contact-continut .wrap-9 {
+                    #regulamente-ul .wrap-6 {
                         grid-column: span 12;
                     }
                     #personal-continut .wrap-show {
@@ -3814,41 +3841,14 @@ border-radius: 4px;
                     #comisii-ul .wrap-6 {
                         grid-column: span 12;
                     }
-                    #regulamente-continut .wrap-show {
+                    #contact-continut .citat-3 {
+                        text-align: center;
+                    }
+                    #contact-continut .wrap-show {
                         display: none;
                     }
-                    #regulamente-continut .wrap-9 {
+                    #contact-continut .wrap-9 {
                         grid-column: span 12;
-                    }
-                    #regulamente-ul .wrap-6 {
-                        grid-column: span 12;
-                    }
-                    #oferta-continut .wrap-show {
-                        display: none;
-                    }
-                    #oferta-continut .wrap-9 {
-                        grid-column: span 12;
-                    }
-                    #gradinita-continut .wrap-show {
-                        display: none;
-                    }
-                    #gradinita-continut .wrap-9 {
-                        grid-column: span 12;
-                    }
-                    #pregatitoare-continut .wrap-show {
-                        display: none;
-                    }
-                    #pregatitoare-continut .wrap-9 {
-                        grid-column: span 12;
-                    }
-                    #verde-platforma-1 .wrap-3 {
-                        grid-column: span 12;
-                    }
-                    #verde-platforma-2 .wrap-3 {
-                        grid-column: span 12;
-                    }
-                    #verde-proiecte .wrap-2 {
-                        grid-column: span 4;
                     }
                     .sectiune-comunicari ul {
                         grid-template-columns: repeat(1, 1fr);
@@ -3891,6 +3891,64 @@ border-radius: 4px;
                     .page-menu .patru-organigrama {
                         grid-template-columns: repeat(1, 1fr);
                     }
+                    #program-continut .wrap-show {
+                        display: none;
+                    }
+                    #program-continut .wrap-92 {
+                        grid-column: span 12;
+                        grid-template-columns: repeat(1, 1fr);
+                    }
+                    #oferta-continut .wrap-show {
+                        display: none;
+                    }
+                    #oferta-continut .wrap-9 {
+                        grid-column: span 12;
+                    }
+                    #gradinita-continut .wrap-show {
+                        display: none;
+                    }
+                    #gradinita-continut .wrap-9 {
+                        grid-column: span 12;
+                    }
+                    #pregatitoare-continut .wrap-show {
+                        display: none;
+                    }
+                    #pregatitoare-continut .wrap-9 {
+                        grid-column: span 12;
+                    }
+                    #admitere-continut .wrap-show {
+                        display: none;
+                    }
+                    #admitere-continut .wrap-8 {
+                        grid-column: span 12;
+                    }
+                    #profesional-continut .wrap-show {
+                        display: none;
+                    }
+                    #profesional-continut .wrap-8 {
+                        grid-column: span 12;
+                    }
+                    #dual-continut .wrap-show {
+                        display: none;
+                    }
+                    #dual-continut .wrap-8 {
+                        grid-column: span 12;
+                    }
+                    #verde-continut .wrap-3 {
+                        grid-column: span 6;
+                    }
+                    #verde-continut .wrap-9 {
+                        grid-column: span 6;
+                    }
+                    #verde-platforma-1 .wrap-3 {
+                        grid-column: span 12;
+                    }
+                    #verde-platforma-2 .wrap-3 {
+                        grid-column: span 12;
+                    }
+                    #verde-proiecte .wrap-2 {
+                        grid-column: span 4;
+                    }
                     #proiecte-continut .wrap-2 {
                         grid-column: span 4;
                     }
@@ -3999,20 +4057,13 @@ border-radius: 4px;
                     #vaccinare-continut .wrap-1 {
                         grid-column: span 2;
                     }
-                    #program-continut .wrap-show {
+                    #regulamente-continut .wrap-show {
                         display: none;
                     }
-                    #program-continut .wrap-92 {
+                    #regulamente-continut .wrap-9 {
                         grid-column: span 12;
-                        grid-template-columns: repeat(1, 1fr);
                     }
-                    #contact-continut .citat-3 {
-                        text-align: center;
-                    }
-                    #contact-continut .wrap-show {
-                        display: none;
-                    }
-                    #contact-continut .wrap-9 {
+                    #regulamente-ul .wrap-6 {
                         grid-column: span 12;
                     }
                     #personal-continut .wrap-show {
@@ -4057,65 +4108,14 @@ border-radius: 4px;
                     #comisii-ul .wrap-6 {
                         grid-column: span 12;
                     }
-                    #regulamente-continut .wrap-show {
+                    #contact-continut .citat-3 {
+                        text-align: center;
+                    }
+                    #contact-continut .wrap-show {
                         display: none;
                     }
-                    #regulamente-continut .wrap-9 {
+                    #contact-continut .wrap-9 {
                         grid-column: span 12;
-                    }
-                    #regulamente-ul .wrap-6 {
-                        grid-column: span 12;
-                    }
-                    #oferta-continut .wrap-show {
-                        display: none;
-                    }
-                    #oferta-continut .wrap-9 {
-                        grid-column: span 12;
-                    }
-                    #gradinita-continut .wrap-show {
-                        display: none;
-                    }
-                    #gradinita-continut .wrap-9 {
-                        grid-column: span 12;
-                    }
-                    #pregatitoare-continut .wrap-show {
-                        display: none;
-                    }
-                    #pregatitoare-continut .wrap-9 {
-                        grid-column: span 12;
-                    }
-                    #admitere-continut .wrap-show {
-                        display: none;
-                    }
-                    #admitere-continut .wrap-8 {
-                        grid-column: span 12;
-                    }
-                    #profesional-continut .wrap-show {
-                        display: none;
-                    }
-                    #profesional-continut .wrap-8 {
-                        grid-column: span 12;
-                    }
-                    #dual-continut .wrap-show {
-                        display: none;
-                    }
-                    #dual-continut .wrap-8 {
-                        grid-column: span 12;
-                    }
-                    #verde-continut .wrap-3 {
-                        grid-column: span 6;
-                    }
-                    #verde-continut .wrap-9 {
-                        grid-column: span 6;
-                    }
-                    #verde-platforma-1 .wrap-3 {
-                        grid-column: span 12;
-                    }
-                    #verde-platforma-2 .wrap-3 {
-                        grid-column: span 12;
-                    }
-                    #verde-proiecte .wrap-2 {
-                        grid-column: span 4;
                     }
                     .sectiune-comunicari ul {
                         grid-template-columns: repeat(1, 1fr);
@@ -4158,6 +4158,82 @@ border-radius: 4px;
                     .page-menu .patru-organigrama {
                         grid-template-columns: repeat(1, 1fr);
                     }
+                    #program-continut .wrap-show {
+                        display: none;
+                    }
+                    #program-continut .wrap-92 {
+                        grid-column: span 12;
+                        grid-template-columns: repeat(1, 1fr);
+                    }
+                    #oferta-continut .wrap-show {
+                        display: none;
+                    }
+                    #oferta-continut .wrap-9 {
+                        grid-column: span 12;
+                    }
+                    #gradinita-continut .wrap-show {
+                        display: none;
+                    }
+                    #gradinita-continut .wrap-9 {
+                        grid-column: span 12;
+                    }
+                    #pregatitoare-continut .wrap-show {
+                        display: none;
+                    }
+                    #pregatitoare-continut .wrap-9 {
+                        grid-column: span 12;
+                    }
+                    #evaluari246-continut .wrap-show {
+                        display: none;
+                    }
+                    #evaluari246-continut .wrap-8 {
+                        grid-column: span 12;
+                    }
+                    #simulare8-continut .wrap-show {
+                        display: none;
+                    }
+                    #simulare8-continut .wrap-8 {
+                        grid-column: span 12;
+                    }
+                    #evaluare-continut .wrap-show {
+                        display: none;
+                    }
+                    #evaluare-continut .wrap-8 {
+                        grid-column: span 12;
+                    }
+                    #admitere-continut .wrap-show {
+                        display: none;
+                    }
+                    #admitere-continut .wrap-8 {
+                        grid-column: span 12;
+                    }
+                    #profesional-continut .wrap-show {
+                        display: none;
+                    }
+                    #profesional-continut .wrap-8 {
+                        grid-column: span 12;
+                    }
+                    #dual-continut .wrap-show {
+                        display: none;
+                    }
+                    #dual-continut .wrap-8 {
+                        grid-column: span 12;
+                    }
+                    #verde-continut .wrap-3 {
+                        grid-column: span 6;
+                    }
+                    #verde-continut .wrap-9 {
+                        grid-column: span 6;
+                    }
+                    #verde-platforma-1 .wrap-3 {
+                        grid-column: span 12;
+                    }
+                    #verde-platforma-2 .wrap-3 {
+                        grid-column: span 12;
+                    }
+                    #verde-proiecte .wrap-2 {
+                        grid-column: span 4;
+                    }
                     #proiecte-continut .wrap-2 {
                         grid-column: span 12;
                     }
@@ -4275,20 +4351,13 @@ border-radius: 4px;
                     #vaccinare-continut .wrap-1 {
                         grid-column: span 6;
                     }
-                    #program-continut .wrap-show {
+                    #regulamente-continut .wrap-show {
                         display: none;
                     }
-                    #program-continut .wrap-92 {
+                    #regulamente-continut .wrap-9 {
                         grid-column: span 12;
-                        grid-template-columns: repeat(1, 1fr);
                     }
-                    #contact-continut .citat-3 {
-                        text-align: center;
-                    }
-                    #contact-continut .wrap-show {
-                        display: none;
-                    }
-                    #contact-continut .wrap-9 {
+                    #regulamente-ul .wrap-6 {
                         grid-column: span 12;
                     }
                     #personal-continut .wrap-show {
@@ -4333,83 +4402,14 @@ border-radius: 4px;
                     #comisii-ul .wrap-6 {
                         grid-column: span 12;
                     }
-                    #regulamente-continut .wrap-show {
+                    #contact-continut .citat-3 {
+                        text-align: center;
+                    }
+                    #contact-continut .wrap-show {
                         display: none;
                     }
-                    #regulamente-continut .wrap-9 {
+                    #contact-continut .wrap-9 {
                         grid-column: span 12;
-                    }
-                    #regulamente-ul .wrap-6 {
-                        grid-column: span 12;
-                    }
-                    #oferta-continut .wrap-show {
-                        display: none;
-                    }
-                    #oferta-continut .wrap-9 {
-                        grid-column: span 12;
-                    }
-                    #gradinita-continut .wrap-show {
-                        display: none;
-                    }
-                    #gradinita-continut .wrap-9 {
-                        grid-column: span 12;
-                    }
-                    #pregatitoare-continut .wrap-show {
-                        display: none;
-                    }
-                    #pregatitoare-continut .wrap-9 {
-                        grid-column: span 12;
-                    }
-                    #evaluari246-continut .wrap-show {
-                        display: none;
-                    }
-                    #evaluari246-continut .wrap-8 {
-                        grid-column: span 12;
-                    }
-                    #simulare8-continut .wrap-show {
-                        display: none;
-                    }
-                    #simulare8-continut .wrap-8 {
-                        grid-column: span 12;
-                    }
-                    #evaluare-continut .wrap-show {
-                        display: none;
-                    }
-                    #evaluare-continut .wrap-8 {
-                        grid-column: span 12;
-                    }
-                    #admitere-continut .wrap-show {
-                        display: none;
-                    }
-                    #admitere-continut .wrap-8 {
-                        grid-column: span 12;
-                    }
-                    #profesional-continut .wrap-show {
-                        display: none;
-                    }
-                    #profesional-continut .wrap-8 {
-                        grid-column: span 12;
-                    }
-                    #dual-continut .wrap-show {
-                        display: none;
-                    }
-                    #dual-continut .wrap-8 {
-                        grid-column: span 12;
-                    }
-                    #verde-continut .wrap-3 {
-                        grid-column: span 6;
-                    }
-                    #verde-continut .wrap-9 {
-                        grid-column: span 6;
-                    }
-                    #verde-platforma-1 .wrap-3 {
-                        grid-column: span 12;
-                    }
-                    #verde-platforma-2 .wrap-3 {
-                        grid-column: span 12;
-                    }
-                    #verde-proiecte .wrap-2 {
-                        grid-column: span 4;
                     }
                     .sectiune-comunicari ul {
                         grid-template-columns: repeat(1, 1fr);
@@ -4452,6 +4452,91 @@ border-radius: 4px;
                     .page-menu .patru-organigrama {
                         grid-template-columns: repeat(1, 1fr);
                     }
+                    #program-continut .wrap-show {
+                        display: none;
+                    }
+                    #program-continut .wrap-92 {
+                        grid-column: span 12;
+                        grid-template-columns: repeat(1, 1fr);
+                    }
+                    #oferta-continut .wrap-show {
+                        display: none;
+                    }
+                    #oferta-continut .wrap-9 {
+                        grid-column: span 12;
+                    }
+                    #gradinita-continut .wrap-show {
+                        display: none;
+                    }
+                    #gradinita-continut .wrap-9 {
+                        grid-column: span 12;
+                    }
+                    #pregatitoare-continut .wrap-show {
+                        display: none;
+                    }
+                    #pregatitoare-continut .wrap-9 {
+                        grid-column: span 12;
+                    }
+                    #evaluari246-continut .wrap-show {
+                        display: none;
+                    }
+                    #evaluari246-continut .wrap-8 {
+                        grid-column: span 12;
+                    }
+                    #simulare8-continut .wrap-show {
+                        display: none;
+                    }
+                    #simulare8-continut .wrap-8 {
+                        grid-column: span 12;
+                    }
+                    #evaluare-continut .wrap-show {
+                        display: none;
+                    }
+                    #evaluare-continut .wrap-8 {
+                        grid-column: span 12;
+                    }
+                    #admitere-continut .wrap-show {
+                        display: none;
+                    }
+                    #admitere-continut .wrap-8 {
+                        grid-column: span 12;
+                    }
+                    #profesional-continut .wrap-show {
+                        display: none;
+                    }
+                    #profesional-continut .wrap-8 {
+                        grid-column: span 12;
+                    }
+                    #dual-continut .wrap-show {
+                        display: none;
+                    }
+                    #dual-continut .wrap-8 {
+                        grid-column: span 12;
+                    }
+                    #altfel-continut .wrap-show {
+                        display: none;
+                    }
+                    #altfel-continut .wrap-9 {
+                        grid-column: span 12;
+                    }
+                    #verde-logo .wrap-show {
+                        display: none;
+                    }
+                    #verde-continut .wrap-3 {
+                        grid-column: span 12;
+                    }
+                    #verde-continut .wrap-9 {
+                        grid-column: span 12;
+                    }
+                    #verde-platforma-1 .wrap-3 {
+                        grid-column: span 12;
+                    }
+                    #verde-platforma-2 .wrap-3 {
+                        grid-column: span 12;
+                    }
+                    #verde-proiecte .wrap-2 {
+                        grid-column: span 6;
+                    }
                     #proiecte-continut .wrap-2 {
                         grid-column: span 12;
                     }
@@ -4569,20 +4654,13 @@ border-radius: 4px;
                     #vaccinare-continut .wrap-1 {
                         grid-column: span 6;
                     }
-                    #program-continut .wrap-show {
+                    #regulamente-continut .wrap-show {
                         display: none;
                     }
-                    #program-continut .wrap-92 {
+                    #regulamente-continut .wrap-9 {
                         grid-column: span 12;
-                        grid-template-columns: repeat(1, 1fr);
                     }
-                    #contact-continut .citat-3 {
-                        text-align: center;
-                    }
-                    #contact-continut .wrap-show {
-                        display: none;
-                    }
-                    #contact-continut .wrap-9 {
+                    #regulamente-ul .wrap-6 {
                         grid-column: span 12;
                     }
                     #personal-continut .wrap-show {
@@ -4627,92 +4705,14 @@ border-radius: 4px;
                     #comisii-ul .wrap-6 {
                         grid-column: span 12;
                     }
-                    #regulamente-continut .wrap-show {
+                    #contact-continut .citat-3 {
+                        text-align: center;
+                    }
+                    #contact-continut .wrap-show {
                         display: none;
                     }
-                    #regulamente-continut .wrap-9 {
+                    #contact-continut .wrap-9 {
                         grid-column: span 12;
-                    }
-                    #regulamente-ul .wrap-6 {
-                        grid-column: span 12;
-                    }
-                    #oferta-continut .wrap-show {
-                        display: none;
-                    }
-                    #oferta-continut .wrap-9 {
-                        grid-column: span 12;
-                    }
-                    #gradinita-continut .wrap-show {
-                        display: none;
-                    }
-                    #gradinita-continut .wrap-9 {
-                        grid-column: span 12;
-                    }
-                    #pregatitoare-continut .wrap-show {
-                        display: none;
-                    }
-                    #pregatitoare-continut .wrap-9 {
-                        grid-column: span 12;
-                    }
-                    #evaluari246-continut .wrap-show {
-                        display: none;
-                    }
-                    #evaluari246-continut .wrap-8 {
-                        grid-column: span 12;
-                    }
-                    #simulare8-continut .wrap-show {
-                        display: none;
-                    }
-                    #simulare8-continut .wrap-8 {
-                        grid-column: span 12;
-                    }
-                    #evaluare-continut .wrap-show {
-                        display: none;
-                    }
-                    #evaluare-continut .wrap-8 {
-                        grid-column: span 12;
-                    }
-                    #admitere-continut .wrap-show {
-                        display: none;
-                    }
-                    #admitere-continut .wrap-8 {
-                        grid-column: span 12;
-                    }
-                    #profesional-continut .wrap-show {
-                        display: none;
-                    }
-                    #profesional-continut .wrap-8 {
-                        grid-column: span 12;
-                    }
-                    #dual-continut .wrap-show {
-                        display: none;
-                    }
-                    #dual-continut .wrap-8 {
-                        grid-column: span 12;
-                    }
-                    #altfel-continut .wrap-show {
-                        display: none;
-                    }
-                    #altfel-continut .wrap-9 {
-                        grid-column: span 12;
-                    }
-                    #verde-logo .wrap-show {
-                        display: none;
-                    }
-                    #verde-continut .wrap-3 {
-                        grid-column: span 12;
-                    }
-                    #verde-continut .wrap-9 {
-                        grid-column: span 12;
-                    }
-                    #verde-platforma-1 .wrap-3 {
-                        grid-column: span 12;
-                    }
-                    #verde-platforma-2 .wrap-3 {
-                        grid-column: span 12;
-                    }
-                    #verde-proiecte .wrap-2 {
-                        grid-column: span 6;
                     }
                     .sectiune-comunicari ul {
                         grid-template-columns: repeat(1, 1fr);
@@ -4755,6 +4755,91 @@ border-radius: 4px;
                     .page-menu .patru-organigrama {
                         grid-template-columns: repeat(1, 1fr);
                     }
+                    #program-continut .wrap-show {
+                        display: none;
+                    }
+                    #program-continut .wrap-92 {
+                        grid-column: span 12;
+                        grid-template-columns: repeat(1, 1fr);
+                    }
+                    #oferta-continut .wrap-show {
+                        display: none;
+                    }
+                    #oferta-continut .wrap-9 {
+                        grid-column: span 12;
+                    }
+                    #gradinita-continut .wrap-show {
+                        display: none;
+                    }
+                    #gradinita-continut .wrap-9 {
+                        grid-column: span 12;
+                    }
+                    #pregatitoare-continut .wrap-show {
+                        display: none;
+                    }
+                    #pregatitoare-continut .wrap-9 {
+                        grid-column: span 12;
+                    }
+                    #evaluari246-continut .wrap-show {
+                        display: none;
+                    }
+                    #evaluari246-continut .wrap-8 {
+                        grid-column: span 12;
+                    }
+                    #simulare8-continut .wrap-show {
+                        display: none;
+                    }
+                    #simulare8-continut .wrap-8 {
+                        grid-column: span 12;
+                    }
+                    #evaluare-continut .wrap-show {
+                        display: none;
+                    }
+                    #evaluare-continut .wrap-8 {
+                        grid-column: span 12;
+                    }
+                    #admitere-continut .wrap-show {
+                        display: none;
+                    }
+                    #admitere-continut .wrap-8 {
+                        grid-column: span 12;
+                    }
+                    #profesional-continut .wrap-show {
+                        display: none;
+                    }
+                    #profesional-continut .wrap-8 {
+                        grid-column: span 12;
+                    }
+                    #dual-continut .wrap-show {
+                        display: none;
+                    }
+                    #dual-continut .wrap-8 {
+                        grid-column: span 12;
+                    }
+                    #altfel-continut .wrap-show {
+                        display: none;
+                    }
+                    #altfel-continut .wrap-9 {
+                        grid-column: span 12;
+                    }
+                    #verde-logo .wrap-show {
+                        display: none;
+                    }
+                    #verde-continut .wrap-3 {
+                        grid-column: span 12;
+                    }
+                    #verde-continut .wrap-9 {
+                        grid-column: span 12;
+                    }
+                    #verde-platforma-1 .wrap-3 {
+                        grid-column: span 12;
+                    }
+                    #verde-platforma-2 .wrap-3 {
+                        grid-column: span 12;
+                    }
+                    #verde-proiecte .wrap-2 {
+                        grid-column: span 6;
+                    }
                     #proiecte-continut .wrap-2 {
                         grid-column: span 12;
                     }
@@ -4882,20 +4967,13 @@ border-radius: 4px;
                     #vaccinare-continut .wrap-1 {
                         grid-column: span 6;
                     }
-                    #program-continut .wrap-show {
+                    #regulamente-continut .wrap-show {
                         display: none;
                     }
-                    #program-continut .wrap-92 {
+                    #regulamente-continut .wrap-9 {
                         grid-column: span 12;
-                        grid-template-columns: repeat(1, 1fr);
                     }
-                    #contact-continut .citat-3 {
-                        text-align: center;
-                    }
-                    #contact-continut .wrap-show {
-                        display: none;
-                    }
-                    #contact-continut .wrap-9 {
+                    #regulamente-ul .wrap-6 {
                         grid-column: span 12;
                     }
                     #personal-continut .wrap-show {
@@ -4940,92 +5018,14 @@ border-radius: 4px;
                     #comisii-ul .wrap-6 {
                         grid-column: span 12;
                     }
-                    #regulamente-continut .wrap-show {
+                    #contact-continut .citat-3 {
+                        text-align: center;
+                    }
+                    #contact-continut .wrap-show {
                         display: none;
                     }
-                    #regulamente-continut .wrap-9 {
+                    #contact-continut .wrap-9 {
                         grid-column: span 12;
-                    }
-                    #regulamente-ul .wrap-6 {
-                        grid-column: span 12;
-                    }
-                    #oferta-continut .wrap-show {
-                        display: none;
-                    }
-                    #oferta-continut .wrap-9 {
-                        grid-column: span 12;
-                    }
-                    #gradinita-continut .wrap-show {
-                        display: none;
-                    }
-                    #gradinita-continut .wrap-9 {
-                        grid-column: span 12;
-                    }
-                    #pregatitoare-continut .wrap-show {
-                        display: none;
-                    }
-                    #pregatitoare-continut .wrap-9 {
-                        grid-column: span 12;
-                    }
-                    #evaluari246-continut .wrap-show {
-                        display: none;
-                    }
-                    #evaluari246-continut .wrap-8 {
-                        grid-column: span 12;
-                    }
-                    #simulare8-continut .wrap-show {
-                        display: none;
-                    }
-                    #simulare8-continut .wrap-8 {
-                        grid-column: span 12;
-                    }
-                    #evaluare-continut .wrap-show {
-                        display: none;
-                    }
-                    #evaluare-continut .wrap-8 {
-                        grid-column: span 12;
-                    }
-                    #admitere-continut .wrap-show {
-                        display: none;
-                    }
-                    #admitere-continut .wrap-8 {
-                        grid-column: span 12;
-                    }
-                    #profesional-continut .wrap-show {
-                        display: none;
-                    }
-                    #profesional-continut .wrap-8 {
-                        grid-column: span 12;
-                    }
-                    #dual-continut .wrap-show {
-                        display: none;
-                    }
-                    #dual-continut .wrap-8 {
-                        grid-column: span 12;
-                    }
-                    #altfel-continut .wrap-show {
-                        display: none;
-                    }
-                    #altfel-continut .wrap-9 {
-                        grid-column: span 12;
-                    }
-                    #verde-logo .wrap-show {
-                        display: none;
-                    }
-                    #verde-continut .wrap-3 {
-                        grid-column: span 12;
-                    }
-                    #verde-continut .wrap-9 {
-                        grid-column: span 12;
-                    }
-                    #verde-platforma-1 .wrap-3 {
-                        grid-column: span 12;
-                    }
-                    #verde-platforma-2 .wrap-3 {
-                        grid-column: span 12;
-                    }
-                    #verde-proiecte .wrap-2 {
-                        grid-column: span 6;
                     }
                     .sectiune-comunicari ul {
                         grid-template-columns: repeat(1, 1fr);
@@ -5068,6 +5068,91 @@ border-radius: 4px;
                     .page-menu .patru-organigrama {
                         grid-template-columns: repeat(1, 1fr);
                     }
+                    #program-continut .wrap-show {
+                        display: none;
+                    }
+                    #program-continut .wrap-92 {
+                        grid-column: span 12;
+                        grid-template-columns: repeat(1, 1fr);
+                    }
+                    #oferta-continut .wrap-show {
+                        display: none;
+                    }
+                    #oferta-continut .wrap-9 {
+                        grid-column: span 12;
+                    }
+                    #gradinita-continut .wrap-show {
+                        display: none;
+                    }
+                    #gradinita-continut .wrap-9 {
+                        grid-column: span 12;
+                    }
+                    #pregatitoare-continut .wrap-show {
+                        display: none;
+                    }
+                    #pregatitoare-continut .wrap-9 {
+                        grid-column: span 12;
+                    }
+                    #evaluari246-continut .wrap-show {
+                        display: none;
+                    }
+                    #evaluari246-continut .wrap-8 {
+                        grid-column: span 12;
+                    }
+                    #evaluare-continut .wrap-show {
+                        display: none;
+                    }
+                    #evaluare-continut .wrap-8 {
+                        grid-column: span 12;
+                    }
+                    #simulare8-continut .wrap-show {
+                        display: none;
+                    }
+                    #simulare8-continut .wrap-8 {
+                        grid-column: span 12;
+                    }
+                    #admitere-continut .wrap-show {
+                        display: none;
+                    }
+                    #admitere-continut .wrap-8 {
+                        grid-column: span 12;
+                    }
+                    #profesional-continut .wrap-show {
+                        display: none;
+                    }
+                    #profesional-continut .wrap-8 {
+                        grid-column: span 12;
+                    }
+                    #dual-continut .wrap-show {
+                        display: none;
+                    }
+                    #dual-continut .wrap-8 {
+                        grid-column: span 12;
+                    }
+                    #altfel-continut .wrap-show {
+                        display: none;
+                    }
+                    #altfel-continut .wrap-9 {
+                        grid-column: span 12;
+                    }
+                    #verde-logo .wrap-show {
+                        display: none;
+                    }
+                    #verde-continut .wrap-3 {
+                        grid-column: span 12;
+                    }
+                    #verde-continut .wrap-9 {
+                        grid-column: span 12;
+                    }
+                    #verde-platforma-1 .wrap-3 {
+                        grid-column: span 12;
+                    }
+                    #verde-platforma-2 .wrap-3 {
+                        grid-column: span 12;
+                    }
+                    #verde-proiecte .wrap-2 {
+                        grid-column: span 6;
+                    }
                     #proiecte-continut .wrap-2 {
                         grid-column: span 12;
                     }
@@ -5195,32 +5280,25 @@ border-radius: 4px;
                     #vaccinare-continut .wrap-1 {
                         grid-column: span 12;
                     }
-                    #program-continut .wrap-show {
+                    #regulamente-continut .wrap-show {
                         display: none;
                     }
-                    #program-continut .wrap-92 {
-                        grid-column: span 12;
-                        grid-template-columns: repeat(1, 1fr);
-                    }
-                    #contact-continut .citat-3 {
-                        text-align: center;
-                    }
-                    #contact-continut .wrap-show {
-                        display: none;
-                    }
-                    #contact-continut .wrap-9 {
+                    #regulamente-continut .wrap-9 {
                         grid-column: span 12;
                     }
-                    #sindicat-continut .wrap-show {
-                        display: none;
-                    }
-                    #sindicat-continut .wrap-8 {
+                    #regulamente-ul .wrap-6 {
                         grid-column: span 12;
                     }
                     #personal-continut .wrap-show {
                         display: none;
                     }
                     #personal-continut .wrap-8 {
+                        grid-column: span 12;
+                    }
+                    #sindicat-continut .wrap-show {
+                        display: none;
+                    }
+                    #sindicat-continut .wrap-8 {
                         grid-column: span 12;
                     }
                     #ca-continut .wrap-show {
@@ -5253,92 +5331,14 @@ border-radius: 4px;
                     #comisii-ul .wrap-6 {
                         grid-column: span 12;
                     }
-                    #regulamente-continut .wrap-show {
+                    #contact-continut .citat-3 {
+                        text-align: center;
+                    }
+                    #contact-continut .wrap-show {
                         display: none;
                     }
-                    #regulamente-continut .wrap-9 {
+                    #contact-continut .wrap-9 {
                         grid-column: span 12;
-                    }
-                    #regulamente-ul .wrap-6 {
-                        grid-column: span 12;
-                    }
-                    #oferta-continut .wrap-show {
-                        display: none;
-                    }
-                    #oferta-continut .wrap-9 {
-                        grid-column: span 12;
-                    }
-                    #gradinita-continut .wrap-show {
-                        display: none;
-                    }
-                    #gradinita-continut .wrap-9 {
-                        grid-column: span 12;
-                    }
-                    #pregatitoare-continut .wrap-show {
-                        display: none;
-                    }
-                    #pregatitoare-continut .wrap-9 {
-                        grid-column: span 12;
-                    }
-                    #evaluari246-continut .wrap-show {
-                        display: none;
-                    }
-                    #evaluari246-continut .wrap-8 {
-                        grid-column: span 12;
-                    }
-                    #simulare8-continut .wrap-show {
-                        display: none;
-                    }
-                    #simulare8-continut .wrap-8 {
-                        grid-column: span 12;
-                    }
-                    #evaluare-continut .wrap-show {
-                        display: none;
-                    }
-                    #evaluare-continut .wrap-8 {
-                        grid-column: span 12;
-                    }
-                    #admitere-continut .wrap-show {
-                        display: none;
-                    }
-                    #admitere-continut .wrap-8 {
-                        grid-column: span 12;
-                    }
-                    #profesional-continut .wrap-show {
-                        display: none;
-                    }
-                    #profesional-continut .wrap-8 {
-                        grid-column: span 12;
-                    }
-                    #dual-continut .wrap-show {
-                        display: none;
-                    }
-                    #dual-continut .wrap-8 {
-                        grid-column: span 12;
-                    }
-                    #altfel-continut .wrap-show {
-                        display: none;
-                    }
-                    #altfel-continut .wrap-9 {
-                        grid-column: span 12;
-                    }
-                    #verde-logo .wrap-show {
-                        display: none;
-                    }
-                    #verde-continut .wrap-3 {
-                        grid-column: span 12;
-                    }
-                    #verde-continut .wrap-9 {
-                        grid-column: span 12;
-                    }
-                    #verde-platforma-1 .wrap-3 {
-                        grid-column: span 12;
-                    }
-                    #verde-platforma-2 .wrap-3 {
-                        grid-column: span 12;
-                    }
-                    #verde-proiecte .wrap-2 {
-                        grid-column: span 6;
                     }
                     .sectiune-comunicari ul {
                         grid-template-columns: repeat(1, 1fr);
@@ -5366,9 +5366,6 @@ border-radius: 4px;
                     .page-menu .patru-prezentare {
                         grid-template-columns: repeat(1, 1fr);
                     }
-                    .page-menu .trei-personal {
-                        grid-template-columns: repeat(1, 1fr);
-                    }
                     .page-menu .trei-evaluare {
                         grid-template-columns: repeat(1, 1fr);
                     }
@@ -5381,8 +5378,96 @@ border-radius: 4px;
                     .page-menu .patru-regulamente {
                         grid-template-columns: repeat(1, 1fr);
                     }
+                    .page-menu .trei-personal {
+                        grid-template-columns: repeat(1, 1fr);
+                    }
                     .page-menu .patru-organigrama {
                         grid-template-columns: repeat(1, 1fr);
+                    }
+                    #program-continut .wrap-show {
+                        display: none;
+                    }
+                    #program-continut .wrap-92 {
+                        grid-column: span 12;
+                        grid-template-columns: repeat(1, 1fr);
+                    }
+                    #oferta-continut .wrap-show {
+                        display: none;
+                    }
+                    #oferta-continut .wrap-9 {
+                        grid-column: span 12;
+                    }
+                    #gradinita-continut .wrap-show {
+                        display: none;
+                    }
+                    #gradinita-continut .wrap-9 {
+                        grid-column: span 12;
+                    }
+                    #pregatitoare-continut .wrap-show {
+                        display: none;
+                    }
+                    #pregatitoare-continut .wrap-9 {
+                        grid-column: span 12;
+                    }
+                    #evaluari246-continut .wrap-show {
+                        display: none;
+                    }
+                    #evaluari246-continut .wrap-8 {
+                        grid-column: span 12;
+                    }
+                    #evaluare-continut .wrap-show {
+                        display: none;
+                    }
+                    #evaluare-continut .wrap-8 {
+                        grid-column: span 12;
+                    }
+                    #simulare8-continut .wrap-show {
+                        display: none;
+                    }
+                    #simulare8-continut .wrap-8 {
+                        grid-column: span 12;
+                    }
+                    #admitere-continut .wrap-show {
+                        display: none;
+                    }
+                    #admitere-continut .wrap-8 {
+                        grid-column: span 12;
+                    }
+                    #profesional-continut .wrap-show {
+                        display: none;
+                    }
+                    #profesional-continut .wrap-8 {
+                        grid-column: span 12;
+                    }
+                    #dual-continut .wrap-show {
+                        display: none;
+                    }
+                    #dual-continut .wrap-8 {
+                        grid-column: span 12;
+                    }
+                    #altfel-continut .wrap-show {
+                        display: none;
+                    }
+                    #altfel-continut .wrap-9 {
+                        grid-column: span 12;
+                    }
+                    #verde-logo .wrap-show {
+                        display: none;
+                    }
+                    #verde-continut .wrap-3 {
+                        grid-column: span 12;
+                    }
+                    #verde-continut .wrap-9 {
+                        grid-column: span 12;
+                    }
+                    #verde-platforma-1 .wrap-3 {
+                        grid-column: span 12;
+                    }
+                    #verde-platforma-2 .wrap-3 {
+                        grid-column: span 12;
+                    }
+                    #verde-proiecte .wrap-2 {
+                        grid-column: span 6;
                     }
                     #proiecte-continut .wrap-2 {
                         grid-column: span 12;
@@ -5511,32 +5596,25 @@ border-radius: 4px;
                     #vaccinare-continut .wrap-1 {
                         grid-column: span 12;
                     }
-                    #program-continut .wrap-show {
+                    #regulamente-continut .wrap-show {
                         display: none;
                     }
-                    #program-continut .wrap-92 {
-                        grid-column: span 12;
-                        grid-template-columns: repeat(1, 1fr);
-                    }
-                    #contact-continut .citat-3 {
-                        text-align: center;
-                    }
-                    #contact-continut .wrap-show {
-                        display: none;
-                    }
-                    #contact-continut .wrap-9 {
+                    #regulamente-continut .wrap-9 {
                         grid-column: span 12;
                     }
-                    #sindicat-continut .wrap-show {
-                        display: none;
-                    }
-                    #sindicat-continut .wrap-8 {
+                    #regulamente-ul .wrap-6 {
                         grid-column: span 12;
                     }
                     #personal-continut .wrap-show {
                         display: none;
                     }
                     #personal-continut .wrap-8 {
+                        grid-column: span 12;
+                    }
+                    #sindicat-continut .wrap-show {
+                        display: none;
+                    }
+                    #sindicat-continut .wrap-8 {
                         grid-column: span 12;
                     }
                     #ca-continut .wrap-show {
@@ -5569,92 +5647,14 @@ border-radius: 4px;
                     #comisii-ul .wrap-6 {
                         grid-column: span 12;
                     }
-                    #regulamente-continut .wrap-show {
+                    #contact-continut .citat-3 {
+                        text-align: center;
+                    }
+                    #contact-continut .wrap-show {
                         display: none;
                     }
-                    #regulamente-continut .wrap-9 {
+                    #contact-continut .wrap-9 {
                         grid-column: span 12;
-                    }
-                    #regulamente-ul .wrap-6 {
-                        grid-column: span 12;
-                    }
-                    #oferta-continut .wrap-show {
-                        display: none;
-                    }
-                    #oferta-continut .wrap-9 {
-                        grid-column: span 12;
-                    }
-                    #gradinita-continut .wrap-show {
-                        display: none;
-                    }
-                    #gradinita-continut .wrap-9 {
-                        grid-column: span 12;
-                    }
-                    #pregatitoare-continut .wrap-show {
-                        display: none;
-                    }
-                    #pregatitoare-continut .wrap-9 {
-                        grid-column: span 12;
-                    }
-                    #evaluari246-continut .wrap-show {
-                        display: none;
-                    }
-                    #evaluari246-continut .wrap-8 {
-                        grid-column: span 12;
-                    }
-                    #simulare8-continut .wrap-show {
-                        display: none;
-                    }
-                    #simulare8-continut .wrap-8 {
-                        grid-column: span 12;
-                    }
-                    #evaluare-continut .wrap-show {
-                        display: none;
-                    }
-                    #evaluare-continut .wrap-8 {
-                        grid-column: span 12;
-                    }
-                    #admitere-continut .wrap-show {
-                        display: none;
-                    }
-                    #admitere-continut .wrap-8 {
-                        grid-column: span 12;
-                    }
-                    #profesional-continut .wrap-show {
-                        display: none;
-                    }
-                    #profesional-continut .wrap-8 {
-                        grid-column: span 12;
-                    }
-                    #dual-continut .wrap-show {
-                        display: none;
-                    }
-                    #dual-continut .wrap-8 {
-                        grid-column: span 12;
-                    }
-                    #altfel-continut .wrap-show {
-                        display: none;
-                    }
-                    #altfel-continut .wrap-9 {
-                        grid-column: span 12;
-                    }
-                    #verde-logo .wrap-show {
-                        display: none;
-                    }
-                    #verde-continut .wrap-3 {
-                        grid-column: span 12;
-                    }
-                    #verde-continut .wrap-9 {
-                        grid-column: span 12;
-                    }
-                    #verde-platforma-1 .wrap-3 {
-                        grid-column: span 12;
-                    }
-                    #verde-platforma-2 .wrap-3 {
-                        grid-column: span 12;
-                    }
-                    #verde-proiecte .wrap-2 {
-                        grid-column: span 6;
                     }
                     .sectiune-comunicari ul {
                         grid-template-columns: repeat(1, 1fr);
