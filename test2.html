@@ -29,7 +29,7 @@
         <meta name="author" content="informatician IFTIMIA DAN-ADRIAN">
 
 <!-- Cuvinte cheie -->
-        <meta name="keywords" content="ȘCOALA GIMNAZIALĂ NICU ALBU PIATRA VACCINARE">
+        <meta name="keywords" content="ȘCOALA GIMNAZIALĂ NICU ALBU PIATRA NEAMȚ VACCINARE">
 
 <!-- Proprietate -->
         <meta property="og:site_name" content="Școala Gimnazială „Nicu Albu” Piatra Neamț">
@@ -112,6 +112,7 @@
                 --asz: 16rem;
                 --asu: 15rem;
                 --skp: -2.8rem;
+                --sz4: 0.9rem;
             }
 
           * {
@@ -284,7 +285,7 @@ border: 0px solid #404040;
                     }
 
 /* MENIU */
-                aside {
+                .aside-menu {
 border: none;
 border-right: 1px solid #404040;
                     margin-top: 0;
@@ -298,7 +299,7 @@ border-right: 1px solid #404040;
                     width: 100%;
                     max-width: var(--asz);
                     height: 100%;
-                    z-index: 10;
+                    z-index: 9;
                     overflow-x: hidden;
                     scrollbar-width: none;
                     position: fixed;
@@ -308,7 +309,7 @@ border-right: 1px solid #404040;
                     background-color: #F8F8F8;
                 }
 
-                    aside.show {
+                    .aside-menu.show {
                         display: flex;
                         opacity: 1;
                         transform: translateX(0);
@@ -385,7 +386,7 @@ border-radius: 4px;
                         width: auto;
                         line-height: 1rem;
                         text-align: left;
-                        font-size: 0.9rem;
+                        font-size: var(--sz4);
                         background-color: #FFFFFF;
                     }
 
@@ -1302,7 +1303,7 @@ border-radius: 4px;
                                     scrollbar-width: none;
                                     word-break: break-word;
                                     flex-shrink: 0;
-                                    font-size: 0.9rem;
+                                    font-size: var(--sz4);
                                     background-color: #FFFFFF;
                                 }
 
@@ -1753,7 +1754,7 @@ border-radius: 4px;
                             padding-right: 0;
                             width: 5rem;
                             height: auto;
-                            font-size: 0.9rem;
+                            font-size: var(--sz4);
                             background-color: #FFFFFF;
                         }
 
@@ -1793,7 +1794,7 @@ border-radius: 4px;
                             width: 5rem;
                             line-height: 1rem;
                             text-align: left;
-                            font-size: 0.9rem;
+                            font-size: var(--sz4);
                             background-color: #FFFFFF;
                         }
 
@@ -1810,7 +1811,7 @@ border-radius: 4px;
                             padding-right: 0.19rem;
                             width: 5rem;
                             text-align: center;
-                            font-size: 0.9rem;
+                            font-size: var(--sz4);
                             background-color: #FFFFFF;
                         }
 
@@ -2378,7 +2379,7 @@ border-radius: 4px;
                             list-style-position: inside;
                         }
 
-                            .sectiune-continut ol.r li {
+                            .sectiune-continut ol.s li {
 border: 0px solid #404040;
 border-radius: 4px;
                                 margin-top: 0;
@@ -2405,7 +2406,7 @@ border-radius: 4px;
                             list-style-position: inside;
                         }
 
-                            .sectiune-continut ol.s li {
+                            .sectiune-continut ol.r li {
 border: 0px solid #404040;
 border-radius: 4px;
                                 margin-top: 0;
@@ -3095,6 +3096,550 @@ border-radius: 4px;
                             text-align: left;
                         }
 
+/* ACCESIBILITATE */
+                .widget-sr-only {
+                    position: absolute;
+                    border: 0;
+                    margin: -1px;
+                    padding: 0;
+                    width: 1px;
+                    height: 1px;
+                    clip-path: inset(100%);
+                    overflow: hidden;
+                    white-space: nowrap;
+                    color: #000000;
+                    background-color: #FFFFFF;
+                }
+
+                .aside-widget {
+                    position: fixed;
+                    top: 0;
+                    right: 0;
+                    z-index: 10;
+                }
+
+                    .widget-floating-btn {
+border: 0px solid #000000;
+border-radius: 50%;
+                        position: fixed;
+                        top: 0;
+                        right: 0;
+                        z-index: 12;
+                        margin-top: 1.1rem;
+                        margin-bottom: 0;
+                        margin-left: 0;
+                        margin-right: 1.1rem;
+                        padding-top: 0;
+                        padding-bottom: 0;
+                        padding-left: 0;
+                        padding-right: 0;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        cursor: pointer;
+                        user-select: none;
+                        background-color: transparent;  
+                    }
+
+                        .widget-floating-btn img {
+border: 0px solid #000000;
+                            margin-top: 0;
+                            margin-bottom: 0;
+                            margin-left: 0;
+                            margin-right: 0;
+                            padding-top: 0.01rem;
+                            padding-bottom: 0.01rem;
+                            padding-left: 0.01rem;
+                            padding-right: 0.01rem;
+                            width: 3rem;
+                            height: auto;
+                         }
+
+                        .widget-floating-btn:focus {
+                            outline: 2px solid #000000;
+                            outline-offset: -1px;
+                        }
+
+                    .widget-icon-and-text {
+                        position: relative;
+                        display: flex;
+                        align-items: center;
+                    }
+
+                    .widget-eticheta {
+border: 1px solid #000000;
+border-radius: 4px;
+                        position: absolute;
+                        left: -8rem;
+                        margin-left: 0;
+                        padding: 0.5rem;
+                        opacity: 0;
+                        transition: opacity 0.3s ease, transform 0.3s ease;
+                        transform: translateX(0);
+                        pointer-events: none;
+                        font-size: 1rem;
+                        font-weight: bold;
+                        white-space: nowrap;
+                        background-color: #FFFFFF;
+                    }
+
+                    #widget-accesibilitate-buton:hover .widget-eticheta {
+                        opacity: 1;
+                    }
+
+                    #widget-accesibilitate-buton[aria-expanded="false"]:hover .widget-eticheta {
+                        opacity: 1;
+                    }
+
+                    #widget-accesibilitate-buton[aria-expanded="true"] .widget-eticheta {
+                        opacity: 0;
+                        transition: none;
+                    }
+
+                    .widget-icon-image {
+                        cursor: pointer;
+                        transition: transform 0.3s ease;
+                    }
+
+                        .widget-icon-image:hover {
+                            transform: scale(1.05);
+                        }
+
+                        .widget-icon-image:hover + .widget-eticheta {
+                            opacity: 1;
+                            transform: translateX(0);
+                        }
+
+                        .widget-icon-image:focus {
+                            transform: scale(1.05);
+                        }
+
+                        .widget-icon-image:focus + .widget-eticheta {
+                            opacity: 1;
+                            transform: translateX(0);
+                        }
+
+                    .widget {
+border: 1px solid #808080;
+border-radius: 8px;
+box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+                        position: fixed;
+                        top: 0;
+                        right: 0;
+                        z-index: 11;
+                        padding: 0.5rem;
+                        width: 100%;
+                        max-width: 24.3rem;
+                        max-height: 100vh;
+                        overflow-y: auto;
+                        scrollbar-width: none;
+                        background-color: #FFFFFF;
+                    }
+
+                        .widget-antet {
+border: 0px solid #808080;
+border-radius: 4px;
+                            margin-top: 0;
+                            margin-bottom: 0;
+                            margin-left: 0;
+                            margin-right: 0;
+                            padding-top: 1.4rem;
+                            padding-bottom: 1.6rem;
+                            padding-left: 0.5rem;
+                            padding-right: 0.5rem;
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            font-size: var(--sz3);
+                        }
+
+                        .widget-declaratie-btn {
+border: 1px solid #808080;
+border-radius: 4px;
+                            margin-top: 0;
+                            margin-bottom: 0;
+                            margin-left: 0;
+                            margin-right: 0;
+                            padding-top: var(--pd3);
+                            padding-bottom: var(--pd3);
+                            padding-left: 0.5rem;
+                            padding-right: 0.5rem;
+                            width: 100%;
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            gap: 0.5rem;
+                            cursor: pointer;
+                            font-size: var(--sz3);
+                            background-color: #F8F8F8;
+                        }
+
+                            .widget-declaratie-btn:hover{
+                                border: 1px solid #000000;
+                                background-color: #E8E8E8;
+                            }
+
+                            .widget-declaratie-btn:focus {
+                                outline: 2px solid #000000;
+                            }
+
+                            .widget-left-text {
+                                text-align: left;
+                                transition: opacity 0.3s ease;
+                            }
+
+                            .arrow {
+                                transition: transform 0.3s ease;
+                                font-size: 1rem;
+                            }
+
+                            .widget-declaratie-text {
+border: 1px solid #808080;
+border-radius: 4px;
+                                margin-top: -1px;
+                                margin-bottom: 0;
+                                margin-left: 0;
+                                margin-right: 0;
+                                padding-top: 1rem;
+                                padding-bottom: 0;
+                                padding-left: 0.5rem;
+                                padding-right: 0.5rem;
+                                font-size: var(--sz4);
+                            }
+
+                            .widget-declaratie-text ol {
+                                margin-top: 0;
+                                margin-bottom: 0;
+                                margin-left: 0;
+                                margin-right: 0;
+                                padding-top: 0;
+                                padding-bottom: 0;
+                                padding-left: 0;
+                                padding-right: 0;
+                                list-style: decimal;
+                                list-style-position: inside;
+                            }
+
+                                .widget-declaratie-text ol li {
+border: 0px solid #404040;
+border-radius: 4px;
+                                    margin-top: 0;
+                                    margin-bottom: 0;
+                                    margin-left: 0;
+                                    margin-right: 0;
+                                    padding-top: 0;
+                                    padding-bottom: 0.5rem;
+                                    padding-left: 0;
+                                    padding-right: 0;
+                                    display: list-item;
+                                    font-size: 1rem;
+                                }
+
+                                    .widget-declaratie-text ol li::marker {
+                                        font-weight: bold;
+                                    }
+
+                            .widget-declaratie-text ul {
+                                margin-top: 0;
+                                margin-bottom: 0;
+                                margin-left: 1rem;
+                                margin-right: 0;
+                                padding-top: 0;
+                                padding-bottom: 0;
+                                padding-left: 0;
+                                padding-right: 0;
+                                grid-template-columns: unset;
+                                list-style: disc;
+                                list-style-position: outside;
+                            }
+
+                                .widget-declaratie-text ul li {
+border: 0px solid #404040;
+border-radius: 4px;
+                                    margin-top: 0;
+                                    margin-bottom: 0;
+                                    margin-left: 0;
+                                    margin-right: 0;
+                                    padding-top: 0;
+                                    padding-bottom: 0;
+                                    padding-left: 0;
+                                    padding-right: 0;
+                                    display: list-item;
+                                    font-size: var(--sz4);
+                                }
+
+                                .widget-lista {
+                                    margin-top: 0;
+                                    margin-bottom: 0;
+                                    margin-left: -0.3rem;
+                                    margin-right: 0;
+                                    padding-top: 0;
+                                    padding-bottom: 0;
+                                    padding-left: 0;
+                                    padding-right: 0;
+                                    display: inline;
+                                }
+
+                                .widget-rand {
+                                    margin-top: 0.5rem;
+                                    margin-bottom: 0;
+                                    margin-left: 0;
+                                    margin-right: 0;
+                                    padding-top: 0;
+                                    padding-bottom: 0;
+                                    padding-left: 0;
+                                    padding-right: 0;
+                                    font-size: var(--sz4);
+                                }
+
+                        .widget-profiluri-btn {
+border: 1px solid #808080;
+border-radius: 4px;
+                            margin-top: 0.5rem;
+                            margin-bottom: 0;
+                            margin-left: 0;
+                            margin-right: 0;
+                            padding-top: var(--pd3);
+                            padding-bottom: var(--pd3);
+                            padding-left: 0.5rem;
+                            padding-right: 0.5rem;
+                            width: 100%;
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            gap: 0.5rem;
+                            cursor: pointer;
+                            font-size: var(--sz3);
+                            background-color: #F8F8F8;
+                        }
+
+                            .widget-profiluri-btn:hover{
+                                border: 1px solid #000000;
+                                background-color: #e8e8e8;
+                            }
+
+                            .widget-profiluri-btn:focus {
+                                outline: 2px solid #000000;
+                            }
+
+                            .widget-profiluri-panou {
+border: 1px solid #808080;
+border-radius: 4px;
+                                margin-top: -1px;
+                                margin-bottom: 0;
+                                margin-left: 0;
+                                margin-right: 0;
+                                padding-top: 0.5rem;
+                                padding-bottom: 0.5rem;
+                                padding-left: 0.5rem;
+                                padding-right: 0.5rem;
+                            }
+
+                                .widget-profiluri-lst {
+                                    display: flex;
+                                    flex-wrap: wrap;
+                                    gap: 0.5rem;
+                                }
+
+
+                                    .profile-button {
+border: 1px solid #808080;
+border-radius: 4px;
+                                        width: 7rem;
+                                        height: 5rem;
+                                        padding: 0.5rem;
+                                        transition: background-color 0.2s, border 0.2s;
+                                        display: flex;
+                                        flex-direction: column;
+                                        align-items: center;
+                                        font-size: 0.8rem;
+                                        cursor: pointer;
+                                        background-color: #f8f8f8;
+                                    }
+
+                                        .profile-button:hover{
+                                            border: 1px solid #000000;
+                                            background-color: #e8e8e8;
+                                        }
+
+                                        .profile-button:focus {
+                                            outline: 2px solid #000000;
+                                        }
+
+                                        .profile-button[aria-pressed="true"] {
+                                            border: 1px solid #000000;
+                                            background-color: #d3d3d3;
+                                        }
+
+                        .widget-optiuni-btn {
+border: 1px solid #808080;
+border-radius: 4px;
+                            margin-top: 0.5rem;
+                            margin-bottom: 0;
+                            margin-left: 0;
+                            margin-right: 0;
+                            padding-top: var(--pd3);
+                            padding-bottom: var(--pd3);
+                            padding-left: 0.5rem;
+                            padding-right: 0.5rem;
+                            width: 100%;
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            gap: 0.5rem;
+                            cursor: pointer;
+                            font-size: var(--sz3);
+                            background-color: #F8F8F8;
+                        }
+
+                            .widget-optiuni-btn:hover{
+                                border: 1px solid #000000;
+                                background-color: #E8E8E8;
+                            }
+
+                            .widget-optiuni-btn:focus {
+                                outline: 2px solid #000000;
+                            }
+
+                            .widget-optiuni-lst {
+border: 1px solid #808080;
+border-radius: 4px;
+                                margin-top: -1px;
+                                margin-bottom: 0;
+                                margin-left: 0;
+                                margin-right: 0;
+                                padding-top: 0.5rem;
+                                padding-bottom: 0.5rem;
+                                padding-left: 0.5rem;
+                                padding-right: 0.5rem;
+                            }
+
+                                .widget-optiuni-lst {
+                                    display: flex;
+                                    flex-wrap: wrap;
+                                    gap: 0.5rem;
+                                }
+
+                                    .option-button {
+border: 1px solid #808080;
+border-radius: 4px;
+                                        width: 7rem;
+                                        height: 5rem;
+                                        padding: 0.5rem;
+                                        transition: background-color 0.2s, border 0.2s;
+                                        display: flex;
+                                        flex-direction: column;
+                                        align-items: center;
+                                        font-size: 0.8rem;
+                                        cursor: pointer;
+                                        background-color: #F8F8F8;
+                                    }
+
+                                        .option-button:hover{
+                                            border: 1px solid #000000;
+                                            background-color: #E8E8E8;
+                                        }
+
+                                        .option-button:focus {
+                                            outline: 2px solid #000000;
+                                        }
+
+                                        .option-button[aria-pressed="true"] {
+                                            border: 1px solid #000000;
+                                            background-color: #D3D3D3;
+                                        }
+
+                                        .button-icon {
+                                            margin-top: 0.5rem;
+                                            margin-bottom: 0.2rem;
+                                            margin-left: auto;
+                                            margin-right: auto;
+                                            width: 2rem;
+                                            height: 2rem;
+                                            display: block;
+                                            fill: none;
+                                            stroke: #000; /* necolorat, contur simplu */
+                                            stroke-width: 2px;
+                                        }
+
+                                        .info-icon {
+border: 1px solid #808080;
+                                            position: absolute;
+                                            z-index: 10;
+                                            top: 0.5rem;
+                                            right: 0.5rem;
+                                            width: 1rem;
+                                            height: 1rem;
+                                            border-radius: 50%;
+                                            display: flex;
+                                            align-items: center;
+                                            justify-content: center;
+                                            font-size: 0.8rem;
+                                            font-weight: bold;
+                                            cursor: default;
+                                            background-color: #FFFFFF;
+                                        }
+
+                                        .popup-info {
+border: 1px solid #808080;
+border-radius: 4px;
+box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+                                            position: fixed; /* peste tot în pagină */
+                                            z-index: 2000; /* peste alte elemente */
+                                            max-width: 50rem; /* max 50rem sau 100% */
+                                            width: auto;
+                                            padding: 0.5rem;
+                                            display: none; /* inițial ascuns */
+                                            word-wrap: break-word; /* text lung se rupe dacă e nevoie */
+                                            white-space: normal; /* text pe mai multe rânduri */
+                                            opacity: 0; /* pentru tranziție */
+                                            transition: opacity 0.3s;
+                                            background-color: #FFFFFF;
+                                        }
+
+                                        .text-box {
+
+                                            margin: 0.5rem auto 0.5rem auto;
+                                            padding: 0.2rem;
+                                            width: 6rem;
+                                            height: auto;
+                                            display: flex;
+                                            flex-direction: column;
+                                            justify-content: space-between;
+                                            align-items: center;
+                                            text-align: center;
+                                            font-size: 0.8rem;
+                                        }
+
+                                        .sub-options-container {
+                                            margin-top: 0.5rem;
+                                            display: flex;
+                                            justify-content: center;
+                                            align-items: center;
+                                            gap: 0.4rem;
+                                          }
+
+                                            .sub-option {
+border: 1px solid #555555;
+border-radius: 50%;
+                                                width: 0.4rem;
+                                                height: 0.4rem;
+                                                cursor: pointer;
+                                                transition: background-color 0.2s;
+                                                background-color: #FFFFFF;
+                                            }
+
+                                                .sub-option.active {
+                                                    background-color: #000000;
+                                                }
+
+        //    @media(max-width: 500px){
+
+         //       .widget {
+          //          width: 90%;
+        //        }
+      //      }
+
 /* SUBSOL */
                 .footer {
 border: 0px solid #404040;
@@ -3291,7 +3836,7 @@ border-radius: 4px;
                     }
                 }
 
-/* (1367px-1680px) page-menu 3, wrap-2 4, wrap-10 8, wrap-1 2, wrap-4 8, wrap-102 5, wrap-108 5, wrap-105 10 (PROIECTE), wrap-2 4, wrap-10 8 (STRATEGIE) */
+/* (1367px-1680px) page-menu 3, wrap-2 4, wrap-10 8, wrap-1 2, wrap-4 8, wrap-102 5, wrap-108 5, wrap-105 10 (PROIECTE), wrap-2 4, wrap-10 8, wrap-1 2 (STRATEGIE) */
                 @media (min-width: 85.4em) and (max-width: 105.1em) {
                     aside {
                         min-height: 100vh;
@@ -3305,11 +3850,17 @@ border-radius: 4px;
                     .page-menu .trei-evaluare {
                         grid-template-columns: repeat(1, 1fr);
                     }
+                    .page-menu .sase-proiecte {
+                        grid-template-columns: repeat(3, 1fr);
+                    }
                     .page-menu .patru-organigrama {
                         grid-template-columns: repeat(2, 1fr);
                     }
-                    .page-menu .sase-proiecte {
-                        grid-template-columns: repeat(3, 1fr);
+                    #verde-platforma-1 .wrap-3 {
+                        grid-column: span 6;
+                    }
+                    #verde-platforma-2 .wrap-3 {
+                        grid-column: span 6;
                     }
                     #proiecte-continut .wrap-2 {
                         grid-column: span 4;
@@ -3418,12 +3969,6 @@ border-radius: 4px;
                     }
                     #vaccinare-continut .wrap-1 {
                         grid-column: span 2;
-                    }
-                    #verde-platforma-1 .wrap-3 {
-                        grid-column: span 6;
-                    }
-                    #verde-platforma-2 .wrap-3 {
-                        grid-column: span 6;
                     }
                     .sectiune-comunicari ul {
                         grid-template-columns: repeat(2, 1fr);
@@ -3450,11 +3995,17 @@ border-radius: 4px;
                     .page-menu .trei-evaluare {
                         grid-template-columns: repeat(1, 1fr);
                     }
+                    .page-menu .sase-proiecte {
+                        grid-template-columns: repeat(3, 1fr);
+                    }
                     .page-menu .patru-organigrama {
                         grid-template-columns: repeat(2, 1fr);
                     }
-                    .page-menu .sase-proiecte {
-                        grid-template-columns: repeat(3, 1fr);
+                    #verde-platforma-1 .wrap-3 {
+                        grid-column: span 6;
+                    }
+                    #verde-platforma-2 .wrap-3 {
+                        grid-column: span 6;
                     }
                     #proiecte-continut .wrap-2 {
                         grid-column: span 4;
@@ -3563,12 +4114,6 @@ border-radius: 4px;
                     }
                     #vaccinare-continut .wrap-1 {
                         grid-column: span 2;
-                    }
-                    #verde-platforma-1 .wrap-3 {
-                        grid-column: span 6;
-                    }
-                    #verde-platforma-2 .wrap-3 {
-                        grid-column: span 6;
                     }
                     .sectiune-comunicari ul {
                         grid-template-columns: repeat(2, 1fr);
@@ -3592,11 +4137,17 @@ border-radius: 4px;
                     .page-menu .trei-evaluare {
                         grid-template-columns: repeat(1, 1fr);
                     }
+                    .page-menu .sase-proiecte {
+                        grid-template-columns: repeat(3, 1fr);
+                    }
                     .page-menu .patru-organigrama {
                         grid-template-columns: repeat(2, 1fr);
                     }
-                    .page-menu .sase-proiecte {
-                        grid-template-columns: repeat(3, 1fr);
+                    #verde-platforma-1 .wrap-3 {
+                        grid-column: span 6;
+                    }
+                    #verde-platforma-2 .wrap-3 {
+                        grid-column: span 6;
                     }
                     #proiecte-continut .wrap-2 {
                         grid-column: span 4;
@@ -3705,12 +4256,6 @@ border-radius: 4px;
                     }
                     #vaccinare-continut .wrap-1 {
                         grid-column: span 2;
-                    }
-                    #verde-platforma-1 .wrap-3 {
-                        grid-column: span 6;
-                    }
-                    #verde-platforma-2 .wrap-3 {
-                        grid-column: span 6;
                     }
                     .sectiune-comunicari ul {
                         grid-template-columns: repeat(2, 1fr);
@@ -3741,11 +4286,45 @@ border-radius: 4px;
                     .page-menu .trei-admitere {
                         grid-template-columns: repeat(1, 1fr);
                     }
+                    .page-menu .sase-proiecte {
+                        grid-template-columns: repeat(3, 1fr);
+                    }
                     .page-menu .patru-organigrama {
                         grid-template-columns: repeat(1, 1fr);
                     }
-                    .page-menu .sase-proiecte {
-                        grid-template-columns: repeat(3, 1fr);
+                    #program-continut .wrap-show {
+                        display: none;
+                    }
+                    #program-continut .wrap-92 {
+                        grid-column: span 12;
+                        grid-template-columns: repeat(1, 1fr);
+                    }
+                    #oferta-continut .wrap-show {
+                        display: none;
+                    }
+                    #oferta-continut .wrap-9 {
+                        grid-column: span 12;
+                    }
+                    #gradinita-continut .wrap-show {
+                        display: none;
+                    }
+                    #gradinita-continut .wrap-9 {
+                        grid-column: span 12;
+                    }
+                    #pregatitoare-continut .wrap-show {
+                        display: none;
+                    }
+                    #pregatitoare-continut .wrap-9 {
+                        grid-column: span 12;
+                    }
+                    #verde-platforma-1 .wrap-3 {
+                        grid-column: span 12;
+                    }
+                    #verde-platforma-2 .wrap-3 {
+                        grid-column: span 12;
+                    }
+                    #verde-proiecte .wrap-2 {
+                        grid-column: span 4;
                     }
                     #proiecte-continut .wrap-2 {
                         grid-column: span 4;
@@ -3855,20 +4434,13 @@ border-radius: 4px;
                     #vaccinare-continut .wrap-1 {
                         grid-column: span 2;
                     }
-                    #program-continut .wrap-show {
+                    #regulamente-continut .wrap-show {
                         display: none;
                     }
-                    #program-continut .wrap-92 {
+                    #regulamente-continut .wrap-9 {
                         grid-column: span 12;
-                        grid-template-columns: repeat(1, 1fr);
                     }
-                    #contact-continut .citat-3 {
-                        text-align: center;
-                    }
-                    #contact-continut .wrap-show {
-                        display: none;
-                    }
-                    #contact-continut .wrap-9 {
+                    #regulamente-ul .wrap-6 {
                         grid-column: span 12;
                     }
                     #personal-continut .wrap-show {
@@ -3913,41 +4485,14 @@ border-radius: 4px;
                     #comisii-ul .wrap-6 {
                         grid-column: span 12;
                     }
-                    #regulamente-continut .wrap-show {
+                    #contact-continut .citat-3 {
+                        text-align: center;
+                    }
+                    #contact-continut .wrap-show {
                         display: none;
                     }
-                    #regulamente-continut .wrap-9 {
+                    #contact-continut .wrap-9 {
                         grid-column: span 12;
-                    }
-                    #regulamente-ul .wrap-6 {
-                        grid-column: span 12;
-                    }
-                    #oferta-continut .wrap-show {
-                        display: none;
-                    }
-                    #oferta-continut .wrap-9 {
-                        grid-column: span 12;
-                    }
-                    #gradinita-continut .wrap-show {
-                        display: none;
-                    }
-                    #gradinita-continut .wrap-9 {
-                        grid-column: span 12;
-                    }
-                    #pregatitoare-continut .wrap-show {
-                        display: none;
-                    }
-                    #pregatitoare-continut .wrap-9 {
-                        grid-column: span 12;
-                    }
-                    #verde-platforma-1 .wrap-3 {
-                        grid-column: span 12;
-                    }
-                    #verde-platforma-2 .wrap-3 {
-                        grid-column: span 12;
-                    }
-                    #verde-proiecte .wrap-2 {
-                        grid-column: span 4;
                     }
                     .sectiune-comunicari ul {
                         grid-template-columns: repeat(1, 1fr);
@@ -3981,14 +4526,72 @@ border-radius: 4px;
                     .page-menu .trei-admitere {
                         grid-template-columns: repeat(1, 1fr);
                     }
-                    .page-menu .patru-organigrama {
-                        grid-template-columns: repeat(1, 1fr);
+                    .page-menu .sase-proiecte {
+                        grid-template-columns: repeat(3, 1fr);
                     }
                     .page-menu .patru-regulamente {
                         grid-template-columns: repeat(2, 1fr);
                     }
-                    .page-menu .sase-proiecte {
-                        grid-template-columns: repeat(3, 1fr);
+                    .page-menu .patru-organigrama {
+                        grid-template-columns: repeat(1, 1fr);
+                    }
+                    #program-continut .wrap-show {
+                        display: none;
+                    }
+                    #program-continut .wrap-92 {
+                        grid-column: span 12;
+                        grid-template-columns: repeat(1, 1fr);
+                    }
+                    #oferta-continut .wrap-show {
+                        display: none;
+                    }
+                    #oferta-continut .wrap-9 {
+                        grid-column: span 12;
+                    }
+                    #gradinita-continut .wrap-show {
+                        display: none;
+                    }
+                    #gradinita-continut .wrap-9 {
+                        grid-column: span 12;
+                    }
+                    #pregatitoare-continut .wrap-show {
+                        display: none;
+                    }
+                    #pregatitoare-continut .wrap-9 {
+                        grid-column: span 12;
+                    }
+                    #admitere-continut .wrap-show {
+                        display: none;
+                    }
+                    #admitere-continut .wrap-8 {
+                        grid-column: span 12;
+                    }
+                    #profesional-continut .wrap-show {
+                        display: none;
+                    }
+                    #profesional-continut .wrap-8 {
+                        grid-column: span 12;
+                    }
+                    #dual-continut .wrap-show {
+                        display: none;
+                    }
+                    #dual-continut .wrap-8 {
+                        grid-column: span 12;
+                    }
+                    #verde-continut .wrap-3 {
+                        grid-column: span 6;
+                    }
+                    #verde-continut .wrap-9 {
+                        grid-column: span 6;
+                    }
+                    #verde-platforma-1 .wrap-3 {
+                        grid-column: span 12;
+                    }
+                    #verde-platforma-2 .wrap-3 {
+                        grid-column: span 12;
+                    }
+                    #verde-proiecte .wrap-2 {
+                        grid-column: span 4;
                     }
                     #proiecte-continut .wrap-2 {
                         grid-column: span 4;
@@ -4098,20 +4701,13 @@ border-radius: 4px;
                     #vaccinare-continut .wrap-1 {
                         grid-column: span 2;
                     }
-                    #program-continut .wrap-show {
+                    #regulamente-continut .wrap-show {
                         display: none;
                     }
-                    #program-continut .wrap-92 {
+                    #regulamente-continut .wrap-9 {
                         grid-column: span 12;
-                        grid-template-columns: repeat(1, 1fr);
                     }
-                    #contact-continut .citat-3 {
-                        text-align: center;
-                    }
-                    #contact-continut .wrap-show {
-                        display: none;
-                    }
-                    #contact-continut .wrap-9 {
+                    #regulamente-ul .wrap-6 {
                         grid-column: span 12;
                     }
                     #personal-continut .wrap-show {
@@ -4156,14 +4752,62 @@ border-radius: 4px;
                     #comisii-ul .wrap-6 {
                         grid-column: span 12;
                     }
-                    #regulamente-continut .wrap-show {
+                    #contact-continut .citat-3 {
+                        text-align: center;
+                    }
+                    #contact-continut .wrap-show {
                         display: none;
                     }
-                    #regulamente-continut .wrap-9 {
+                    #contact-continut .wrap-9 {
                         grid-column: span 12;
                     }
-                    #regulamente-ul .wrap-6 {
+                    .sectiune-comunicari ul {
+                        grid-template-columns: repeat(1, 1fr);
+                    }
+                    .imagine-4 {
+                        grid-template-columns: repeat(1, 1fr);
+                    }
+                    .imagine-2 {
+                        grid-template-columns: repeat(1, 1fr);
+                    }
+                    .sectiune-telverde ul {
+                        grid-template-columns: repeat(2, 1fr);
+                    }
+                    .sectiune-legaturi ul {
+                        display: grid;
+                        grid-template-columns: repeat(2, 1fr);
+                    }
+                }
+
+/* (601px-720px) page-menu-1 (organigrama), wrap-4, page-menu 2, wrap-2 12, wrap-10 12, wrap-1 4, wrap-4 4, wrap-102 10, wrap-108 10 (PROIECTE), wrap-2 12, wrap-10 12, wrap-105 10, wrap-1 6 (STRATEGIE) */
+                @media (min-width: 37.5em) and (max-width: 45.1em) {
+                    aside {
+                        border-radius: 4px;
+                    }
+                    .page-menu .patru-prezentare {
+                        grid-template-columns: repeat(2, 1fr);
+                    }
+                    .page-menu .trei-evaluare {
+                        grid-template-columns: repeat(1, 1fr);
+                    }
+                    .page-menu .trei-admitere {
+                        grid-template-columns: repeat(1, 1fr);
+                    }
+                    .page-menu .sase-proiecte {
+                        grid-template-columns: repeat(2, 1fr);
+                    }
+                    .page-menu .patru-regulamente {
+                        grid-template-columns: repeat(2, 1fr);
+                    }
+                    .page-menu .patru-organigrama {
+                        grid-template-columns: repeat(1, 1fr);
+                    }
+                    #program-continut .wrap-show {
+                        display: none;
+                    }
+                    #program-continut .wrap-92 {
                         grid-column: span 12;
+                        grid-template-columns: repeat(1, 1fr);
                     }
                     #oferta-continut .wrap-show {
                         display: none;
@@ -4181,6 +4825,24 @@ border-radius: 4px;
                         display: none;
                     }
                     #pregatitoare-continut .wrap-9 {
+                        grid-column: span 12;
+                    }
+                    #evaluari246-continut .wrap-show {
+                        display: none;
+                    }
+                    #evaluari246-continut .wrap-8 {
+                        grid-column: span 12;
+                    }
+                    #simulare8-continut .wrap-show {
+                        display: none;
+                    }
+                    #simulare8-continut .wrap-8 {
+                        grid-column: span 12;
+                    }
+                    #evaluare-continut .wrap-show {
+                        display: none;
+                    }
+                    #evaluare-continut .wrap-8 {
                         grid-column: span 12;
                     }
                     #admitere-continut .wrap-show {
@@ -4215,47 +4877,6 @@ border-radius: 4px;
                     }
                     #verde-proiecte .wrap-2 {
                         grid-column: span 4;
-                    }
-                    .sectiune-comunicari ul {
-                        grid-template-columns: repeat(1, 1fr);
-                    }
-                    .imagine-4 {
-                        grid-template-columns: repeat(1, 1fr);
-                    }
-                    .imagine-2 {
-                        grid-template-columns: repeat(1, 1fr);
-                    }
-                    .sectiune-telverde ul {
-                        grid-template-columns: repeat(2, 1fr);
-                    }
-                    .sectiune-legaturi ul {
-                        display: grid;
-                        grid-template-columns: repeat(2, 1fr);
-                    }
-                }
-
-/* (601px-720px) page-menu-1 (organigrama), wrap-4, page-menu 2, wrap-2 12, wrap-10 12, wrap-1 4, wrap-4 4, wrap-102 10, wrap-108 10 (PROIECTE), wrap-2 12, wrap-10 12, wrap-105 10 (STRATEGIE) */
-                @media (min-width: 37.5em) and (max-width: 45.1em) {
-                    aside {
-                        border-radius: 4px;
-                    }
-                    .page-menu .patru-prezentare {
-                        grid-template-columns: repeat(2, 1fr);
-                    }
-                    .page-menu .trei-evaluare {
-                        grid-template-columns: repeat(1, 1fr);
-                    }
-                    .page-menu .trei-admitere {
-                        grid-template-columns: repeat(1, 1fr);
-                    }
-                    .page-menu .patru-organigrama {
-                        grid-template-columns: repeat(1, 1fr);
-                    }
-                    .page-menu .patru-regulamente {
-                        grid-template-columns: repeat(2, 1fr);
-                    }
-                    .page-menu .sase-proiecte {
-                        grid-template-columns: repeat(2, 1fr);
                     }
                     #proiecte-continut .wrap-2 {
                         grid-column: span 12;
@@ -4374,20 +4995,13 @@ border-radius: 4px;
                     #vaccinare-continut .wrap-1 {
                         grid-column: span 6;
                     }
-                    #program-continut .wrap-show {
+                    #regulamente-continut .wrap-show {
                         display: none;
                     }
-                    #program-continut .wrap-92 {
+                    #regulamente-continut .wrap-9 {
                         grid-column: span 12;
-                        grid-template-columns: repeat(1, 1fr);
                     }
-                    #contact-continut .citat-3 {
-                        text-align: center;
-                    }
-                    #contact-continut .wrap-show {
-                        display: none;
-                    }
-                    #contact-continut .wrap-9 {
+                    #regulamente-ul .wrap-6 {
                         grid-column: span 12;
                     }
                     #personal-continut .wrap-show {
@@ -4432,83 +5046,14 @@ border-radius: 4px;
                     #comisii-ul .wrap-6 {
                         grid-column: span 12;
                     }
-                    #regulamente-continut .wrap-show {
+                    #contact-continut .citat-3 {
+                        text-align: center;
+                    }
+                    #contact-continut .wrap-show {
                         display: none;
                     }
-                    #regulamente-continut .wrap-9 {
+                    #contact-continut .wrap-9 {
                         grid-column: span 12;
-                    }
-                    #regulamente-ul .wrap-6 {
-                        grid-column: span 12;
-                    }
-                    #oferta-continut .wrap-show {
-                        display: none;
-                    }
-                    #oferta-continut .wrap-9 {
-                        grid-column: span 12;
-                    }
-                    #gradinita-continut .wrap-show {
-                        display: none;
-                    }
-                    #gradinita-continut .wrap-9 {
-                        grid-column: span 12;
-                    }
-                    #pregatitoare-continut .wrap-show {
-                        display: none;
-                    }
-                    #pregatitoare-continut .wrap-9 {
-                        grid-column: span 12;
-                    }
-                    #evaluari246-continut .wrap-show {
-                        display: none;
-                    }
-                    #evaluari246-continut .wrap-8 {
-                        grid-column: span 12;
-                    }
-                    #simulare8-continut .wrap-show {
-                        display: none;
-                    }
-                    #simulare8-continut .wrap-8 {
-                        grid-column: span 12;
-                    }
-                    #evaluare-continut .wrap-show {
-                        display: none;
-                    }
-                    #evaluare-continut .wrap-8 {
-                        grid-column: span 12;
-                    }
-                    #admitere-continut .wrap-show {
-                        display: none;
-                    }
-                    #admitere-continut .wrap-8 {
-                        grid-column: span 12;
-                    }
-                    #profesional-continut .wrap-show {
-                        display: none;
-                    }
-                    #profesional-continut .wrap-8 {
-                        grid-column: span 12;
-                    }
-                    #dual-continut .wrap-show {
-                        display: none;
-                    }
-                    #dual-continut .wrap-8 {
-                        grid-column: span 12;
-                    }
-                    #verde-continut .wrap-3 {
-                        grid-column: span 6;
-                    }
-                    #verde-continut .wrap-9 {
-                        grid-column: span 6;
-                    }
-                    #verde-platforma-1 .wrap-3 {
-                        grid-column: span 12;
-                    }
-                    #verde-platforma-2 .wrap-3 {
-                        grid-column: span 12;
-                    }
-                    #verde-proiecte .wrap-2 {
-                        grid-column: span 4;
                     }
                     .sectiune-comunicari ul {
                         grid-template-columns: repeat(1, 1fr);
@@ -4542,14 +5087,99 @@ border-radius: 4px;
                     .page-menu .trei-admitere {
                         grid-template-columns: repeat(1, 1fr);
                     }
-                    .page-menu .patru-organigrama {
-                        grid-template-columns: repeat(1, 1fr);
+                    .page-menu .sase-proiecte {
+                        grid-template-columns: repeat(2, 1fr);
                     }
                     .page-menu .patru-regulamente {
                         grid-template-columns: repeat(2, 1fr);
                     }
-                    .page-menu .sase-proiecte {
-                        grid-template-columns: repeat(2, 1fr);
+                    .page-menu .patru-organigrama {
+                        grid-template-columns: repeat(1, 1fr);
+                    }
+                    #program-continut .wrap-show {
+                        display: none;
+                    }
+                    #program-continut .wrap-92 {
+                        grid-column: span 12;
+                        grid-template-columns: repeat(1, 1fr);
+                    }
+                    #oferta-continut .wrap-show {
+                        display: none;
+                    }
+                    #oferta-continut .wrap-9 {
+                        grid-column: span 12;
+                    }
+                    #gradinita-continut .wrap-show {
+                        display: none;
+                    }
+                    #gradinita-continut .wrap-9 {
+                        grid-column: span 12;
+                    }
+                    #pregatitoare-continut .wrap-show {
+                        display: none;
+                    }
+                    #pregatitoare-continut .wrap-9 {
+                        grid-column: span 12;
+                    }
+                    #evaluari246-continut .wrap-show {
+                        display: none;
+                    }
+                    #evaluari246-continut .wrap-8 {
+                        grid-column: span 12;
+                    }
+                    #simulare8-continut .wrap-show {
+                        display: none;
+                    }
+                    #simulare8-continut .wrap-8 {
+                        grid-column: span 12;
+                    }
+                    #evaluare-continut .wrap-show {
+                        display: none;
+                    }
+                    #evaluare-continut .wrap-8 {
+                        grid-column: span 12;
+                    }
+                    #admitere-continut .wrap-show {
+                        display: none;
+                    }
+                    #admitere-continut .wrap-8 {
+                        grid-column: span 12;
+                    }
+                    #profesional-continut .wrap-show {
+                        display: none;
+                    }
+                    #profesional-continut .wrap-8 {
+                        grid-column: span 12;
+                    }
+                    #dual-continut .wrap-show {
+                        display: none;
+                    }
+                    #dual-continut .wrap-8 {
+                        grid-column: span 12;
+                    }
+                    #altfel-continut .wrap-show {
+                        display: none;
+                    }
+                    #altfel-continut .wrap-9 {
+                        grid-column: span 12;
+                    }
+                    #verde-logo .wrap-show {
+                        display: none;
+                    }
+                    #verde-continut .wrap-3 {
+                        grid-column: span 12;
+                    }
+                    #verde-continut .wrap-9 {
+                        grid-column: span 12;
+                    }
+                    #verde-platforma-1 .wrap-3 {
+                        grid-column: span 12;
+                    }
+                    #verde-platforma-2 .wrap-3 {
+                        grid-column: span 12;
+                    }
+                    #verde-proiecte .wrap-2 {
+                        grid-column: span 6;
                     }
                     #proiecte-continut .wrap-2 {
                         grid-column: span 12;
@@ -4668,20 +5298,13 @@ border-radius: 4px;
                     #vaccinare-continut .wrap-1 {
                         grid-column: span 6;
                     }
-                    #program-continut .wrap-show {
+                    #regulamente-continut .wrap-show {
                         display: none;
                     }
-                    #program-continut .wrap-92 {
+                    #regulamente-continut .wrap-9 {
                         grid-column: span 12;
-                        grid-template-columns: repeat(1, 1fr);
                     }
-                    #contact-continut .citat-3 {
-                        text-align: center;
-                    }
-                    #contact-continut .wrap-show {
-                        display: none;
-                    }
-                    #contact-continut .wrap-9 {
+                    #regulamente-ul .wrap-6 {
                         grid-column: span 12;
                     }
                     #personal-continut .wrap-show {
@@ -4726,92 +5349,14 @@ border-radius: 4px;
                     #comisii-ul .wrap-6 {
                         grid-column: span 12;
                     }
-                    #regulamente-continut .wrap-show {
+                    #contact-continut .citat-3 {
+                        text-align: center;
+                    }
+                    #contact-continut .wrap-show {
                         display: none;
                     }
-                    #regulamente-continut .wrap-9 {
+                    #contact-continut .wrap-9 {
                         grid-column: span 12;
-                    }
-                    #regulamente-ul .wrap-6 {
-                        grid-column: span 12;
-                    }
-                    #oferta-continut .wrap-show {
-                        display: none;
-                    }
-                    #oferta-continut .wrap-9 {
-                        grid-column: span 12;
-                    }
-                    #gradinita-continut .wrap-show {
-                        display: none;
-                    }
-                    #gradinita-continut .wrap-9 {
-                        grid-column: span 12;
-                    }
-                    #pregatitoare-continut .wrap-show {
-                        display: none;
-                    }
-                    #pregatitoare-continut .wrap-9 {
-                        grid-column: span 12;
-                    }
-                    #evaluari246-continut .wrap-show {
-                        display: none;
-                    }
-                    #evaluari246-continut .wrap-8 {
-                        grid-column: span 12;
-                    }
-                    #simulare8-continut .wrap-show {
-                        display: none;
-                    }
-                    #simulare8-continut .wrap-8 {
-                        grid-column: span 12;
-                    }
-                    #evaluare-continut .wrap-show {
-                        display: none;
-                    }
-                    #evaluare-continut .wrap-8 {
-                        grid-column: span 12;
-                    }
-                    #admitere-continut .wrap-show {
-                        display: none;
-                    }
-                    #admitere-continut .wrap-8 {
-                        grid-column: span 12;
-                    }
-                    #profesional-continut .wrap-show {
-                        display: none;
-                    }
-                    #profesional-continut .wrap-8 {
-                        grid-column: span 12;
-                    }
-                    #dual-continut .wrap-show {
-                        display: none;
-                    }
-                    #dual-continut .wrap-8 {
-                        grid-column: span 12;
-                    }
-                    #altfel-continut .wrap-show {
-                        display: none;
-                    }
-                    #altfel-continut .wrap-9 {
-                        grid-column: span 12;
-                    }
-                    #verde-logo .wrap-show {
-                        display: none;
-                    }
-                    #verde-continut .wrap-3 {
-                        grid-column: span 12;
-                    }
-                    #verde-continut .wrap-9 {
-                        grid-column: span 12;
-                    }
-                    #verde-platforma-1 .wrap-3 {
-                        grid-column: span 12;
-                    }
-                    #verde-platforma-2 .wrap-3 {
-                        grid-column: span 12;
-                    }
-                    #verde-proiecte .wrap-2 {
-                        grid-column: span 6;
                     }
                     .sectiune-comunicari ul {
                         grid-template-columns: repeat(1, 1fr);
@@ -4845,14 +5390,99 @@ border-radius: 4px;
                     .page-menu .trei-admitere {
                         grid-template-columns: repeat(1, 1fr);
                     }
-                    .page-menu .patru-organigrama {
+                    .page-menu .sase-proiecte {
                         grid-template-columns: repeat(1, 1fr);
                     }
                     .page-menu .patru-regulamente {
                         grid-template-columns: repeat(2, 1fr);
                     }
-                    .page-menu .sase-proiecte {
+                    .page-menu .patru-organigrama {
                         grid-template-columns: repeat(1, 1fr);
+                    }
+                    #program-continut .wrap-show {
+                        display: none;
+                    }
+                    #program-continut .wrap-92 {
+                        grid-column: span 12;
+                        grid-template-columns: repeat(1, 1fr);
+                    }
+                    #oferta-continut .wrap-show {
+                        display: none;
+                    }
+                    #oferta-continut .wrap-9 {
+                        grid-column: span 12;
+                    }
+                    #gradinita-continut .wrap-show {
+                        display: none;
+                    }
+                    #gradinita-continut .wrap-9 {
+                        grid-column: span 12;
+                    }
+                    #pregatitoare-continut .wrap-show {
+                        display: none;
+                    }
+                    #pregatitoare-continut .wrap-9 {
+                        grid-column: span 12;
+                    }
+                    #evaluari246-continut .wrap-show {
+                        display: none;
+                    }
+                    #evaluari246-continut .wrap-8 {
+                        grid-column: span 12;
+                    }
+                    #simulare8-continut .wrap-show {
+                        display: none;
+                    }
+                    #simulare8-continut .wrap-8 {
+                        grid-column: span 12;
+                    }
+                    #evaluare-continut .wrap-show {
+                        display: none;
+                    }
+                    #evaluare-continut .wrap-8 {
+                        grid-column: span 12;
+                    }
+                    #admitere-continut .wrap-show {
+                        display: none;
+                    }
+                    #admitere-continut .wrap-8 {
+                        grid-column: span 12;
+                    }
+                    #profesional-continut .wrap-show {
+                        display: none;
+                    }
+                    #profesional-continut .wrap-8 {
+                        grid-column: span 12;
+                    }
+                    #dual-continut .wrap-show {
+                        display: none;
+                    }
+                    #dual-continut .wrap-8 {
+                        grid-column: span 12;
+                    }
+                    #altfel-continut .wrap-show {
+                        display: none;
+                    }
+                    #altfel-continut .wrap-9 {
+                        grid-column: span 12;
+                    }
+                    #verde-logo .wrap-show {
+                        display: none;
+                    }
+                    #verde-continut .wrap-3 {
+                        grid-column: span 12;
+                    }
+                    #verde-continut .wrap-9 {
+                        grid-column: span 12;
+                    }
+                    #verde-platforma-1 .wrap-3 {
+                        grid-column: span 12;
+                    }
+                    #verde-platforma-2 .wrap-3 {
+                        grid-column: span 12;
+                    }
+                    #verde-proiecte .wrap-2 {
+                        grid-column: span 6;
                     }
                     #proiecte-continut .wrap-2 {
                         grid-column: span 12;
@@ -4981,20 +5611,13 @@ border-radius: 4px;
                     #vaccinare-continut .wrap-1 {
                         grid-column: span 6;
                     }
-                    #program-continut .wrap-show {
+                    #regulamente-continut .wrap-show {
                         display: none;
                     }
-                    #program-continut .wrap-92 {
+                    #regulamente-continut .wrap-9 {
                         grid-column: span 12;
-                        grid-template-columns: repeat(1, 1fr);
                     }
-                    #contact-continut .citat-3 {
-                        text-align: center;
-                    }
-                    #contact-continut .wrap-show {
-                        display: none;
-                    }
-                    #contact-continut .wrap-9 {
+                    #regulamente-ul .wrap-6 {
                         grid-column: span 12;
                     }
                     #personal-continut .wrap-show {
@@ -5039,92 +5662,14 @@ border-radius: 4px;
                     #comisii-ul .wrap-6 {
                         grid-column: span 12;
                     }
-                    #regulamente-continut .wrap-show {
+                    #contact-continut .citat-3 {
+                        text-align: center;
+                    }
+                    #contact-continut .wrap-show {
                         display: none;
                     }
-                    #regulamente-continut .wrap-9 {
+                    #contact-continut .wrap-9 {
                         grid-column: span 12;
-                    }
-                    #regulamente-ul .wrap-6 {
-                        grid-column: span 12;
-                    }
-                    #oferta-continut .wrap-show {
-                        display: none;
-                    }
-                    #oferta-continut .wrap-9 {
-                        grid-column: span 12;
-                    }
-                    #gradinita-continut .wrap-show {
-                        display: none;
-                    }
-                    #gradinita-continut .wrap-9 {
-                        grid-column: span 12;
-                    }
-                    #pregatitoare-continut .wrap-show {
-                        display: none;
-                    }
-                    #pregatitoare-continut .wrap-9 {
-                        grid-column: span 12;
-                    }
-                    #evaluari246-continut .wrap-show {
-                        display: none;
-                    }
-                    #evaluari246-continut .wrap-8 {
-                        grid-column: span 12;
-                    }
-                    #simulare8-continut .wrap-show {
-                        display: none;
-                    }
-                    #simulare8-continut .wrap-8 {
-                        grid-column: span 12;
-                    }
-                    #evaluare-continut .wrap-show {
-                        display: none;
-                    }
-                    #evaluare-continut .wrap-8 {
-                        grid-column: span 12;
-                    }
-                    #admitere-continut .wrap-show {
-                        display: none;
-                    }
-                    #admitere-continut .wrap-8 {
-                        grid-column: span 12;
-                    }
-                    #profesional-continut .wrap-show {
-                        display: none;
-                    }
-                    #profesional-continut .wrap-8 {
-                        grid-column: span 12;
-                    }
-                    #dual-continut .wrap-show {
-                        display: none;
-                    }
-                    #dual-continut .wrap-8 {
-                        grid-column: span 12;
-                    }
-                    #altfel-continut .wrap-show {
-                        display: none;
-                    }
-                    #altfel-continut .wrap-9 {
-                        grid-column: span 12;
-                    }
-                    #verde-logo .wrap-show {
-                        display: none;
-                    }
-                    #verde-continut .wrap-3 {
-                        grid-column: span 12;
-                    }
-                    #verde-continut .wrap-9 {
-                        grid-column: span 12;
-                    }
-                    #verde-platforma-1 .wrap-3 {
-                        grid-column: span 12;
-                    }
-                    #verde-platforma-2 .wrap-3 {
-                        grid-column: span 12;
-                    }
-                    #verde-proiecte .wrap-2 {
-                        grid-column: span 6;
                     }
                     .sectiune-comunicari ul {
                         grid-template-columns: repeat(1, 1fr);
@@ -5144,7 +5689,7 @@ border-radius: 4px;
                     }
                 }
 
-/* (353px-426px) page-menu 1 (prezentare), wrap-2 (verde 2-proiecte), telverde 1 */
+/* (353px-426px) page-menu 1 (prezentare), wrap-2 (verde 2-proiecte), telverde 1, wrap-1 12 (STRATEGIE) */
                 @media (min-width: 21.9em) and (max-width: 26.7em) {
                     aside {
                         border-radius: 4px;
@@ -5158,14 +5703,99 @@ border-radius: 4px;
                     .page-menu .trei-admitere {
                         grid-template-columns: repeat(1, 1fr);
                     }
-                    .page-menu .patru-organigrama {
+                    .page-menu .sase-proiecte {
                         grid-template-columns: repeat(1, 1fr);
                     }
                     .page-menu .patru-regulamente {
                         grid-template-columns: repeat(1, 1fr);
                     }
-                    .page-menu .sase-proiecte {
+                    .page-menu .patru-organigrama {
                         grid-template-columns: repeat(1, 1fr);
+                    }
+                    #program-continut .wrap-show {
+                        display: none;
+                    }
+                    #program-continut .wrap-92 {
+                        grid-column: span 12;
+                        grid-template-columns: repeat(1, 1fr);
+                    }
+                    #oferta-continut .wrap-show {
+                        display: none;
+                    }
+                    #oferta-continut .wrap-9 {
+                        grid-column: span 12;
+                    }
+                    #gradinita-continut .wrap-show {
+                        display: none;
+                    }
+                    #gradinita-continut .wrap-9 {
+                        grid-column: span 12;
+                    }
+                    #pregatitoare-continut .wrap-show {
+                        display: none;
+                    }
+                    #pregatitoare-continut .wrap-9 {
+                        grid-column: span 12;
+                    }
+                    #evaluari246-continut .wrap-show {
+                        display: none;
+                    }
+                    #evaluari246-continut .wrap-8 {
+                        grid-column: span 12;
+                    }
+                    #evaluare-continut .wrap-show {
+                        display: none;
+                    }
+                    #evaluare-continut .wrap-8 {
+                        grid-column: span 12;
+                    }
+                    #simulare8-continut .wrap-show {
+                        display: none;
+                    }
+                    #simulare8-continut .wrap-8 {
+                        grid-column: span 12;
+                    }
+                    #admitere-continut .wrap-show {
+                        display: none;
+                    }
+                    #admitere-continut .wrap-8 {
+                        grid-column: span 12;
+                    }
+                    #profesional-continut .wrap-show {
+                        display: none;
+                    }
+                    #profesional-continut .wrap-8 {
+                        grid-column: span 12;
+                    }
+                    #dual-continut .wrap-show {
+                        display: none;
+                    }
+                    #dual-continut .wrap-8 {
+                        grid-column: span 12;
+                    }
+                    #altfel-continut .wrap-show {
+                        display: none;
+                    }
+                    #altfel-continut .wrap-9 {
+                        grid-column: span 12;
+                    }
+                    #verde-logo .wrap-show {
+                        display: none;
+                    }
+                    #verde-continut .wrap-3 {
+                        grid-column: span 12;
+                    }
+                    #verde-continut .wrap-9 {
+                        grid-column: span 12;
+                    }
+                    #verde-platforma-1 .wrap-3 {
+                        grid-column: span 12;
+                    }
+                    #verde-platforma-2 .wrap-3 {
+                        grid-column: span 12;
+                    }
+                    #verde-proiecte .wrap-2 {
+                        grid-column: span 6;
                     }
                     #proiecte-continut .wrap-2 {
                         grid-column: span 12;
@@ -5294,32 +5924,25 @@ border-radius: 4px;
                     #vaccinare-continut .wrap-1 {
                         grid-column: span 12;
                     }
-                    #program-continut .wrap-show {
+                    #regulamente-continut .wrap-show {
                         display: none;
                     }
-                    #program-continut .wrap-92 {
-                        grid-column: span 12;
-                        grid-template-columns: repeat(1, 1fr);
-                    }
-                    #contact-continut .citat-3 {
-                        text-align: center;
-                    }
-                    #contact-continut .wrap-show {
-                        display: none;
-                    }
-                    #contact-continut .wrap-9 {
+                    #regulamente-continut .wrap-9 {
                         grid-column: span 12;
                     }
-                    #sindicat-continut .wrap-show {
-                        display: none;
-                    }
-                    #sindicat-continut .wrap-8 {
+                    #regulamente-ul .wrap-6 {
                         grid-column: span 12;
                     }
                     #personal-continut .wrap-show {
                         display: none;
                     }
                     #personal-continut .wrap-8 {
+                        grid-column: span 12;
+                    }
+                    #sindicat-continut .wrap-show {
+                        display: none;
+                    }
+                    #sindicat-continut .wrap-8 {
                         grid-column: span 12;
                     }
                     #ca-continut .wrap-show {
@@ -5352,92 +5975,14 @@ border-radius: 4px;
                     #comisii-ul .wrap-6 {
                         grid-column: span 12;
                     }
-                    #regulamente-continut .wrap-show {
+                    #contact-continut .citat-3 {
+                        text-align: center;
+                    }
+                    #contact-continut .wrap-show {
                         display: none;
                     }
-                    #regulamente-continut .wrap-9 {
+                    #contact-continut .wrap-9 {
                         grid-column: span 12;
-                    }
-                    #regulamente-ul .wrap-6 {
-                        grid-column: span 12;
-                    }
-                    #oferta-continut .wrap-show {
-                        display: none;
-                    }
-                    #oferta-continut .wrap-9 {
-                        grid-column: span 12;
-                    }
-                    #gradinita-continut .wrap-show {
-                        display: none;
-                    }
-                    #gradinita-continut .wrap-9 {
-                        grid-column: span 12;
-                    }
-                    #pregatitoare-continut .wrap-show {
-                        display: none;
-                    }
-                    #pregatitoare-continut .wrap-9 {
-                        grid-column: span 12;
-                    }
-                    #evaluari246-continut .wrap-show {
-                        display: none;
-                    }
-                    #evaluari246-continut .wrap-8 {
-                        grid-column: span 12;
-                    }
-                    #simulare8-continut .wrap-show {
-                        display: none;
-                    }
-                    #simulare8-continut .wrap-8 {
-                        grid-column: span 12;
-                    }
-                    #evaluare-continut .wrap-show {
-                        display: none;
-                    }
-                    #evaluare-continut .wrap-8 {
-                        grid-column: span 12;
-                    }
-                    #admitere-continut .wrap-show {
-                        display: none;
-                    }
-                    #admitere-continut .wrap-8 {
-                        grid-column: span 12;
-                    }
-                    #profesional-continut .wrap-show {
-                        display: none;
-                    }
-                    #profesional-continut .wrap-8 {
-                        grid-column: span 12;
-                    }
-                    #dual-continut .wrap-show {
-                        display: none;
-                    }
-                    #dual-continut .wrap-8 {
-                        grid-column: span 12;
-                    }
-                    #altfel-continut .wrap-show {
-                        display: none;
-                    }
-                    #altfel-continut .wrap-9 {
-                        grid-column: span 12;
-                    }
-                    #verde-logo .wrap-show {
-                        display: none;
-                    }
-                    #verde-continut .wrap-3 {
-                        grid-column: span 12;
-                    }
-                    #verde-continut .wrap-9 {
-                        grid-column: span 12;
-                    }
-                    #verde-platforma-1 .wrap-3 {
-                        grid-column: span 12;
-                    }
-                    #verde-platforma-2 .wrap-3 {
-                        grid-column: span 12;
-                    }
-                    #verde-proiecte .wrap-2 {
-                        grid-column: span 6;
                     }
                     .sectiune-comunicari ul {
                         grid-template-columns: repeat(1, 1fr);
@@ -5465,23 +6010,108 @@ border-radius: 4px;
                     .page-menu .patru-prezentare {
                         grid-template-columns: repeat(1, 1fr);
                     }
-                    .page-menu .trei-personal {
-                        grid-template-columns: repeat(1, 1fr);
-                    }
                     .page-menu .trei-evaluare {
                         grid-template-columns: repeat(1, 1fr);
                     }
                     .page-menu .trei-admitere {
                         grid-template-columns: repeat(1, 1fr);
                     }
-                    .page-menu .patru-organigrama {
+                    .page-menu .sase-proiecte {
                         grid-template-columns: repeat(1, 1fr);
                     }
                     .page-menu .patru-regulamente {
                         grid-template-columns: repeat(1, 1fr);
                     }
-                    .page-menu .sase-proiecte {
+                    .page-menu .trei-personal {
                         grid-template-columns: repeat(1, 1fr);
+                    }
+                    .page-menu .patru-organigrama {
+                        grid-template-columns: repeat(1, 1fr);
+                    }
+                    #program-continut .wrap-show {
+                        display: none;
+                    }
+                    #program-continut .wrap-92 {
+                        grid-column: span 12;
+                        grid-template-columns: repeat(1, 1fr);
+                    }
+                    #oferta-continut .wrap-show {
+                        display: none;
+                    }
+                    #oferta-continut .wrap-9 {
+                        grid-column: span 12;
+                    }
+                    #gradinita-continut .wrap-show {
+                        display: none;
+                    }
+                    #gradinita-continut .wrap-9 {
+                        grid-column: span 12;
+                    }
+                    #pregatitoare-continut .wrap-show {
+                        display: none;
+                    }
+                    #pregatitoare-continut .wrap-9 {
+                        grid-column: span 12;
+                    }
+                    #evaluari246-continut .wrap-show {
+                        display: none;
+                    }
+                    #evaluari246-continut .wrap-8 {
+                        grid-column: span 12;
+                    }
+                    #evaluare-continut .wrap-show {
+                        display: none;
+                    }
+                    #evaluare-continut .wrap-8 {
+                        grid-column: span 12;
+                    }
+                    #simulare8-continut .wrap-show {
+                        display: none;
+                    }
+                    #simulare8-continut .wrap-8 {
+                        grid-column: span 12;
+                    }
+                    #admitere-continut .wrap-show {
+                        display: none;
+                    }
+                    #admitere-continut .wrap-8 {
+                        grid-column: span 12;
+                    }
+                    #profesional-continut .wrap-show {
+                        display: none;
+                    }
+                    #profesional-continut .wrap-8 {
+                        grid-column: span 12;
+                    }
+                    #dual-continut .wrap-show {
+                        display: none;
+                    }
+                    #dual-continut .wrap-8 {
+                        grid-column: span 12;
+                    }
+                    #altfel-continut .wrap-show {
+                        display: none;
+                    }
+                    #altfel-continut .wrap-9 {
+                        grid-column: span 12;
+                    }
+                    #verde-logo .wrap-show {
+                        display: none;
+                    }
+                    #verde-continut .wrap-3 {
+                        grid-column: span 12;
+                    }
+                    #verde-continut .wrap-9 {
+                        grid-column: span 12;
+                    }
+                    #verde-platforma-1 .wrap-3 {
+                        grid-column: span 12;
+                    }
+                    #verde-platforma-2 .wrap-3 {
+                        grid-column: span 12;
+                    }
+                    #verde-proiecte .wrap-2 {
+                        grid-column: span 6;
                     }
                     #proiecte-continut .wrap-2 {
                         grid-column: span 12;
@@ -5610,32 +6240,25 @@ border-radius: 4px;
                     #vaccinare-continut .wrap-1 {
                         grid-column: span 12;
                     }
-                    #program-continut .wrap-show {
+                    #regulamente-continut .wrap-show {
                         display: none;
                     }
-                    #program-continut .wrap-92 {
-                        grid-column: span 12;
-                        grid-template-columns: repeat(1, 1fr);
-                    }
-                    #contact-continut .citat-3 {
-                        text-align: center;
-                    }
-                    #contact-continut .wrap-show {
-                        display: none;
-                    }
-                    #contact-continut .wrap-9 {
+                    #regulamente-continut .wrap-9 {
                         grid-column: span 12;
                     }
-                    #sindicat-continut .wrap-show {
-                        display: none;
-                    }
-                    #sindicat-continut .wrap-8 {
+                    #regulamente-ul .wrap-6 {
                         grid-column: span 12;
                     }
                     #personal-continut .wrap-show {
                         display: none;
                     }
                     #personal-continut .wrap-8 {
+                        grid-column: span 12;
+                    }
+                    #sindicat-continut .wrap-show {
+                        display: none;
+                    }
+                    #sindicat-continut .wrap-8 {
                         grid-column: span 12;
                     }
                     #ca-continut .wrap-show {
@@ -5668,92 +6291,14 @@ border-radius: 4px;
                     #comisii-ul .wrap-6 {
                         grid-column: span 12;
                     }
-                    #regulamente-continut .wrap-show {
+                    #contact-continut .citat-3 {
+                        text-align: center;
+                    }
+                    #contact-continut .wrap-show {
                         display: none;
                     }
-                    #regulamente-continut .wrap-9 {
+                    #contact-continut .wrap-9 {
                         grid-column: span 12;
-                    }
-                    #regulamente-ul .wrap-6 {
-                        grid-column: span 12;
-                    }
-                    #oferta-continut .wrap-show {
-                        display: none;
-                    }
-                    #oferta-continut .wrap-9 {
-                        grid-column: span 12;
-                    }
-                    #gradinita-continut .wrap-show {
-                        display: none;
-                    }
-                    #gradinita-continut .wrap-9 {
-                        grid-column: span 12;
-                    }
-                    #pregatitoare-continut .wrap-show {
-                        display: none;
-                    }
-                    #pregatitoare-continut .wrap-9 {
-                        grid-column: span 12;
-                    }
-                    #evaluari246-continut .wrap-show {
-                        display: none;
-                    }
-                    #evaluari246-continut .wrap-8 {
-                        grid-column: span 12;
-                    }
-                    #simulare8-continut .wrap-show {
-                        display: none;
-                    }
-                    #simulare8-continut .wrap-8 {
-                        grid-column: span 12;
-                    }
-                    #evaluare-continut .wrap-show {
-                        display: none;
-                    }
-                    #evaluare-continut .wrap-8 {
-                        grid-column: span 12;
-                    }
-                    #admitere-continut .wrap-show {
-                        display: none;
-                    }
-                    #admitere-continut .wrap-8 {
-                        grid-column: span 12;
-                    }
-                    #profesional-continut .wrap-show {
-                        display: none;
-                    }
-                    #profesional-continut .wrap-8 {
-                        grid-column: span 12;
-                    }
-                    #dual-continut .wrap-show {
-                        display: none;
-                    }
-                    #dual-continut .wrap-8 {
-                        grid-column: span 12;
-                    }
-                    #altfel-continut .wrap-show {
-                        display: none;
-                    }
-                    #altfel-continut .wrap-9 {
-                        grid-column: span 12;
-                    }
-                    #verde-logo .wrap-show {
-                        display: none;
-                    }
-                    #verde-continut .wrap-3 {
-                        grid-column: span 12;
-                    }
-                    #verde-continut .wrap-9 {
-                        grid-column: span 12;
-                    }
-                    #verde-platforma-1 .wrap-3 {
-                        grid-column: span 12;
-                    }
-                    #verde-platforma-2 .wrap-3 {
-                        grid-column: span 12;
-                    }
-                    #verde-proiecte .wrap-2 {
-                        grid-column: span 6;
                     }
                     .sectiune-comunicari ul {
                         grid-template-columns: repeat(1, 1fr);
@@ -5789,13 +6334,18 @@ border-radius: 4px;
 
         </section>
 
+<!-- Link "Sari la setări pentru accesibilitate" -->
+        <a href="#widget-accesibilitate" id="skipToAccesibilitate" class="skip-link">
+            Mergi la setări pentru accesibilitate
+        </a>
+
 <!-- Link "Sari la conținut" -->
         <a href="#main-content" id="skipToContinut" class="skip-link">
             Mergi la conținutul paginii
         </a>
 
 <!-- MENIU -->
-        <aside id="main-menu" aria-label="Meniu principal">
+        <aside id="main-menu" class="aside-menu" aria-label="Meniu principal">
 
             <header>
 
@@ -6061,7 +6611,7 @@ border-radius: 4px;
 <!-- Secțiune Conținut -->
                 <section id="vaccinare-continut" class="sectiune-continut" aria-labelledby="vaccinare-continut-label">
 
-                    <h2 id="vaccinare-continut-label" class="m3 sr-only" aria-describedby="vaccinare-meniu vaccinare-prezentare vaccinare-brosura vaccinare-brosura-informatii vaccinare-situatie vaccinare-situatie-informatii vaccinare-ziua-sanatatii vaccinare-ziua-sanatatii-informatii vaccinare-adaptare vaccinare-adaptare-informatii vaccinare-rovaccinare vaccinare-rovaccinare-informatii vaccinare-platforma vaccinare-programare vaccinare-programare-prezentare vaccinare-prelungire vaccinare-prelungire-informatii vaccinare-scenariu vaccinare-scenariu-informatii vaccinare-sfaturi vaccinare-sfaturi-informatii vaccinare-la-joaca vaccinare-protejat vaccinare-masca vaccinare-purtarea-mastii vaccinare-comunicare vaccinare-redeschidere-sfaturi vaccinare-redeschidere-scoli vaccinare-redeschidere-gradinite vaccinare-reguli vaccinare-cabinetul-medical vaccinare-in-siguranta vaccinare-masuri vaccinare-masuri-prezentare vaccinare-reluare vaccinare-reluare-prezentare">Vaccinare</h2>
+                    <h2 id="vaccinare-continut-label" class="m3 sr-only" aria-describedby="vaccinare-meniu vaccinare-prezentare vaccinare-brosura vaccinare-brosura-informatii vaccinare-situatie vaccinare-situatie-informatii vaccinare-ziua-sanatatii vaccinare-ziua-sanatatii-informatii vaccinare-adaptare vaccinare-rovaccinare vaccinare-rovaccinare-informatii vaccinare-platforma vaccinare-programare vaccinare-programare-prezentare vaccinare-prelungire vaccinare-prelungire-informatii vaccinare-scenariu vaccinare-scenariu-informatii vaccinare-sfaturi vaccinare-sfaturi-informatii vaccinare-la-joaca vaccinare-protejat vaccinare-masca vaccinare-purtarea-mastii vaccinare-comunicare vaccinare-redeschidere-sfaturi vaccinare-redeschidere-scoli vaccinare-redeschidere-gradinite vaccinare-reguli vaccinare-cabinetul-medical vaccinare-in-siguranta vaccinare-masuri vaccinare-masuri-prezentare vaccinare-reluare vaccinare-reluare-prezentare">Vaccinare</h2>
 
                     <section id="vaccinare-meniu" class="wrap-2" aria-labelledby="vaccinare-meniu-label">
 
@@ -6284,11 +6834,11 @@ border-radius: 4px;
 
                         <section id="prezentare-ziua-sanatatii" class="wrap-1010" aria-labelledby="prezentare-ziua-sanatatii-label">
 
-                            <h4 id="prezentare-ziua-sanatatii-label" class="m3 sr-only">Ziua Sănătății</h4>
+                            <h4 id="prezentare-ziua-sanatatii-label" class="m3 sr-only">Descriere Ziua Sănătății</h4>
 
-                            <article id="descriere-ziua-sanatatii" class="content-text" aria-labelledby="descriere-ziua-sanatatiii-label">
+                            <article id="ziua-sanatatii-descriere" class="content-text" aria-labelledby="ziua-sanatatii-descriere-label">
 
-                                <h5 id="descriere-ziua-sanatatii-label" class="m3 sr-only" aria-describedby="descriere-ziua-sanatatii">Descrierea Zilei Mondiale a Sănătății</h5>
+                                <h5 id="ziua-sanatatii-descriere-label" class="m3 sr-only" aria-describedby="descriere-ziua-sanatatii">Descrierea Zilei Mondiale a Sănătății</h5>
 
                                 <section id="descriere-ziua-sanatatii" class="coloane" aria-labelledby="descriere-ziua-sanatatii-label">
 
@@ -6311,11 +6861,11 @@ border-radius: 4px;
 
                         <section id="informatii-ziua-sanatatii" class="wrap-1010" aria-labelledby="informatii-ziua-sanatatii-label">
 
-                            <h4 id="informatii-ziua-sanatatii-label" class="m3 sr-only" aria-describedby="informatii-ziua-sanatatii">Informații despre Ziua Mondială a Sănătății</h4>
+                            <h4 id="informatii-ziua-sanatatii-label" class="m3 sr-only" aria-describedby="ziua-sanatatii-informatii">Informații despre Ziua Mondială a Sănătății</h4>
 
-                            <section id="informatii-ziua-sanatatii" class="content-article citat-9" aria-labelledby="ziua-sanatatii-label">
+                            <section id="ziua-sanatatii-informatii" class="content-article citat-9" aria-labelledby="ziua-sanatatii-informatii-label">
 
-                                <h5 id="ziua-sanatatii-label" class="m3 sr-only" aria-describedby="sarbatoare">Sărbătoare</h5>
+                                <h5 id="ziua-sanatatii-informatii-label" class="m3 sr-only" aria-describedby="sarbatoare">Sărbătoare</h5>
 
                                 <article id="sarbatoare" class="sectiune-informatii" aria-labelledby="sarbatoare-label">
 
@@ -6354,7 +6904,7 @@ border-radius: 4px;
 
                         <h4 id="vaccinare-adaptare-label" class="m3 sr-only">Adaptare</h4>
 
-                        <div id="adaptare" class="content-imagine">
+                        <div id="imagine-adaptare" class="content-imagine">
                             <img src="strategie/vaccinare/adaptare.png" width="3000" height="1987" alt="Într-o clasă luminoasă, un elev este așezat în bancă, cu un creion în mână, scriind în caiet, atent la profesorul de lângă el, care indică cu degetul la tablă, iar în fundal, sunt alți elevi în bănci, scriind, toți purtând măști medicale de protecție" tabindex="0">
                         </div>
 
@@ -6370,11 +6920,11 @@ border-radius: 4px;
 
                             <article id="prezentare-structura" class="content-text" aria-labelledby="prezentare-structura-label">
 
-                                <h5 id="prezentare-structura-label" class="m3 sr-only" aria-describedby="structura">Descrierea adaptării structurii anului școlar</h5>
+                                <h5 id="prezentare-structura-label" class="m3 sr-only" aria-describedby="structura-prezentare">Descrierea adaptării structurii anului școlar</h5>
 
-                                <section id="structura" class="coloane" aria-labelledby="structura-label">
+                                <section id="structura-prezentare" class="coloane" aria-labelledby="structura-prezentare-label">
 
-                                    <h6 id="structura-label" class="m3 citat-1">Adaptarea structurii anului școlar 2020-2021 la situația epidemiologică actuală</h6>
+                                    <h6 id="structura-prezentare-label" class="m3 citat-1">Adaptarea structurii anului școlar 2020-2021 la situația epidemiologică actuală</h6>
 
                                     <p>„Astăzi, 25 martie 2021, la sediul Ministerului Educației, a avut loc ședința Comisiei de Dialog Social. Au participat, alături de reprezentanții Ministerului Educației, reprezentanții federațiilor sindicale reprezentative din învățământ și ai asociațiilor patronale, iar în calitate de invitați, reprezentanți ai elevilor, studenților și părinților.</p>
                                     <p>Consultările cu partenerii de dialog social au vizat calendarul și modul de organizare a examenelor naționale, precum și propunerile de modificare/adaptare a structurii anului școlar 2020-2021 la realitățile impuse de situația epidemiologică.</p>
@@ -6426,9 +6976,9 @@ border-radius: 4px;
 
                         <section id="informatii-adaptare" class="wrap-1010" aria-labelledby="informatii-adaptare-label">
 
-                            <h4 id="informatii-adaptare-label" class="m3 sr-only" aria-describedby="informatii-adaptare">Informații despre adaptarea structurii anului școlar</h4>
+                            <h4 id="informatii-adaptare-label" class="m3 sr-only" aria-describedby="adaptare">Informații despre adaptarea structurii anului școlar</h4>
 
-                            <section id="informatii-adaptare" class="content-article citat-9" aria-labelledby="adaptare-label">
+                            <section id="adaptare" class="content-article citat-9" aria-labelledby="adaptare-label">
 
                                 <h5 id="adaptare-label" class="m3 sr-only" aria-describedby="anul-scolar">Anul școlar</h5>
 
@@ -6479,9 +7029,9 @@ border-radius: 4px;
 
                     <section id="vaccinare-rovaccinare" class="wrap-2" aria-labelledby="vaccinare-rovaccinare-label">
 
-                        <h4 id="vaccinare-rovaccinare-label" class="m3 sr-only">#ROVACCINARE</h4>
+                        <h4 id="vaccinare-rovaccinare-label" class="m3 sr-only">Imagine #ROVACCINARE</h4>
 
-                        <div id="rovaccinare" class="content-imagine">
+                        <div id="imagine-rovaccinare" class="content-imagine">
                             <img src="strategie/vaccinare/rovaccinare.png" width="900" height="900" alt="Sigla platformei campaniei de vaccinare împotriva COVID-19, reprezentată din hexagoane interconectate care includ simboluri asociate cu sănătatea și vaccinarea, precum un stetoscop, o seringă, o hartă administrativă a României, deasupra fiind textul „#ROVACCINARE”" tabindex="0">
                         </div>
 
@@ -6493,15 +7043,15 @@ border-radius: 4px;
 
                         <section id="rovaccinare-informatii" class="wrap-1010" aria-labelledby="rovaccinare-informatii-label">
 
-                            <h4 id="rovaccinare-informatiie-label" class="m3 sr-only" aria-describedby="rovaccinare">Informații despre campania #ROVACCINARE</h4>
+                            <h4 id="rovaccinare-informatii-label" class="m3 sr-only" aria-describedby="rovaccinare">Informații despre campania #ROVACCINARE</h4>
 
                             <section id="rovaccinare" class="content-article citat-9" aria-labelledby="rovaccinare-label">
 
-                                <h5 id="rovaccinare-label" class="m3 sr-only" aria-describedby="campania-rovaccinare">Campania #ROVACCINARE</h5>
+                                <h5 id="rovaccinare-label" class="m3 sr-only" aria-describedby="campanie-rovaccinare">Campanie #ROVACCINARE</h5>
 
-                                <article id="campania-rovaccinare" class="sectiune-informatii" aria-labelledby="campania-rovaccinare-label">
+                                <article id="campanie-rovaccinare" class="sectiune-informatii" aria-labelledby="campanie-rovaccinare-label">
 
-                                    <h6 id="campanie-vaccinare-label" class="m3 citat-1">Campania de vaccinare împotriva COVID-19:</h6>
+                                    <h6 id="campanie-rovaccinare-label" class="m3 citat-1">Campania de vaccinare împotriva COVID-19:</h6>
 
                                     <ul class="coloane">
                                         <li>
@@ -6616,7 +7166,7 @@ border-radius: 4px;
                             </li>
                             <li>
                                 <div id="apartinatori" class="content-imagine">
-                                    <a href="https://drive.google.com/file/d/1iphTsmgTG1SKb4CqWCnjufny2-9grfBm/view" target="_blank" rel="noopener noreferrer" class="tooltip-link" aria-describedby="apartinatori-title apartinatorie-tooltip">
+                                    <a href="https://drive.google.com/file/d/1iphTsmgTG1SKb4CqWCnjufny2-9grfBm/view" target="_blank" rel="noopener noreferrer" class="tooltip-link" aria-describedby="apartinatori-title apartinatori-tooltip">
                                         <img src="strategie/vaccinare/apartinatori.png" width="2766" height="1126" alt="Sigla campaniei de programare pentru vaccinarea împotriva COVID-19, reprezentată de textul „#ROVACCINARE”, scris cu alb și albastru deschis pe fundal albastru închis, iar dedesubt, scris cu negru pe alb și cu chenar negru, textul „Etapa a II-a Aparținători”">
                                         <span id="apartinatori-title" class="tooltip-title" role="tooltip">Etapa a II-a Aparținători</span>
                                         <span id="apartinatori-tooltip" class="tooltip-content" role="tooltip">Se deschide într-o nouă fereastră</span>
@@ -6805,11 +7355,11 @@ border-radius: 4px;
 
                             <article id="sfaturi" class="content-text" aria-labelledby="sfaturi-label">
 
-                                <h5 id="sfaturi-label" class="m3 sr-only" aria-describedby="deschiderea-scolii">Sfaturi</h5>
+                                <h5 id="sfaturi-label" class="m3 sr-only" aria-describedby="sfaturi-deschiderea-scolii">Sfaturi</h5>
 
-                                <section id="deschiderea-scolii" class="coloane" aria-labelledby="deschiderea-scolii-label">
+                                <section id="sfaturi-deschiderea-scolii" class="coloane" aria-labelledby="sfaturi-deschiderea-scolii-label">
 
-                                    <h6 id="deschiderea-scolii-label" class="m3 citat-1">Sfaturi pentru deschiderea școlii</h6>
+                                    <h6 id="sfaturi-deschiderea-scolii-label" class="m3 citat-1">Sfaturi pentru deschiderea școlii</h6>
 
                                     <p class="citat-0">Pandemia a provocat cea mai distructivă perturbare a educației din istorie. Este așadar vital ca școala să continue cu prezență fizică și fără întreruperi. Pentru a menține școlile deschise și în siguranță, Organizația Mondială a Sănătății, Fondul Naţiunilor Unite pentru Copii și Organizația Națiunilor Unite pentru Educație, Știință și Cultură au adoptat un set de opt recomandări, formulate de experții din cadrul Grupului Consultativ Tehnic pentru Regiunea Europeană a Organizației Mondiale a Sănătății, cu privire la școlarizarea pe durata pandemiei de COVID-19:</p>
                                     <p class="citat-0">‒ școlile trebuie să fie printre ultimele instituții care se închid și printre primele care se redeschid;</p>
@@ -6861,7 +7411,7 @@ border-radius: 4px;
 
                         <h3 id="vaccinare-masca-label" class="m3 sr-only">Masca</h3>
 
-                        <div id="la-joaca" class="content-imagine">
+                        <div id="masca" class="content-imagine">
                             <a href="https://drive.google.com/file/d/1y79HPoG4vpq40Vpuwa_I8xj1Cy2-U45E/view" target="_blank" rel="noopener noreferrer" class="tooltip-link" aria-describedby="masca-title masca-tooltip">
                                 <img src="strategie/vaccinare/masca.png" width="1280" height="1810" alt="Afiș informativ despre cum se poartă corect masca medicală de protecție pentru a proteja de coronavirus, care prezintă pașii necesari pentru utilizarea corectă a măștii: curățarea mâinilor înainte de a pune masca, potrivirea acesteia cu partea colorată în exterior, fixarea măștii pe nas cu ajutorul firului metalic, asigurarea că masca acoperă atât gura, cât și nasul, și îndepărtarea măștii folosind benzile elastice fără a atinge fața, menționarea faptului că masca este un obiect de utilizare personală, ilustrațiile fiind colorate și ușor de înțeles, destinate să ajute persoanele să aplice corect măsurile de protecție, iar în partea de sus se află siglele Ministerului Sănătății, INSP și UNICEF">
                                 <span id="masca-title" class="tooltip-title" role="tooltip">Cum să purtăm corect masca</span>
@@ -6946,7 +7496,7 @@ border-radius: 4px;
                         <h3 id="vaccinare-reguli-label" class="m3 sr-only">Reguli</h3>
 
                         <div id="reguli" class="content-imagine">
-                            <a href="https://drive.google.com/file/d/1qyyydbHScYQkF6jDfDQ0YZJf6SU_Wdsw/view" target="_blank" rel="noopener noreferrer" class="tooltip-link" aria-describedby="regulia-title reguli-tooltip">
+                            <a href="https://drive.google.com/file/d/1qyyydbHScYQkF6jDfDQ0YZJf6SU_Wdsw/view" target="_blank" rel="noopener noreferrer" class="tooltip-link" aria-describedby="reguli-title reguli-tooltip">
                                 <img src="strategie/vaccinare/reguli.png" width="1280" height="1810" alt="Afiș informativ cu sfaturi pentru părinți privind învățarea copiilor să respecte regulile de siguranță în unitățile de învățământ preșcolar, care enumeră 9 reguli esențiale, cum ar fi spălarea corectă a mâinilor, utilizarea șervețelelor de unică folosință, păstrarea distanței fizice și evitarea atingerii feței cu mâinile nespălate, fiind incluse și sfaturi pentru evitarea consumului de alimente sau băuturi în comun și pentru încurajarea comunicării cu educatori și părinți, desenul incluzând imagini cu copii care respectă aceste reguli, iar în partea de sus se află siglele Ministerului Educației și Cercetării, Ministerului Sănătății, INSP și UNICEF">
                                 <span id="reguli-title" class="tooltip-title" role="tooltip">Reguli de siguranță</span>
                                 <span id="reguli-tooltip" class="tooltip-content" role="tooltip">Se deschide într-o nouă fereastră</span>
@@ -6983,7 +7533,7 @@ border-radius: 4px;
 
                     </section>
 
-                    <section id="vaccinare-masuri" class="wrap-2" aria-labelledby="vaccinare-masurii-label">
+                    <section id="vaccinare-masuri" class="wrap-2" aria-labelledby="vaccinare-masuri-label">
 
                         <h3 id="vaccinare-masuri-label" class="m3 sr-only">Afișe informative Măsuri</h3>
 
@@ -7265,6 +7815,127 @@ border-radius: 4px;
 
         </main>
 
+<!-- ACCESIBILITATE -->
+        <aside id="widget-accesibilitate-container" class="aside-widget" aria-label="Meniu accesibilitate">
+
+<!-- Buton de accesibilitate -->
+            <button id="widget-accesibilitate-buton" class="widget-floating-btn" type="button" tabindex="0" aria-labelledby="widget-accesibilitate-buton-label" aria-pressed="false" aria-expanded="false" aria-controls="widget-accesibilitate" onclick="toggleWidget()" onkeydown="if(event.key==='Enter'){toggleWidget();}">
+                <div class="widget-icon-and-text">
+                    <img id="widget-accesibilitate-buton-iconita" class="widget-icon-image" src="https://raw.githubusercontent.com/scoalanicualbu/website/main/accesibilitate/accesibilitate.png" alt="Iconiță de accesibilitate, reprezentată printr-o siluetă umană albă cu brațele întinse, încadrată într-un cerc alb pe fundal verde-închis, simbol universal pentru accesibilitate, incluziune, design accesibil și facilități pentru persoane cu dizabilități" aria-hidden="true">
+                    <span id="widget-accesibilitate-buton-label" class="widget-eticheta">Accesibilitate</span>
+                </div>
+            </button>
+
+<!-- Meniu Setări pentru accesibilitate -->
+            <section id="widget-accesibilitate" class="widget" role="region" aria-labelledby="widget-accesibilitate-label" aria-hidden="true">
+
+  <!-- Antet Widget de accesibilitate -->
+                <h2 id="widget-accesibilitate-label" class="widget-antet">
+                    Setări pentru accesibilitate
+                </h2>
+
+  <!-- Declarație de accesibilitate -->
+                <button id="widget-declaratie-buton" class="widget-declaratie-btn" type="button" tabindex="0" aria-labelledby="widget-declaratie-buton-label" aria-expanded="false" aria-controls="widget-declaratie-continut" onclick="toggleDeclaratie(this)">
+                    <span id="widget-declaratie-buton-label" class="widget-left-text">Declarație de accesibilitate</span>
+                    <span class="arrow" aria-hidden="true">▼</span>
+                </button>
+
+                <section id="widget-declaratie-continut" class="widget-declaratie-text" aria-labelledby="widget-declaratie-continut-label" aria-hidden="true">
+
+                    <h3 id="widget-declaratie-continut-label" class="widget-sr-only">Declarație</h3>
+
+                    <ol>
+                        <li>
+                            <h4 id="widget-declaratie-informatii-label" class="widget-lista">Informații generale</h4>
+                            <p class="widget-rand">Acest site web a fost creat pentru a fi accesibil tuturor utilizatorilor, inclusiv persoanelor cu dizabilități, oferind o experiență online inclusivă și ușor de utilizat.</p>
+                        </li>
+                        <li>
+                            <h4 id="widget-declaratie-masuri-label" class="widget-lista">Măsuri de accesibilitate</h4>
+                            <p class="widget-rand">Pentru a asigura accesibilitatea, au fost implementate următoarele soluții tehnice și de design:</p>
+                            <ul>
+                                <li>
+                                    Utilizarea atributelor ARIA, pentru interpretarea corectă a elementelor din pagină și îmbunătățirea experienței utilizatorilor care folosesc cititoare de ecran;
+                                </li>
+                                <li>
+                                    Structurarea semantică a conținutului HTML pentru o navigare clară, intuitivă și facilitarea înțelegerii informațiilor;
+                                </li>
+                                <li>
+                                    Furnizarea de texte alternative pentru imagini, pentru extinderea accesibilității vizuale;
+                                </li>
+                                <li>
+                                    Asigurarea unui contrast adecvat între text și fundal, pentru o mai bună lizibilitate a conținutului;
+                                </li>
+                                <li>
+                                    Posibilitatea navigării complete prin tastatură, pentru a îmbunătăți experiența utilizatorilor în cazuri de mobilitate redusă;
+                                </li>
+                                <li>
+                                    Integrarea unui widget de accesibilitate, pentru personalizarea experienței de navigare.
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <h4 id="widget-declaratie-conformitate-label" class="widget-lista">Conformitate</h4>
+                            <p class="widget-rand">Acest site web este proiectat pentru a fi conform cu ghidurile de accesibilitate a conținutului web (WCAG) 2.1 nivel AA, cu legea europeană privind accesiblitatea (EAA) și cu standardul tehnic european armonizat EN 301 549.</p>
+                            <p class="widget-rand">WCAG 2.1 oferă recomandări pentru îmbunătățirea accesibilității conținutului web, abordând aspecte legate de percepție, funcționare, înțelegere și robustețe. Nivelul AA reprezintă un echilibru între accesibilitate și implementare practică.</p>
+                            <p class="widget-rand">Standardul EAA / EN 301 549 definește cerințele tehnice pentru accesibilitatea produselor și serviciilor tehnologiei informațiilor și comunicațiilor, inclusiv a site-urilor web, asigurând conformitatea cu legislația europeană privind accesibilitatea digitală.</p>
+                        </li>
+                        <li>
+                            <h4 id="widget-declaratie-feedback-label" class="widget-lista">Feedback</h4>
+                            <p class="widget-rand">Apreciem sugestiile și observațiile legate de accesibilitate. Dacă întâmpinați dificultăți în utilizarea site-ului web sau aveți propuneri de îmbunătățire, vă rugăm să ne contactați.</p>
+                        </li>
+                        <li>
+                            <h4 id="widget-declaratie-actualizari-label" class="widget-lista">Actualizări</h4>
+                            <p class="widget-rand">Declarația de accesibilitate este revizuită periodic pentru a reflecta evoluțiile și îmbunătățirile aduse site-ului. Vă recomandăm să verificați această pagină pentru informații actualizate.</p>
+                            <p class="widget-rand">Data ultimei actualizări: 24.05.2024.</p>
+                        </li>
+                    </ol>
+
+                </section>
+
+<!-- Profiluri de accesibilitate -->
+                <button id="widget-profiluri-buton" class="widget-profiluri-btn" type="button" tabindex="0" aria-labelledby="widget-profiluri-buton-label" aria-expanded="false" aria-controls="widget-profiluri-continut" onclick="toggleProfiles(this)">
+                    <span id="widget-profiluri-buton-label" class="widget-left-text">Profiluri de accesibilitate</span>
+                    <span class="arrow" aria-hidden="true">▼</span>
+                </button>
+
+                <section id="widget-profiluri-continut" class="widget-profiluri-panou" aria-labelledby="widget-profiluri-continut-label" aria-hidden="true">
+
+                    <h3 id="widget-profiluri-continut-label" class="widget-sr-only">Profiluri</h3>
+
+                    <div id="widget-profiluri-lista" class="widget-profiluri-lst" role="region" aria-labelledby="widget-profiluri-lista-label">
+
+                        <h4 id="widget-profiluri-lista-label" class="widget-sr-only">Lista profilurilor de accesibilitate</h4>
+
+<!-- Profiluri generate din JS -->
+
+                    </div>
+
+                </section>
+
+ <!-- Opțiuni de accesibilitate -->
+                <button id="widget-optiuni-buton" class="widget-optiuni-btn" type="button" tabindex="0" aria-labelledby="widget-optiuni-buton-label" aria-expanded="false" aria-controls="widget-optiuni-continut" onclick="toggleOptions(this)">
+                    <span id="widget-optiuni-buton-label" class="widget-left-text">Opțiuni de accesibilitate</span>
+                    <span class="arrow" aria-hidden="true">▼</span>
+                </button>
+
+                <section id="widget-optiuni-continut" class="widget-optiuni-panou" aria-labelledby="widget-optiunii-continut-label" aria-hidden="true">
+
+                    <h3 id="widget-profiluri-continut-label" class="widget-sr-only">Optiuni</h3>
+
+                    <div id="widget-optiuni-lista" class="widget-optiuni-lst" role="region" aria-labelledby="widget-optiuni-lista-label">
+
+                        <h4 id="widget-optiuni-lista-label" class="widget-sr-only">Lista opțiunilor de accesibilitate</h4>
+
+<!-- Opțiuni generate din JS -->
+
+                    </div>
+
+                </section>
+
+            </section>
+
+        </aside>
+
 <!-- SUBSOL -->
         <footer class="footer" aria-labelledby="subsol-label">
 
@@ -7422,7 +8093,6 @@ border-radius: 4px;
 
                 divTar.style.height = 'auto';
                 const inaltimeRef = divRef.offsetHeight;
-    console.log('Setez inaltime pentru', targetDivId, 'la', inaltimeRef);
                 divTar.style.height = inaltimeRef + 'px';
 
                 if (img) {
@@ -8186,8 +8856,614 @@ border-radius: 4px;
                 updateSageti();
             });
 
+// Funcții de bază și utilitare
+
+// Afișare sau ascundere Meniu Setări pentru accesibilitate
+            function toggleWidget() {
+                const widget=document.getElementById('widget-accesibilitate');
+                const btn=document.getElementById('widget-accesibilitate-buton');
+                if (widget.getAttribute('aria-hidden')==='true') {
+
+// Afișare Meniu Setări pentru accesibilitate
+                    widget.setAttribute('aria-hidden','false');
+                    widget.style.display='block';
+                    btn.setAttribute('aria-pressed','true');
+                    btn.setAttribute('aria-expanded','true');
+
+// Focusare pe Declarația de accesibilitate
+                    document.getElementById('declaratieLabel')?.focus();
+                } else {
+
+// Ascundere Meniu Setări pentru accesibilitate
+                    widget.setAttribute('aria-hidden','true');
+                    widget.style.display='none';
+                    btn.setAttribute('aria-pressed','false');
+                    btn.setAttribute('aria-expanded','false');
+
+// Focusare pe Butonul de accesibilitate
+                    document.getElementById('widget-accesibilitate-buton').focus();
+                }
+            }
+
+// Deschidere sau închidere Declarație de accesibilitate
+            function toggleDeclaratie(btn) {
+                const text=document.getElementById('widget-declaratie-continut');
+                const arrow=btn.querySelector('.arrow');
+                if (btn.getAttribute('aria-expanded')==='true') {
+                    btn.setAttribute('aria-expanded','false');
+                    text.setAttribute('aria-hidden','true');
+                    text.style.display='none';
+                    arrow.textContent='▼';
+                } else {
+                    btn.setAttribute('aria-expanded','true');
+                    text.setAttribute('aria-hidden','false');
+                    text.style.display='block';
+                    arrow.textContent='▲';
+                }
+            }
+
+// Deschidere sau închidere Profiluri de accesibilitate
+            function toggleProfiles(btn) {
+                const panel=document.getElementById('widget-profiluri-continut');
+                const arrow=btn.querySelector('.arrow');
+                if (btn.getAttribute('aria-expanded')==='true') {
+                    btn.setAttribute('aria-expanded','false');
+                    panel.setAttribute('aria-hidden','true');
+                    panel.style.display='none';
+                    arrow.textContent='▼';
+
+// Focusare pe Profiluri de accesibilitate
+                     document.getElementById('widget-profiluri-buton').focus();
+
+                } else {
+                    btn.setAttribute('aria-expanded','true');
+                    panel.setAttribute('aria-hidden','false');
+                    panel.style.display='block';
+                    arrow.textContent='▲';
+
+// Focusare pe primul Profil de accesibilitate
+                    document.querySelector('.profile-button')?.focus();
+                }
+            }
+
+// Păstrare stare setări la închidere Profiluri de accesibilitate
+            function updateProfilesButtonStyle() {
+                const btn=document.getElementById('widget-profiluri-buton');
+                const pressed= Array.from(document.querySelectorAll('.profile-button')).some(b=>b.getAttribute('aria-pressed')==='true');
+                btn.style.backgroundColor=pressed?'#d3d3d3':'#f8f8f8';
+            }
+
+// Deschidere sau închidere Opțiuni de accesibilitate
+            function toggleOptions(btn) {
+                const panel=document.getElementById('widget-optiuni-continut');
+                const arrow=btn.querySelector('.arrow');
+                if (btn.getAttribute('aria-expanded')==='true') {
+                    btn.setAttribute('aria-expanded','false');
+                    panel.setAttribute('aria-hidden','true');
+                    panel.style.display='none';
+                    arrow.textContent='▼';
+
+// Focusare pe Opțiuni de accesibilitate
+                     document.getElementById('widget-optiuni-buton').focus();
+
+                } else {
+                    btn.setAttribute('aria-expanded','true');
+                    panel.setAttribute('aria-hidden','false');
+                    panel.style.display='block';
+                    arrow.textContent='▲';
+
+// Focusare pe prima Opțiune de accesibilitate
+                    document.querySelector('.option-button')?.focus();
+                }
+            }
+
+// Păstrare stare setări la închidere Opțiuni de accesibilitate
+            function updateOptionsButtonStyle() {
+                const anyActive = Array.from(document.querySelectorAll('.option-button'))
+                    .some(b => b.getAttribute('aria-pressed') === 'true');
+                const btn = document.getElementById('widget-optiuni-buton');
+                btn.style.backgroundColor = anyActive ? '#d3d3d3' : '#f8f8f8';
+}
+
+// Activare și dezactivare ciclică subOpțiune individuală de accesibilitate
+            function toggleOptiune(i) {
+                if (!optiuni[i].subOptiuni) return;
+                if (subOptiuniState[i] === undefined || subOptiuniState[i] === -1) {
+                    subOptiuniState[i] = 0;
+                } else {
+                    if (subOptiuniState[i] === optiuni[i].subOptiuni.length - 1) {
+                        subOptiuniState[i] = -1;
+                    } else {
+                    subOptiuniState[i]++;
+                    }
+                }
+
+// Actualizează UI dacă vrei să afișezi starea
+            console.log(`Optiunea ${optiuni[i].nume} activată:`, subOptiuniState[i] !== -1 ? optiuni[i].subOptiuni[subOptiuniState[i]] : 'Dezactivat');
+            }
+
+// Afișare Etichetă buton
+            function showPopup(popup, icon) {
+
+// Încărcare Etichetă buton
+                if (!document.body.contains(popup)) {
+                    document.body.appendChild(popup);
+            }
+
+// Stilizare Etichetă buton
+                popup.style.display = 'block';
+                popup.style.opacity = '0';
+
+// Obținere poziție iconiță "i" pentru informații despre buton
+                const rect = icon.getBoundingClientRect();
+
+// Opținere dimensiuni Eticheta buton
+                const popupWidth = popup.offsetWidth;
+                const popupHeight = popup.offsetHeight;
+
+// Calculează poziția (centrare deasupra iconului)
+                let top = rect.top - popupHeight - 8; // 8px spațiu deasupra
+                let left = rect.left + (rect.width - popupWidth) / 2;
+
+// Ajustare pentru marginile viewport-ului
+                if (left < 0) left = 10; // margine stânga
+                if (left + popupWidth > window.innerWidth)
+                left = window.innerWidth - popupWidth - 10; // margine dreapta
+                if (top < 0) top = rect.bottom + 8; // dacă nu intră deasupra, afișează sub icon
+
+// Setare poziție Etichetă buton
+                popup.style.top = top + 'px';
+                popup.style.left = left + 'px';
+
+// Tranziție pentru apariție
+                setTimeout(() => {
+                    popup.style.opacity = '1';
+                    }, 10);
+                }
+
+// Ascundere Etichetă buton
+            function hidePopup(popup) {
+                popup.style.opacity = '0';
+
+// Ascundere completă după tranziție
+                setTimeout(() => {
+                popup.style.display = 'none';
+                }, 300);
+            }
+
+// Funcții de inițializare
+
+// Generare Profiluri individuale de accesibilitate
+            const profiluri = [
+                {
+                    nume: 'Vârstnic',
+                    descriere: 'Profilul Vârstnic activează opțiunile: Oprire animații, Contrast inteligent, Ghid de lectură, Cursor mare alb, Lupă de text și Evidențiere focus.',
+                    icon: '🧓'
+                },
+                {
+                    nume: 'Mobilitate redusă',
+                    descriere: 'Profilul Mobilitate redusă activează opțiunile: Oprire animații și Lupă de text.',
+                    icon: '🚶‍♂️'
+                },
+                {
+                    nume: 'Vedere redusă',
+                    descriere: 'Profilul Vedere redusă activează opțiunile; Oprire animații, Saturație ridicată, Font care poate fi citit și Cursor mare alb.',
+                    icon: '👓'
+                },
+                {
+                    nume: 'Orb',
+                    descriere: 'Profilul Orb activează opțiunile: Vorbește și tastează și Cititor de ecran.',
+                    icon: '🦽'
+                },
+                {
+                    nume: 'Daltonic',
+                    descriere: 'Profilul Daltonic activează opțiunea Daltonic, subopțiunea Deuteranomalic, cea mai răspândită. Pentru alte variante de daltonism, încercați opțiunea Daltonic de mai jos, cu alte subopțiuni.',
+                    icon: '🌈'
+                },
+                {
+                    nume: 'Dislexic',
+                    descriere: 'Profilul Dislexic activează opțiunile: Oprire animații și Font pentru dislexie.',
+                    icon: '📖'
+                },
+                {
+                    nume: 'Retard',
+                    descriere: 'Profilul Retard activează opțiunile: Oprire animații, Mască de lectură și Lupă de text.',
+                    icon: '🧠'
+                },
+                {
+                    nume: 'Epileptic',
+                    descriere: 'Profilul Epileptic activează opțiunile: Oprire animații și Saturație scăzută.',
+                    icon: '⚠️'
+                },
+                {
+                    nume: 'Tulburat',
+                    descriere: 'Profilul Tulburat activează opțiunile: Oprire animații, Mască de lectură și Saturație scăzută.',
+                    icon: '🤯'
+                }
+            ];
+
+            function initProfiluri() {
+                const container = document.getElementById('widget-profiluri-lista');
+                container.innerHTML = '';
+
+                profiluri.forEach((p, i) => {
+                    const btn = document.createElement('button');
+                    btn.className = 'profile-button';
+                    btn.setAttribute('aria-pressed', 'false');
+                    btn.setAttribute('aria-label', p.nume);
+                    btn.style.position='relative'; // pentru poziționarea iconițelor
+
+// Comutare stare
+                    btn.onclick = () => {
+                        const e = btn.getAttribute('aria-pressed')==='true';
+                        btn.setAttribute('aria-pressed', String(!e));
+                        updateProfilesButtonStyle();
+                    };
+
+// Atribuire Iconiță reprezentativă pentru buton
+                    const iconSVG = document.createElement('svg');
+                    iconSVG.className='button-icon';
+                    iconSVG.setAttribute('viewBox','0 0 64 64');
+                    iconSVG.innerHTML= `<circle cx="32" cy="16" r="12" stroke="black" stroke-width="2" fill="none"/>
+                    <rect x="24" y="28" width="16" height="20" stroke="black" stroke-width="2" fill="none"/>`;
+                    btn.appendChild(iconSVG);
+
+// Setare Iconița "i" în colțul din dreapta sus
+                    const infoIcon = document.createElement('div');
+                    infoIcon.className='info-icon';
+                    infoIcon.innerText='i';
+
+// Setare Etichetă buton
+                    const popup = document.createElement('div');
+                    popup.className='popup-info';
+                    popup.innerText=p.descriere;
+                    infoIcon.appendChild(popup);
+
+// Afișare Etichetă buton
+                    infoIcon.addEventListener('mouseenter', ()=>{
+                        showPopup(popup, infoIcon);
+                    });
+
+// Ascundere Etichetă buton
+                    infoIcon.addEventListener('mouseleave', ()=>{
+                        hidePopup(popup);
+                    });
+
+// Adăugare Iconiță "i" la Profil
+                    btn.appendChild(infoIcon);
+
+// Atribuire text la Profil
+                    const spanText = document.createElement('span');
+                    spanText.innerText=p.nume;
+                    btn.appendChild(spanText);
+                    container.appendChild(btn);
+                });
+            }
+
+// Generare Opțiuni individuale de accesibilitate
+            const optiuni = [
+                {
+                    nume:'Dezactivare sunet',
+                    descriere:'Sunet dezactivat',
+                    icon:'🔇',
+                    subOptiuni:[]
+                },
+                {
+                    nume:'Oprire animații',
+                    descriere:'Animații oprite',
+                    icon:'🚫',
+                    subOptiuni:[]
+                },
+  {nume:'Ascundere imagini', descriere:'Imagini ascunse.', icon:'🖼️', subOptiuni:[]},
+  {nume:'Daltonic', descriere:'Acromatopsic, Acromatomalic, Protanopic, Deuteranopic, Tritanopic, Protanomalic, Deuteranomalic, Trianomalic', icon:'🌈', subOptiuni:['Acromatopsic', 'Acromatomalic', 'Protanopic', 'Deuteranopic', 'Tritanopic', 'Protanomalic', 'Deuteranomalic', 'Trianomalic']},
+  {nume:'Contrast', descriere:'Contrast inteligent, Contrast mare, Contrast luminos, Contrast întunecat', icon:'🎨', subOptiuni:['Contrast inteligent', 'Contrast mare', 'Contrast luminos', 'Contrast întunecat']},
+  {nume:'Saturație', descriere:'Saturație scăzută, Saturație ridicată', icon:'🌈', subOptiuni:['Saturație scăzută', 'Saturație ridicată']},
+  {nume:'Culoare fundal', descriere:'Fundal Alb, Fundal Galben, Fundal Portocaliu, Fundal Verde, Fundal Roșu, Fundal Albastru, Fundal Violet, Fundal Negru', icon:'🖍️', subOptiuni:['Fundal Alb', 'Fundal Galben', 'Fundal Portocaliu', 'Fundal Verde', 'Fundal Roșu', 'Fundal Albastru', 'Fundal Violet', 'Fundal Negru']},
+  {nume:'Evidențiere focus', descriere:'Focus evidențiat.', icon:'🎯', subOptiuni:[]},
+  {nume:'Cursor', descriere:'Cursor mare Alb, Cursor mare Negru', icon:'🖱️', subOptiuni:['Cursor mare Alb', 'Cursor mare Negru']},
+  {nume:'Evidențiere trecere', descriere:'Trecere evidențiată.', icon:'➡️', subOptiuni:[]},
+  {nume:'Evidențiere legături', descriere:'Legături evidențiate.', icon:'🔗', subOptiuni:[]},
+  {nume:'Evidențiere titluri', descriere:'Titluri evidențiate.', icon:'🏷️', subOptiuni:[]},
+  {nume:'Culoare text', descriere:'Text Alb, Text Galben, Text Portocaliu, Text Verde, Text Roșu, Text Albastru, Text Violet, Text Negru', icon:'📝', subOptiuni:['Text Alb', 'Text Galben', 'Text Portocaliu', 'Text Verde', 'Text Roșu', 'Text Albastru', 'Text Violet', 'Text Negru']},
+  {nume:'Culoare titlu', descriere:'Titlu Alb, Titlu Galben, Titlu Portocaliu, Titlu Verde, Titlu Roșu, Titlu Albastru, Titlu Violet, Titlu Negru', icon:'🏷️', subOptiuni:['Titlu Alb', 'Titlu Galben', 'Titlu Portocaliu', 'Titlu Verde', 'Titlu Roșu', 'Titlu Albastru', 'Titlu Violet', 'Titlu Negru']},
+  {nume:'Scalare conținut', descriere:'Conținut Foarte mic, Conținut Mic, Conținut Mare, Conținut Foarte mare', icon:'🔍', subOptiuni:['Conținut Foarte mic', 'Conținut Mic', 'Conținut Mare', 'Conținut Foarte mare']},
+  {nume:'Aliniere text', descriere:'Aliniere Stânga, Aliniere Centru, Aliniere Dreapta, Aliniere Stânga-Dreapta', icon:'↔️', subOptiuni:['Aliniere Stânga', 'Aliniere Centru', 'Aliniere Dreapta', 'Aliniere Stânga-Dreapta']},
+  {nume:'Înălțime linie', descriere:'Linie Micșorată, Linie Mărită, Linie Mare, Linie Foarte mare', icon:'📏', subOptiuni:['Linie Micșorată', 'Linie Mărită', 'Linie Mare', 'Linie Foarte mare']},
+  {nume:'Spațiu dintre litere', descriere:'Spațiu Micșorat, Spațiu Mărit, Spațiu Mare, Spațiu Foarte mare', icon:'✏️', subOptiuni:['Spațiu Micșorat', 'Spațiu Mărit', 'Spațiu Mare', 'Spațiu Foarte mare']},
+  {nume:'Mărime font', descriere:'Font Foarte mic, Font Mic, Mare, Font Foarte mare', icon:'🔠', subOptiuni:['Font Foarte mic', 'Font Mic', 'Font Mare', 'Font Foarte mare']},
+  {nume:'Font', descriere:'Font care poate fi citit, Font pentru dislexie', icon:'🔤', subOptiuni:['Font care poate fi citit', 'Font pentru dislexie']},
+  {nume:'Mască de lectură', descriere:'Mască de lectură activată.', icon:'🛡️', subOptiuni:[]},
+  {nume:'Filtrare conținut', descriere:'Conținut filtrat.', icon:'🚫', subOptiuni:[]},
+  {nume:'Mod citire', descriere:'Mod citire activat.', icon:'📖', subOptiuni:[]},
+  {nume:'Cititor de ecran', descriere:'Cititor de ecran activat.', icon:'🧑‍🦯', subOptiuni:[]},
+  {nume:'Tastatură virtuală', descriere:'Tastatură virtuală activată.', icon:'⌨️', subOptiuni:[]},
+  {nume:'Vorbire și tastează', descriere:'Vorbire convertită în text.', icon:'🎙️', subOptiuni:[]},
+  {nume:'Dicționar', descriere:'Dicționar activat.', icon:'📚', subOptiuni:[]}
+];
+
+// Lista de subopțiuni ciclice pentru fiecare opțiune care are subopțiuni
+const subOptiuni = [
+  ['Acromatopsic', 'Acromatomalic', 'Protanopic', 'Deuteranopic', 'Tritanopic', 'Protanomalic', 'Deuteranomalic', 'Trianomalic'],
+  ['Contrast inteligent', 'Contrast mare', 'Contrast luminos', 'Contrast întunecat'],
+  ['Saturație scăzută', 'Saturație ridicată'],
+  ['Fundal Alb', 'Fundal Galben', 'Fundal Portocaliu', 'Fundal Verde', 'Fundal Roșu', 'Fundal Albastru', 'Fundal Violet', 'Fundal Negru'],
+  ['Cursor mare Alb', 'Cursor mare Negru'],
+  ['Text Alb', 'Text Galben', 'Text Portocaliu', 'Text Verde', 'Text Roșu', 'Text Albastru', 'Text Violet', 'Text Negru'],
+  ['Titlu Alb', 'Titlu Galben', 'Titlu Portocaliu', 'Titlu Verde', 'Titlu Roșu', 'Titlu Albastru', 'Titlu Violet', 'Titlu Negru'],
+  ['Conținut Foarte mic', 'Conținut Mic', 'Conținut Mare', 'Conținut Foarte mare'],
+  ['Aliniere Stânga', 'Aliniere Centru', 'Aliniere Dreapta', 'Aliniere Stânga-Dreapta'],
+  ['Linie Micșorată', 'Linie Mărită', 'Linie Mare', 'Linie Foarte mare'],
+  ['Spațiu Micșorat', 'Spațiu Mărit', 'Spațiu Mare', 'Spațiu Foarte mare'],
+  ['Font Foarte mic', 'Font Mic', 'Mare', 'Font Foarte mare'],
+  ['Font care poate fi citit', 'Font pentru dislexie']
+];
+
+// Starea subopțiunilor pentru fiecare opțiune
+const subOptiuniStare = {}; // cheia: index opțiune, valoare: index subopțiune sau -1 pentru dezactivat
+
+// Funcție de inițializare pentru Opțiuni
+function initOptiuni() {
+  const container = document.getElementById('widget-optiuni-lista');
+  container.innerHTML = '';
+
+  optiuni.forEach((opt, index) => {
+    const btn = document.createElement('button');
+    btn.className = 'option-button';
+    btn.setAttribute('aria-pressed', 'false');
+    btn.setAttribute('aria-label', opt.nume);
+    btn.style.position='relative'; // pentru poziționarea iconițelor
+    btn.onclick = () => {
+      const e = btn.getAttribute('aria-pressed')==='true';
+      btn.setAttribute('aria-pressed', String(!e));
+      updateOptionsButtonStyle();
+
+      if (opt.subOptiuni.length > 1) {
+        // Gestionare casete ciclice
+        cicluSubOptiune(btn, index);
+      } else {
+        // Toggle pentru o singură sub-opțiune
+        if (subOptiuniStare[index]===-1 || subOptiuniStare[index]===undefined) {
+          subOptiuniStare[index]=0; // activat
+        } else {
+          subOptiuniStare[index]=-1; // dezactivat
+        }
+        updateOptiuneText(btn, index);
+      }
+    };
+
+    // Adaugă iconița SVG reprezentativă
+    const iconSVG = document.createElement('svg');
+    iconSVG.className='button-icon';
+    iconSVG.setAttribute('viewBox','0 0 64 64');
+    iconSVG.innerHTML= `<circle cx="32" cy="16" r="12" stroke="black" stroke-width="2" fill="none"/>
+<rect x="24" y="28" width="16" height="20" stroke="black" stroke-width="2" fill="none"/>`;
+    btn.appendChild(iconSVG);
+
+    // Adaugă iconița "i" în colțul din dreapta sus
+    const infoIcon = document.createElement('div');
+    infoIcon.className='info-icon';
+    infoIcon.innerText='i';
+
+    // Popup pentru descriere
+    const popup = document.createElement('div');
+    popup.className='popup-info';
+    popup.innerText=opt.descriere;
+    infoIcon.appendChild(popup);
+
+infoIcon.addEventListener('mouseenter', ()=>{ showPopup(popup, infoIcon); });
+
+infoIcon.addEventListener('mouseleave', ()=>{ hidePopup(popup); });
+
+    // Adaugă iconița "i" în buton
+    btn.appendChild(infoIcon);
+
+    // Textul opțiunii
+    const spanText = document.createElement('span');
+    spanText.innerText=opt.nume;
+    btn.appendChild(spanText);
+
+    // Adaugă butonul în container
+    container.appendChild(btn);
+
+    // Inițial, actualizează textul butonului
+    updateOptiuneText(btn, index);
+  });
+}
+
+// Actualizează textul butonului pentru opțiunea cu index dat
+function updateOptiuneText(btn, index) {
+  const e = btn.getAttribute('aria-pressed')==='true';
+  const opt = optiuni[index];
+  let text = '';
+  if (opt.subOptiuni.length>1) {
+    // casete ciclice
+    const activeIdx = subOptiuniStare[index];
+    if (activeIdx===undefined || activeIdx===-1) {
+      text=opt.nume; // dezactivat
+    } else {
+      text=opt.subOptiuni[activeIdx]; // starea activa
+    }
+  } else {
+    // doar nume sau sub-optiune
+    if (subOptiuniStare[index]===-1 || subOptiuniStare[index]===undefined) {
+      text=opt.nume;
+    } else {
+      text=opt.subOptiuni[subOptiuniStare[index]];
+    }
+  }
+  // setare text
+  const span = btn.querySelector('span');
+  span.innerText=text;
+}
+
+// Funcție de inițializare pentru casetele ciclice
+function cicluSubOptiune(parentBtn, indexOpt) {
+  const container = parentBtn.querySelector('.sub-options-container');
+  if (subOptiuniStare[indexOpt]===undefined || subOptiuniStare[indexOpt]===-1) {
+    subOptiuniStare[indexOpt]=0;
+  } else {
+    subOptiuniStare[indexOpt]= (subOptiuniStare[indexOpt]+1) % subOptiuni[indexOpt].length;
+  }
+  initCaseta(container, indexOpt);
+  // Actualizează textul
+  updateOptiuneText(parentBtn, indexOpt);
+}
+
+// Generare casete ciclice
+function initCaseta(container, indexOpt) {
+  container.innerHTML='';
+  const currentIdx = subOptiuniStare[indexOpt] || 0;
+  subOptiuni[indexOpt].forEach((val,i) => {
+    const div = document.createElement('div');
+    div.className='sub-option';
+    if (i===currentIdx) div.classList.add('active');
+    div.onclick= ()=> {
+      subOptiuniStare[indexOpt]=i;
+      initCaseta(container,indexOpt);
+      // actualizează textul butonului
+      const btn = document.querySelector(`.option-button[aria-label="${optiuni[indexOpt].nume}"]`);
+      if (btn) updateOptiuneText(btn, indexOpt);
+    };
+    container.appendChild(div);
+  });
+}
+
+// Inițializare Meniu Setări pentru accesibilitate
+            function initialize() {
+
+// Ascundere Meniu Setări pentru accesibilitate
+                document.getElementById('widget-accesibilitate').style.display='none';
+                document.getElementById('widget-accesibilitate').setAttribute('aria-hidden','true');
+
+// Inchidere Declarație de accesibilitate
+                document.getElementById('widget-declaratie-continut').style.display='none';
+                document.getElementById('widget-declaratie-continut').setAttribute('aria-hidden','true');
+                document.getElementById('widget-declaratie-buton').setAttribute('aria-expanded','false');
+                document.querySelector('#widget-declaratie-buton .arrow').textContent='▼';
+
+// Inchidere Profiluri de accesibilitate
+                document.getElementById('widget-profiluri-continut').style.display='none';
+                document.getElementById('widget-profiluri-continut').setAttribute('aria-hidden','true');
+                document.getElementById('widget-profiluri-buton').setAttribute('aria-expanded','false');
+                document.querySelector('#widget-profiluri-buton .arrow').textContent='▼';
+
+// Dezactivare Profiluri individuale de accesibilitate
+                document.querySelectorAll('.profile-button').forEach(btn => {
+                    btn.setAttribute('aria-pressed','false');
+                });
+
+// Actualizare stiluri Profiluri de accesibilitate
+                updateProfilesButtonStyle();
+
+// Inițializare Profiluri indivituale de accesibilitate
+                initProfiluri();
+
+// Deschidere Opțiuni de accesibilitate
+                document.getElementById('widget-optiuni-continut').style.display='block';
+                document.getElementById('widget-optiuni-continut').setAttribute('aria-hidden','false');
+                document.getElementById('widget-optiuni-buton').setAttribute('aria-expanded','true');
+                document.querySelector('#widget-optiuni-buton .arrow').textContent='▲';
+
+// Dezactivare Opțiuni individuale de accesibilitate
+                document.querySelectorAll('.option-button').forEach(btn => {
+                    btn.setAttribute('aria-pressed','false');
+                });
+
+// Actualizare stiluri Opțiuni indivituale de accesibilitate
+                updateOptionsButtonStyle()
+
+// Inițializare Opțiuni indivituale de accesibilitate
+  initOptiuni();
+
+// Inițial, pentru toate opțiunile cu subOpțiuni multiple, setează starea -1 (dezactivat)
+Object.keys(subOptiuniStare).forEach(k => {
+  if (optiuni[k] && optiuni[k].subOptiuni.length > 1) {
+    subOptiuniStare[k] = -1;
+  } else {
+    subOptiuniStare[k] = 0;
+  }
+});
+
+}
+
+// Resetare stare Meniu Setări pentru accesibilitate
+function reset() {
+
+// Ascundere Meniu Setări pentru accesibilitate
+                document.getElementById('widget-accesibilitate').style.display='none';
+                document.getElementById('widget-accesibilitate').setAttribute('aria-hidden','true');
+
+// Inchidere Declarație de accesibilitate
+                document.getElementById('widget-declaratie-continut').style.display='none';
+                document.getElementById('widget-declaratie-continut').setAttribute('aria-hidden','true');
+                document.getElementById('widget-declaratie-buton').setAttribute('aria-expanded','false');
+                document.querySelector('#widget-declaratie-buton .arrow').textContent='▼';
+
+// Inchidere Profiluri de accesibilitate
+                document.getElementById('widget-profiluri-continut').style.display='none';
+                document.getElementById('widget-profiluri-continut').setAttribute('aria-hidden','true');
+                document.getElementById('widget-profiluri-buton').setAttribute('aria-expanded','false');
+                document.querySelector('#widget-profiluri-buton .arrow').textContent='▼';
+
+// Dezactivare Profiluri individuale de accesibilitate
+                document.querySelectorAll('.profile-button').forEach(btn => {
+                    btn.setAttribute('aria-pressed','false');
+                });
+
+// Actualizare stiluri Profiluri de accesibilitate
+                updateProfilesButtonStyle();
+
+// Deschidere Opțiuni de accesibilitate
+                document.getElementById('widget-optiuni-continut').style.display='block';
+                document.getElementById('widget-optiuni-continut').setAttribute('aria-hidden','false');
+                document.getElementById('widget-optiuni-buton').setAttribute('aria-expanded','true');
+                document.querySelector('#widget-optiuni-buton .arrow').textContent='▲';
+
+// Dezactivare Opțiuni individuale de accesibilitate
+                document.querySelectorAll('.option-button').forEach(btn => {
+                    btn.setAttribute('aria-pressed','false');
+                });
+
+// Actualizare stiluri Opțiuni indivituale de accesibilitate
+                updateOptionsButtonStyle()
+
+  // Resetare stări interne, dacă e cazul
+  Object.keys(subOptiuniStare).forEach(k => {
+    subOptiuniStare[k] = -1; // sau 0 dacă vrei să fie activat implicit
+  });
+
+  // Ascunde toate popup-urile
+  document.querySelectorAll('.popup-info').forEach(p => {
+    p.style.display='none'; // sau folosește classList.remove('active') dacă preferi clase CSS
+
+  });
+}
+
+// Funcții de eveniment și de gestionare a interacțiunii
+
+// Inițializare setări la încărcarea paginii
+            window.addEventListener('DOMContentLoaded', initialize);
+
+// Gestionare taste la apăsare
+            document.addEventListener('keydown', function(e) {
+
+// Tasta ESC - reinițializare Meniu Setări pentru accesibilitate
+                if (e.key==='Escape') {
+
+// Blocare comportament implicit pentru apasarea tastei ESC
+                    e.preventDefault();
+
+// Setare comportament particularizat pentru apasarea tastei ESC
+                    reset();
+                    document.getElementById('widget-accesibilitate-buton').focus();
+                    return;
+                }
+
+            });
+
         </script>
 
     </body>
 
 </html>
+
