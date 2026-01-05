@@ -3458,8 +3458,10 @@ border-radius: 4px;
                             }
 
                                 .widget-profiluri-lst {
+                                    width: 100%;
                                     display: flex;
                                     flex-wrap: wrap;
+                                    justify-content: space-between;
                                     gap: 0.5rem;
                                 }
 
@@ -3474,7 +3476,7 @@ border-radius: 4px;
                                         padding-bottom: 0.5rem;
                                         padding-left: 0.5rem;
                                         padding-right: 0.5rem;
-                                        width: 7rem;
+                                        width: calc((100% - 2 * 0.5rem) / 3);
                                         height: 5rem;
                                         transition: background-color 0.2s, border 0.2s;
                                         display: flex;
@@ -3543,8 +3545,10 @@ border-radius: 4px;
                             }
 
                                 .widget-optiuni-lst {
+                                    width: 100%;
                                     display: flex;
                                     flex-wrap: wrap;
+                                    justify-content: space-between;
                                     gap: 0.5rem;
                                 }
 
@@ -3556,10 +3560,10 @@ border-radius: 4px;
                                         margin-left: 0;
                                         margin-right: 0;
                                         padding-top: 0.5rem;
-                                        padding-bottom: 0.5rem;
+                                        padding-bottom: 0.5rem;	
                                         padding-left: 0.5rem;
                                         padding-right: 0.5rem;
-                                        width: 7rem;
+                                        width: calc((100% - 2 * 0.5rem) / 3);
                                         height: 5rem;
                                         transition: background-color 0.2s, border 0.2s;
                                         display: flex;
@@ -3629,8 +3633,8 @@ box-shadow: 0 2px 8px rgba(0,0,0,0.2);
                                             padding-bottom: 0.5rem;
                                             padding-left: 0.5rem;
                                             padding-right: 0.5rem;
-                                            width: 30rem;
-                                            max-width: 30rem;
+                                            width: max-content;
+                                            max-width: 24.3rem;
                                             display: none;
                                             word-wrap: break-word;
                                             white-space: normal;
@@ -9027,60 +9031,61 @@ border-radius: 4px;
             }
 
 // Afișare Etichetă buton
-function showPopup(popup, icon) {
-  // Încărcare Etichetă buton
-  if (!document.body.contains(popup)) {
-    document.body.appendChild(popup);
-  }
+            function showPopup(popup, icon) {
 
-  // Stilizare Etichetă buton
-  popup.style.display = 'block';
-  popup.style.opacity = '0';
+// Încărcare Etichetă buton
+                if (!document.body.contains(popup)) {
+                    document.body.appendChild(popup);
+            }
 
-  // Obținere poziție iconiță "i" pentru informații despre buton
-  const rect = icon.getBoundingClientRect();
+// Stilizare Etichetă buton
+                popup.style.display = 'block';
+                popup.style.opacity = '0';
 
-  // Obține dimensiunile popup-ului în rem
-  const rootFontSize = parseFloat(getComputedStyle(document.documentElement).fontSize);
-  const popupWidthRem = popup.offsetWidth / rootFontSize;
-  const popupHeightRem = popup.offsetHeight / rootFontSize;
+// Obținere poziție iconiță "i" pentru informații despre buton
+                const rect = icon.getBoundingClientRect();
 
-  // Calculează poziția (centrare deasupra iconului)
-  let topRem = (rect.top / rootFontSize) - popupHeightRem - 0.0625; // 1px ≈ 0.0625rem
-  let leftRem = (rect.left / rootFontSize) + ((rect.width / rootFontSize) - popupWidthRem) / 2;
+const widget = document.getElementById('widget-accesibilitate-container');
+const rectWidget = widget.getBoundingClientRect();
 
-  // Marginea dreaptă și stângă în rem
-  const marginRightRem = 1.1;
+// Opținere dimensiuni Etichetă buton
+                const popupWidth = popup.offsetWidth;
+                const popupHeight = popup.offsetHeight;
 
-  // Ajustare dacă depășește marginea dreaptă
-  if (leftRem + popupWidthRem > (window.innerWidth / rootFontSize) - marginRightRem) {
-    leftRem = (window.innerWidth / rootFontSize) - popupWidthRem - marginRightRem;
-  }
+    // Poziția de centru deasupra iconului
+    let left = rect.left + (rect.width - popupWidth) / 2;
 
-  // Ajustare dacă depășește marginea stângă
-  if (leftRem < marginRightRem) {
-    leftRem = marginRightRem;
-  }
+    // Ajustare pentru overflow dreapta
+    if (left + popupWidth > rectWidget.right) {
+        left = rectWidget.right - popupWidth;
+    }
+console.log('left:', left, 'rectWidget.left:', rectWidget.left);
+    // Ajustare pentru overflow stânga
+// ?
 
-  // Setare poziție în rem
-  popup.style.top = topRem + 'rem';
-  popup.style.left = leftRem + 'rem';
+    // Poziționare pe verticală
+    let top = rect.top - popupHeight - 1;
+    if (top < 0) top = rect.bottom + 1;
 
-  // Tranziție pentru apariție
-  setTimeout(() => {
-    popup.style.opacity = '1';
-  }, 10);
-}
+// Setare poziție Etichetă buton
+                popup.style.top = top + 'px';
+                popup.style.left = left + 'px';
+
+// Tranziție pentru apariție
+                setTimeout(() => {
+                    popup.style.opacity = '1';
+                    }, 10);
+                }
 
 // Ascundere Etichetă buton
-function hidePopup(popup) {
-  popup.style.opacity = '0';
+            function hidePopup(popup) {
+                popup.style.opacity = '0';
 
-  // Ascundere completă după tranziție
-  setTimeout(() => {
-    popup.style.display = 'none';
-  }, 300);
-}
+// Ascundere completă după tranziție
+                setTimeout(() => {
+                popup.style.display = 'none';
+                }, 300);
+            }
 
 // Funcții de inițializare
 
