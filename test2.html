@@ -9023,6 +9023,8 @@ border-radius: 4px;
 const widget = document.getElementById('widget-accesibilitate-container');
 const rectWidget = widget.getBoundingClientRect();
 
+console.log('rectWidget.left:', rectWidget.left, 'rectWidget.right:', rectWidget.right, 'rectWidget.width:', rectWidget.width);
+
 // Opținere dimensiuni Etichetă buton
                 const popupWidth = popup.offsetWidth;
                 const popupHeight = popup.offsetHeight;
@@ -9030,20 +9032,13 @@ const rectWidget = widget.getBoundingClientRect();
     // Poziția de centru deasupra iconului
     let left = rect.left + (rect.width - popupWidth) / 2;
 
-console.log('left1:', left, 'rectWidget.left1:', rectWidget.left, 'rectWidget.right1:', rectWidget.right);
-
     // Ajustare pentru overflow dreapta
-    if (left + popupWidth > rectWidget.right) {
+    if (left + popupWidth > window.innerWidth) {
         left = rectWidget.right - popupWidth;
     }
 
     // Ajustare pentru overflow stânga
-const widgetOffsetLeft = widget.offsetLeft;
-//if (left < widgetOffsetLeft) {
-//  left = widgetOffsetLeft;
-//}
 
-console.log('left2:', left, 'widgetOffsetLeft:', widgetOffsetLeft, 'rectWidget.right2:', rectWidget.right);
 
     // Poziționare pe verticală
     let top = rect.top - popupHeight - 1;
