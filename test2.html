@@ -9038,10 +9038,12 @@ console.log('left1:', left, 'rectWidget.left1:', rectWidget.left, 'rectWidget.ri
     }
 
     // Ajustare pentru overflow stânga
-//if (left < rectWidget.left) {
-//    left = rectWidget.left;
+const widgetOffsetLeft = widget.offsetLeft;
+//if (left < widgetOffsetLeft) {
+//  left = widgetOffsetLeft;
 //}
-console.log('left2:', left, 'rectWidget.left2:', rectWidget.left, 'rectWidget.right2:', rectWidget.right);
+
+console.log('left2:', left, 'widgetOffsetLeft:', widgetOffsetLeft, 'rectWidget.right2:', rectWidget.right);
 
     // Poziționare pe verticală
     let top = rect.top - popupHeight - 1;
