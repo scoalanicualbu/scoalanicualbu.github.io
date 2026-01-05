@@ -9030,16 +9030,18 @@ const rectWidget = widget.getBoundingClientRect();
     // Poziția de centru deasupra iconului
     let left = rect.left + (rect.width - popupWidth) / 2;
 
+console.log('left1:', left, 'rectWidget.left1:', rectWidget.left, 'rectWidget.right1:', rectWidget.right);
+
     // Ajustare pentru overflow dreapta
     if (left + popupWidth > rectWidget.right) {
         left = rectWidget.right - popupWidth;
     }
 
     // Ajustare pentru overflow stânga
-if (left < rectWidget.left) {
-    left = rectWidget.left;
-}
-console.log('left:', left, 'rectWidget.left:', rectWidget.left);
+//if (left < rectWidget.left) {
+//    left = rectWidget.left;
+//}
+console.log('left2:', left, 'rectWidget.left2:', rectWidget.left, 'rectWidget.right2:', rectWidget.right);
 
     // Poziționare pe verticală
     let top = rect.top - popupHeight - 1;
