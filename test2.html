@@ -3302,7 +3302,8 @@ border-radius: 4px;
                             }
 
                             .widget-declaratie-btn:focus {
-                                outline: 2px solid #000000;
+                                outline: 3px solid #000000;
+                                outline-offset: -1px;
                             }
 
                             .widget-left-text {
@@ -3441,7 +3442,8 @@ border-radius: 4px;
                             }
 
                             .widget-profiluri-btn:focus {
-                                outline: 2px solid #000000;
+                                outline: 3px solid #000000;
+                                outline-offset: -1px;
                             }
 
                             .widget-profiluri-panou {
@@ -3493,7 +3495,8 @@ border-radius: 4px;
                                         }
 
                                         .profile-button:focus {
-                                            outline: 2px solid #000000;
+                                            outline: 3px solid #000000;
+                                            outline-offset: -1px;
                                         }
 
                                         .profile-button[aria-pressed="true"] {
@@ -3528,7 +3531,8 @@ border-radius: 4px;
                             }
 
                             .widget-optiuni-btn:focus {
-                                outline: 2px solid #000000;
+                                outline: 3px solid #000000;
+                                outline-offset: -1px;
                             }
 
                             .widget-optiuni-panou {
@@ -3560,7 +3564,7 @@ border-radius: 4px;
                                         margin-left: 0;
                                         margin-right: 0;
                                         padding-top: 0.5rem;
-                                        padding-bottom: 0.5rem;	
+                                        padding-bottom: 0.5rem;
                                         padding-left: 0.5rem;
                                         padding-right: 0.5rem;
                                         width: calc((100% - 2 * 0.5rem) / 3);
@@ -3580,7 +3584,8 @@ border-radius: 4px;
                                         }
 
                                         .option-button:focus {
-                                            outline: 2px solid #000000;
+                                            outline: 3px solid #000000;
+                                            outline-offset: -1px;
                                         }
 
                                         .option-button[aria-pressed="true"] {
@@ -9000,65 +9005,47 @@ border-radius: 4px;
                     subOptiuniState[i]++;
                     }
                 }
-
-// Actualizează UI dacă vrei să afișezi starea
-            console.log(`Optiunea ${optiuni[i].nume} activată:`, subOptiuniState[i] !== -1 ? optiuni[i].subOptiuni[subOptiuniState[i]] : 'Dezactivat');
             }
 
-// Afișare Etichetă buton
+// Afișare etichetă de informații
             function showPopup(popup, icon) {
-
-// Încărcare Etichetă buton
                 if (!document.body.contains(popup)) {
                     document.body.appendChild(popup);
-            }
-
-// Stilizare Etichetă buton
+                }
                 popup.style.display = 'block';
                 popup.style.opacity = '0';
 
-// Obținere poziție iconiță "i" pentru informații despre buton
+                const widget = document.getElementById('widget-accesibilitate');
+                const rectWidget = widget.getBoundingClientRect();
+
                 const rect = icon.getBoundingClientRect();
-
-const widget = document.getElementById('widget-accesibilitate');
-const rectWidget = widget.getBoundingClientRect();
-
-console.log('rectWidget.left:', rectWidget.left, 'rectWidget.right:', rectWidget.right, 'rectWidget.width:', rectWidget.width, 'rect.left:', rect.left, 'rect.right:', rect.right);
-
-// Opținere dimensiuni Etichetă buton
                 const popupWidth = popup.offsetWidth;
                 const popupHeight = popup.offsetHeight;
 
-    // Poziția de centru deasupra iconului
-    let left = rect.left + (rect.width - popupWidth) / 2;
+                let top = rect.top - popupHeight - 1;
+                if (top < rectWidget.top) {
+                    top = rectWidget.top + 1;
+                }
 
-    // Ajustare pentru overflow dreapta
-    if (left + popupWidth > window.innerWidth) {
-        left = rectWidget.right - popupWidth;
-    }
+                let left = rect.left + (rect.width - popupWidth) / 2;
+                if (left + popupWidth > window.innerWidth) {
+                    left = rectWidget.right - popupWidth;
+                }
+                if (left < rectWidget.left) {
+                    left = rectWidget.left;
+                }
 
-    // Ajustare pentru overflow stânga
-
-
-    // Poziționare pe verticală
-    let top = rect.top - popupHeight - 1;
-    if (top < 0) top = rect.bottom + 1;
-
-// Setare poziție Etichetă buton
                 popup.style.top = top + 'px';
                 popup.style.left = left + 'px';
 
-// Tranziție pentru apariție
                 setTimeout(() => {
                     popup.style.opacity = '1';
                     }, 10);
                 }
 
-// Ascundere Etichetă buton
             function hidePopup(popup) {
                 popup.style.opacity = '0';
 
-// Ascundere completă după tranziție
                 setTimeout(() => {
                 popup.style.display = 'none';
                 }, 300);
