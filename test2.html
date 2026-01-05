@@ -8188,19 +8188,14 @@ border-radius: 4px;
             ];
 
             function updateImagini() {
-                const tryUpdate = () => {
+                imaginiParametri.forEach(([referenceDivId, targetDivId]) => {
+                    const divRef = document.getElementById(referenceDivId);
+                    const divTar = document.getElementById(targetDivId);
+                });
 
-                    imaginiParametri.forEach(([referenceDivId, targetDivId]) => {
-                        const divRef = document.getElementById(referenceDivId);
-                        const divTar = document.getElementById(targetDivId);
-                    });
-
-                    imaginiParametri.forEach(([referenceDivId, targetDivId]) => {
-                        updateImagine(referenceDivId, targetDivId);
-                    });
-                  };
-
-                tryUpdate();
+                imaginiParametri.forEach(([referenceDivId, targetDivId]) => {
+                    updateImagine(referenceDivId, targetDivId);
+                });
             }
 
 // Setare înălțime container în funcție de container de referință
@@ -8239,38 +8234,18 @@ border-radius: 4px;
             ];
 
             function updateDivs() {
-                const maxIncercari = 10;
-                let incercari = 0;
+                divsParametri.forEach(([referenceDivId, targetDivId, imageDivId, nrSiblings]) => {
+                    const referenceDiv = document.getElementById(referenceDivId);
+                    const targetDiv = document.getElementById(targetDivId);
+                    const imageDiv = document.getElementById(imageDivId);
 
-                const tryUpdate = () => {
-                    let toateGăsite = true;
-
-                    divsParametri.forEach(([referenceDivId, targetDivId, imageDivId, nrSiblings]) => {
-                        const referenceDiv = document.getElementById(referenceDivId);
-                        const targetDiv = document.getElementById(targetDivId);
-                        const imageDiv = document.getElementById(imageDivId);
-
-                        if (!referenceDiv || !targetDiv || !imageDiv) {
-                            toateGăsite = false;
-                            return;
-                        }
-                    });
-
-                    if (toateGăsite) {
-                        divsParametri.forEach(([referenceDivId, targetDivId, imageDivId, nrSiblings]) => {
-                            updateDiv(referenceDivId, targetDivId, imageDivId, nrSiblings);
-                        });
-                    } else {
-                        incercari++;
-                        if (incercari < maxIncercari) {
-                            setTimeout(tryUpdate, 300);
-                        } else {
-                            console.warn(`Unele elemente din divsParametri nu au fost găsite după ${maxIncercari} încercări.`);
-                            }
+                    if (!referenceDiv || !targetDiv || !imageDiv) {
+                        return;
                     }
-                };
-
-                tryUpdate();
+                    divsParametri.forEach(([referenceDivId, targetDivId, imageDivId, nrSiblings]) => {
+                        updateDiv(referenceDivId, targetDivId, imageDivId, nrSiblings);
+                    });
+                });
             }
 
 // Poziționare text alternativ dacă imaginea nu s-a încărcat
@@ -9059,9 +9034,12 @@ const rectWidget = widget.getBoundingClientRect();
     if (left + popupWidth > rectWidget.right) {
         left = rectWidget.right - popupWidth;
     }
-console.log('left:', left, 'rectWidget.left:', rectWidget.left);
+
     // Ajustare pentru overflow stânga
-// ?
+if (left < rectWidget.left) {
+    left = rectWidget.left;
+}
+console.log('left:', left, 'rectWidget.left:', rectWidget.left);
 
     // Poziționare pe verticală
     let top = rect.top - popupHeight - 1;
