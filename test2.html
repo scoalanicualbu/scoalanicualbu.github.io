@@ -114,6 +114,8 @@
                 --skp: -2.8rem;
                 --sz4: 0.9rem;
                 --sz5: 0.8rem;
+                --wsz: 24.3rem;
+                --wsp: 24.175rem;
             }
 
           * {
@@ -320,12 +322,8 @@ border-right: 1px solid #404040;
 border: 1px solid #404040;
 border-radius: 4px;
                         position: fixed;
-                        top: 1rem;
-                        left: 1rem;
-                    padding-top: 0;
-                    padding-bottom: 0;
-                    padding-left: 0;
-                    padding-right: 0;
+                        top: 1.2rem;
+                        left: 1.2rem;
                         z-index: 4;
                         padding-bottom: 0;
                         width: 2.8rem;
@@ -343,6 +341,11 @@ border-radius: 4px;
 border: 1px solid #000000;
 border-radius: 4px;
                             background-color: #DCDCDC;
+                        }
+
+                        #menu-toggle:focus {
+                            outline: 3px solid #000000;
+                            outline-offset: -1px;
                         }
 
                     aside.show + #menu-toggle {
@@ -3255,7 +3258,7 @@ box-shadow: 0 4px 12px rgba(0,0,0,0.2);
                         padding-left: 0.5rem;
                         padding-right: 0.5rem;
                         width: 100%;
-                        max-width: 24.3rem;
+                        max-width: var(--wsz);
                         max-height: 100vh;
                         overflow-y: auto;
                         scrollbar-width: none;
@@ -3632,6 +3635,10 @@ border: 1px solid #808080;
                                             background-color: #FFFFFF;
                                         }
 
+                                        .info-icon:hover{
+                                            border: 1px solid #000000;
+                                        }
+
                                         .popup-info {
 border: 1px solid #808080;
 border-radius: 4px;
@@ -3643,7 +3650,7 @@ box-shadow: 0 2px 8px rgba(0,0,0,0.2);
                                             padding-left: 0.5rem;
                                             padding-right: 0.5rem;
                                             width: max-content;
-                                            max-width: 24.3rem;
+                                            max-width: var(--wsp);
                                             display: none;
                                             word-wrap: break-word;
                                             white-space: normal;
@@ -9021,9 +9028,10 @@ border-radius: 4px;
 
                 const widget = document.getElementById('widget-accesibilitate');
                 const rectWidget = widget.getBoundingClientRect();
-
                 const rect = icon.getBoundingClientRect();
-                const popupWidth = popup.offsetWidth;
+
+                popup.style.maxWidth = rectWidget.width - 2 + 'px';
+                const popupWidth = Math.min(popup.offsetWidth, rectWidget.width - 2);
                 const popupHeight = popup.offsetHeight;
 
                 let top = rect.top - popupHeight - 1;
@@ -9032,11 +9040,11 @@ border-radius: 4px;
                 }
 
                 let left = rect.left + (rect.width - popupWidth) / 2;
-                if (left + popupWidth > window.innerWidth) {
-                    left = rectWidget.right - popupWidth;
+                if (left + popupWidth + 1 > window.innerWidth) {
+                    left = rectWidget.right - popupWidth - 1;
                 }
-                if (left < rectWidget.left) {
-                    left = rectWidget.left;
+                if (left < rectWidget.left + 1) {
+                    left = rectWidget.left + 1;
                 }
 
                 popup.style.top = top + 'px';
