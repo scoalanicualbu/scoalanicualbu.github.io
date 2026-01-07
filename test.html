@@ -6409,7 +6409,7 @@ border-radius: 4px;
         </section>
 
 <!-- Link "Sari la setări pentru accesibilitate" -->
-        <a href="#widget-accesibilitate" id="skipToAccesibilitate" class="skip-link">
+        <a href="#widget-accesibilitate" id="skipToAccesibilitate" class="skip-link"onclick="skipToAccesibilitate(event)" >
             Mergi la setări pentru accesibilitate
         </a>
 
@@ -8902,6 +8902,25 @@ border-radius: 4px;
 
 
 // Funcții de bază și utilitare
+
+// Sărire direct la Meniu Setări pentru accesibilitate
+            function skipToAccesibilitate(e) {
+                e.preventDefault(); // Previne comportamentul default
+                const btn = document.getElementById('widget-accesibilitate-buton');
+
+                if (btn) {
+                    const isPressed = btn.getAttribute('aria-pressed') === 'true';
+                    const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+
+                    if (!isPressed || !isExpanded) {
+                        btn.setAttribute('aria-pressed', 'true');
+                        btn.setAttribute('aria-expanded', 'true');
+
+                        toggleWidget();
+                    }
+                    btn.focus();
+                }
+            }
 
 // Afișare sau ascundere Meniu Setări pentru accesibilitate
             function toggleWidget() {
