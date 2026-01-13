@@ -111,7 +111,7 @@
                 --szp: 0.8rem;
                 --asz: 16rem;
                 --asu: 15rem;
-                --skp: -5.7rem;
+                --skp: -5.8rem;
                 --sz4: 0.9rem;
                 --sz5: 0.8rem;
                 --wsz: 24.3rem;
@@ -325,7 +325,7 @@ border-radius: 4px;
                         top: 1.2rem;
                         left: 1.2rem;
                         z-index: 4;
-                        padding-bottom: 0;
+                        padding-bottom: 0.3rem;
                         width: 2.8rem;
                         height: 2.8rem;
                         display: none;
@@ -3486,7 +3486,7 @@ border-radius: 4px;
                                         padding-left: 0.5rem;
                                         padding-right: 0.5rem;
                                         width: calc((100% - 2 * 0.5rem) / 3);
-                                        height: 5rem;
+                                        height: 6.5rem;
                                         transition: background-color 0.2s, border 0.2s;
                                         display: flex;
                                         flex-direction: column;
@@ -3571,11 +3571,11 @@ border-radius: 4px;
                                         margin-left: 0;
                                         margin-right: 0;
                                         padding-top: 0.5rem;
-                                        padding-bottom: 0.5rem;
+                                        padding-bottom: 0.4rem;
                                         padding-left: 0.5rem;
                                         padding-right: 0.5rem;
                                         width: calc((100% - 2 * 0.5rem) / 3);
-                                        height: 5rem;
+                                        height: 6.5rem;
                                         transition: background-color 0.2s, border 0.2s;
                                         display: flex;
                                         flex-direction: column;
@@ -3679,7 +3679,14 @@ box-shadow: 0 2px 8px rgba(0,0,0,0.2);
                                         }
 
                                         .sub-options-container {
-                                            margin-top: 0.5rem;
+                                            margin-top: auto;
+                                            margin-bottom: 0;
+                                            margin-left: 0.2rem;
+                                            margin-right: 0.2rem;
+                                            padding-top: 0;
+                                            padding-bottom: 0;
+                                            padding-left: 0;
+                                            padding-right: 0;
                                             display: flex;
                                             justify-content: center;
                                             align-items: center;
@@ -3687,7 +3694,7 @@ box-shadow: 0 2px 8px rgba(0,0,0,0.2);
                                           }
 
                                             .sub-option {
-border: 1px solid #555555;
+border: 1px solid #404040;
 border-radius: 50%;
                                                 width: 0.4rem;
                                                 height: 0.4rem;
@@ -3697,7 +3704,7 @@ border-radius: 50%;
                                             }
 
                                                 .sub-option.active {
-                                                    background-color: #000000;
+                                                    background-color: #404040;
                                                 }
 
      /*       @media(max-width: 500px){
@@ -6402,7 +6409,7 @@ border-radius: 4px;
         </section>
 
 <!-- Link "Sari la setări pentru accesibilitate" -->
-        <a href="#widget-accesibilitate" id="skipToAccesibilitate" class="skip-link">
+        <a href="#widget-accesibilitate" id="skipToAccesibilitate" class="skip-link"onclick="skipToAccesibilitate(event)" >
             Mergi la setări pentru accesibilitate
         </a>
 
@@ -8870,7 +8877,6 @@ border-radius: 4px;
                         e.preventDefault();
                     }
                 }, { passive: false });
-
             });
 
 // Apeluri de inițializare pentru funcții
@@ -8896,6 +8902,25 @@ border-radius: 4px;
 
 
 // Funcții de bază și utilitare
+
+// Sărire direct la Meniu Setări pentru accesibilitate
+            function skipToAccesibilitate(e) {
+                e.preventDefault(); // Previne comportamentul default
+                const btn = document.getElementById('widget-accesibilitate-buton');
+
+                if (btn) {
+                    const isPressed = btn.getAttribute('aria-pressed') === 'true';
+                    const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+
+                    if (!isPressed || !isExpanded) {
+                        btn.setAttribute('aria-pressed', 'true');
+                        btn.setAttribute('aria-expanded', 'true');
+
+                        toggleWidget();
+                    }
+                    btn.focus();
+                }
+            }
 
 // Afișare sau ascundere Meniu Setări pentru accesibilitate
             function toggleWidget() {
@@ -9002,7 +9027,7 @@ border-radius: 4px;
                     .some(b => b.getAttribute('aria-pressed') === 'true');
                 const btn = document.getElementById('widget-optiuni-buton');
                 btn.style.backgroundColor = anyActive ? '#D3D3D3' : '#F8F8F8';
-}
+            }
 
 // Activare și dezactivare ciclică subOpțiune individuală de accesibilitate
             function toggleOptiune(i) {
@@ -9078,6 +9103,60 @@ border-radius: 4px;
                 {nume: 'Tulburat', descriere: 'Profilul Tulburat activează opțiunile: Oprire animații, Mască de lectură și Saturație scăzută.', icon: '🤯'}
             ];
 
+// Mapare între profiluri și opțiuni
+            const profiluriOptiuni = {
+                'Vârstnic': ['Oprire animații', 'Contrast inteligent', 'Ghid de lectură', 'Cursor mare alb', 'Lupă de text', 'Evidențiere focus'],
+                'Mobilitate redusă': ['Oprire animații', 'Lupă de text'],
+                'Vedere redusă': ['Oprire animații', 'Saturație ridicată', 'Font care poate fi citit', 'Cursor mare alb'],
+                'Orb': ['Vorbește și tastează', 'Cititor de ecran'],
+                'Daltonic': ['Deuteranomalic'],
+                'Dislexic': ['Oprire animații', 'Font pentru dislexie'],
+                'Retard': ['Oprire animații', 'Mască de lectură', 'Lupă de text'],
+                'Epileptic': ['Oprire animații', 'Saturație scăzută'],
+                'Tulburat': ['Oprire animații', 'Mască de lectură', 'Saturație scăzută']
+            };
+
+function setProfil(nume, activ) {
+    const profilBtn = document.querySelector(`.profile-button[aria-label="${nume}"]`);
+    if (profilBtn) {
+        profilBtn.setAttribute('aria-pressed', String(activ));
+    }
+
+    const optList = profiluriOptiuni[nume] || [];
+    optList.forEach(optName => {
+        const btnOpt = document.querySelector(`.option-button[aria-label="${optName}"]`);
+        if (btnOpt) {
+            btnOpt.setAttribute('aria-pressed', String(activ));
+        }
+    });
+
+    // Actualizează starea profilurilor
+    updateProfileFromOptions();
+}
+
+function toggleOptiune(numeOptiune, activ) {
+    const btnOpt = document.querySelector(`.option-button[aria-label="${numeOptiune}"]`);
+    if (btnOpt) {
+        btnOpt.setAttribute('aria-pressed', String(activ));
+    }
+    // Verifică dacă toate opțiunile unui profil sunt active și actualizează profilul
+    updateProfileFromOptions();
+}
+
+function updateProfileFromOptions() {
+    profiluri.forEach(p => {
+        const optList = profiluriOptiuni[p.nume] || [];
+        const allActive = optList.every(optName => {
+            const btnOpt = document.querySelector(`.option-button[aria-label="${optName}"]`);
+            return btnOpt && btnOpt.getAttribute('aria-pressed')==='true';
+        });
+        const profilBtn = document.querySelector(`.profile-button[aria-label="${p.nume}"]`);
+        if (profilBtn) {
+            profilBtn.setAttribute('aria-pressed', String(allActive));
+        }
+    });
+}
+
             function initProfiluri() {
                 const container = document.getElementById('widget-profiluri-lista');
                 container.innerHTML = '';
@@ -9091,18 +9170,19 @@ border-radius: 4px;
 
 // Comutare stare
                     btn.onclick = () => {
-                        const e = btn.getAttribute('aria-pressed')==='true';
-                        btn.setAttribute('aria-pressed', String(!e));
-                        updateProfilesButtonStyle();
+    const nume = btn.getAttribute('aria-label');
+    const e = btn.getAttribute('aria-pressed')==='true';
+    console.log(`Apăsat profilul: ${nume}, anterior: ${e}`);
+    setProfil(nume, !e);
+    console.log(`După setare: ${!e}`);
+    updateProfilesButtonStyle();
                     };
 
 // Atribuire Iconiță reprezentativă pentru buton
-                    const iconSVG = document.createElement('svg');
-                    iconSVG.className='button-icon';
-                    iconSVG.setAttribute('viewBox','0 0 64 64');
-                    iconSVG.innerHTML= `<circle cx="32" cy="16" r="12" stroke="black" stroke-width="2" fill="none"/>
-                    <rect x="24" y="28" width="16" height="20" stroke="black" stroke-width="2" fill="none"/>`;
-                    btn.appendChild(iconSVG);
+                    const iconText = document.createElement('div');
+                    iconText.className='button-icon';
+                    iconText.innerText = p.icon; // emoji
+                    btn.appendChild(iconText);
 
 // Setare Iconița "i" în colțul din dreapta sus
                     const infoIcon = document.createElement('div');
@@ -9145,174 +9225,205 @@ border-radius: 4px;
                 {nume:'Contrast', descriere:'Contrast inteligent, Contrast mare, Contrast luminos, Contrast întunecat', icon:'🎨', subOptiuni:['Contrast inteligent', 'Contrast mare', 'Contrast luminos', 'Contrast întunecat']},
                 {nume:'Saturație', descriere:'Saturație scăzută, Saturație ridicată', icon:'🌈', subOptiuni:['Saturație scăzută', 'Saturație ridicată']},
                 {nume:'Culoare fundal', descriere:'Fundal Alb, Fundal Galben, Fundal Portocaliu, Fundal Verde, Fundal Roșu, Fundal Albastru, Fundal Violet, Fundal Negru', icon:'🖍️', subOptiuni:['Fundal Alb', 'Fundal Galben', 'Fundal Portocaliu', 'Fundal Verde', 'Fundal Roșu', 'Fundal Albastru', 'Fundal Violet', 'Fundal Negru']},
-                {nume:'Evidențiere focus', descriere:'Focus evidențiat', icon:'🎯', subOptiuni:[]},
-                {nume:'Cursor', descriere:'Cursor mare Alb, Cursor mare Negru', icon:'🖱️', subOptiuni:['Cursor mare Alb', 'Cursor mare Negru']},
-                {nume:'Evidențiere trecere', descriere:'Trecere evidențiată', icon:'➡️', subOptiuni:[]},
-                {nume:'Evidențiere legături', descriere:'Legături evidențiate', icon:'🔗', subOptiuni:[]},
-                {nume:'Evidențiere titluri', descriere:'Titluri evidențiate', icon:'🏷️', subOptiuni:[]},
                 {nume:'Culoare text', descriere:'Text Alb, Text Galben, Text Portocaliu, Text Verde, Text Roșu, Text Albastru, Text Violet, Text Negru', icon:'📝', subOptiuni:['Text Alb', 'Text Galben', 'Text Portocaliu', 'Text Verde', 'Text Roșu', 'Text Albastru', 'Text Violet', 'Text Negru']},
                 {nume:'Culoare titlu', descriere:'Titlu Alb, Titlu Galben, Titlu Portocaliu, Titlu Verde, Titlu Roșu, Titlu Albastru, Titlu Violet, Titlu Negru', icon:'🏷️', subOptiuni:['Titlu Alb', 'Titlu Galben', 'Titlu Portocaliu', 'Titlu Verde', 'Titlu Roșu', 'Titlu Albastru', 'Titlu Violet', 'Titlu Negru']},
-                {nume:'Scalare conținut', descriere:'Conținut Foarte mic, Conținut Mic, Conținut Mare, Conținut Foarte mare', icon:'🔍', subOptiuni:['Conținut Foarte mic', 'Conținut Mic', 'Conținut Mare', 'Conținut Foarte mare']},
+                {nume:'Evidențiere titluri', descriere:'Titluri evidențiate', icon:'🏷️', subOptiuni:[]},
+                {nume:'Evidențiere legături', descriere:'Legături evidențiate', icon:'🔗', subOptiuni:[]},
+                {nume:'Evidențiere focus', descriere:'Focus evidențiat', icon:'🎯', subOptiuni:[]},
+                {nume:'Evidențiere trecere', descriere:'Trecere evidențiată', icon:'➡️', subOptiuni:[]},
+                {nume:'Cursor', descriere:'Cursor mare Alb, Cursor mare Negru', icon:'🖱️', subOptiuni:['Cursor mare Alb', 'Cursor mare Negru']},
+                {nume:'Mască de lectură', descriere:'Mască de lectură activată', icon:'🛡️', subOptiuni:[]},
+                {nume:'Ghid de lectură', descriere:'Ghid de lectură activat', icon:'🛡️', subOptiuni:[]},
+                {nume:'Lupă de text', descriere:'Lupă de text activată', icon:'🔍', subOptiuni:[]},
                 {nume:'Aliniere text', descriere:'Aliniere Stânga, Aliniere Centru, Aliniere Dreapta, Aliniere Stânga-Dreapta', icon:'↔️', subOptiuni:['Aliniere Stânga', 'Aliniere Centru', 'Aliniere Dreapta', 'Aliniere Stânga-Dreapta']},
                 {nume:'Înălțime linie', descriere:'Linie Micșorată, Linie Mărită, Linie Mare, Linie Foarte mare', icon:'📏', subOptiuni:['Linie Micșorată', 'Linie Mărită', 'Linie Mare', 'Linie Foarte mare']},
                 {nume:'Spațiu dintre litere', descriere:'Spațiu Micșorat, Spațiu Mărit, Spațiu Mare, Spațiu Foarte mare', icon:'✏️', subOptiuni:['Spațiu Micșorat', 'Spațiu Mărit', 'Spațiu Mare', 'Spațiu Foarte mare']},
                 {nume:'Mărime font', descriere:'Font Foarte mic, Font Mic, Mare, Font Foarte mare', icon:'🔠', subOptiuni:['Font Foarte mic', 'Font Mic', 'Font Mare', 'Font Foarte mare']},
                 {nume:'Font', descriere:'Font care poate fi citit, Font pentru dislexie', icon:'🔤', subOptiuni:['Font care poate fi citit', 'Font pentru dislexie']},
-                {nume:'Mască de lectură', descriere:'Mască de lectură activată', icon:'🛡️', subOptiuni:[]},
+                {nume:'Scalare conținut', descriere:'Conținut Foarte mic, Conținut Mic, Conținut Mare, Conținut Foarte mare', icon:'🔍', subOptiuni:['Conținut Foarte mic', 'Conținut Mic', 'Conținut Mare', 'Conținut Foarte mare']},
                 {nume:'Filtrare conținut', descriere:'Conținut filtrat', icon:'🚫', subOptiuni:[]},
                 {nume:'Mod citire', descriere:'Mod citire activat', icon:'📖', subOptiuni:[]},
                 {nume:'Cititor de ecran', descriere:'Cititor de ecran activat', icon:'🧑‍🦯', subOptiuni:[]},
                 {nume:'Tastatură virtuală', descriere:'Tastatură virtuală activată', icon:'⌨️', subOptiuni:[]},
-                {nume:'Vorbire și tastează', descriere:'Vorbire convertită în text', icon:'🎙️', subOptiuni:[]},
+                {nume:'Vorbește și tastează', descriere:'Vorbire convertită în text', icon:'🎙️', subOptiuni:[]},
                 {nume:'Dicționar', descriere:'Dicționar activat', icon:'📚', subOptiuni:[]}
             ];
 
-// Lista de subopțiuni ciclice pentru fiecare opțiune care are subopțiuni
             const subOptiuni = [
+                [],
+                [],
+                [],
                 ['Acromatopsic', 'Acromatomalic', 'Protanopic', 'Deuteranopic', 'Tritanopic', 'Protanomalic', 'Deuteranomalic', 'Trianomalic'],
                 ['Contrast inteligent', 'Contrast mare', 'Contrast luminos', 'Contrast întunecat'],
                 ['Saturație scăzută', 'Saturație ridicată'],
                 ['Fundal Alb', 'Fundal Galben', 'Fundal Portocaliu', 'Fundal Verde', 'Fundal Roșu', 'Fundal Albastru', 'Fundal Violet', 'Fundal Negru'],
-                ['Cursor mare Alb', 'Cursor mare Negru'],
                 ['Text Alb', 'Text Galben', 'Text Portocaliu', 'Text Verde', 'Text Roșu', 'Text Albastru', 'Text Violet', 'Text Negru'],
                 ['Titlu Alb', 'Titlu Galben', 'Titlu Portocaliu', 'Titlu Verde', 'Titlu Roșu', 'Titlu Albastru', 'Titlu Violet', 'Titlu Negru'],
-                ['Conținut Foarte mic', 'Conținut Mic', 'Conținut Mare', 'Conținut Foarte mare'],
+                [],
+                [],
+                [],
+                [],
+                ['Cursor mare Alb', 'Cursor mare Negru'],
+                [],
+                [],
+                [],
                 ['Aliniere Stânga', 'Aliniere Centru', 'Aliniere Dreapta', 'Aliniere Stânga-Dreapta'],
                 ['Linie Micșorată', 'Linie Mărită', 'Linie Mare', 'Linie Foarte mare'],
                 ['Spațiu Micșorat', 'Spațiu Mărit', 'Spațiu Mare', 'Spațiu Foarte mare'],
                 ['Font Foarte mic', 'Font Mic', 'Mare', 'Font Foarte mare'],
-                ['Font care poate fi citit', 'Font pentru dislexie']
+                ['Font care poate fi citit', 'Font pentru dislexie'],
+                ['Conținut Foarte mic', 'Conținut Mic', 'Conținut Mare', 'Conținut Foarte mare'],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                []
             ];
 
-// Starea subopțiunilor pentru fiecare opțiune
-            const subOptiuniStare = {}; // cheia: index opțiune, valoare: index subopțiune sau -1 pentru dezactivat
+            const subOptiuniStare = {};
 
-// Funcție de inițializare pentru Opțiuni
-function initOptiuni() {
-  const container = document.getElementById('widget-optiuni-lista');
-  container.innerHTML = '';
+            let suboptiuneActiva = {};
 
-  optiuni.forEach((opt, index) => {
-    const btn = document.createElement('button');
-    btn.className = 'option-button';
-    btn.setAttribute('aria-pressed', 'false');
-    btn.setAttribute('aria-label', opt.nume);
-    btn.style.position='relative'; // pentru poziționarea iconițelor
-    btn.onclick = () => {
-      const e = btn.getAttribute('aria-pressed')==='true';
-      btn.setAttribute('aria-pressed', String(!e));
-      updateOptionsButtonStyle();
+            function initOptiuni() {
+                const container = document.getElementById('widget-optiuni-lista');
+                container.innerHTML = '';
 
-      if (opt.subOptiuni.length > 1) {
-        // Gestionare casete ciclice
-        cicluSubOptiune(btn, index);
-      } else {
-        // Toggle pentru o singură sub-opțiune
-        if (subOptiuniStare[index]===-1 || subOptiuniStare[index]===undefined) {
-          subOptiuniStare[index]=0; // activat
-        } else {
-          subOptiuniStare[index]=-1; // dezactivat
-        }
-        updateOptiuneText(btn, index);
-      }
-    };
+                optiuni.forEach((opt, index) => {
+                    const btn = document.createElement('button');
+                    btn.className = 'option-button';
+                    btn.setAttribute('aria-pressed', 'false');
+                    btn.setAttribute('aria-label', opt.nume);
+                    btn.style.position='relative';
 
-    // Adaugă iconița SVG reprezentativă
-    const iconSVG = document.createElement('svg');
-    iconSVG.className='button-icon';
-    iconSVG.setAttribute('viewBox','0 0 64 64');
-    iconSVG.innerHTML= `<circle cx="32" cy="16" r="12" stroke="black" stroke-width="2" fill="none"/>
-<rect x="24" y="28" width="16" height="20" stroke="black" stroke-width="2" fill="none"/>`;
-    btn.appendChild(iconSVG);
+// Icon emoji
+                    const iconSpan = document.createElement('span');
+                    iconSpan.className='button-icon';
+                    iconSpan.innerText=opt.icon;
+                    btn.appendChild(iconSpan);
 
-    // Adaugă iconița "i" în colțul din dreapta sus
-    const infoIcon = document.createElement('div');
-    infoIcon.className='info-icon';
-    infoIcon.innerText='i';
+                    const infoIcon = document.createElement('div');
+                    infoIcon.className='info-icon';
+                    infoIcon.innerText='i';
 
-    // Popup pentru descriere
-    const popup = document.createElement('div');
-    popup.className='popup-info';
-    popup.innerText=opt.descriere;
-    infoIcon.appendChild(popup);
+                    const popup = document.createElement('div');
+                    popup.className='popup-info';
+                    popup.innerText=opt.descriere;
+                    infoIcon.appendChild(popup);
 
-infoIcon.addEventListener('mouseenter', ()=>{ showPopup(popup, infoIcon); });
+                    infoIcon.addEventListener('mouseenter', ()=>showPopup(popup, infoIcon));
+                    infoIcon.addEventListener('mouseleave', ()=>hidePopup(popup));
+                    btn.appendChild(infoIcon);
 
-infoIcon.addEventListener('mouseleave', ()=>{ hidePopup(popup); });
+                    const spanText = document.createElement('span');
+                    spanText.innerText=opt.nume;
+                    btn.appendChild(spanText);
 
-    // Adaugă iconița "i" în buton
-    btn.appendChild(infoIcon);
+                    btn.onclick= ()=> {
+                        const e=btn.getAttribute('aria-pressed')==='true';
 
-    // Textul opțiunii
-    const spanText = document.createElement('span');
-    spanText.innerText=opt.nume;
-    btn.appendChild(spanText);
+                        if (opt.subOptiuni.length>1) {
+                            if (!suboptiuneActiva[index]) {
+                                subOptiuniStare[index]=0;
+                                suboptiuneActiva[index]=true;
+                            } else {
+                                if (subOptiuniStare[index] < opt.subOptiuni.length -1) {
+                                    subOptiuniStare[index]++;
+                                } else {
+                                    subOptiuniStare[index] = -1;
+                                    delete suboptiuneActiva[index];
+                                }
+                            }
+                            initCaseta(btn.querySelector('.sub-options-container'), index);
+                            updateOptiuneText(btn, index);
+                        } else {
+                            const e = btn.getAttribute('aria-pressed') === 'true';
+                            btn.setAttribute('aria-pressed', String(!e));
+                            if (e) {
+                                delete suboptiuneActiva[index];
+                            } else {
+                                suboptiuneActiva[index] = true;
+                            }
+                            updateOptiuneText(btn, index);
+                        }
+                        const optiuniBtn = document.querySelector('.buton-optiuni');
+                        if (optiuniBtn) {
+                            const areActiv = Object.keys(suboptiuneActiva).length > 0;
+                            optiuniBtn.setAttribute('aria-pressed', String(areActiv));
+                        }
+                        updateOptionsButtonStyle();
+                    };
 
-    // Adaugă butonul în container
-    container.appendChild(btn);
+                    container.appendChild(btn);
 
-    // Inițial, actualizează textul butonului
-    updateOptiuneText(btn, index);
-  });
-}
+                    if (opt.subOptiuni.length>1) {
+                        const subContainer = document.createElement('div');
+                        subContainer.className='sub-options-container';
+                        btn.appendChild(subContainer);
+                        initCaseta(subContainer, index);
+                        updateOptiuneText(btn, index);
+                    } else {
+                        updateOptiuneText(btn, index);
+                    }
+                });
+            }
 
-// Actualizează textul butonului pentru opțiunea cu index dat
-function updateOptiuneText(btn, index) {
-  const e = btn.getAttribute('aria-pressed')==='true';
-  const opt = optiuni[index];
-  let text = '';
-  if (opt.subOptiuni.length>1) {
-    // casete ciclice
-    const activeIdx = subOptiuniStare[index];
-    if (activeIdx===undefined || activeIdx===-1) {
-      text=opt.nume; // dezactivat
-    } else {
-      text=opt.subOptiuni[activeIdx]; // starea activa
-    }
-  } else {
-    // doar nume sau sub-optiune
-    if (subOptiuniStare[index]===-1 || subOptiuniStare[index]===undefined) {
-      text=opt.nume;
-    } else {
-      text=opt.subOptiuni[subOptiuniStare[index]];
-    }
-  }
-  // setare text
-  const span = btn.querySelector('span');
-  span.innerText=text;
-}
+            function updateOptiuneText(btn, index) {
+                const opt = optiuni[index];
 
-// Funcție de inițializare pentru casetele ciclice
-function cicluSubOptiune(parentBtn, indexOpt) {
-  const container = parentBtn.querySelector('.sub-options-container');
-  if (subOptiuniStare[indexOpt]===undefined || subOptiuniStare[indexOpt]===-1) {
-    subOptiuniStare[indexOpt]=0;
-  } else {
-    subOptiuniStare[indexOpt]= (subOptiuniStare[indexOpt]+1) % subOptiuni[indexOpt].length;
-  }
-  initCaseta(container, indexOpt);
-  // Actualizează textul
-  updateOptiuneText(parentBtn, indexOpt);
-}
+                const areSubOptiuni = opt.subOptiuni.length > 1;
+                const subOptiuneActiv = suboptiuneActiva[index];
 
-// Generare casete ciclice
-function initCaseta(container, indexOpt) {
-  container.innerHTML='';
-  const currentIdx = subOptiuniStare[indexOpt] || 0;
-  subOptiuni[indexOpt].forEach((val,i) => {
-    const div = document.createElement('div');
-    div.className='sub-option';
-    if (i===currentIdx) div.classList.add('active');
-    div.onclick= ()=> {
-      subOptiuniStare[indexOpt]=i;
-      initCaseta(container,indexOpt);
-      // actualizează textul butonului
-      const btn = document.querySelector(`.option-button[aria-label="${optiuni[indexOpt].nume}"]`);
-      if (btn) updateOptiuneText(btn, indexOpt);
-    };
-    container.appendChild(div);
-  });
-}
+                const optiuniBtn = document.querySelector('.buton-optiuni');
+
+                if (areSubOptiuni && subOptiuneActiv) {
+                    btn.setAttribute('aria-pressed', 'true');
+
+                    if (optiuniBtn) {
+                        optiuniBtn.setAttribute('aria-pressed', 'true');
+                    }
+
+                    const activeIdx = subOptiuniStare[index];
+                    if (activeIdx !== undefined && activeIdx !== -1) {
+                        const subText = opt.subOptiuni[activeIdx] !== undefined ? opt.subOptiuni[activeIdx] : opt.nume;
+                        btn.querySelector('span:nth-of-type(2)').innerText = subText;
+                    } else {
+                            btn.querySelector('span:nth-of-type(2)').innerText = opt.nume;
+                    }
+                } else {
+                    const isActive = !!suboptiuneActiva[index];
+                    btn.setAttribute('aria-pressed', String(isActive));
+
+                    if (optiuniBtn) {
+                        optiuniBtn.setAttribute('aria-pressed', String(isActive));
+                    }
+
+                    btn.querySelector('span:nth-of-type(2)').innerText = opt.nume;
+                }
+            }
+
+            function initCaseta(container, indexOpt) {
+                container.innerHTML='';
+                if (!subOptiuni[indexOpt] || subOptiuni[indexOpt].length===0) return;
+
+                const currentIdx = subOptiuniStare[indexOpt] !== undefined ? subOptiuniStare[indexOpt] : -1;
+
+                subOptiuni[indexOpt].forEach((val,i) => {
+                    if (val===undefined) return;
+                    const div=document.createElement('div');
+                    div.className='sub-option';
+                    if (i===currentIdx) div.classList.add('active');
+
+                    div.onclick= ()=> {
+                        subOptiuniStare[indexOpt]=i;
+                        initCaseta(container, indexOpt);
+                        const btn=document.querySelector(`.option-button[aria-label="${optiuni[indexOpt].nume}"]`);
+                        if(btn) updateOptiuneText(btn, indexOpt);
+                    };
+                    container.appendChild(div);
+                });
+            }
 
 // Inițializare Meniu Setări pentru accesibilitate
             function initialize() {
@@ -9359,21 +9470,38 @@ function initCaseta(container, indexOpt) {
                 updateOptionsButtonStyle()
 
 // Inițializare Opțiuni indivituale de accesibilitate
-  initOptiuni();
+                initOptiuni();
 
 // Inițial, pentru toate opțiunile cu subOpțiuni multiple, setează starea -1 (dezactivat)
-Object.keys(subOptiuniStare).forEach(k => {
-  if (optiuni[k] && optiuni[k].subOptiuni.length > 1) {
-    subOptiuniStare[k] = -1;
-  } else {
-    subOptiuniStare[k] = 0;
-  }
+                Object.keys(subOptiuniStare).forEach(k => {
+                    if (optiuni[k] && optiuni[k].subOptiuni.length > 1) {
+                        subOptiuniStare[k] = -1;
+                    } else {
+                        subOptiuniStare[k] = 0;
+                    }
+                });
+
+// Evenimente pentru profil
+document.querySelectorAll('.profile-button').forEach(btn => {
+    btn.onclick = () => {
+        const nume = btn.getAttribute('aria-label');
+        const e = btn.getAttribute('aria-pressed') === 'true';
+        setProfil(nume, !e);
+    };
 });
 
-}
+// Evenimente pentru opțiuni
+document.querySelectorAll('.option-button').forEach(btn => {
+    btn.onclick = () => {
+        const optName = btn.getAttribute('aria-label');
+        const e = btn.getAttribute('aria-pressed') === 'true';
+        toggleOptiune(optName, !e);
+    };
+});
+            }
 
 // Resetare stare Meniu Setări pentru accesibilitate
-function reset() {
+            function reset() {
 
 // Ascundere Meniu Setări pentru accesibilitate
                 document.getElementById('widget-accesibilitate').style.display='none';
@@ -9414,16 +9542,15 @@ function reset() {
                 updateOptionsButtonStyle()
 
   // Resetare stări interne, dacă e cazul
-  Object.keys(subOptiuniStare).forEach(k => {
-    subOptiuniStare[k] = -1; // sau 0 dacă vrei să fie activat implicit
-  });
+                Object.keys(subOptiuniStare).forEach(k => {
+                    subOptiuniStare[k] = -1; // sau 0 dacă vrei să fie activat implicit
+                });
 
   // Ascunde toate popup-urile
-  document.querySelectorAll('.popup-info').forEach(p => {
-    p.style.display='none'; // sau folosește classList.remove('active') dacă preferi clase CSS
-
-  });
-}
+                document.querySelectorAll('.popup-info').forEach(p => {
+                    p.style.display='none'; // sau folosește classList.remove('active') dacă preferi clase CSS
+                });
+            }
 
 // Funcții de eveniment și de gestionare a interacțiunii
 
@@ -9444,7 +9571,6 @@ function reset() {
                     document.getElementById('widget-accesibilitate-buton').focus();
                     return;
                 }
-
             });
 
         </script>
