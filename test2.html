@@ -17,7 +17,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!-- Titlu -->
-        <title>Erasmus+</title>
+        <title>eTwinning</title>
 
 <!-- Resurse -->
 <!--        <base href="https://scoalanicualbu.github.io">-->
@@ -7326,14 +7326,13 @@ border-radius: 4px;
                 });
             }
 
-function initializeCarusele() {
-    const containers = document.querySelectorAll('.content-carusel');
-    containers.forEach((container) => {
-        const id = container.id;
-        console.log('Inițializează carusel cu id:', id);
-        initializeCarusel(id);
-    });
-}
+            function initializeCarusele() {
+                const containers = document.querySelectorAll('.content-carusel');
+                containers.forEach((container) => {
+                    const id = container.id;
+                    initializeCarusel(id);
+                });
+            }
 
 // Micșorare, mărire și translatare imagine
             function limitPosition(container, img, scale, translateX, translateY) {
