@@ -1445,6 +1445,34 @@ border-radius: 4px;
                                 display: list-item;
                             }
 
+                                ol.sublist {
+                                    counter-reset: item;
+                                    list-style-type: none;
+                                    margin-left: 0rem;
+                                }
+
+                                    ol.sublist > li {
+                                        counter-increment: item;
+                                        margin-bottom: 0px;
+                                    }
+                                        ol.sublist > li::before {
+                                            content: counter(item) ". ";
+                                            font-weight: bold;
+                                        }
+
+                                    ol.sublist ol {
+                                        counter-reset: subitem;
+                                        list-style-type: none;
+                                        padding-left: 0px;
+                                        margin-top: 0px;
+                                    }
+                                        ol.sublist ol > li {
+                                            counter-increment: subitem;
+                                        }
+                                        ol.sublist ol > li::before {
+                                            content: counter(item) "." counter(subitem) " ";
+                                        }
+
                                 .lista {
 border: 0px solid #404040;
 border-radius: 4px;
